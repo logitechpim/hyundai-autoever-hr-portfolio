@@ -20,4 +20,3 @@
 
 ## Deployment
 GitHub 저장소와 Vercel을 연결하면 `main` 브랜치 변경사항을 자동 배포하도록 구성할 수 있습니다.
-
