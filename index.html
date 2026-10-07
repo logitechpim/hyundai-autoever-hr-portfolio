@@ -3400,6 +3400,21 @@ body.has-chapter-rail #hrd .container{
 }
 .project-live-link:hover{filter:brightness(1.08)}
 .project-live-link:focus-visible{outline:2px solid var(--hyundai-blue);outline-offset:4px}
+/* Show one navigation surface at each screen size. */
+@media (min-width:1280px){
+  .nav{display:none}
+}
+@media (max-width:1279px){
+  .nav-links{
+    display:flex;
+    gap:clamp(12px,3vw,22px);
+    font-size:13px;
+    white-space:nowrap;
+    overflow-x:auto;
+    max-width:100%;
+  }
+  .nav-inner{justify-content:center}
+}
 </style>
 </head>
 <body class="has-chapter-rail">
@@ -4020,7 +4035,7 @@ const observedSections = ['intro','hrd','collab','hrm','other','why']
   .filter(Boolean);
 
 function updateActiveNav(){
-  const navHeight = document.querySelector('.nav')?.offsetHeight || 66;
+  const navHeight = document.querySelector('.nav')?.offsetHeight || 0;
   const marker = window.scrollY + navHeight + 120;
 
   let currentId = observedSections[0]?.id || '';
@@ -4032,6 +4047,10 @@ function updateActiveNav(){
       break;
     }
   }
+
+  const atPageEnd = window.scrollY > 0 &&
+    Math.ceil(window.scrollY + window.innerHeight) >= document.documentElement.scrollHeight - 2;
+  if(atPageEnd) currentId = observedSections[observedSections.length - 1]?.id || currentId;
 
   document.querySelectorAll('[data-nav], .chapter-link[data-chapter]').forEach(link=>{
     const active = (link.dataset.nav || link.dataset.chapter) === currentId;
