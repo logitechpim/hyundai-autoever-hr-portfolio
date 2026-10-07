@@ -3415,6 +3415,27 @@ body.has-chapter-rail #hrd .container{
   }
   .nav-inner{justify-content:center}
 }
+.hrd-artifact.compact-artifact,
+.hrm-artifact-editorial.compact-artifact{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  min-height:0;
+  padding-top:24px;
+  padding-bottom:24px;
+}
+.compact-artifact > .artifact-btn{
+  margin:0;
+  flex-shrink:0;
+}
+@media(max-width:700px){
+  .hrd-artifact.compact-artifact,
+  .hrm-artifact-editorial.compact-artifact{
+    flex-wrap:wrap;
+    gap:14px;
+  }
+}
 </style>
 </head>
 <body class="has-chapter-rail">
@@ -3572,23 +3593,12 @@ body.has-chapter-rail #hrd .container{
 </div>
 </article>
 </div>
-<div class="hrd-artifact fade">
+<div class="hrd-artifact compact-artifact fade">
 <div class="hrd-artifact-copy">
 <div class="eyebrow">TRAINING ARTIFACT</div>
 <h3>신규 조교 온보딩 및 QA 교육체계</h3>
-<div class="artifact-action-row">
-<button aria-controls="trainingArtifactModal" aria-haspopup="dialog" class="artifact-btn" id="openTrainingArtifact" type="button">
-            View Training Material →
-          </button>
-<span>Case 03 운영 방식을 재구성한 4장의 실무 예시입니다.</span>
 </div>
-</div>
-<button aria-label="교육자료 미리보기 열기" class="hrd-artifact-preview" id="openTrainingArtifactThumb" type="button">
-<img alt="신규 조교 온보딩 교육자료 재구성본 첫 번째 슬라이드" src="qa_training_artifact/training-01.png"/>
-<img alt="" src="qa_training_artifact/training-02.png"/>
-<img alt="" src="qa_training_artifact/training-03.png"/>
-<img alt="" src="qa_training_artifact/training-04.png"/>
-</button>
+<button aria-controls="trainingArtifactModal" aria-haspopup="dialog" class="artifact-btn" id="openTrainingArtifact" type="button">View Training Material →</button>
 </div>
 <div class="company-head simple-head fade">
 <div class="company-name">대일외국어고등학교</div>
@@ -3767,20 +3777,12 @@ body.has-chapter-rail #hrd .container{
 </div>
 </article>
 </div>
-<div class="hrm-artifact-editorial fade">
+<div class="hrm-artifact-editorial compact-artifact fade">
 <div class="hrm-artifact-copy">
 <div class="eyebrow">PEOPLE OPERATIONS ARTIFACT</div>
 <h3>조교 운영 및 성과관리 대시보드</h3>
-<div class="artifact-action-row">
-<button aria-controls="operationsArtifactModal" aria-haspopup="dialog" class="artifact-btn" id="openOperationsArtifact" type="button">
-              View Operations Dashboard →
-            </button>
-<span>Case 07, 08의 운영 판단에 활용한 40명 규모 관리 대시보드입니다.</span>
 </div>
-</div>
-<button aria-label="조교 운영 대시보드 미리보기 열기" class="operations-thumb editorial-thumb" id="openOperationsArtifactThumb" type="button">
-<img alt="조교 운영 현황 대시보드 미리보기" src="hrm_operations_artifact/operations-01.png"/>
-</button>
+<button aria-controls="operationsArtifactModal" aria-haspopup="dialog" class="artifact-btn" id="openOperationsArtifact" type="button">View Operations Dashboard →</button>
 </div>
 <div class="company-head simple-head fade hrm-company-head">
 <div class="company-name">대일외국어고등학교</div>
