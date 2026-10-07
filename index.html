@@ -3436,6 +3436,27 @@ body.has-chapter-rail #hrd .container{
     gap:14px;
   }
 }
+
+/* Concrete training examples */
+.training-evidence-dialog{max-width:1100px}
+.training-evidence{border-top:2px solid var(--hyundai-blue);padding:24px 0}
+.training-case-title{margin:0 0 6px;color:var(--hyundai-blue);font-size:25px}
+.training-case-desc{margin:0 0 24px;color:var(--muted);font-size:14px}
+.training-evidence-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:30px}
+.training-example{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;color:var(--ink)}
+.training-example-label,.training-explanation h4{font-size:12px;font-weight:800;color:var(--hyundai-gold);margin:0 0 12px}
+.training-example h3{font-size:23px;color:var(--hyundai-blue);margin:0 0 24px;line-height:1.4}
+.training-example ol{padding-left:22px;margin:0}
+.training-example li{padding:0 0 16px 8px}
+.training-example p{margin:6px 0 0;line-height:1.7}
+.training-explanation{padding:12px 0}
+.training-explanation p{font-size:16px;margin:0 0 24px;line-height:1.8}
+.training-source{font-size:12px;color:var(--muted);line-height:1.6}
+.training-compare>div{padding:16px 0;border-top:1px solid var(--line)}
+.training-compare span{font-size:13px;font-weight:800;color:var(--hyundai-blue)}
+.training-example dt{font-weight:800;margin-top:18px;color:var(--hyundai-blue)}
+.training-example dd{margin:6px 0 0;line-height:1.7}
+@media(max-width:700px){.training-evidence-grid{grid-template-columns:1fr;gap:12px}.training-example{padding:20px}.training-example h3{font-size:20px}.training-case-title{font-size:22px}.training-explanation p{font-size:15px}}
 </style>
 </head>
 <body class="has-chapter-rail">
@@ -3959,33 +3980,13 @@ body.has-chapter-rail #hrd .container{
 </div>
 <div aria-hidden="true" class="artifact-modal" id="trainingArtifactModal">
 <div class="artifact-backdrop" data-close-artifact=""></div>
-<section aria-labelledby="trainingArtifactTitle" aria-modal="true" class="artifact-dialog" role="dialog">
+<section aria-labelledby="trainingArtifactTitle" aria-modal="true" class="artifact-dialog training-evidence-dialog" role="dialog">
 <button aria-label="닫기" class="artifact-close" data-close-artifact="" type="button">×</button>
-<div class="artifact-header">
-<div>
-<div class="artifact-small">PORTFOLIO RECONSTRUCTION</div>
-<h2 id="trainingArtifactTitle">신규 조교 온보딩 및 QA 교육체계</h2>
-</div>
-<div class="artifact-counter"><span id="artifactCurrent">1</span> / 4</div>
-</div>
-<div class="artifact-stage">
-<img alt="교육자료 재구성본 슬라이드 1" id="artifactSlide" src="qa_training_artifact/training-01.png"/>
-</div>
-<div class="artifact-nav">
-<button id="artifactPrev" type="button">← Previous</button>
-<div class="artifact-dots" id="artifactDots">
-<button aria-label="1번 슬라이드" class="active" data-slide="0" type="button"></button>
-<button aria-label="2번 슬라이드" data-slide="1" type="button"></button>
-<button aria-label="3번 슬라이드" data-slide="2" type="button"></button>
-<button aria-label="4번 슬라이드" data-slide="3" type="button"></button>
-</div>
-<button id="artifactNext" type="button">Next →</button>
-</div>
-<div class="artifact-note">
-      실제 내부 문서를 그대로 공개하지 않고, 수행 방식과 교육 구조만 포트폴리오용으로 재구성했습니다.
-    </div>
-</section>
-</div>
+<div class="artifact-header"><div><div class="artifact-small">TRAINING MATERIAL · SELECTED CASES</div><h2 id="trainingArtifactTitle">신규 조교 온보딩 및 QA 교육자료</h2></div><div class="artifact-counter"><span id="artifactCurrent">1</span> / 3</div></div>
+<div id="artifactSlide" class="training-evidence"></div>
+<div class="artifact-nav"><button id="artifactPrev" type="button">← Previous</button><div class="artifact-dots" id="artifactDots"><button aria-label="업무 절차 교육" class="active" data-slide="0" type="button"></button><button aria-label="답변 품질 기준 교육"  data-slide="1" type="button"></button><button aria-label="상황별 판단 기준 교육"  data-slide="2" type="button"></button></div><button id="artifactNext" type="button">Next →</button></div>
+<div class="artifact-note">실제 제작한 QA 업무 가이드를 바탕으로 교육 방식과 사례를 재구성했습니다. 내부 화면과 계정·학생 정보는 포함하지 않았으며, 예시 문장은 포트폴리오용 가상 사례입니다.</div>
+</section></div>
 <div aria-hidden="true" class="artifact-modal" id="operationsArtifactModal">
 <div class="artifact-backdrop" data-close-operations=""></div>
 <section aria-labelledby="operationsArtifactTitle" aria-modal="true" class="artifact-dialog operations-dialog" role="dialog">
@@ -4151,18 +4152,12 @@ const trainingDots = [...document.querySelectorAll('#artifactDots button')];
 const trainingPrev = document.getElementById('artifactPrev');
 const trainingNext = document.getElementById('artifactNext');
 
-const trainingSlides = [
-  'qa_training_artifact/training-01.png',
-  'qa_training_artifact/training-02.png',
-  'qa_training_artifact/training-03.png',
-  'qa_training_artifact/training-04.png'
-];
+const trainingSlides = [{"title":"업무 절차 교육","desc":"업무 순서를 단계별 안내와 작성 예시로 연결한 교육자료 구성","body":"<div class=\"training-example-label\">업무 가이드 예시</div><h3>질문 확인부터 답변 등록까지</h3><ol><li><b>질문과 근거 확인</b><p>질문의 핵심을 파악하고 관련 자료를 확인합니다.</p></li><li><b>답변 작성</b><p>인사, 설명, 마무리 순서로 작성하고 문단을 나눕니다.</p></li><li><b>등록 전 점검</b><p>질문과 답변의 일치 여부, 근거, 맞춤법을 확인합니다.</p></li></ol>","point":"교육자료 구성","explain":"신규 조교가 실제 업무 순서를 따라갈 수 있도록 절차 안내와 답변 작성 예시를 함께 배치했습니다.","source":"원본 10~13쪽의 답변 작성 절차·예시를 바탕으로 재구성"},{"title":"답변 품질 기준 교육","desc":"주의사항을 구체적인 답변 문장으로 설명한 교육자료 구성","body":"<div class=\"training-example-label\">가상 질문과 답변 예시</div><h3>“두 풀이 중 어떤 방법이 더 좋을까요?”</h3><div class=\"training-compare\"><div><span>개인적인 판단이 앞선 답변</span><p>“제 경험상 A가 더 쉽고 좋은 방법입니다.”</p></div><div><span>조건을 설명하는 답변</span><p>“A는 계산 과정을 줄이는 데 도움이 되고, B는 원리를 확인하는 데 도움이 됩니다. 문제의 조건과 이해 수준에 따라 선택할 수 있습니다.”</p></div></div>","point":"교육자료 구성","explain":"개인 의견을 넣지 말라는 주의사항에 금지 표현과 대체 표현을 붙여, 답변 작성 시 참고할 수 있도록 설명했습니다.","source":"원본 21~22쪽의 품질 기준·대체 표현을 바탕으로 재구성"},{"title":"상황별 판단 기준 교육","desc":"판단이 필요한 질문을 유형별로 정리한 교육자료 구성","body":"<div class=\"training-example-label\">가상 상황별 판단 예시</div><h3>질문을 받았을 때 무엇을 확인할까?</h3><dl><dt>학습 질문과 상담이 섞인 경우</dt><dd>답변 범위를 구분하고 학습 질문에 해당하는 내용을 안내합니다.</dd><dt>질문 내용이나 첨부 자료가 부족한 경우</dt><dd>추측해서 답변하지 않고 필요한 정보가 있는지 확인합니다.</dd><dt>질문의 의도가 불명확한 경우</dt><dd>내용을 충분히 이해했는지 먼저 점검합니다.</dd></dl>","point":"교육자료 구성","explain":"신규 조교가 판단하기 어려운 질문을 유형별로 구분하고, 상황에 따라 확인할 사항과 답변 범위를 정리했습니다.","source":"원본 24~27쪽의 질문 유형 분류를 바탕으로 재구성"}];
 let trainingIndex = 0;
-
 function renderTrainingSlide(){
   if(!trainingSlide) return;
-  trainingSlide.src = trainingSlides[trainingIndex];
-  trainingSlide.alt = `교육자료 재구성본 슬라이드 ${trainingIndex + 1}`;
+  const item = trainingSlides[trainingIndex];
+  trainingSlide.innerHTML = '<h3 class="training-case-title">' + item.title + '</h3><p class="training-case-desc">' + item.desc + '</p><div class="training-evidence-grid"><div class="training-example">' + item.body + '</div><aside class="training-explanation"><h4>' + item.point + '</h4><p>' + item.explain + '</p><div class="training-source">' + item.source + '</div></aside></div>';
   if(trainingCurrent) trainingCurrent.textContent = trainingIndex + 1;
   trainingDots.forEach((dot,i)=>dot.classList.toggle('active', i===trainingIndex));
   if(trainingPrev) trainingPrev.disabled = trainingIndex === 0;
