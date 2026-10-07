@@ -1,22 +1,22 @@
-# Hyundai AutoEver HR Portfolio
+# 이준호 HR Portfolio
 
-현대오토에버 HRD 1지망, HRM 2지망 지원을 위해 제작한 개인 포트폴리오 웹사이트입니다.
+HRD / HRM 지원 포트폴리오입니다.
 
-## Tech Stack
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Responsive Web Design
-- Intersection Observer API
-- Vercel 예정
+- 사이트: https://junho-lee-hr-portfolio.vercel.app/
+- 기본 브랜치: main
+- 배포: Vercel GitHub 연동 자동 배포
+- 정적 HTML 사이트로 별도 빌드 과정 없이 루트 index.html을 제공합니다.
 
-## Structure
-- `index.html`: 메인 포트폴리오 페이지
-- `qa_training_artifact/`: 재구성한 교육 자료 이미지
-- `hrm_operations_artifact/`: 재구성한 HR 운영 대시보드 이미지
+## 구성
 
-## Local Preview
-`index.html`을 브라우저에서 열면 됩니다.
+index.html은 소개, 경력과 학력, 13개 주요 경험, 업무 역량, 지원 동기와 상세 팝업을 포함합니다. assets/css와 assets/vendor는 스타일과 아이콘을, assets/img는 활동 사진과 운영 자료를 담습니다.
 
-## Deployment
-GitHub 저장소와 Vercel을 연결하면 `main` 브랜치 변경사항을 자동 배포하도록 구성할 수 있습니다.
+main 브랜치에 변경사항을 push하면 Vercel에서 자동으로 재배포됩니다.
+
+## 디자인 출처
+
+iPortfolio by BootstrapMade: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+라이선스: https://bootstrapmade.com/license/
+원본의 BootstrapMade 크레딧을 유지합니다.
+
+이전 사이트는 Git 기록에 보존되어 있습니다.
