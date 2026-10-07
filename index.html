@@ -3406,14 +3406,16 @@ body.has-chapter-rail #hrd .container{
 <nav class="nav">
 <div class="container nav-inner">
 <div class="nav-links">
+<a data-nav="intro" href="#intro">Intro</a>
 <a data-nav="hrd" href="#hrd">HRD</a>
-<a data-nav="collab" href="#collab">Collaboration</a>
+<a data-nav="collab" href="#collab">AI</a>
 <a data-nav="hrm" href="#hrm">HRM</a>
 <a data-nav="other" href="#other">Projects</a>
+<a data-nav="why" href="#why">Why</a>
 </div>
 </div>
 </nav>
-<header class="hero">
+<header class="hero" id="intro">
 <div class="container">
 <div class="hero-split fade">
 <div class="hero-left">
@@ -3457,7 +3459,11 @@ body.has-chapter-rail #hrd .container{
 </header><aside aria-label="섹션 인덱스" class="chapter-rail">
 <div class="chapter-rail-inner">
 <div class="chapter-rail-title">PORTFOLIO</div>
-<a class="chapter-link active" data-chapter="hrd" href="#hrd">
+<a class="chapter-link active" data-chapter="intro" href="#intro" aria-current="location">
+<span class="chapter-num">00</span>
+<span class="chapter-text"><strong>Intro</strong><small>About Me</small></span>
+</a>
+<a class="chapter-link" data-chapter="hrd" href="#hrd">
 <span class="chapter-num">01</span>
 <span class="chapter-text"><strong>HRD</strong><small>Primary Track</small></span>
 </a>
@@ -4009,7 +4015,7 @@ const fadeObserver = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.fade').forEach(el=>fadeObserver.observe(el));
 
 const navLinks = [...document.querySelectorAll('[data-nav]')];
-const observedSections = ['approach','hrd','collab','hrm','other']
+const observedSections = ['intro','hrd','collab','hrm','other','why']
   .map(id=>document.getElementById(id))
   .filter(Boolean);
 
@@ -4027,8 +4033,11 @@ function updateActiveNav(){
     }
   }
 
-  navLinks.forEach(link=>{
-    link.classList.toggle('active', link.dataset.nav === currentId);
+  document.querySelectorAll('[data-nav], .chapter-link[data-chapter]').forEach(link=>{
+    const active = (link.dataset.nav || link.dataset.chapter) === currentId;
+    link.classList.toggle('active', active);
+    if(active) link.setAttribute('aria-current','location');
+    else link.removeAttribute('aria-current');
   });
 }
 
@@ -4298,38 +4307,5 @@ if (hrmToggle && hrmBody) {
 }
 
 </script>
-<script>
-(function(){
-  const chapterLinks = Array.from(document.querySelectorAll('.chapter-link[data-chapter]'));
-  if(!chapterLinks.length) return;
-  const sectionIds = chapterLinks.map(link => link.dataset.chapter);
-  const sections = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
-  const setActive = (id) => {
-    chapterLinks.forEach(link => {
-      const active = link.dataset.chapter === id;
-      link.classList.toggle('active', active);
-      if(active){
-        link.setAttribute('aria-current','true');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
-  };
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter(entry => entry.isIntersecting)
-      .sort((a,b) => b.intersectionRatio - a.intersectionRatio);
-    if(visible[0]) setActive(visible[0].target.id);
-  }, {
-    rootMargin: '-22% 0px -60% 0px',
-    threshold: [0.12, 0.25, 0.4, 0.6]
-  });
-  sections.forEach(section => observer.observe(section));
-  chapterLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      setActive(link.dataset.chapter);
-    });
-  });
-})();
-</script></body>
+</body>
 </html>
