@@ -57,3 +57,15 @@
 .resume .resume-item{border-left-color:#3EB034!important}
 .filter.active,.cta,.resource-button,.scroll-top,.services .service-item .icon{background:#3EB034!important;border-color:#3EB034!important}
 .case-copy .category,.story-number,.section-label{color:#2A8A24!important}
+
+/* Compact project/activity list */
+.activity-name-only{
+  padding-bottom:10px!important;
+  margin-bottom:4px!important;
+}
+.activity-name-only h4{
+  margin-bottom:0!important;
+}
+.activity-name-only::before{
+  top:3px!important;
+}
