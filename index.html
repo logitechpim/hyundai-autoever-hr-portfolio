@@ -3457,6 +3457,13 @@ body.has-chapter-rail #hrd .container{
 .training-example dt{font-weight:800;margin-top:18px;color:var(--hyundai-blue)}
 .training-example dd{margin:6px 0 0;line-height:1.7}
 @media(max-width:700px){.training-evidence-grid{grid-template-columns:1fr;gap:12px}.training-example{padding:20px}.training-example h3{font-size:20px}.training-case-title{font-size:22px}.training-explanation p{font-size:15px}}
+
+.circle-open-btn{margin-top:18px;padding:10px 15px;font-size:13px}
+.circle-photo-dialog{max-width:1000px}
+.circle-photo-stage{background:#f2ede8;border:1px solid var(--line);border-radius:16px;display:flex;align-items:center;justify-content:center;min-height:240px;padding:16px}
+.circle-photo-stage img{display:block;max-width:100%;width:auto;max-height:62vh;object-fit:contain}
+.circle-photo-caption{margin:0 0 16px;color:var(--muted);font-size:14px}
+@media(max-width:700px){.circle-photo-stage{padding:8px;min-height:0}.circle-photo-stage img{max-height:55vh}.circle-photo-dialog .artifact-header h2{font-size:24px}}
 </style>
 </head>
 <body class="has-chapter-rail">
@@ -3630,6 +3637,7 @@ body.has-chapter-rail #hrd .container{
 <div class="hrd-case-title">
 <h3>학급자치서클 운영</h3>
 <div class="jd-match-text">조직문화 진단 및 조직 개발 프로그램 추진</div>
+<button class="artifact-btn circle-open-btn" id="openCirclePhotos" type="button" aria-haspopup="dialog" aria-controls="circlePhotoModal">활동 사진 보기 ↗</button>
 </div>
 <div class="hrd-key-action">
 <div class="hrd-subhead">KEY ACTION</div>
@@ -4021,6 +4029,15 @@ body.has-chapter-rail #hrd .container{
     </div>
 </section>
 </div>
+<div aria-hidden="true" class="artifact-modal" id="circlePhotoModal">
+<div class="artifact-backdrop" data-close-circle=""></div>
+<section aria-labelledby="circlePhotoTitle" aria-modal="true" class="artifact-dialog circle-photo-dialog" role="dialog">
+<button aria-label="닫기" class="artifact-close" data-close-circle="" type="button">×</button>
+<div class="artifact-header"><div><div class="artifact-small">CLASS CIRCLE</div><h2 id="circlePhotoTitle">학급자치서클 운영</h2></div><div class="artifact-counter"><span id="circlePhotoCurrent">1</span> / 2</div></div>
+<p class="circle-photo-caption" id="circlePhotoCaption">서클 활동에 앞서 공유한 대화 규칙</p>
+<div class="circle-photo-stage"><img id="circlePhotoImage" src="class_circle/circle-rules.svg" alt="토킹스틱 사용, 경청, 발언 방식 존중, 답변 선택권과 비밀 보장을 안내하는 서클 규칙"/></div>
+<div class="artifact-nav"><button id="circlePhotoPrev" type="button">← Previous</button><div class="artifact-dots" id="circlePhotoDots"><button type="button" class="active" data-photo="0" aria-label="서클 규칙"></button><button type="button" data-photo="1" aria-label="서클 활동 사진"></button></div><button id="circlePhotoNext" type="button">Next →</button></div>
+</section></div>
 <script>
 const fadeObserver = new IntersectionObserver((entries)=>{
   entries.forEach(entry=>{
@@ -4322,6 +4339,29 @@ if (hrmToggle && hrmBody) {
   });
 }
 
+
+const circleModal=document.getElementById('circlePhotoModal');
+const circleOpener=document.getElementById('openCirclePhotos');
+const circlePhotos=[
+{src:'class_circle/circle-rules.svg',alt:'토킹스틱 사용, 경청, 발언 방식 존중, 답변 선택권과 비밀 보장을 안내하는 서클 규칙',caption:'서클 활동에 앞서 공유한 대화 규칙'},
+{src:'class_circle/circle-activity.svg',alt:'학생들이 교실에서 원형으로 둘러앉아 참여하는 학급자치서클 활동',caption:'원형으로 둘러앉아 이야기를 나누는 학급자치서클 활동'}];
+let circlePhotoIndex=0;
+function renderCirclePhoto(){
+const item=circlePhotos[circlePhotoIndex],img=document.getElementById('circlePhotoImage');
+img.src=item.src;img.alt=item.alt;
+document.getElementById('circlePhotoCaption').textContent=item.caption;
+document.getElementById('circlePhotoCurrent').textContent=circlePhotoIndex+1;
+document.getElementById('circlePhotoPrev').disabled=circlePhotoIndex===0;
+document.getElementById('circlePhotoNext').disabled=circlePhotoIndex===circlePhotos.length-1;
+document.querySelectorAll('#circlePhotoDots button').forEach((b,i)=>b.classList.toggle('active',i===circlePhotoIndex));
+}
+function closeCirclePhotos(){circleModal.classList.remove('open');circleModal.setAttribute('aria-hidden','true');document.body.classList.remove('modal-open');circleOpener.focus();}
+circleOpener.addEventListener('click',()=>{circlePhotoIndex=0;renderCirclePhoto();circleModal.classList.add('open');circleModal.setAttribute('aria-hidden','false');document.body.classList.add('modal-open');circleModal.querySelector('.artifact-close').focus();});
+document.querySelectorAll('[data-close-circle]').forEach(b=>b.addEventListener('click',closeCirclePhotos));
+document.getElementById('circlePhotoPrev').addEventListener('click',()=>{if(circlePhotoIndex>0){circlePhotoIndex--;renderCirclePhoto();}});
+document.getElementById('circlePhotoNext').addEventListener('click',()=>{if(circlePhotoIndex<circlePhotos.length-1){circlePhotoIndex++;renderCirclePhoto();}});
+document.querySelectorAll('#circlePhotoDots button').forEach(b=>b.addEventListener('click',()=>{circlePhotoIndex=Number(b.dataset.photo);renderCirclePhoto();}));
+document.addEventListener('keydown',e=>{if(!circleModal.classList.contains('open'))return;if(e.key==='Escape')closeCirclePhotos();if(e.key==='ArrowLeft'&&circlePhotoIndex>0){circlePhotoIndex--;renderCirclePhoto();}if(e.key==='ArrowRight'&&circlePhotoIndex<circlePhotos.length-1){circlePhotoIndex++;renderCirclePhoto();}});
 </script>
 </body>
 </html>
