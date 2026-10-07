@@ -12,9 +12,9 @@
    Branding only. Layout and content are intentionally unchanged.
    ============================================================ */
 :root{
-  --kyobo-green:#43A62A;
-  --kyobo-green-dark:#2F7E1E;
-  --kyobo-navy:#08285B;
+  --kyobo-green:#3EB034;
+  --kyobo-green-dark:#2A8A24;
+  --kyobo-navy:#003577;
   --kyobo-pale:#F4F8F1;
   --kyobo-line:#DCE7D7;
   --accent-color:var(--kyobo-green);
@@ -22,9 +22,9 @@
   --nav-color:#C6D4C0;
   --nav-hover-color:#FFFFFF;
 }
-.dark-background{--background-color:var(--kyobo-navy);--surface-color:#173D6D}
+.dark-background{--background-color:var(--kyobo-navy);--surface-color:#124A85}
 .header{background:var(--kyobo-navy)!important}
-.avatar{background:#1D4779!important;border-color:#315A87!important}
+.avatar{background:#18528A!important;border-color:#3B6C9D!important}
 .hero{background:#F5F7F3!important;--heading-color:var(--kyobo-navy)}
 .hero h2,.hero-eyebrow,.hero-role span,.about-art,.fact strong,.case-copy .read,.section-label,.detail-context,.migrated-results strong,.training-example-label,.story-number,.story-closing span,.final-open-item span,.final-open-item strong,.text-link,.resource-nav button{color:var(--kyobo-navy)!important}
 .hero-role span{border-bottom-color:var(--kyobo-green)!important}
@@ -39,5 +39,21 @@
 .case-copy .category{color:var(--kyobo-green-dark)!important}
 .fact i{color:var(--kyobo-green)!important}
 .story-closing,.final-open-item,.skills-list span,.training-example{background:var(--kyobo-pale)!important}
-.dialog::backdrop{background:#08285BAA!important}
+.dialog::backdrop{background:#003577AA!important}
 .navmenu a:hover .navicon,.navmenu .active .navicon,.navmenu .active:focus .navicon{color:var(--kyobo-green)!important}
+
+/* Kyobo logo color calibration: sampled from user-provided logo */
+:root{
+  --kyobo-green:#3EB034;
+  --kyobo-green-dark:#2A8A24;
+  --kyobo-navy:#003577;
+  --accent-color:#3EB034;
+  --heading-color:#003577;
+}
+.header{background:#003577!important}
+.avatar{background:#18528A!important;border-color:#3B6C9D!important}
+.hero-role span{color:#003577!important;border-bottom-color:#3EB034!important}
+.section-title h2:after,.resume .resume-item::before{background:#3EB034!important}
+.resume .resume-item{border-left-color:#3EB034!important}
+.filter.active,.cta,.resource-button,.scroll-top,.services .service-item .icon{background:#3EB034!important;border-color:#3EB034!important}
+.case-copy .category,.story-number,.section-label{color:#2A8A24!important}
