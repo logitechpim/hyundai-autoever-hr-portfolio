@@ -570,17 +570,34 @@ pointer-events:none}
 .hero-wordmark{font-size:clamp(42px,5vw,76px);font-weight:800;letter-spacing:-3px;line-height:1;color:var(--navy);white-space:nowrap}
 .hero-wordmark span{font-weight:500;letter-spacing:-2px}
 .why-id-symbol{font-size:14px!important;font-weight:800;color:#fff!important;background:var(--navy)!important;border-radius:2px!important}
+
+/* Hyundai AutoEver navigation icons */
+.navmenu a{gap:14px;padding:14px 18px;color:#bfd0e5;transition:color .2s ease,background .2s ease,transform .2s ease}
+.navmenu a:hover{transform:translateX(2px)}
+.navmenu a.active::before{display:none}
+.nav-icon{width:20px;height:20px;flex:0 0 20px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round;color:#82cfff}
+.navmenu a.active .nav-icon,.navmenu a:hover .nav-icon{color:#fff}
+
+/* HR preference cards */
+.choice-details{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;margin-top:32px;max-width:760px}
+.choice{position:relative;min-height:154px;padding:24px 24px 22px;background:#f3f6f9;border:1px solid transparent;overflow:hidden;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.choice::after{content:"";position:absolute;right:-34px;bottom:-50px;width:116px;height:116px;border:1px solid rgba(0,44,95,.08);border-radius:50%}
+.choice:hover{transform:translateY(-3px);border-color:#d7e2ee;box-shadow:0 12px 28px rgba(0,44,95,.07)}
+.choice span{display:block;font-size:11px;font-weight:700;letter-spacing:.2px;color:var(--green-dark)}
+.choice strong{display:block;font-size:26px;line-height:1.15;color:var(--navy);margin:12px 0 13px}
+.choice p{position:relative;z-index:1;margin:0!important;font-size:13px!important;line-height:1.65!important;color:#66758a!important}
+@media(max-width:700px){.choice-details{grid-template-columns:1fr}.choice{min-height:140px}}
 </style>
 </head>
 <body>
 <header class="header">
   <nav class="navmenu" id="navmenu">
-    <a href="#hero" class="active">홈</a>
-    <a href="#about">소개</a>
-    <a href="#resume">커리어 프로필</a>
-    <a href="#portfolio">주요 경험</a>
-    <a href="#services">업무 역량</a>
-    <a href="#why">Why Hyundai AutoEver</a>
+    <a href="#hero" class="active"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3l8.5 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-6h5v6"/></svg><span>홈</span></a>
+    <a href="#about"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-2.5A5.5 5.5 0 0 1 10.5 13h3a5.5 5.5 0 0 1 5.5 5.5V21"/></svg><span>소개</span></a>
+    <a href="#resume"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h9l4 4V21.5H6z"/><path d="M15 2.5v4h4M9 11h6M9 15h6M9 19h4"/></svg><span>커리어 프로필</span></a>
+    <a href="#portfolio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>주요 경험</span></a>
+    <a href="#services"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5.5 4-4 4 4-4 4M9.5 14.5l-8 8"/><path d="M4.5 1.5a5 5 0 0 0 6.4 6.4L21.5 18.5a2.1 2.1 0 0 1-3 3L7.9 10.9a5 5 0 0 1-6.4-6.4l3 3 3-3z"/></svg><span>업무 역량</span></a>
+    <a href="#why"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.4 7-11V4.5L12 2 5 4.5V10c0 6.6 7 11 7 11z"/><path d="m9 11.5 2 2 4-4"/></svg><span>Why Hyundai AutoEver</span></a>
   </nav>
   
 </header>
@@ -655,55 +672,40 @@ pointer-events:none}
 
 <section id="portfolio">
 <div class="container"><div class="section-title"><h2>주요 경험</h2><p>분류를 선택해 경험을 살펴보세요. 각 항목을 누르면 수행 내용과 관련 자료를 볼 수 있습니다.</p></div>
-<div class="filters"><button class="filter active" data-filter="FINANCE">Finance</button><button class="filter" data-filter="WOOJIN">HR - Woojin Math</button><button class="filter" data-filter="DAEIL">HR - 대일외고</button><button class="filter" data-filter="PROJECT">프로젝트 활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
-<div class="portfolio-grid"><button class="case-card" data-category="FINANCE" onclick="openCase('finance_check')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/88cc62f4e0af19c968217494f97a99be2ff4104d.png" alt="시황 체크포인트"><div class="visual-content"><strong>CHECK</strong><span>시황 메모 정리</span></div></div>
-<div class="case-copy"><div class="category">FINANCE</div><h3>시황 체크포인트</h3><p>시장지표, 강세 업종, 채권시장 신호 점검</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" data-category="FINANCE" onclick="openCase('finance_report')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/9636257cd6b18cd1208f10fc9e7aa06755dce44a.png" alt="분기별 투자보고서 작성"><div class="visual-content"><strong>REPORT</strong><span>분기별 투자 기준 정리</span></div></div>
-<div class="case-copy"><div class="category">FINANCE</div><h3>분기별 투자보고서 작성</h3><p>미국·한국 시황, 핵심 리스크, 매매 기준 정리</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" data-category="FINANCE" onclick="openCase('finance_research')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/bef23d90ae65643d6c9607164b0e0741be7881ff.png" alt="증권사 리서치 확인"><div class="visual-content"><strong>RESEARCH</strong><span>증권사 리포트 확인</span></div></div>
-<div class="case-copy"><div class="category">FINANCE</div><h3>증권사 리서치 확인</h3><p>금리·환율·산업 변화가 가격에 이어지는 과정 메모</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" data-category="FINANCE" onclick="openCase('finance_book')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/ae6d344715fcd4e7fc2c6d0eaf88ca485bd5fb1e.png" alt="투자 서적 독서"><div class="visual-content"><strong>BOOK</strong><span>경제·자산배분 관련 독서</span></div></div>
-<div class="case-copy"><div class="category">FINANCE</div><h3>투자 서적 독서</h3><p>시장 판단 기준을 넓히기 위한 학습</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" data-category="FINANCE" onclick="openCase('finance_move')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/47f358a7ff8e41b075c7684d94d130cb311c95a8.png" alt="Expected Move 활용"><div class="visual-content"><strong>VOL</strong><span>옵션시장 예상 변동폭</span></div></div>
-<div class="case-copy"><div class="category">FINANCE</div><h3>Expected Move 활용</h3><p>과열 구간과 매매 기준 점검</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="WOOJIN" onclick="openCase('quality')">
+<div class="filters"><button class="filter active" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
+<div class="portfolio-grid"><button class="case-card" hidden data-category="HRM" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>개인별 성과 편차 진단</h3><p>답변량, 오류율, 근무시간 점검</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="WOOJIN" onclick="openCase('improvement')">
+<div class="case-copy"><div class="category">HRM</div><h3>개인별 성과 편차 진단</h3><p>답변량, 오류율, 근무시간 점검</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" data-category="HRD" onclick="openCase('improvement')">
 <div class="case-visual"><strong>4주 → 3주</strong><span>신규 조교 평균 적응기간 단축</span></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>데이터 기반 교육과정 개선</h3><p>반복 오류 유형화</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="WOOJIN" onclick="openCase('onboard')">
+<div class="case-copy"><div class="category">HRD</div><h3>데이터 기반 교육과정 개선</h3><p>반복 오류 유형화</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" data-category="HRD" onclick="openCase('onboard')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/onboarding-guide-cover.svg" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>조교 선발, 온보딩 및 직무교육</h3><p>시스템 사용법 교육</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="DAEIL" onclick="openCase('circle')">
+<div class="case-copy"><div class="category">HRD</div><h3>조교 선발, 온보딩 및 직무교육</h3><p>시스템 사용법 교육</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" data-category="HRD" onclick="openCase('circle')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><div class="visual-content"><strong>CLASS</strong><span>월 1회 정기 프로그램</span></div></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>학급자치서클 운영</h3><p>관계형성, 성찰, 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="DAEIL" onclick="openCase('counsel')">
+<div class="case-copy"><div class="category">HRD</div><h3>학급자치서클 운영</h3><p>관계형성, 성찰, 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" hidden data-category="HRM" onclick="openCase('counsel')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><div class="visual-content"><strong>600회 +</strong><span>학생 및 학부모 개별 상담</span></div></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>300명 이상의 학생 및 학부모 개별 상담</h3><p>학업, 관계, 학교 적응 과정 진단</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="DAEIL" onclick="openCase('brief')">
+<div class="case-copy"><div class="category">HRM</div><h3>300명 이상의 학생 및 학부모 개별 상담</h3><p>학업, 관계, 학교 적응 과정 진단</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" data-category="HRD" onclick="openCase('brief')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>학부모 설명회 및 입시 설명회</h3><p>학교생활 및 입시 정보 안내</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD</div><h3>학부모 설명회 및 입시 설명회</h3><p>학교생활 및 입시 정보 안내</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
 <div class="case-visual"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div>
 <div class="case-copy"><div class="category">AI</div><h3>AI 답변의 품질 기준을 구조화</h3><p>교육용 AI 답변 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="WOOJIN" onclick="openCase('selection')">
+<button class="case-card" hidden data-category="HRM" onclick="openCase('selection')">
 <div class="case-visual"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>직무 적합성 중심 선발기준 개선</h3><p>설명력, 문맥 이해, 오류 검토 능력</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="WOOJIN" onclick="openCase('retention')">
+<div class="case-copy"><div class="category">HRM</div><h3>직무 적합성 중심 선발기준 개선</h3><p>설명력, 문맥 이해, 오류 검토 능력</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" hidden data-category="HRM" onclick="openCase('retention')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>같은 기간 조기 이탈 인원 감소</span></div></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>선발 이후까지 연결한 채용 프로세스 개선</h3><p>입사 후 성과와 이탈 데이터를 다음 선발에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="DAEIL" onclick="openCase('interview')">
+<div class="case-copy"><div class="category">HRM</div><h3>선발 이후까지 연결한 채용 프로세스 개선</h3><p>입사 후 성과와 이탈 데이터를 다음 선발에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" hidden data-category="HRM" onclick="openCase('interview')">
 <div class="case-visual"><strong>약 100명</strong><span>지원자 직접 면접 및 평가</span></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>지원자 면접 및 평가</h3><p>3인 면접위원으로 입학전형 참여</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="DAEIL" onclick="openCase('alignment')">
+<div class="case-copy"><div class="category">HRM</div><h3>지원자 면접 및 평가</h3><p>3인 면접위원으로 입학전형 참여</p><span class="read">자세히 보기 ↗</span></div></button>
+<button class="case-card" hidden data-category="HRM" onclick="openCase('alignment')">
 <div class="case-visual"><strong>공통 기준</strong><span>면접위원 간 판단 근거 정렬</span></div>
-<div class="case-copy"><div class="category">본사지원</div><h3>면접위원 간 평가기준 정렬</h3><p>실제 답변 사례와 점수 근거 비교</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRM</div><h3>면접위원 간 평가기준 정렬</h3><p>실제 답변 사례와 점수 근거 비교</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="PROJECT" onclick="openCase('money')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
 <div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
@@ -735,6 +737,18 @@ pointer-events:none}
     확인해 온 경험을 현대오토에버 HR 업무에 연결하겠습니다.<br><br>
     IT와 소프트웨어 산업에 대한 지속적인 학습을 바탕으로 현업을 이해하고,<br>
     구성원이 더 잘 일하고 성장할 수 있는 환경을 만드는 데 기여하겠습니다.</p>
+    <div class="choice-details" aria-label="희망 직무 순위">
+      <div class="choice">
+        <span>1ST CHOICE</span>
+        <strong>HRD</strong>
+        <p>학습 니즈 발굴 / L&amp;D 설계 / 효과 측정 / 조직개발</p>
+      </div>
+      <div class="choice">
+        <span>2ND CHOICE</span>
+        <strong>HRM</strong>
+        <p>채용 / 평가 / 유지 / 인력계획</p>
+      </div>
+    </div>
   </div>
 
   <div class="employee-card-slot">
@@ -783,29 +797,29 @@ const cases={
 "finance_report":{label:`FINANCE / Investment Report`,title:`분기별 투자보고서 작성`,meta:`부모님 자산 운용 참고 자료`,body:`<div class="detail-context">미국·한국 시황, 핵심 리스크, 매매 기준을 분기마다 정리한 투자보고서 작성</div><h3>활동 내용</h3><ul><li>미국·한국 시장 환경 정리</li><li>주요 리스크 요인 요약</li><li>자산별 매매 기준 정리</li><li>부모님 자산 운용 참고 자료로 활용</li></ul><h3>의미</h3><p>시장 변화와 자산운용 의사결정을 연결해서 설명하는 연습을 했습니다.</p><figure class="detail-single-image"><img src="assets/9636257cd6b18cd1208f10fc9e7aa06755dce44a.png" alt="분기별 투자보고서 원본 자료"><figcaption>분기별 투자보고서 예시. 미국과 한국 시황, 핵심 리스크, 향후 계획을 구조화해 정리했습니다.</figcaption></figure>`},
 "finance_research":{label:`FINANCE / Research`,title:`증권사 리서치 확인`,meta:`리포트 기반 학습`,body:`<div class="detail-context">증권사 리포트를 읽고 금리·환율·산업 변화가 가격에 어떻게 이어지는지 메모</div><h3>활동 내용</h3><ul><li>증권사 리포트 핵심 논지 확인</li><li>금리와 환율 변화 점검</li><li>산업 변화가 가격에 미치는 영향 기록</li><li>시장 판단 근거 확장</li></ul><h3>의미</h3><p>개인적인 감이 아니라 근거를 바탕으로 시장을 해석하는 습관을 만들었습니다.</p><figure class="detail-single-image"><img src="assets/bef23d90ae65643d6c9607164b0e0741be7881ff.png" alt="증권사 리서치 원본 자료"><figcaption>읽고 정리한 증권사 리포트 일부입니다. 리서치 자료를 직접 출력해 핵심 내용을 체크하며 학습했습니다.</figcaption></figure>`},
 "finance_book":{label:`FINANCE / Reading`,title:`투자 서적 독서`,meta:`지속 학습`,body:`<div class="detail-context">경제·자산배분·산업 변화 관련 책을 읽고 시장을 볼 때 쓰는 기준을 넓힘</div><h3>활동 내용</h3><ul><li>경제와 자산배분 관련 서적 독서</li><li>산업 변화와 투자 프레임 학습</li><li>핵심 개념 메모와 정리</li><li>실제 시장 해석 기준 보완</li></ul><h3>의미</h3><p>짧은 시황을 넘어서 장기적인 투자 관점과 프레임을 확장했습니다.</p><figure class="detail-single-image"><img src="assets/ae6d344715fcd4e7fc2c6d0eaf88ca485bd5fb1e.png" alt="투자 서적 독서 원본 자료"><figcaption>실제 읽은 투자·경제 관련 서적 일부입니다. 시장을 볼 때 쓰는 프레임을 넓히기 위해 지속적으로 읽고 정리했습니다.</figcaption></figure>`},
-"quality":{label:`본사지원 / Woojin Math`,title:`개인별 성과 편차 진단`,meta:`Woojin Math`,body:`<div class="detail-context">조직 직무 이슈 분석 및 학습 니즈로 전환/발굴</div>
+"quality":{label:`HRM / Woojin Math`,title:`개인별 성과 편차 진단`,meta:`Woojin Math`,body:`<div class="detail-context">조직 직무 이슈 분석 및 학습 니즈로 전환/발굴</div>
 <h3>수행 내용</h3><ul><li>답변량, 오류율, 근무시간 점검</li><li>1:1 면담을 통한 원인 분류</li><li>개인별 교육 및 역할 조정</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div><div><strong>-60%</strong><span>오류율 감소</span></div></div>
 `},
-"improvement":{label:`본사지원 / Woojin Math`,title:`데이터 기반 교육과정 개선`,meta:`Woojin Math`,body:`<div class="detail-context">데이터 분석을 통한 학습 효과 측정 및 인사이트 제공</div>
+"improvement":{label:`HRD / Woojin Math`,title:`데이터 기반 교육과정 개선`,meta:`Woojin Math`,body:`<div class="detail-context">데이터 분석을 통한 학습 효과 측정 및 인사이트 제공</div>
 <h3>수행 내용</h3><ul><li>반복 오류 유형화</li><li>누적 답변 및 업무 기록 분석</li><li>교육 예시, 실습, 피드백 기준 반영</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>4주 → 3주</strong><span>신규 조교 평균 적응기간 단축</span></div>`},
-"onboard":{label:`본사지원 / Woojin Math`,title:`조교 선발, 온보딩 및 직무교육`,meta:`Woojin Math`,body:`<div class="detail-context">과정 기획/개발 → 운영 → 평가 전체 사이클을 주도</div>
+"onboard":{label:`HRD / Woojin Math`,title:`조교 선발, 온보딩 및 직무교육`,meta:`Woojin Math`,body:`<div class="detail-context">과정 기획/개발 → 운영 → 평가 전체 사이클을 주도</div>
 <h3>수행 내용</h3><ul><li>시스템 사용법 교육</li><li>답변 기준 및 실습 운영</li><li>재질문 대응 및 피드백 체계 구성</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>100명 +</strong><span>온보딩 및 직무교육 조교</span></div>`},
-"circle":{label:`본사지원 / 대일외국어고등학교`,title:`학급자치서클 운영`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직문화 진단 및 조직 개발 프로그램 추진</div>
+"circle":{label:`HRD / 대일외국어고등학교`,title:`학급자치서클 운영`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직문화 진단 및 조직 개발 프로그램 추진</div>
 <h3>수행 내용</h3>
 <ul><li>월 1회 정기 프로그램 운영</li><li>동일 발언기회와 공동 의사결정 구조 설계</li><li>관계형성, 성찰, 상호이해 중심 진행</li></ul>
 <h3>결과</h3>
 <div class="metric-block"><strong>조직 분위기 개선</strong><span>학급 친밀도 향상 및 상호 이해 기반 형성</span></div>
 <h3>활동 사진</h3>
 <div class="detail-gallery"><figure><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><figcaption>학생들과 원형으로 앉아 학급자치서클 프로그램을 진행한 장면입니다.</figcaption></figure></div>`},
-"counsel":{label:`본사지원 / 대일외국어고등학교`,title:`300명 이상의 학생 및 학부모 개별 상담`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 구성원 성장에 대한 관심과 열정</div>
+"counsel":{label:`HRM / 대일외국어고등학교`,title:`300명 이상의 학생 및 학부모 개별 상담`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 구성원 성장에 대한 관심과 열정</div>
 <h3>수행 내용</h3><ul><li>학업, 관계, 학교 적응 과정의 어려움 진단</li><li>학생 및 학부모 상황에 따른 개별 상담과 팔로업</li><li>적응 저해 요인 파악 후 지속 지원</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>활동 사진</h3>
 <div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure></div>`},
-"brief":{label:`본사지원 / 대일외국어고등학교`,title:`학부모 설명회 및 입시 설명회`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대규모 정보 전달 및 이해관계자 커뮤니케이션</div>
+"brief":{label:`HRD / 대일외국어고등학교`,title:`학부모 설명회 및 입시 설명회`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대규모 정보 전달 및 이해관계자 커뮤니케이션</div>
 <h3>수행 내용</h3>
 <ul><li>500명 이상의 학부모 및 학생을 대상으로 학교생활 및 입시 정보 안내</li><li>대상자의 관심과 이해 수준을 고려해 핵심 정보와 설명 흐름 구성</li><li>주요 질문과 우려 사항에 대한 질의응답 진행 및 후속 상담 연결</li></ul>
 <h3>활동 사진</h3>
@@ -816,18 +830,18 @@ const cases={
 "ai":{label:`AI / 교육용 AI 답변 서비스`,title:`AI 답변의 품질 기준을 구조화`,meta:`교육용 AI 답변 서비스`,body:`<div class="detail-context">외부 AI 업체와 강의 영상과 교재 기반의 교육용 AI 답변 서비스를 개발하며, 답변 품질 검증과 평가 기준 설계를 담당했습니다.</div>
 <h3>수행 내용</h3><ul><li>실제 AI 답변 3,500건 검수</li><li>오류를 계산, 개념, 설명 유형으로 분류</li><li>학생 학습에 미치는 영향에 따라 오류 심각도 정의</li><li>질문 의도 반영, 설명의 충분성, 이해 가능성을 포함한 답변 적정도 기준 설계</li><li>공통 검수표 작성 및 수정 우선순위 수립</li><li>반복 오류 사례와 개선 방향을 외부 업체에 전달하고 판단 기준 조율</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>90%</strong><span>서비스 만족도 달성 및 베타테스트 도입 완료</span></div>`},
-"selection":{label:`본사지원 / Woojin Math`,title:`직무 적합성 중심 선발기준 개선`,meta:`Woojin Math`,body:`<div class="detail-context">조직 HR 운영 관련 제도 및 프로세스 운영, 개선 과제 발굴 추진</div>
+"selection":{label:`HRM / Woojin Math`,title:`직무 적합성 중심 선발기준 개선`,meta:`Woojin Math`,body:`<div class="detail-context">조직 HR 운영 관련 제도 및 프로세스 운영, 개선 과제 발굴 추진</div>
 <h3>수행 내용</h3><ul><li>설명력, 문맥 이해, 오류 검토 능력을 평가기준에 반영</li><li>테스트와 면접 질문 및 판단 기준 정비</li><li>선발 후 답변량, 오류율, 미션 수행, 근무 이력 추적</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>약 300명</strong><span>지원자 평가</span></div><div><strong>100명 +</strong><span>최종 선발</span></div></div>
 <button class="resource-button" onclick="openOps()">조교 운영 및 성과관리 대시보드 보기 ↗</button>`},
-"retention":{label:`본사지원 / Woojin Math`,title:`선발 이후까지 연결한 채용 프로세스 개선`,meta:`Woojin Math`,body:`<div class="detail-context">조직 인력 생산성 지표 분석을 기반으로 적정 정원 산정 및 관리</div>
+"retention":{label:`HRM / Woojin Math`,title:`선발 이후까지 연결한 채용 프로세스 개선`,meta:`Woojin Math`,body:`<div class="detail-context">조직 인력 생산성 지표 분석을 기반으로 적정 정원 산정 및 관리</div>
 <h3>수행 내용</h3><ul><li>선발 이후 답변량, 오류율, 미션 수행, 근무 이력 지속 추적</li><li>학교 일정, 거리, 학업 부담 등 조기 이탈 원인 분석</li><li>입사 후 성과와 이탈 데이터를 다음 선발 기준에 반영</li><li>잔류 인원, 예상 이탈, 업무량을 바탕으로 다음 해 채용 규모 산정</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>40% ↓</strong><span>같은 기간 조기 이탈 인원 감소</span></div>
 <button class="resource-button" onclick="openOps()">조교 운영 및 성과관리 대시보드 보기 ↗</button>`},
-"interview":{label:`본사지원 / 대일외국어고등학교`,title:`지원자 면접 및 평가`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 HR 운영 관련 제도 및 프로세스 운영, 개선 과제 발굴 추진</div>
+"interview":{label:`HRM / 대일외국어고등학교`,title:`지원자 면접 및 평가`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 HR 운영 관련 제도 및 프로세스 운영, 개선 과제 발굴 추진</div>
 <h3>수행 내용</h3><ul><li>3인 면접위원으로 입학전형 참여</li><li>자기소개서 기반 질문과 후속 질문 설계</li><li>답변의 논리, 경험의 구체성, 질문과의 관련성 평가</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>약 100명</strong><span>지원자 직접 면접 및 평가</span></div>`},
-"alignment":{label:`본사지원 / 대일외국어고등학교`,title:`면접위원 간 평가기준 정렬`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 및 HR 운영 이슈를 파악 분석하고 대응방안을 도출하는 역량</div>
+"alignment":{label:`HRM / 대일외국어고등학교`,title:`면접위원 간 평가기준 정렬`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 및 HR 운영 이슈를 파악 분석하고 대응방안을 도출하는 역량</div>
 <h3>수행 내용</h3><ul><li>실제 지원자 답변 사례와 점수 근거 비교</li><li>공통으로 판단 가능한 항목을 평가기준으로 정리</li><li>점수보다 판단 근거를 설명하고 공유하는 방식으로 조율</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>공통 기준</strong><span>면접위원 간 판단 근거 정렬</span></div>`},
 "money":{label:`PROJECT / 2026 AI Challenge / 금융보안원 주최`,title:`So, My Money?`,meta:`2026 AI Challenge`,body:`<div class="detail-context">IT/SW 기술에 대한 이해와 관심</div>
