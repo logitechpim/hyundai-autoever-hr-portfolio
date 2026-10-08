@@ -148,6 +148,8 @@ main{margin-left:225px} section{padding:68px 6%} .light{background:#f7f9f6} .con
 .case-visual:not(.photo-case)::after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(0,44,95,.08);border-radius:50%;right:-32px;bottom:-42px}
 .case-visual:not(.photo-case)>*{position:relative;z-index:1}
 .case-visual.photo-case::after{background:linear-gradient(180deg,rgba(242,247,243,.52),rgba(225,235,242,.74))}
+.case-visual.football-case .visual-bg{filter:grayscale(.28) saturate(.82) brightness(.94) contrast(.96);object-position:center 48%}
+.case-visual.football-case::after{background:linear-gradient(180deg,rgba(236,243,247,.16),rgba(220,232,241,.42))}
 
 .services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:52px;align-items:start;margin-top:28px}
 .service{display:grid;grid-template-columns:64px minmax(0,1fr);gap:18px;align-items:start}
@@ -671,9 +673,9 @@ pointer-events:none}
 <section id="portfolio">
 <div class="container"><div class="section-title"><h2>주요 경험</h2><p>분류를 선택해 경험을 살펴보세요. 각 항목을 누르면 수행 내용과 관련 자료를 볼 수 있습니다.</p></div>
 <div class="filters"><button class="filter active" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
-<div class="portfolio-grid"><button class="case-card" hidden data-category="HRM" onclick="openCase('quality')">
+<div class="portfolio-grid"><button class="case-card" data-category="HRD" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRM</div><h3>개인별 성과 편차 진단</h3><p>답변량, 오류율, 근무시간 점검</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD</div><h3>개인별 성과 편차 진단</h3><p>답변량, 오류율, 근무시간 점검</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('improvement')">
 <div class="case-visual"><strong>4주 → 3주</strong><span>신규 조교 평균 적응기간 단축</span></div>
 <div class="case-copy"><div class="category">HRD</div><h3>데이터 기반 교육과정 개선</h3><p>반복 오류 유형화</p><span class="read">자세히 보기 ↗</span></div></button>
@@ -683,9 +685,9 @@ pointer-events:none}
 <button class="case-card" data-category="HRD" onclick="openCase('circle')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><div class="visual-content"><strong>CLASS</strong><span>월 1회 정기 프로그램</span></div></div>
 <div class="case-copy"><div class="category">HRD</div><h3>학급자치서클 운영</h3><p>관계형성, 성찰, 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('counsel')">
+<button class="case-card" data-category="HRD" onclick="openCase('counsel')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><div class="visual-content"><strong>600회 +</strong><span>학생 및 학부모 개별 상담</span></div></div>
-<div class="case-copy"><div class="category">HRM</div><h3>300명 이상의 학생 및 학부모 개별 상담</h3><p>학업, 관계, 학교 적응 과정 진단</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD</div><h3>300명 이상의 학생 및 학부모 개별 상담</h3><p>학업, 관계, 학교 적응 과정 진단</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('brief')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
 <div class="case-copy"><div class="category">HRD</div><h3>학부모 설명회 및 입시 설명회</h3><p>학교생활 및 입시 정보 안내</p><span class="read">자세히 보기 ↗</span></div></button>
@@ -708,7 +710,7 @@ pointer-events:none}
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
 <div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="PROJECT" onclick="openCase('football')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/57e3e653d23cd71dbb8ae5aa090ad8512261a94a.png" alt="사회인 축구팀 운영 현장"><div class="visual-content"><strong>4 Years</strong><span>사회인 축구팀 운영진</span></div></div>
+<div class="case-visual photo-case football-case"><img class="visual-bg" src="assets/57e3e653d23cd71dbb8ae5aa090ad8512261a94a.png" alt="사회인 축구팀 운영 현장"><div class="visual-content"><strong>4 Years</strong><span>사회인 축구팀 운영진</span></div></div>
 <div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p><span class="read">자세히 보기 ↗</span></div></button></div></div>
 </section>
 
@@ -786,7 +788,7 @@ const cases={
 "finance_report":{label:`FINANCE / Investment Report`,title:`분기별 투자보고서 작성`,meta:`부모님 자산 운용 참고 자료`,body:`<div class="detail-context">미국·한국 시황, 핵심 리스크, 매매 기준을 분기마다 정리한 투자보고서 작성</div><h3>활동 내용</h3><ul><li>미국·한국 시장 환경 정리</li><li>주요 리스크 요인 요약</li><li>자산별 매매 기준 정리</li><li>부모님 자산 운용 참고 자료로 활용</li></ul><h3>의미</h3><p>시장 변화와 자산운용 의사결정을 연결해서 설명하는 연습을 했습니다.</p><figure class="detail-single-image"><img src="assets/9636257cd6b18cd1208f10fc9e7aa06755dce44a.png" alt="분기별 투자보고서 원본 자료"><figcaption>분기별 투자보고서 예시. 미국과 한국 시황, 핵심 리스크, 향후 계획을 구조화해 정리했습니다.</figcaption></figure>`},
 "finance_research":{label:`FINANCE / Research`,title:`증권사 리서치 확인`,meta:`리포트 기반 학습`,body:`<div class="detail-context">증권사 리포트를 읽고 금리·환율·산업 변화가 가격에 어떻게 이어지는지 메모</div><h3>활동 내용</h3><ul><li>증권사 리포트 핵심 논지 확인</li><li>금리와 환율 변화 점검</li><li>산업 변화가 가격에 미치는 영향 기록</li><li>시장 판단 근거 확장</li></ul><h3>의미</h3><p>개인적인 감이 아니라 근거를 바탕으로 시장을 해석하는 습관을 만들었습니다.</p><figure class="detail-single-image"><img src="assets/bef23d90ae65643d6c9607164b0e0741be7881ff.png" alt="증권사 리서치 원본 자료"><figcaption>읽고 정리한 증권사 리포트 일부입니다. 리서치 자료를 직접 출력해 핵심 내용을 체크하며 학습했습니다.</figcaption></figure>`},
 "finance_book":{label:`FINANCE / Reading`,title:`투자 서적 독서`,meta:`지속 학습`,body:`<div class="detail-context">경제·자산배분·산업 변화 관련 책을 읽고 시장을 볼 때 쓰는 기준을 넓힘</div><h3>활동 내용</h3><ul><li>경제와 자산배분 관련 서적 독서</li><li>산업 변화와 투자 프레임 학습</li><li>핵심 개념 메모와 정리</li><li>실제 시장 해석 기준 보완</li></ul><h3>의미</h3><p>짧은 시황을 넘어서 장기적인 투자 관점과 프레임을 확장했습니다.</p><figure class="detail-single-image"><img src="assets/ae6d344715fcd4e7fc2c6d0eaf88ca485bd5fb1e.png" alt="투자 서적 독서 원본 자료"><figcaption>실제 읽은 투자·경제 관련 서적 일부입니다. 시장을 볼 때 쓰는 프레임을 넓히기 위해 지속적으로 읽고 정리했습니다.</figcaption></figure>`},
-"quality":{label:`HRM / Woojin Math`,title:`개인별 성과 편차 진단`,meta:`Woojin Math`,body:`<div class="detail-context">조직 직무 이슈 분석 및 학습 니즈로 전환/발굴</div>
+"quality":{label:`HRD / Woojin Math`,title:`개인별 성과 편차 진단`,meta:`Woojin Math`,body:`<div class="detail-context">조직 직무 이슈 분석 및 학습 니즈로 전환/발굴</div>
 <h3>수행 내용</h3><ul><li>답변량, 오류율, 근무시간 점검</li><li>1:1 면담을 통한 원인 분류</li><li>개인별 교육 및 역할 조정</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div><div><strong>-60%</strong><span>오류율 감소</span></div></div>
 `},
@@ -803,7 +805,7 @@ const cases={
 <div class="metric-block"><strong>조직 분위기 개선</strong><span>학급 친밀도 향상 및 상호 이해 기반 형성</span></div>
 <h3>활동 사진</h3>
 <div class="detail-gallery"><figure><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><figcaption>학생들과 원형으로 앉아 학급자치서클 프로그램을 진행한 장면입니다.</figcaption></figure></div>`},
-"counsel":{label:`HRM / 대일외국어고등학교`,title:`300명 이상의 학생 및 학부모 개별 상담`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 구성원 성장에 대한 관심과 열정</div>
+"counsel":{label:`HRD / 대일외국어고등학교`,title:`300명 이상의 학생 및 학부모 개별 상담`,meta:`대일외국어고등학교`,body:`<div class="detail-context">조직 구성원 성장에 대한 관심과 열정</div>
 <h3>수행 내용</h3><ul><li>학업, 관계, 학교 적응 과정의 어려움 진단</li><li>학생 및 학부모 상황에 따른 개별 상담과 팔로업</li><li>적응 저해 요인 파악 후 지속 지원</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>활동 사진</h3>
