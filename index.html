@@ -148,6 +148,8 @@ main{margin-left:225px} section{padding:68px 6%} .light{background:#f7f9f6} .con
 .case-visual:not(.photo-case)::after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(0,44,95,.08);border-radius:50%;right:-32px;bottom:-42px}
 .case-visual:not(.photo-case)>*{position:relative;z-index:1}
 .case-visual.photo-case::after{background:linear-gradient(180deg,rgba(242,247,243,.52),rgba(225,235,242,.74))}
+.case-visual.onboarding-case::after{background:linear-gradient(180deg,rgba(242,247,243,.66),rgba(225,235,242,.82))}
+.case-visual.onboarding-case .visual-content{transform:translateY(-34px)}
 .case-visual.football-case{background:#e8eef3}
 .case-visual.football-case .visual-bg{object-position:center 43%}
 
@@ -680,7 +682,7 @@ pointer-events:none}
 <div class="case-visual"><strong>4주 → 3주</strong><span>신규 조교 평균 적응기간 단축</span></div>
 <div class="case-copy"><div class="category">HRD</div><h3>데이터 기반 교육과정 개선</h3><p>반복 오류 유형화</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('onboard')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
+<div class="case-visual photo-case onboarding-case"><img class="visual-bg" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
 <div class="case-copy"><div class="category">HRD</div><h3>조교 선발, 온보딩 및 직무교육</h3><p>시스템 사용법 교육</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('circle')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><div class="visual-content"><strong>CLASS</strong><span>월 1회 정기 프로그램</span></div></div>
