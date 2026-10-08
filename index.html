@@ -37,9 +37,9 @@ main{margin-left:225px} section{padding:68px 6%} .light{background:#f7f9f6} .con
 .activity-name-only h4{margin-bottom:0!important;font-size:14px!important;line-height:1.8!important}
 .activity-name-only::before{top:3px!important}
 
-.detail-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
-.detail-gallery figure{margin:0}
-.detail-gallery img{width:100%;height:310px;object-fit:cover;border:1px solid #e2e7e0;background:#f5f5f5}
+.detail-gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px auto 0;justify-items:center}
+.detail-gallery figure{margin:0;text-align:center;width:100%}
+.detail-gallery img{display:block;width:100%;height:310px;object-fit:cover;margin:0 auto;border:1px solid #e2e7e0;background:#f5f5f5}
 .detail-gallery figcaption{font-size:12px;color:var(--muted);line-height:1.6;margin-top:7px}
 .project-link{display:inline-flex;margin-top:24px;padding:11px 16px;border-radius:5px;background:var(--green);color:#fff;font-size:13px;font-weight:600}
 .project-link:hover{background:var(--green-dark)}
@@ -52,8 +52,8 @@ main{margin-left:225px} section{padding:68px 6%} .light{background:#f7f9f6} .con
 .case-visual.photo-case .visual-content{position:relative;z-index:1;padding:18px;text-align:center}
 .case-visual.photo-case strong{font-size:34px;line-height:1;color:var(--navy);display:block}
 .case-visual.photo-case span{font-size:11px;margin-top:10px;color:var(--navy);font-weight:500}
-.detail-single-image{margin-top:22px}
-.detail-single-image img{width:100%;max-width:100%;border:1px solid #e2e7e0;background:#f5f5f5}
+.detail-single-image{margin:22px auto 0;text-align:center}
+.detail-single-image img{display:block;width:auto;max-width:86%;margin:0 auto;border:1px solid #e2e7e0;background:#f5f5f5}
 .detail-single-image figcaption{font-size:12px;color:var(--muted);line-height:1.6;margin-top:8px}
 
 
@@ -801,7 +801,7 @@ const cases={
 "onboard":{label:`HRD - 전문성 / Woojin Math`,title:`직무 온보딩 체계 설계 및 운영`,meta:`Woojin Math`,body:`<div class="detail-context">신규 구성원의 직무 전문성 확보를 위한 온보딩 과정의 기획·개발·운영·평가 전 과정 주도</div>
 <h3>수행 내용</h3><ul><li>시스템 사용법 교육</li><li>답변 기준 및 실습 운영</li><li>재질문 대응 및 피드백 체계 구성</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>100명 +</strong><span>온보딩 및 직무교육 조교</span></div>
-<figure class="detail-single-image"><img src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><figcaption>신규 조교가 업무 기준과 답변 절차를 익힐 수 있도록 제작한 QA 조교 업무 가이드입니다.</figcaption></figure>`},
+<div class="detail-gallery"><figure><img src="assets/onboarding-system-guide.png" alt="QA 시스템 사용법 교육 자료"><figcaption>시스템 사용법 교육</figcaption></figure><figure><img src="assets/onboarding-feedback-example.png" alt="실제 사례 기반 피드백 자료"><figcaption>실 사례로 피드백 체계 구성</figcaption></figure></div>`},
 "circle":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`참여형 조직개발 프로그램 설계 및 운영`,meta:`대일외국어고등학교`,body:`<div class="detail-context">구성원의 관계와 조직 분위기에 맞춘 참여형 조직개발 프로그램 운영</div>
 <h3>수행 내용</h3>
 <ul><li>월 1회 정기 프로그램 운영</li><li>동일 발언기회와 공동 의사결정 구조 설계</li><li>관계형성, 성찰, 상호이해 중심 진행</li></ul>
@@ -813,7 +813,7 @@ const cases={
 <h3>수행 내용</h3><ul><li>학업, 관계, 학교 적응 과정의 어려움 진단</li><li>학생 및 학부모 상황에 따른 개별 상담과 팔로업</li><li>적응 저해 요인 파악 후 지속 지원</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>활동 사진</h3>
-<div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure></div>`},
+<div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure><figure><img src="assets/member-adaptation-diagnosis.png" alt="학생 및 학부모 상담 기록과 적응 진단 자료"><figcaption>상담 기록을 바탕으로 구성원의 적응 상태와 성장 지원 방향을 점검한 자료입니다.</figcaption></figure></div>`},
 "brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`대규모 이해관계자 교육 및 커뮤니케이션`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대상자의 이해 수준과 관심사를 반영한 대규모 교육·정보 전달 프로그램 운영</div>
 <h3>수행 내용</h3>
 <ul><li>500명 이상의 학부모 및 학생을 대상으로 학교생활 및 입시 정보 안내</li><li>대상자의 관심과 이해 수준을 고려해 핵심 정보와 설명 흐름 구성</li><li>주요 질문과 우려 사항에 대한 질의응답 진행 및 후속 상담 연결</li></ul>
