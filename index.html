@@ -943,8 +943,8 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 
 
 <section id="portfolio">
-<div class="container"><div class="section-title"><h2>주요 경험</h2><p>분류를 선택해 경험을 살펴보세요. 각 항목을 누르면 수행 내용과 관련 자료를 볼 수 있습니다.</p></div>
-<div class="filters"><button class="filter active" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
+<div class="container"><div class="section-title"><h2>주요 경험</h2></div>
+<div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 및 기타활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
 <div class="portfolio-grid"><button class="case-card" data-category="HRD" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
 <div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p><span class="read">자세히 보기 ↗</span></div></button>
@@ -963,25 +963,25 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 <button class="case-card" data-category="HRD" onclick="openCase('brief')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
 <div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
+<button class="case-card" data-category="AI" onclick="openCase('ai')">
 <div class="case-visual"><div class="visual-content"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div></div>
 <div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('selection')">
+<button class="case-card" data-category="HRM" onclick="openCase('selection')">
 <div class="case-visual hrm-case compact-metric"><div class="visual-content"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div></div>
 <div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('retention')">
+<button class="case-card" data-category="HRM" onclick="openCase('retention')">
 <div class="case-visual photo-case hrm-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>조기 이탈 인원 감소</span></div></div>
 <div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('interview')">
+<button class="case-card" data-category="HRM" onclick="openCase('interview')">
 <div class="case-visual hrm-case"><div class="visual-content"><strong>약 100명</strong><span>지원자 면접 및 평가</span></div></div>
 <div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('alignment')">
+<button class="case-card" data-category="HRM" onclick="openCase('alignment')">
 <div class="case-visual hrm-case"><div class="visual-content"><strong>공통 기준</strong><span>면접 평가 기준 정렬</span></div></div>
 <div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="PROJECT" onclick="openCase('money')">
+<button class="case-card" data-category="PROJECT" onclick="openCase('money')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
 <div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="PROJECT" onclick="openCase('football')">
+<button class="case-card" data-category="PROJECT" onclick="openCase('football')">
 <div class="case-visual photo-case football-case"><img class="visual-bg" src="assets/football-team.jpg" alt="사회인 축구팀 운영 현장"><div class="visual-content"><strong>50명</strong><span>축구팀 운영진</span></div></div>
 <div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p><span class="read">자세히 보기 ↗</span></div></button></div></div>
 </section>
@@ -1169,7 +1169,9 @@ function openCase(key){
 }
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===btn));
- document.querySelectorAll('.case-card').forEach(card=>card.hidden=card.dataset.category!==btn.dataset.filter);
+ document.querySelectorAll('.case-card').forEach(card=>{
+  card.hidden=btn.dataset.filter!=='ALL'&&card.dataset.category!==btn.dataset.filter;
+ });
 }));
 const opsImages=[`assets/c48c09ce223196b4f43dc3dc9fc02c6d5a19a1a1.png`,`assets/f148ba000f65259376b738e12a214a92cb715ad4.png`,`assets/d825c8f1b8214b3356ab04ac8b937c046c63e2c6.png`,`assets/e5f29e01c5ab774a2df902755a1afa71c84eb902.png`];
 function openOps(){
