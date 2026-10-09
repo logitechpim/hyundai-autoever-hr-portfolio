@@ -845,6 +845,27 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .resume-matrix>.career-panel:nth-child(1){padding-right:28px!important}
  .resume-profile-side{width:100%!important}
 }
+
+/* Balance the two-by-two grid by distributing content density */
+@media(min-width:1241px){
+ .resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;
+  padding:24px 22px 24px 0!important;border-right:1px solid #dce4e8!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.skills-panel{
+  grid-column:2!important;grid-row:1!important;
+  padding:24px 0 24px 22px!important;border-right:0!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.certification-panel{
+  grid-column:1!important;grid-row:2!important;
+  padding:24px 22px 24px 0!important;border-right:1px solid #dce4e8!important;border-bottom:0!important
+ }
+ .resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;
+  padding:24px 0 24px 22px!important;border-right:0!important;border-bottom:0!important
+ }
+ .resume-profile-side>.resume-panel+ .resume-panel{padding-top:24px!important}
+}
 </style>
 </head>
 <body>
