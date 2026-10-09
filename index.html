@@ -682,68 +682,99 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .dialog[open] .section-label,.dialog[open] h2{animation:none!important;opacity:1;transform:none}
 }
 
-/* Career profile prototype: clear hierarchy and balanced information groups */
+/* Career profile prototype: quiet editorial layout */
 .resume-matrix{
  display:grid!important;
- grid-template-columns:minmax(0,1.42fr) minmax(290px,.78fr)!important;
+ grid-template-columns:minmax(0,1.28fr) minmax(280px,.72fr)!important;
  grid-template-areas:"career side" "projects projects"!important;
  grid-template-rows:auto auto!important;
- gap:48px 64px!important;
+ gap:42px 58px!important;
  align-items:start!important;
  border:0!important;background:transparent!important
 }
 .resume-matrix>.career-panel:nth-child(1){
  grid-area:career!important;grid-column:1!important;grid-row:1!important;
- min-height:0!important;padding:0 34px 0 0!important;border:0!important;background:transparent!important
+ min-height:0!important;padding:0 46px 0 0!important;
+ border:0!important;border-right:1px solid #dce4e8!important;
+ background:transparent!important
+}
+.resume-matrix>.resume-panel{min-width:0}
+.resume-matrix .resume-title{
+ font-size:23px!important;line-height:1.35!important;
+ margin:0 0 22px!important;color:#222
+}
+.resume-matrix>.career-panel .resume-item{
+ padding:0 0 25px 20px!important;margin:0 0 22px!important;
+ border-left:1px solid var(--green)!important
+}
+.resume-matrix>.career-panel .resume-item:last-child{margin-bottom:0!important;padding-bottom:0!important}
+.resume-matrix>.career-panel .resume-item::before{
+ width:11px!important;height:11px!important;left:-6px!important;top:1px!important;
+ border-width:1.5px!important
+}
+.resume-matrix>.career-panel .resume-item h4{font-size:20px!important;margin-bottom:8px!important}
+.resume-matrix>.career-panel .resume-item h5{font-size:12px!important;padding:4px 9px!important}
+.resume-matrix>.career-panel .resume-item p,.resume-matrix>.career-panel .resume-item li{
+ font-size:14px!important;line-height:1.85!important
 }
 .resume-matrix>.resume-profile-side{
  grid-area:side!important;display:grid!important;grid-template-columns:1fr!important;
- gap:14px!important;align-content:start!important;min-width:0
+ gap:0!important;align-content:start!important;min-width:0
 }
 .resume-profile-side>.resume-panel{
- min-width:0!important;margin:0!important;padding:19px 22px 18px!important;
- border:1px solid #dfe7e9!important;border-radius:10px!important;background:#fff!important;
- box-shadow:0 5px 18px rgba(0,44,95,.035)
+ margin:0!important;padding:0 0 20px!important;
+ border:0!important;border-bottom:1px solid #dce4e8!important;
+ border-radius:0!important;background:transparent!important;box-shadow:none!important
 }
-.resume-profile-side .resume-title{font-size:17px!important;margin:0 0 12px!important;color:var(--navy)}
+.resume-profile-side>.resume-panel+ .resume-panel{padding-top:19px!important}
+.resume-profile-side .resume-title{font-size:16px!important;margin:0 0 10px!important;color:var(--green-dark)}
 .resume-profile-side .resume-item{border:0!important;padding:0!important;margin:0!important}
 .resume-profile-side .resume-item::before,.resume-profile-side .cert-list::before{display:none!important}
 .resume-profile-side .resume-item h4{font-size:16px!important;margin:0 0 4px!important}
 .resume-profile-side .resume-item p{font-size:13px!important;margin:0 0 6px!important;color:var(--muted)}
-.resume-profile-side .resume-item ul{margin:0;padding-left:18px}
+.resume-profile-side .resume-item ul{margin:0;padding-left:17px}
 .resume-profile-side .resume-item li,.resume-profile-side .cert-list li{font-size:13px!important;line-height:1.75!important}
 .resume-profile-side .cert-list{border:0!important;padding:0!important;margin:0!important}
-.resume-profile-side .cert-list ul{margin:0;padding-left:18px}
-.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
-.skill-tags span{display:inline-flex;align-items:center;min-height:32px;padding:6px 11px;border:1px solid #e1e9ed;border-radius:999px;background:#f5f8fa;color:#274b70;font-size:11px;font-weight:700;letter-spacing:.25px}
+.resume-profile-side .cert-list ul{margin:0;padding-left:17px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px}
+.skill-tags span{
+ display:inline-flex;align-items:center;min-height:28px;padding:4px 9px;
+ border:1px solid #dfe7eb;border-radius:4px;background:rgba(255,255,255,.55);
+ color:#385675;font-size:10px;font-weight:700;letter-spacing:.2px
+}
 .resume-matrix>.projects-panel:nth-child(3){
  grid-area:projects!important;grid-column:1/-1!important;grid-row:2!important;
- min-width:0!important;margin:0!important;padding:26px 0 0!important;border:0!important;
- border-top:1px solid #dce4e8!important;background:transparent!important
+ min-width:0!important;margin:0!important;padding:24px 0 0!important;
+ border:0!important;border-top:1px solid #dce4e8!important;
+ background:transparent!important
 }
-.resume-matrix>.projects-panel .resume-title{font-size:22px!important;margin:0 0 18px!important}
-.projects-panel .activity-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+.resume-matrix>.projects-panel .resume-title{font-size:20px!important;margin:0 0 14px!important}
+.projects-panel .activity-grid{
+ display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
+ gap:0!important
+}
 .projects-panel .activity-grid .activity-name-only{
- min-height:94px!important;margin:0!important;padding:19px 22px!important;
- border:1px solid #e1e8eb!important;border-left:3px solid var(--green)!important;
- border-radius:8px!important;background:#fff!important;display:flex;flex-direction:column;justify-content:center
+ min-height:64px!important;margin:0!important;padding:12px 20px!important;
+ border:0!important;border-left:1px solid var(--green)!important;
+ border-radius:0!important;background:transparent!important;
+ display:flex;flex-direction:column;justify-content:center
 }
+.projects-panel .activity-grid .activity-name-only+ .activity-name-only{margin-left:28px!important}
 .projects-panel .activity-name-only::before{display:none!important}
-.projects-panel .activity-kicker{font-size:9px;letter-spacing:1.2px;color:var(--green-dark);font-weight:700;margin-bottom:7px}
 .projects-panel .activity-name-only h4{font-size:16px!important;line-height:1.5!important;margin:0!important}
+.projects-panel .activity-kicker{display:none!important}
 @media(min-width:701px) and (max-width:960px){
- .resume-matrix{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr)!important;gap:38px 34px!important}
- .resume-matrix>.career-panel{padding-right:20px!important}
- .resume-profile-side>.resume-panel{padding:16px 17px!important}
+ .resume-matrix{grid-template-columns:minmax(0,1.12fr) minmax(245px,.88fr)!important;gap:36px 30px!important}
+ .resume-matrix>.career-panel:nth-child(1){padding-right:26px!important}
 }
 @media(max-width:700px){
  .resume-matrix{display:flex!important;flex-direction:column!important;gap:30px!important}
  .resume-matrix>.career-panel,.resume-matrix>.resume-profile-side,.resume-matrix>.projects-panel{width:100%!important;max-width:none!important}
- .resume-matrix>.career-panel{padding:0!important}
- .resume-profile-side{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
- .resume-matrix>.projects-panel{padding-top:22px!important}
+ .resume-matrix>.career-panel:nth-child(1){padding:0 0 24px!important;border-right:0!important;border-bottom:1px solid #dce4e8!important}
+ .resume-profile-side{display:grid!important;grid-template-columns:1fr!important}
+ .resume-matrix>.projects-panel:nth-child(3){padding-top:22px!important}
  .projects-panel .activity-grid{grid-template-columns:1fr!important}
- .projects-panel .activity-grid .activity-name-only{min-height:78px!important}
+ .projects-panel .activity-grid .activity-name-only+ .activity-name-only{margin:8px 0 0!important}
 }
 </style>
 </head>
@@ -813,8 +844,8 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
   </div>
   <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
     <div class="activity-grid">
-      <div class="resume-item activity-name-only"><span class="activity-kicker">PROJECT</span><h4>So, My Money?</h4></div>
-      <div class="resume-item activity-name-only"><span class="activity-kicker">ACTIVITY</span><h4>사회인 축구팀 운영진</h4></div>
+      <div class="resume-item activity-name-only"><h4>So, My Money?</h4></div>
+      <div class="resume-item activity-name-only"><h4>사회인 축구팀 운영진</h4></div>
     </div>
   </div>
 </div>/div>
