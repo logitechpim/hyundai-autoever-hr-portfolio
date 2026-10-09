@@ -908,6 +908,34 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 @media(max-width:1050px){.featured-deck{height:470px}.featured-card{width:41%;height:405px;left:calc(var(--card-index)*12%)}.featured-art{height:250px}.featured-copy{padding:12px 13px}}
 @media(max-width:760px){.featured-deck{height:auto;display:grid;grid-template-columns:1fr;gap:16px;perspective:none;margin-top:26px}.featured-card{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:0;transform:none!important;overflow:hidden}.featured-art{height:230px}.featured-copy{padding:15px 16px 16px}.featured-copy strong{font-size:17px}.featured-copy>span:not(.featured-kicker):not(.featured-link){font-size:12px}.featured-index{font-size:10px}.featured-peek{top:58px}.featured-symbol{width:84px;height:84px}.featured-metric{font-size:36px}.featured-metric-caption{font-size:11px}.featured-link{font-size:12px}.featured-card:hover,.featured-card:focus-visible{transform:translateY(-5px)!important}}
 @media(prefers-reduced-motion:reduce){.featured-card,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition:none!important}.featured-card:hover,.featured-card:focus-visible{transform:none!important}}
+
+/* Pointer-responsive card deck motion */
+.featured-experiences{background:radial-gradient(ellipse at 50% 52%,#eef3f5 0%,#f7f9f6 62%);padding-top:74px;padding-bottom:78px}
+.featured-deck{perspective:1600px;transform-style:preserve-3d}
+.featured-card{transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,filter;transition:transform .72s cubic-bezier(.16,1,.3,1),box-shadow .5s ease,border-color .35s ease,filter .45s ease}
+.featured-card::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(255,255,255,.18),transparent 62%);opacity:0;transition:opacity .28s ease}
+.featured-card.is-active{z-index:30!important;transform:translateY(-34px) translateZ(54px) scale(1.06) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(var(--hover-tilt,0deg));border-color:rgba(92,136,184,.82);box-shadow:0 34px 70px rgba(7,31,60,.36);filter:saturate(1.13)}
+.featured-card.is-before{transform:translateX(-16px) translateZ(-12px) scale(.985) rotate(var(--card-tilt));filter:brightness(.88)}
+.featured-card.is-after{transform:translateX(18px) translateZ(-12px) scale(.985) rotate(var(--card-tilt));filter:brightness(.88)}
+.featured-card.is-active::before{opacity:1}
+.featured-card.is-active .featured-art::before{transform:scale(1.18);background-position:var(--pointer-x,73%) var(--pointer-y,28%)}
+.featured-card.is-active .featured-art::after{transform:translateX(130%)}
+.featured-card.is-active .featured-symbol{transform:translate3d(-5px,-5px,22px) rotate(-4deg) scale(1.1)}
+.featured-card.is-active .featured-link b{transform:translate(4px,-4px)}
+.featured-card:hover,.featured-card:focus-visible{z-index:30!important;transform:translateY(-34px) translateZ(54px) scale(1.06) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(var(--hover-tilt,0deg));box-shadow:0 34px 70px rgba(7,31,60,.36)}
+.featured-card:hover::before,.featured-card:focus-visible::before{opacity:1}
+.featured-deck:has(.featured-card:hover) .featured-card:not(:hover){filter:brightness(.9) saturate(.88)}
+.featured-deck:has(.featured-card:focus-visible) .featured-card:not(:focus-visible){filter:brightness(.9) saturate(.88)}
+@media(max-width:760px){
+ .featured-experiences{padding-top:58px;padding-bottom:58px}
+ .featured-card,.featured-card.is-active,.featured-card.is-before,.featured-card.is-after,.featured-card:hover,.featured-card:focus-visible{transform:none!important;filter:none}
+ .featured-card:hover,.featured-card:focus-visible,.featured-card.is-active{box-shadow:0 14px 30px rgba(10,35,65,.16)}
+ .featured-card::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card,.featured-card::before,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition:none!important}
+ .featured-card.is-active,.featured-card.is-before,.featured-card.is-after,.featured-card:hover,.featured-card:focus-visible{transform:none!important}
+}
 </style>
 </head>
 <body>
@@ -1292,6 +1320,34 @@ addEventListener('scroll',()=>{
 addEventListener('resize',updateActiveNav);
 updateActiveNav();
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const featuredDeck=document.querySelector('.featured-deck');
+const featuredCards=[...document.querySelectorAll('.featured-card')];
+function activateFeaturedCard(card){
+ featuredCards.forEach(other=>{
+  other.classList.remove('is-active','is-before','is-after');
+  if(other===card)other.classList.add('is-active');
+  else if(featuredCards.indexOf(other)<featuredCards.indexOf(card))other.classList.add('is-before');
+  else other.classList.add('is-after');
+ });
+}
+function clearFeaturedCards(){featuredCards.forEach(card=>card.classList.remove('is-active','is-before','is-after'));}
+featuredCards.forEach(card=>{
+ card.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')activateFeaturedCard(card)});
+ card.addEventListener('pointermove',event=>{
+  if(event.pointerType!=='mouse'||reduceMotion)return;
+  const rect=card.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;
+  card.style.setProperty('--pointer-x',Math.round(x*100)+'%');
+  card.style.setProperty('--pointer-y',Math.round(y*100)+'%');
+  card.style.setProperty('--tilt-x',((.5-y)*5).toFixed(2)+'deg');
+  card.style.setProperty('--tilt-y',((x-.5)*6).toFixed(2)+'deg');
+ });
+ card.addEventListener('pointerleave',()=>{
+  card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');
+  setTimeout(()=>{if(!featuredDeck.matches(':hover'))clearFeaturedCards()},100);
+ });
+ card.addEventListener('focus',()=>activateFeaturedCard(card));
+ card.addEventListener('blur',()=>setTimeout(()=>{if(!featuredDeck.contains(document.activeElement))clearFeaturedCards()},0));
+});
 function formatCount(value,source){
  const decimals=(source.split('.')[1]||'').length;
  return new Intl.NumberFormat('ko-KR',{minimumFractionDigits:0,maximumFractionDigits:decimals}).format(decimals?Number(value.toFixed(decimals)):Math.round(value));
