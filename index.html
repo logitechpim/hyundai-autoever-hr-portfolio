@@ -692,8 +692,8 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  align-items:start!important;
  border:0!important;background:transparent!important
 }
-.resume-matrix>.career-panel{
- grid-area:career!important;grid-column:auto!important;grid-row:auto!important;
+.resume-matrix>.career-panel:nth-child(1){
+ grid-area:career!important;grid-column:1!important;grid-row:1!important;
  min-height:0!important;padding:0 34px 0 0!important;border:0!important;background:transparent!important
 }
 .resume-matrix>.resume-profile-side{
@@ -716,8 +716,8 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 .resume-profile-side .cert-list ul{margin:0;padding-left:18px}
 .skill-tags{display:flex;flex-wrap:wrap;gap:8px}
 .skill-tags span{display:inline-flex;align-items:center;min-height:32px;padding:6px 11px;border:1px solid #e1e9ed;border-radius:999px;background:#f5f8fa;color:#274b70;font-size:11px;font-weight:700;letter-spacing:.25px}
-.resume-matrix>.projects-panel{
- grid-area:projects!important;grid-column:auto!important;grid-row:auto!important;
+.resume-matrix>.projects-panel:nth-child(3){
+ grid-area:projects!important;grid-column:1/-1!important;grid-row:2!important;
  min-width:0!important;margin:0!important;padding:26px 0 0!important;border:0!important;
  border-top:1px solid #dce4e8!important;background:transparent!important
 }
