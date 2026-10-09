@@ -933,8 +933,11 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .featured-card::before{display:none}
 }
 @media(prefers-reduced-motion:reduce){
- .featured-card,.featured-card::before,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition:none!important}
- .featured-card.is-active,.featured-card.is-before,.featured-card.is-after,.featured-card:hover,.featured-card:focus-visible{transform:none!important}
+ .featured-card{transition-duration:.32s!important}
+ .featured-card::before,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition-duration:.2s!important}
+ .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible{transform:translateY(-20px) translateZ(24px) scale(1.025)!important}
+ .featured-card.is-before{transform:translateX(-10px) scale(.99) rotate(var(--card-tilt))!important}
+ .featured-card.is-after{transform:translateX(10px) scale(.99) rotate(var(--card-tilt))!important}
 }
 
 /* Click-to-expand transition from the selected experience card into its story */
@@ -951,8 +954,8 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(4){animatio
 dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animation-delay:180ms}
 @keyframes featured-content-unfold{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
 @media(prefers-reduced-motion:reduce){
- dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition:none!important}
- dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation:none!important;opacity:1!important;transform:none!important}
+ dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition-duration:.36s!important}
+ dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation-duration:.32s!important;animation-delay:20ms!important}
 }
 </style>
 </head>
