@@ -650,12 +650,13 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 
 
 /* All experience cards: fixed metric panel size and shared position */
-.case-visual .visual-content{position:absolute;z-index:2;left:50%;right:auto;top:60%;bottom:auto;width:68%;max-width:320px;height:100px;transform:translate(-50%,-50%);box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 12px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
+.case-visual .visual-content{z-index:2;top:60%;bottom:auto;width:68%;max-width:320px;height:100px;transform:translate(-50%,-50%);box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 12px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
+.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{position:absolute;left:50%;right:auto}
 .case-visual .visual-content strong{font-size:30px;line-height:1.1}
 .case-visual .visual-content span{display:block;margin-top:6px;line-height:1.35}
 .case-visual.compact-metric .visual-content strong{font-size:20px;white-space:nowrap}
 @media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .visual-content{transform:translate(-50%,calc(-50% - 3px))}}
-@media(max-width:700px){.case-visual .visual-content{width:68%;height:96px;padding:9px 8px}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
+@media(max-width:700px){.case-visual .visual-content{width:68%;height:96px;padding:9px 8px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:50%;right:auto}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
 </style>
 </head>
 <body>
