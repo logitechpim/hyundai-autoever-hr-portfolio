@@ -715,7 +715,7 @@ pointer-events:none}
 <div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>500명 이상의 학부모·학생 대상 정보 전달</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
 <div class="case-visual"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div>
-<div class="case-copy"><div class="category">AI</div><h3>AI 답변의 품질 기준을 구조화</h3><p>교육용 AI 답변 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="HRM" onclick="openCase('selection')">
 <div class="case-visual"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div>
 <div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p><span class="read">자세히 보기 ↗</span></div></button>
@@ -842,9 +842,11 @@ const cases={
 <figure><img src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><figcaption>설명회 현장에서 직접 발표를 진행하는 모습입니다.</figcaption></figure>
 <figure><img src="assets/stakeholder-communication.png" alt="대규모 이해관계자 교육 및 커뮤니케이션 자료"><figcaption>대규모 이해관계자 커뮤니케이션을 위해 구성한 발표 자료입니다.</figcaption></figure>
 </div>`},
-"ai":{label:`AI / 교육용 AI 답변 서비스`,title:`AI 답변의 품질 기준을 구조화`,meta:`교육용 AI 답변 서비스`,body:`<div class="detail-context">외부 AI 업체와 강의 영상과 교재 기반의 교육용 AI 답변 서비스를 개발하며, 답변 품질 검증과 평가 기준 설계를 담당했습니다.</div>
-<h3>수행 내용</h3><ul><li>실제 AI 답변 3,500건 검수</li><li>오류를 계산, 개념, 설명 유형으로 분류</li><li>학생 학습에 미치는 영향에 따라 오류 심각도 정의</li><li>질문 의도 반영, 설명의 충분성, 이해 가능성을 포함한 답변 적정도 기준 설계</li><li>공통 검수표 작성 및 수정 우선순위 수립</li><li>반복 오류 사례와 개선 방향을 외부 업체에 전달하고 판단 기준 조율</li></ul>
-<h3>결과</h3><div class="metric-block"><strong>90%</strong><span>서비스 만족도 달성 및 베타테스트 도입 완료</span></div>`},
+"ai":{label:`AI / 교육용 AI 답변 서비스`,title:`수학과 AI를 연결한 서비스 개선 협업`,meta:`우진매쓰 / 교육용 수학 답변 서비스`,body:`<div class="detail-context">우진매쓰에서 외부 AI 업체와 교육용 수학 답변 서비스를 개발하는 과정에 참여했습니다. 저는 수학 교육 측에서 답변의 정확도와 설명의 적절성을 검수했고, 외부 업체는 AI 구현을 담당했습니다.</div>
+<h3>협업 과정의 어려움</h3><p>업체에 수학 전문가가 없어 수학 답변의 구조를 잡거나 학생의 질문 의도에 맞게 설명을 개선하는 데 어려움이 있었습니다. 업체에서도 여러 방법을 시도했지만 해결이 어려운 상황을 공유했습니다.</p>
+<h3>제가 맡은 역할과 협업 과정</h3><ul><li>업체에 구체적으로 어떤 부분에서 어려움을 겪는지 먼저 공유해 달라고 요청했습니다.</li><li>공유받은 어려움을 바탕으로 LLM 프롬프트를 여러 버전으로 실험했습니다.</li><li>핵심 개념을 먼저 설명하고 불필요하게 장황한 답변을 줄이기 위한 프롬프트 초안을 업체에 전달했습니다.</li><li>업체는 초안을 실제 구현에 반영하고 추가로 고도화했습니다.</li><li>저는 개선된 답변을 다시 검수하고 피드백을 전달하는 과정을 반복했습니다.</li></ul>
+<h3>협업 결과</h3><ul><li>답변 구조의 일관성이 개선되고 불필요한 장황함이 줄었습니다.</li><li>일부 학생을 대상으로 베타테스트를 진행했습니다.</li></ul>
+<h3>직접 수행한 검수</h3><div class="metric-block"><strong>3,500건</strong><span>제가 누적 직접 검수한 AI 답변 수</span></div>`},
 "selection":{label:`HRM - 인재 확보 / Woojin Math`,title:`직무 적합성 기반 인재 선발체계 개선`,meta:`Woojin Math`,body:`<div class="detail-context">공정성과 직무 적합성을 높이기 위해 핵심역량 중심으로 선발기준과 채용 프로세스를 개선</div>
 <h3>수행 내용</h3><ul><li>설명력, 문맥 이해, 오류 검토 능력을 평가기준에 반영</li><li>테스트와 면접 질문 및 판단 기준 정비</li><li>선발 후 답변량, 오류율, 미션 수행, 근무 이력 추적</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>약 300명</strong><span>지원자 평가</span></div><div><strong>100명 +</strong><span>최종 선발</span></div></div>
