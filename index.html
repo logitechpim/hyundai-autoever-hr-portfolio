@@ -639,6 +639,14 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 .hero-wordmark{animation:wordmark-enter .8s .2s ease-out both}
 @media(max-width:700px){body::before{top:9px;right:10px;font-size:9px;padding:7px 10px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:12px;right:12px;bottom:12px;padding:11px 9px}.dialog-inner{padding:40px 22px}.dialog-inner h2{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
+
+/* Prototype refinement: reveal the onboarding cover and slightly narrow metric panels */
+.case-visual.photo-case .visual-content{left:22px;right:22px}
+.case-visual.onboarding-case .visual-bg{transform:translateY(-30px) scale(1.12)}
+@media(hover:hover) and (pointer:fine){
+ .motion-ready .case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(-30px) scale(1.12)}
+}
+@media(max-width:700px){.case-visual.photo-case .visual-content{left:18px;right:18px}}
 </style>
 </head>
 <body>
