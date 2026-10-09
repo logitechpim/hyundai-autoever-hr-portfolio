@@ -785,6 +785,54 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .resume-profile-side>.resume-panel:last-child{border-bottom:0!important}
 }
 .skill-tags span{white-space:nowrap}
+
+/* Roomier rhythm for the two-by-two profile facts */
+@media(min-width:1241px){
+ .resume-matrix{gap:40px 48px!important}
+ .resume-profile-side{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,minmax(190px,auto))!important;
+  align-content:start!important
+ }
+ .resume-profile-side>.resume-panel{
+  min-height:190px!important;margin:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important
+ }
+ .resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;padding:24px 22px 24px 0!important;
+  border-right:1px solid #dce4e8!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.certification-panel{
+  grid-column:2!important;grid-row:1!important;padding:24px 0 24px 22px!important;
+  border-right:0!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.skills-panel{
+  grid-column:1!important;grid-row:2!important;padding:24px 22px 24px 0!important;
+  border-right:1px solid #dce4e8!important;border-bottom:0!important
+ }
+ .resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;padding:24px 0 24px 22px!important;
+  border-right:0!important;border-bottom:0!important
+ }
+ .resume-profile-side>.resume-panel+ .resume-panel{padding-top:24px!important}
+ .resume-profile-side .resume-title{font-size:16px!important;margin:0 0 18px!important;letter-spacing:.01em}
+ .resume-profile-side .resume-item h4{font-size:17px!important;margin:0 0 5px!important}
+ .resume-profile-side .resume-item p{font-size:14px!important;margin:0 0 12px!important}
+ .resume-profile-side .resume-item ul,.resume-profile-side .cert-list ul,.projects-panel .activity-list{
+  display:grid;gap:6px;margin:0;padding-left:18px
+ }
+ .resume-profile-side .resume-item li,.resume-profile-side .cert-list li,.projects-panel .activity-list li{
+  font-size:13px!important;line-height:1.8!important
+ }
+ .skill-tags{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .skill-tags span{
+  min-height:34px!important;padding:6px 8px!important;
+  justify-content:center!important;font-size:11px!important;letter-spacing:0!important
+ }
+}
+@media(max-width:1240px){
+ .resume-profile-side>.resume-panel{min-height:0!important}
+}
 </style>
 </head>
 <body>
