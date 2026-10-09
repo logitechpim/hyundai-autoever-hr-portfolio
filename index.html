@@ -743,17 +743,9 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  color:#385675;font-size:10px;font-weight:700;letter-spacing:.2px
 }
 .resume-profile-side>.projects-panel{padding-bottom:16px!important}
-.projects-panel .activity-grid{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}
-.projects-panel .activity-grid .activity-name-only{
- min-height:0!important;margin:0!important;padding:0 0 0 12px!important;
- border:0!important;border-left:1px solid var(--green)!important;
- border-radius:0!important;background:transparent!important;
- display:block!important
-}
-.projects-panel .activity-grid .activity-name-only+ .activity-name-only{margin:0!important}
-.projects-panel .activity-name-only::before{display:none!important}
-.projects-panel .activity-name-only h4{font-size:14px!important;line-height:1.65!important;margin:0!important}
-.projects-panel .activity-kicker{display:none!important}
+.projects-panel .activity-list{margin:0;padding-left:17px}
+.projects-panel .activity-list li{font-size:13px;line-height:1.75}
+.projects-panel .activity-list li+li{margin-top:3px}
 @media(min-width:701px) and (max-width:960px){
  .resume-matrix{grid-template-columns:minmax(0,1.12fr) minmax(245px,.88fr)!important;gap:36px 30px!important}
  .resume-matrix>.career-panel:nth-child(1){padding-right:26px!important}
@@ -830,10 +822,10 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
       <div class="skill-tags"><span>EXCEL</span><span>WORD</span><span>POWERPOINT</span><span>LLM</span><span>PYTHON</span></div>
     </div>
     <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
-      <div class="activity-grid">
-        <div class="resume-item activity-name-only"><h4>So, My Money?</h4></div>
-        <div class="resume-item activity-name-only"><h4>사회인 축구팀 운영진</h4></div>
-      </div>
+      <ul class="activity-list">
+        <li>So, My Money?</li>
+        <li>사회인 축구팀 운영진</li>
+      </ul>
     </div>
   </div>
 </div></div>
