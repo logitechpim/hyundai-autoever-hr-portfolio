@@ -612,6 +612,10 @@ pointer-events:none}
 @media(max-width:700px){.choice-details{grid-template-columns:1fr}.choice{min-height:140px}}
 
 @media(hover:hover) and (pointer:fine){.motion-ready .case-card.is-visible:hover{transform:translateY(-8px)}.motion-ready .case-card:hover .visual-bg{transform:scale(1.12)}.motion-ready .case-card:hover .visual-content{transform:translateY(-5px)}}
+
+/* Keep the onboarding metric clear of text printed on its cover image */
+.case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.03)}
+@media(hover:hover) and (pointer:fine){.case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.09)}}
 </style>
 </head>
 <body>
@@ -697,22 +701,22 @@ pointer-events:none}
 <div class="filters"><button class="filter active" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
 <div class="portfolio-grid"><button class="case-card" data-category="HRD" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>답변량, 오류율, 근무시간 점검</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('improvement')">
 <div class="case-visual photo-case"><div class="visual-content"><strong>30%+</strong><span>2025년 게시판 질문량 증가<br>2024년 대비</span></div></div>
-<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>오류 사례와 현장 질문을 재교육·차년도 교육에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>반복 오류와 현장 질문의 교육 반영</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('onboard')">
 <div class="case-visual photo-case onboarding-case"><img class="visual-bg" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>공통 기준 교육, 사례 실습 및 피드백</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>조직 안내부터 답변 기준까지 단계별 온보딩</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('circle')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><div class="visual-content"><strong>CLASS</strong><span>월 1회 정기 프로그램</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>참여형 조직개발 프로그램 설계 및 운영</h3><p>관계형성, 성찰, 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>참여형 조직개발 프로그램 설계 및 운영</h3><p>토킹스틱을 활용한 대화와 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('counsel')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><div class="visual-content"><strong>600회 +</strong><span>학생 및 학부모 개별 상담</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학업, 관계, 학교 적응 과정 진단</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학생 및 학부모 상담과 맞춤 성장 지원</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('brief')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>500명 이상의 학부모·학생 대상 정보 전달</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
 <div class="case-visual"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div>
 <div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
