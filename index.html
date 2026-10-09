@@ -866,6 +866,15 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  }
  .resume-profile-side>.resume-panel+ .resume-panel{padding-top:24px!important}
 }
+
+/* Reference layout: education/tools above certification/projects */
+@media(min-width:1241px){
+ .resume-profile-side{grid-template-areas:"education skills" "certification projects"!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(190px,auto))!important;align-content:start!important}
+ .resume-profile-side>.education-panel{grid-area:education!important}
+ .resume-profile-side>.skills-panel{grid-area:skills!important}
+ .resume-profile-side>.certification-panel{grid-area:certification!important}
+ .resume-profile-side>.projects-panel{grid-area:projects!important}
+}
 </style>
 </head>
 <body>
