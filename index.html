@@ -686,8 +686,8 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 .resume-matrix{
  display:grid!important;
  grid-template-columns:minmax(0,1.28fr) minmax(280px,.72fr)!important;
- grid-template-areas:"career side" "projects projects"!important;
- grid-template-rows:auto auto!important;
+ grid-template-areas:"career side"!important;
+ grid-template-rows:auto!important;
  gap:42px 58px!important;
  align-items:start!important;
  border:0!important;background:transparent!important
@@ -742,26 +742,17 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  border:1px solid #dfe7eb;border-radius:4px;background:rgba(255,255,255,.55);
  color:#385675;font-size:10px;font-weight:700;letter-spacing:.2px
 }
-.resume-matrix>.projects-panel:nth-child(3){
- grid-area:projects!important;grid-column:1/-1!important;grid-row:2!important;
- min-width:0!important;margin:0!important;padding:24px 0 0!important;
- border:0!important;border-top:1px solid #dce4e8!important;
- background:transparent!important
-}
-.resume-matrix>.projects-panel .resume-title{font-size:20px!important;margin:0 0 14px!important}
-.projects-panel .activity-grid{
- display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;
- gap:0!important
-}
+.resume-profile-side>.projects-panel{padding-bottom:16px!important}
+.projects-panel .activity-grid{display:grid!important;grid-template-columns:1fr!important;gap:8px!important}
 .projects-panel .activity-grid .activity-name-only{
- min-height:64px!important;margin:0!important;padding:12px 20px!important;
+ min-height:0!important;margin:0!important;padding:0 0 0 12px!important;
  border:0!important;border-left:1px solid var(--green)!important;
  border-radius:0!important;background:transparent!important;
- display:flex;flex-direction:column;justify-content:center
+ display:block!important
 }
-.projects-panel .activity-grid .activity-name-only+ .activity-name-only{margin-left:28px!important}
+.projects-panel .activity-grid .activity-name-only+ .activity-name-only{margin:0!important}
 .projects-panel .activity-name-only::before{display:none!important}
-.projects-panel .activity-name-only h4{font-size:16px!important;line-height:1.5!important;margin:0!important}
+.projects-panel .activity-name-only h4{font-size:14px!important;line-height:1.65!important;margin:0!important}
 .projects-panel .activity-kicker{display:none!important}
 @media(min-width:701px) and (max-width:960px){
  .resume-matrix{grid-template-columns:minmax(0,1.12fr) minmax(245px,.88fr)!important;gap:36px 30px!important}
@@ -769,12 +760,9 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 }
 @media(max-width:700px){
  .resume-matrix{display:flex!important;flex-direction:column!important;gap:30px!important}
- .resume-matrix>.career-panel,.resume-matrix>.resume-profile-side,.resume-matrix>.projects-panel{width:100%!important;max-width:none!important}
+ .resume-matrix>.career-panel,.resume-matrix>.resume-profile-side{width:100%!important;max-width:none!important}
  .resume-matrix>.career-panel:nth-child(1){padding:0 0 24px!important;border-right:0!important;border-bottom:1px solid #dce4e8!important}
  .resume-profile-side{display:grid!important;grid-template-columns:1fr!important}
- .resume-matrix>.projects-panel:nth-child(3){padding-top:22px!important}
- .projects-panel .activity-grid{grid-template-columns:1fr!important}
- .projects-panel .activity-grid .activity-name-only+ .activity-name-only{margin:8px 0 0!important}
 }
 </style>
 </head>
@@ -841,14 +829,14 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
     <div class="resume-panel compact skills-panel"><h3 class="resume-title">활용 도구</h3>
       <div class="skill-tags"><span>EXCEL</span><span>WORD</span><span>POWERPOINT</span><span>LLM</span><span>PYTHON</span></div>
     </div>
-  </div>
-  <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
-    <div class="activity-grid">
-      <div class="resume-item activity-name-only"><h4>So, My Money?</h4></div>
-      <div class="resume-item activity-name-only"><h4>사회인 축구팀 운영진</h4></div>
+    <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
+      <div class="activity-grid">
+        <div class="resume-item activity-name-only"><h4>So, My Money?</h4></div>
+        <div class="resume-item activity-name-only"><h4>사회인 축구팀 운영진</h4></div>
+      </div>
     </div>
   </div>
-</div>/div>
+</div></div>
 </section>
 
 
