@@ -838,6 +838,13 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .resume-matrix{grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr)!important;column-gap:24px!important}
  .resume-matrix>.career-panel:nth-child(1){padding-right:24px!important}
 }
+
+/* Use the section width for both the career timeline and profile grid */
+@media(min-width:1241px){
+ .resume-matrix{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;column-gap:36px!important}
+ .resume-matrix>.career-panel:nth-child(1){padding-right:28px!important}
+ .resume-profile-side{width:100%!important}
+}
 </style>
 </head>
 <body>
