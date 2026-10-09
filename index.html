@@ -957,6 +957,50 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
  dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition-duration:.36s!important}
  dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation-duration:.32s!important;animation-delay:20ms!important}
 }
+
+/* Hyundai AutoEver inspired flagship card surfaces: deep blue, white and a vivid blue glow */
+.featured-card{border:0!important;border-radius:18px;background:#0a1b2d;box-shadow:0 20px 42px rgba(5,26,51,.28),0 8px 18px rgba(5,26,51,.16)}
+.featured-art{background:linear-gradient(145deg,#06172a 0%,#0a2c51 56%,#0c5790 100%)}
+.featured-art::before{background:radial-gradient(ellipse at 72% 26%,rgba(49,177,255,.56),transparent 39%),linear-gradient(135deg,rgba(255,255,255,.11),transparent 54%)}
+.art-coaching{background:linear-gradient(145deg,#07182b 0%,#103767 65%,#145b91 100%)}
+.art-coaching::before{background:radial-gradient(ellipse at 76% 25%,rgba(83,163,255,.52),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.09),transparent 60%)}
+.art-improvement{background:linear-gradient(145deg,#071a2b 0%,#0c3f5d 60%,#087d91 100%)}
+.art-improvement::before{background:radial-gradient(ellipse at 74% 25%,rgba(39,206,222,.43),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.09),transparent 58%)}
+.art-retention{background:linear-gradient(145deg,#101c2b 0%,#153858 62%,#23739b 100%)}
+.art-retention::before{background:radial-gradient(ellipse at 74% 25%,rgba(110,181,226,.47),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.art-ai{background:linear-gradient(145deg,#061a30 0%,#073e69 56%,#0085bd 100%)}
+.art-ai::before{background:radial-gradient(ellipse at 74% 25%,rgba(51,206,255,.58),transparent 42%),linear-gradient(145deg,rgba(255,255,255,.1),transparent 60%)}
+.featured-copy{min-height:155px;background:linear-gradient(145deg,#0a1b2d 0%,#102a43 100%);padding:15px 18px 17px}
+.featured-kicker{color:#76ceff;font-size:10px;letter-spacing:.6px}
+.featured-copy strong{color:#f5f9ff;font-size:16px;line-height:1.4}
+.featured-copy>span:not(.featured-kicker):not(.featured-link){color:#c3d5e7;font-size:11px;line-height:1.6}
+.featured-link{color:#9cddff;font-size:11px}
+.featured-index{background:rgba(3,20,37,.34);backdrop-filter:blur(7px);border-color:rgba(197,231,255,.62)}
+.featured-peek{color:rgba(225,242,255,.84)}
+.featured-symbol{filter:drop-shadow(0 0 12px rgba(88,197,255,.25))}
+.featured-card{transition:transform .84s cubic-bezier(.18,.82,.22,1),box-shadow .58s ease,filter .5s ease}
+.featured-card.is-active{box-shadow:0 34px 80px rgba(0,23,51,.48),0 0 48px rgba(34,157,230,.22)}
+.featured-card.is-click-pull{z-index:40!important;transform:translateY(-58px) translateZ(110px) scale(1.12) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(var(--hover-tilt,0deg));box-shadow:0 42px 100px rgba(0,19,45,.56),0 0 64px rgba(35,166,245,.32)}
+.featured-card.is-click-pull .featured-art::after{transform:translateX(130%)}
+.featured-card.is-click-pull .featured-metric{transform:translateZ(20px);text-shadow:0 5px 26px rgba(60,184,255,.44)}
+.featured-card.is-click-pull .featured-copy{background:linear-gradient(145deg,#0b2036,#153a5d)}
+.featured-link{position:relative;width:max-content}
+.featured-link::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:#5cc4ff;transform:scaleX(0);transform-origin:left;transition:transform .36s ease}
+.featured-card:hover .featured-link::after,.featured-card.is-active .featured-link::after,.featured-card:focus-visible .featured-link::after{transform:scaleX(1)}
+.featured-deck:has(.featured-card:hover) .featured-card:not(:hover){filter:brightness(.78) saturate(.82)}
+@media(max-width:1050px) and (min-width:761px){.featured-card.is-click-pull{transform:translateY(-42px) translateZ(70px) scale(1.08) rotate(0deg)}}
+@media(max-width:760px){
+ .featured-card{border:0!important;background:#0a1b2d;box-shadow:0 16px 36px rgba(5,26,51,.22)}
+ .featured-card.is-click-pull{transform:none!important}
+ .featured-copy{min-height:145px}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card{transition-duration:.42s!important}
+ .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible{transform:translateY(-20px) translateZ(24px) scale(1.025)!important}
+ .featured-card.is-click-pull{transform:translateY(-34px) translateZ(60px) scale(1.06)!important}
+ dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition-duration:.48s!important}
+ dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation-duration:.36s!important;animation-delay:20ms!important}
+}
 </style>
 </head>
 <body>
@@ -1301,30 +1345,40 @@ function openOps(){
  ops.showModal();
 }
 
-function openFeaturedCase(event,key){
+
+async function openFeaturedCase(event,key){
  event.preventDefault();
  if(detail.open)return;
- const card=event.currentTarget,rect=card.getBoundingClientRect(),c=cases[key];
+ const card=event.currentTarget,c=cases[key];
  if(!c)return;
  modalReturnScrollY=window.scrollY;
+ const desktop=window.matchMedia('(min-width: 761px)').matches;
+ if(desktop){
+  activateFeaturedCard(card);
+  card.classList.add('is-click-pull');
+  await new Promise(resolve=>setTimeout(resolve,420));
+  if(detail.open)return;
+ }
+ const rect=card.getBoundingClientRect();
  detailBody.innerHTML=`<div class="section-label">${c.label}</div><h2>${c.title}</h2>${c.body}`;
  detail.classList.add('featured-morphing');
- Object.assign(detail.style,{position:'fixed',margin:'0',left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px',maxHeight:'none',overflow:'hidden',borderRadius:'16px',transform:'none'});
+ Object.assign(detail.style,{position:'fixed',margin:'0',left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px',maxHeight:'none',overflow:'hidden',borderRadius:'18px',transform:'none'});
  detail.showModal();
  const endWidth=Math.min(900,window.innerWidth*.94),endHeight=Math.min(760,window.innerHeight*.88);
  const endLeft=(window.innerWidth-endWidth)/2,endTop=(window.innerHeight-endHeight)/2;
  requestAnimationFrame(()=>requestAnimationFrame(()=>{
-  detail.style.transition='left .72s cubic-bezier(.16,1,.3,1),top .72s cubic-bezier(.16,1,.3,1),width .72s cubic-bezier(.16,1,.3,1),height .72s cubic-bezier(.16,1,.3,1),border-radius .72s cubic-bezier(.16,1,.3,1),box-shadow .5s ease';
-  detail.style.left=endLeft+'px';detail.style.top=endTop+'px';detail.style.width=endWidth+'px';detail.style.height=endHeight+'px';detail.style.borderRadius='24px';detail.style.boxShadow='0 32px 90px rgba(0,20,50,.3)';
+  detail.style.transition='left .82s cubic-bezier(.18,.82,.22,1),top .82s cubic-bezier(.18,.82,.22,1),width .82s cubic-bezier(.18,.82,.22,1),height .82s cubic-bezier(.18,.82,.22,1),border-radius .82s cubic-bezier(.18,.82,.22,1),box-shadow .6s ease';
+  detail.style.left=endLeft+'px';detail.style.top=endTop+'px';detail.style.width=endWidth+'px';detail.style.height=endHeight+'px';detail.style.borderRadius='26px';detail.style.boxShadow='0 38px 110px rgba(0,18,45,.45)';
  }));
- setTimeout(()=>detail.classList.add('featured-unfolded'),220);
+ setTimeout(()=>{if(detail.open)detail.classList.add('featured-unfolded')},360);
  setTimeout(()=>{
+  if(!detail.open)return;
   detail.classList.remove('featured-morphing','featured-unfolded');
   detail.style.transition='none';detail.style.overflowY='auto';detail.style.boxShadow='';
   animateCounters(detailBody);
- },760);
+ },900);
 }
-detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');restoreModalPagePosition();});
+detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');clearFeaturedCards();document.querySelectorAll('.featured-card').forEach(card=>card.classList.remove('is-click-pull'));restoreModalPagePosition();});
 ops.addEventListener('close',restoreModalPagePosition);
 const navLinks=[...document.querySelectorAll('.navmenu a')];
 function scrollToSection(target,hash){
