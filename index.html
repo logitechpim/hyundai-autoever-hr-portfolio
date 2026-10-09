@@ -936,6 +936,24 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .featured-card,.featured-card::before,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition:none!important}
  .featured-card.is-active,.featured-card.is-before,.featured-card.is-after,.featured-card:hover,.featured-card:focus-visible{transform:none!important}
 }
+
+/* Click-to-expand transition from the selected experience card into its story */
+dialog.featured-morphing{padding:0;min-width:0;max-width:none;max-height:none;background:#fff}
+dialog.featured-morphing::backdrop{background:rgba(8,40,91,0);backdrop-filter:blur(0);transition:background .65s ease,backdrop-filter .65s ease}
+dialog.featured-morphing.featured-unfolded::backdrop{background:rgba(8,40,91,.68);backdrop-filter:blur(3px)}
+dialog.featured-morphing .dialog-inner{opacity:0;transform:translateY(20px) scale(.985);transition:opacity .45s ease,transform .65s cubic-bezier(.16,1,.3,1)}
+dialog.featured-morphing.featured-unfolded .dialog-inner{opacity:1;transform:translateY(0) scale(1)}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation:featured-content-unfold .55s cubic-bezier(.16,1,.3,1) both}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(1){animation-delay:0ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(2){animation-delay:45ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(3){animation-delay:90ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(4){animation-delay:135ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animation-delay:180ms}
+@keyframes featured-content-unfold{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+ dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition:none!important}
+ dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation:none!important;opacity:1!important;transform:none!important}
+}
 </style>
 </head>
 <body>
@@ -1018,23 +1036,23 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
   <div class="container">
     <div class="section-title"><h2>핵심 경험</h2><p>교육 체계, 성과 개선, 조직 운영과 AI 협업을 보여주는 다섯 가지 사례입니다.</p></div>
     <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
-      <button class="featured-card" style="--card-index:0;--card-tilt:-5deg" type="button" onclick="openCase('onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
+      <button class="featured-card" style="--card-index:0;--card-tilt:-5deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
         <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
         <span class="featured-copy"><span class="featured-kicker">기준을 세우고 현장에 안착시키다</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
       </button>
-      <button class="featured-card" style="--card-index:1;--card-tilt:-2deg" type="button" onclick="openCase('quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
+      <button class="featured-card" style="--card-index:1;--card-tilt:-2deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
         <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">저성과 조교 평균 답변량 증가</span></span>
         <span class="featured-copy"><span class="featured-kicker">성과 데이터를 개인별 피드백으로</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
       </button>
-      <button class="featured-card" style="--card-index:2;--card-tilt:1deg" type="button" onclick="openCase('improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
+      <button class="featured-card" style="--card-index:2;--card-tilt:1deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
         <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">30%+</span><span class="featured-metric-caption">2025년 게시판 질문량 증가 · 2024년 대비</span></span>
         <span class="featured-copy"><span class="featured-kicker">현장 사례를 다음 교육과 운영에 반영</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
       </button>
-      <button class="featured-card" style="--card-index:3;--card-tilt:3deg" type="button" onclick="openCase('retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
+      <button class="featured-card" style="--card-index:3;--card-tilt:3deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
         <span class="featured-art art-retention"><span class="featured-index">04 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
         <span class="featured-copy"><span class="featured-kicker">성과와 이탈 데이터를 다음 선발에 연결</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
       </button>
-      <button class="featured-card" style="--card-index:4;--card-tilt:6deg" type="button" onclick="openCase('ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
+      <button class="featured-card" style="--card-index:4;--card-tilt:6deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
         <span class="featured-art art-ai"><span class="featured-index">05 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
         <span class="featured-copy"><span class="featured-kicker">수학 교육과 AI 구현을 잇다</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
       </button>
@@ -1279,7 +1297,31 @@ function openOps(){
  opsGrid.innerHTML=opsImages.filter(Boolean).map((src,i)=>`<img src="${src}" alt="운영 대시보드 ${i+1}">`).join('');
  ops.showModal();
 }
-detail.addEventListener('close',restoreModalPagePosition);
+
+function openFeaturedCase(event,key){
+ event.preventDefault();
+ if(detail.open)return;
+ const card=event.currentTarget,rect=card.getBoundingClientRect(),c=cases[key];
+ if(!c)return;
+ modalReturnScrollY=window.scrollY;
+ detailBody.innerHTML=`<div class="section-label">${c.label}</div><h2>${c.title}</h2>${c.body}`;
+ detail.classList.add('featured-morphing');
+ Object.assign(detail.style,{position:'fixed',margin:'0',left:rect.left+'px',top:rect.top+'px',width:rect.width+'px',height:rect.height+'px',maxHeight:'none',overflow:'hidden',borderRadius:'16px',transform:'none'});
+ detail.showModal();
+ const endWidth=Math.min(900,window.innerWidth*.94),endHeight=Math.min(760,window.innerHeight*.88);
+ const endLeft=(window.innerWidth-endWidth)/2,endTop=(window.innerHeight-endHeight)/2;
+ requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  detail.style.transition='left .72s cubic-bezier(.16,1,.3,1),top .72s cubic-bezier(.16,1,.3,1),width .72s cubic-bezier(.16,1,.3,1),height .72s cubic-bezier(.16,1,.3,1),border-radius .72s cubic-bezier(.16,1,.3,1),box-shadow .5s ease';
+  detail.style.left=endLeft+'px';detail.style.top=endTop+'px';detail.style.width=endWidth+'px';detail.style.height=endHeight+'px';detail.style.borderRadius='24px';detail.style.boxShadow='0 32px 90px rgba(0,20,50,.3)';
+ }));
+ setTimeout(()=>detail.classList.add('featured-unfolded'),220);
+ setTimeout(()=>{
+  detail.classList.remove('featured-morphing','featured-unfolded');
+  detail.style.transition='none';detail.style.overflowY='auto';detail.style.boxShadow='';
+  animateCounters(detailBody);
+ },760);
+}
+detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');restoreModalPagePosition();});
 ops.addEventListener('close',restoreModalPagePosition);
 const navLinks=[...document.querySelectorAll('.navmenu a')];
 function scrollToSection(target,hash){
