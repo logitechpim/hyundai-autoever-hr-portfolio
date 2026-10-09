@@ -657,6 +657,11 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 .case-visual.compact-metric .visual-content strong{font-size:20px;white-space:nowrap}
 @media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .visual-content{transform:translate(-50%,calc(-50% - 3px))}}
 @media(max-width:700px){.case-visual .visual-content{width:68%;height:96px;padding:9px 8px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:50%;right:auto}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
+
+/* Keep onboarding metric centered like every other card, and lower all panels slightly */
+.case-visual .visual-content{top:63%}
+.case-visual.onboarding-case .visual-content{transform:translate(-50%,-50%)}
+@media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .case-visual.onboarding-case .visual-content{transform:translate(-50%,calc(-50% - 3px))}}
 </style>
 </head>
 <body>
