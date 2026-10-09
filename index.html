@@ -616,6 +616,29 @@ pointer-events:none}
 /* Keep the onboarding metric clear of text printed on its cover image */
 .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.03)}
 @media(hover:hover) and (pointer:fine){.case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.09)}}
+
+/* Design prototype: portfolio cards, modal readability, and restrained motion */
+body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;top:14px;right:16px;padding:8px 12px;border-radius:999px;background:#173E70;color:#fff;font-size:10px;letter-spacing:1px;box-shadow:0 4px 16px rgba(0,44,95,.16)}
+.case-card{border-radius:8px;overflow:hidden}
+.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;padding:13px 12px;border:1px solid rgba(255,255,255,.8);border-radius:7px;background:rgba(255,255,255,.88);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center;transition:transform .28s ease,background .28s ease}
+.case-visual.photo-case .visual-content strong,.case-visual:not(.photo-case) .visual-content strong{font-size:30px}
+.case-visual.photo-case .visual-content span,.case-visual:not(.photo-case) .visual-content span{display:block;margin-top:6px}
+.case-visual.onboarding-case .visual-bg{transform:translateY(36px) scale(1.12)}
+@media(hover:hover) and (pointer:fine){
+ .motion-ready .case-card:hover .visual-bg{transform:scale(1.05)}
+ .motion-ready .case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(36px) scale(1.12)}
+ .motion-ready .case-card:hover .visual-content{transform:translateY(-3px);background:rgba(255,255,255,.94)}
+}
+.dialog-inner{padding:46px clamp(24px,6vw,56px)}
+.dialog-inner h2{max-width:760px;margin:12px 0 22px}
+.dialog-inner h3{max-width:760px;font-size:18px;margin-top:34px;margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.dialog-inner p,.dialog-inner li{max-width:760px;line-height:1.85}
+.detail-context{max-width:760px;padding:16px 18px;border-left:3px solid var(--green);background:var(--pale);border-radius:0 6px 6px 0}
+.story-step{max-width:760px;border-left:1px solid var(--line);padding-left:20px;margin-top:30px}
+.story-step .story-number{display:inline-block;min-width:30px;padding:4px 8px;border-radius:999px;background:var(--pale);font-weight:700}
+.hero-wordmark{animation:wordmark-enter .8s .2s ease-out both}
+@media(max-width:700px){body::before{top:9px;right:10px;font-size:9px;padding:7px 10px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:12px;right:12px;bottom:12px;padding:11px 9px}.dialog-inner{padding:40px 22px}.dialog-inner h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
 </style>
 </head>
 <body>
