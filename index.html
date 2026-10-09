@@ -662,6 +662,25 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 .case-visual .visual-content{top:66%}
 .case-visual.onboarding-case .visual-content{transform:translate(-50%,-50%)}
 @media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .case-visual.onboarding-case .visual-content{transform:translate(-50%,calc(-50% - 3px))}}
+
+/* Prototype effects: metric light sweep and a softer case modal */
+.case-visual .visual-content{position:absolute;overflow:hidden}
+.case-visual .visual-content::after{content:"";position:absolute;z-index:0;top:-40%;bottom:-40%;left:-55%;width:34%;background:linear-gradient(105deg,transparent 0%,rgba(92,136,184,.04) 30%,rgba(92,136,184,.24) 50%,rgba(92,136,184,.04) 70%,transparent 100%);transform:skewX(-18deg);opacity:0;pointer-events:none}
+.case-visual .visual-content>*{position:relative;z-index:1}
+@media(hover:hover) and (pointer:fine){.case-card:hover .visual-content::after{left:125%;opacity:1;transition:left .7s cubic-bezier(.2,.7,.2,1),opacity .18s ease}}
+.dialog{border-radius:18px;opacity:0;transform:translateY(14px) scale(.985);transition:opacity .26s ease,transform .26s cubic-bezier(.2,.7,.2,1),overlay .26s ease allow-discrete,display .26s ease allow-discrete}
+.dialog[open]{opacity:1;transform:translateY(0) scale(1)}
+.dialog::backdrop{background:rgba(8,40,91,0);backdrop-filter:blur(0);transition:background .26s ease,backdrop-filter .26s ease}
+.dialog[open]::backdrop{background:rgba(8,40,91,.68);backdrop-filter:blur(3px)}
+.dialog[open] .section-label,.dialog[open] h2{animation:modal-heading-in .42s cubic-bezier(.2,.7,.2,1) both}
+.dialog[open] h2{animation-delay:.04s}
+@keyframes modal-heading-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@starting-style{.dialog[open]{opacity:0;transform:translateY(14px) scale(.985)}.dialog[open]::backdrop{background:rgba(8,40,91,0);backdrop-filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){
+ .case-visual .visual-content::after{display:none}
+ .dialog,.dialog::backdrop{transition:none!important}
+ .dialog[open] .section-label,.dialog[open] h2{animation:none!important;opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
