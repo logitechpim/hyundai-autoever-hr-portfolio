@@ -648,14 +648,14 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 }
 @media(max-width:700px){.case-visual.photo-case .visual-content{left:18px;right:18px}}
 
-/* HRM prototype: matching white metric panels, inset 1 cm on each side */
-.case-visual.hrm-case{position:relative;overflow:hidden}
-.case-visual.hrm-case .visual-content{position:absolute;z-index:2;left:calc(22px + 1cm);right:calc(22px + 1cm);bottom:14px;height:98px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 8px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
-.case-visual.hrm-case .visual-content strong{font-size:30px;line-height:1.1}
-.case-visual.hrm-case.compact-metric .visual-content strong{font-size:20px;white-space:nowrap}
-.case-visual.hrm-case .visual-content span{display:block;margin-top:6px;line-height:1.3}
-@media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .case-visual.hrm-case .visual-content{transform:translateY(-3px)}}
-@media(max-width:700px){.case-visual.hrm-case .visual-content{left:calc(18px + 1cm);right:calc(18px + 1cm);height:92px;padding:8px 6px}.case-visual.hrm-case .visual-content strong{font-size:27px}.case-visual.hrm-case.compact-metric .visual-content strong{font-size:18px}}
+
+/* All experience cards: shared white metric panel, inset 1 cm on each side */
+.case-visual .visual-content{position:absolute;z-index:2;left:calc(22px + 1cm);right:calc(22px + 1cm);bottom:14px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:13px 9px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
+.case-visual .visual-content strong{font-size:30px;line-height:1.1}
+.case-visual .visual-content span{display:block;margin-top:6px;line-height:1.35}
+.case-visual.compact-metric .visual-content strong{font-size:20px;white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .visual-content{transform:translateY(-3px)}}
+@media(max-width:700px){.case-visual .visual-content{left:calc(18px + 1cm);right:calc(18px + 1cm);padding:10px 7px}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
 </style>
 </head>
 <body>
@@ -758,7 +758,7 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
 <div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
-<div class="case-visual"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div>
+<div class="case-visual"><div class="visual-content"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div></div>
 <div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="HRM" onclick="openCase('selection')">
 <div class="case-visual hrm-case compact-metric"><div class="visual-content"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div></div>
