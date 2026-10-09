@@ -650,12 +650,13 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 
 
 /* All experience cards: shared white metric panel, inset 1 cm on each side */
-.case-visual .visual-content{position:absolute;z-index:2;left:calc(22px + 1cm);right:calc(22px + 1cm);bottom:14px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:13px 9px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
+.case-visual .visual-content{position:absolute;z-index:2;bottom:14px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:13px 9px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
+.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:calc(22px + 1cm);right:calc(22px + 1cm)}
 .case-visual .visual-content strong{font-size:30px;line-height:1.1}
 .case-visual .visual-content span{display:block;margin-top:6px;line-height:1.35}
 .case-visual.compact-metric .visual-content strong{font-size:20px;white-space:nowrap}
 @media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .visual-content{transform:translateY(-3px)}}
-@media(max-width:700px){.case-visual .visual-content{left:calc(18px + 1cm);right:calc(18px + 1cm);padding:10px 7px}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
+@media(max-width:700px){.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:calc(18px + 1cm);right:calc(18px + 1cm)}.case-visual .visual-content{padding:10px 7px}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
 </style>
 </head>
 <body>
