@@ -617,17 +617,20 @@ pointer-events:none}
 .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.03)}
 @media(hover:hover) and (pointer:fine){.case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.09)}}
 
-/* Design prototype: portfolio cards, modal readability, and restrained motion */
+
+/* Design prototype: consistent experience-card visuals and reading flow */
 body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;top:14px;right:16px;padding:8px 12px;border-radius:999px;background:#173E70;color:#fff;font-size:10px;letter-spacing:1px;box-shadow:0 4px 16px rgba(0,44,95,.16)}
 .case-card{border-radius:8px;overflow:hidden}
-.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;padding:13px 12px;border:1px solid rgba(255,255,255,.8);border-radius:7px;background:rgba(255,255,255,.88);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center;transition:transform .28s ease,background .28s ease}
-.case-visual.photo-case .visual-content strong,.case-visual:not(.photo-case) .visual-content strong{font-size:30px}
-.case-visual.photo-case .visual-content span,.case-visual:not(.photo-case) .visual-content span{display:block;margin-top:6px}
+.case-visual{height:195px!important;position:relative;overflow:hidden}
+.case-visual.photo-case .visual-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.case-visual .visual-content{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;height:98px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 12px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center;transition:transform .28s ease,background .28s ease}
+.case-visual .visual-content strong{font-size:30px;line-height:1.12}
+.case-visual .visual-content span{display:block;margin-top:6px;line-height:1.35}
 .case-visual.onboarding-case .visual-bg{transform:translateY(36px) scale(1.12)}
 @media(hover:hover) and (pointer:fine){
  .motion-ready .case-card:hover .visual-bg{transform:scale(1.05)}
  .motion-ready .case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(36px) scale(1.12)}
- .motion-ready .case-card:hover .visual-content{transform:translateY(-3px);background:rgba(255,255,255,.94)}
+ .motion-ready .case-card:hover .visual-content{transform:translateY(-3px);background:rgba(255,255,255,.96)}
 }
 .dialog-inner{padding:46px clamp(24px,6vw,56px)}
 .dialog-inner h2{max-width:760px;margin:12px 0 22px}
@@ -637,7 +640,7 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 .story-step{max-width:760px;border-left:1px solid var(--line);padding-left:20px;margin-top:30px}
 .story-step .story-number{display:inline-block;min-width:30px;padding:4px 8px;border-radius:999px;background:var(--pale);font-weight:700}
 .hero-wordmark{animation:wordmark-enter .8s .2s ease-out both}
-@media(max-width:700px){body::before{top:9px;right:10px;font-size:9px;padding:7px 10px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:12px;right:12px;bottom:12px;padding:11px 9px}.dialog-inner{padding:40px 22px}.dialog-inner h2{font-size:24px}}
+@media(max-width:700px){body::before{top:9px;right:10px;font-size:9px;padding:7px 10px}.case-visual .visual-content{left:12px;right:12px;bottom:12px;height:92px;padding:8px}.case-visual .visual-content strong{font-size:27px}.dialog-inner{padding:40px 22px}.dialog-inner h2{font-size:24px}}
 @media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
 </style>
 </head>
@@ -741,19 +744,19 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
 <div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
-<div class="case-visual"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div>
+<div class="case-visual"><div class="visual-content"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div></div>
 <div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="HRM" onclick="openCase('selection')">
-<div class="case-visual"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div>
+<div class="case-visual"><div class="visual-content"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div></div>
 <div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="HRM" onclick="openCase('retention')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>같은 기간 조기 이탈 인원 감소</span></div></div>
 <div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="HRM" onclick="openCase('interview')">
-<div class="case-visual"><strong>약 100명</strong><span>지원자 직접 면접 및 평가</span></div>
+<div class="case-visual"><div class="visual-content"><strong>약 100명</strong><span>지원자 직접 면접 및 평가</span></div></div>
 <div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="HRM" onclick="openCase('alignment')">
-<div class="case-visual"><strong>공통 기준</strong><span>면접위원 간 판단 근거 정렬</span></div>
+<div class="case-visual"><div class="visual-content"><strong>공통 기준</strong><span>면접위원 간 판단 근거 정렬</span></div></div>
 <div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p><span class="read">자세히 보기 ↗</span></div></button>
 <button class="case-card" hidden data-category="PROJECT" onclick="openCase('money')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
