@@ -681,6 +681,70 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
  .dialog,.dialog::backdrop{transition:none!important}
  .dialog[open] .section-label,.dialog[open] h2{animation:none!important;opacity:1;transform:none}
 }
+
+/* Career profile prototype: clear hierarchy and balanced information groups */
+.resume-matrix{
+ display:grid!important;
+ grid-template-columns:minmax(0,1.42fr) minmax(290px,.78fr)!important;
+ grid-template-areas:"career side" "projects projects"!important;
+ grid-template-rows:auto auto!important;
+ gap:48px 64px!important;
+ align-items:start!important;
+ border:0!important;background:transparent!important
+}
+.resume-matrix>.career-panel{
+ grid-area:career!important;grid-column:auto!important;grid-row:auto!important;
+ min-height:0!important;padding:0 34px 0 0!important;border:0!important;background:transparent!important
+}
+.resume-matrix>.resume-profile-side{
+ grid-area:side!important;display:grid!important;grid-template-columns:1fr!important;
+ gap:14px!important;align-content:start!important;min-width:0
+}
+.resume-profile-side>.resume-panel{
+ min-width:0!important;margin:0!important;padding:19px 22px 18px!important;
+ border:1px solid #dfe7e9!important;border-radius:10px!important;background:#fff!important;
+ box-shadow:0 5px 18px rgba(0,44,95,.035)
+}
+.resume-profile-side .resume-title{font-size:17px!important;margin:0 0 12px!important;color:var(--navy)}
+.resume-profile-side .resume-item{border:0!important;padding:0!important;margin:0!important}
+.resume-profile-side .resume-item::before,.resume-profile-side .cert-list::before{display:none!important}
+.resume-profile-side .resume-item h4{font-size:16px!important;margin:0 0 4px!important}
+.resume-profile-side .resume-item p{font-size:13px!important;margin:0 0 6px!important;color:var(--muted)}
+.resume-profile-side .resume-item ul{margin:0;padding-left:18px}
+.resume-profile-side .resume-item li,.resume-profile-side .cert-list li{font-size:13px!important;line-height:1.75!important}
+.resume-profile-side .cert-list{border:0!important;padding:0!important;margin:0!important}
+.resume-profile-side .cert-list ul{margin:0;padding-left:18px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px}
+.skill-tags span{display:inline-flex;align-items:center;min-height:32px;padding:6px 11px;border:1px solid #e1e9ed;border-radius:999px;background:#f5f8fa;color:#274b70;font-size:11px;font-weight:700;letter-spacing:.25px}
+.resume-matrix>.projects-panel{
+ grid-area:projects!important;grid-column:auto!important;grid-row:auto!important;
+ min-width:0!important;margin:0!important;padding:26px 0 0!important;border:0!important;
+ border-top:1px solid #dce4e8!important;background:transparent!important
+}
+.resume-matrix>.projects-panel .resume-title{font-size:22px!important;margin:0 0 18px!important}
+.projects-panel .activity-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+.projects-panel .activity-grid .activity-name-only{
+ min-height:94px!important;margin:0!important;padding:19px 22px!important;
+ border:1px solid #e1e8eb!important;border-left:3px solid var(--green)!important;
+ border-radius:8px!important;background:#fff!important;display:flex;flex-direction:column;justify-content:center
+}
+.projects-panel .activity-name-only::before{display:none!important}
+.projects-panel .activity-kicker{font-size:9px;letter-spacing:1.2px;color:var(--green-dark);font-weight:700;margin-bottom:7px}
+.projects-panel .activity-name-only h4{font-size:16px!important;line-height:1.5!important;margin:0!important}
+@media(min-width:701px) and (max-width:960px){
+ .resume-matrix{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr)!important;gap:38px 34px!important}
+ .resume-matrix>.career-panel{padding-right:20px!important}
+ .resume-profile-side>.resume-panel{padding:16px 17px!important}
+}
+@media(max-width:700px){
+ .resume-matrix{display:flex!important;flex-direction:column!important;gap:30px!important}
+ .resume-matrix>.career-panel,.resume-matrix>.resume-profile-side,.resume-matrix>.projects-panel{width:100%!important;max-width:none!important}
+ .resume-matrix>.career-panel{padding:0!important}
+ .resume-profile-side{display:grid!important;grid-template-columns:1fr!important;gap:12px!important}
+ .resume-matrix>.projects-panel{padding-top:22px!important}
+ .projects-panel .activity-grid{grid-template-columns:1fr!important}
+ .projects-panel .activity-grid .activity-name-only{min-height:78px!important}
+}
 </style>
 </head>
 <body>
@@ -732,32 +796,28 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 <section id="resume" class="light">
 <div class="container"><div class="section-title"><h2>커리어 프로필</h2><p>학교와 연구실에서 교육 운영, 상담과 조교 관리 경험을 쌓았습니다.</p></div>
 <div class="resume-matrix">
-  <div class="resume-panel"><h3 class="resume-title">경력</h3>
+  <div class="resume-panel career-panel"><h3 class="resume-title">경력</h3>
     <div class="resume-item"><h4>Woojin Math</h4><h5>2024.03 — 현재</h5><p><strong>대한민국 1타 메가스터디 강사 연구원</strong></p><ul><li>신규 조교 온보딩 및 직무교육</li><li>답변 품질 점검과 교육과정 개선</li><li>채용, 평가와 조교 운영</li></ul></div>
     <div class="resume-item"><h4>대일외국어고등학교</h4><h5>2022.03 — 2024.02</h5><p><strong>전국 단위 2위 외고 수학교사</strong></p><ul><li>300명 이상의 학생 및 학부모 개별 상담</li><li>학급자치서클 정기 운영</li><li>학부모 설명회 및 입시 설명회</li></ul></div>
   </div>
-  <div class="resume-panel compact"><h3 class="resume-title">학력</h3>
-    <div class="resume-item"><h4>성균관대학교</h4><p>수학교육과</p><ul><li>전체학점 3.78 / 4.5</li><li>전공학점 4.14 / 4.5</li></ul></div>
-  </div>
-  <div class="resume-panel compact"><h3 class="resume-title">자격증</h3>
-    <div class="cert-list"><ul><li>중등학교 정교사</li><li>컴퓨터활용능력 2급</li><li>워드프로세서 1급</li></ul></div>
-  </div>
-  <div class="resume-panel compact"><h3 class="resume-title">SKILLS</h3>
-    <div class="skills-list">
-      <div class="skill-row"><span class="skill-name">EXCEL</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">WORD</span><div class="skill-track"><div class="skill-fill" style="width:100%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">POWERPOINT</span><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">LLM</span><div class="skill-track"><div class="skill-fill" style="width:100%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">PYTHON</span><div class="skill-track"><div class="skill-fill" style="width:50%"></div></div></div>
+  <div class="resume-profile-side">
+    <div class="resume-panel compact education-panel"><h3 class="resume-title">학력</h3>
+      <div class="resume-item"><h4>성균관대학교</h4><p>수학교육과</p><ul><li>전체학점 3.78 / 4.5</li><li>전공학점 4.14 / 4.5</li></ul></div>
+    </div>
+    <div class="resume-panel compact certification-panel"><h3 class="resume-title">자격증</h3>
+      <div class="cert-list"><ul><li>중등학교 정교사</li><li>컴퓨터활용능력 2급</li><li>워드프로세서 1급</li></ul></div>
+    </div>
+    <div class="resume-panel compact skills-panel"><h3 class="resume-title">활용 도구</h3>
+      <div class="skill-tags"><span>EXCEL</span><span>WORD</span><span>POWERPOINT</span><span>LLM</span><span>PYTHON</span></div>
     </div>
   </div>
   <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
     <div class="activity-grid">
-      <div class="resume-item activity-name-only"><h4>So, My Money?</h4></div>
-      <div class="resume-item activity-name-only"><h4>사회인 축구팀 운영진</h4></div>
+      <div class="resume-item activity-name-only"><span class="activity-kicker">PROJECT</span><h4>So, My Money?</h4></div>
+      <div class="resume-item activity-name-only"><span class="activity-kicker">ACTIVITY</span><h4>사회인 축구팀 운영진</h4></div>
     </div>
   </div>
-</div></div>
+</div>/div>
 </section>
 
 
