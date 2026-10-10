@@ -1495,39 +1495,35 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 @media(max-width:700px){.hero-logo{width:min(420px,100%)!important}}
 
 
-/* Match the reference profile proportions at desktop and laptop viewport widths */
+/* Career profile: align the education/certification and tools/projects split to the reference */
 @media(min-width:801px){
- .resume-profile-side{
+ #resume .resume-matrix>.resume-profile-side{
   display:grid!important;
-  grid-template-columns:minmax(0,56fr) minmax(0,44fr)!important;
-  grid-template-areas:"education skills" "certification projects"!important;
+  grid-template-columns:minmax(0,56%) minmax(0,44%)!important;
   grid-template-rows:repeat(2,minmax(190px,auto))!important;
   align-content:start!important;
  }
- .resume-profile-side>.education-panel{
-  grid-area:education!important;
+ #resume .resume-matrix>.resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;
   padding:24px 22px 24px 0!important;
   border-right:1px solid #dce4e8!important;
   border-bottom:1px solid #dce4e8!important;
  }
- .resume-profile-side>.skills-panel{
-  grid-area:skills!important;
+ #resume .resume-matrix>.resume-profile-side>.skills-panel{
+  grid-column:2!important;grid-row:1!important;
   padding:24px 0 24px 22px!important;
-  border:0!important;
-  border-bottom:1px solid #dce4e8!important;
+  border:0!important;border-bottom:1px solid #dce4e8!important;
  }
- .resume-profile-side>.certification-panel{
-  grid-area:certification!important;
+ #resume .resume-matrix>.resume-profile-side>.certification-panel{
+  grid-column:1!important;grid-row:2!important;
   padding:24px 22px 24px 0!important;
-  border:0!important;
-  border-right:1px solid #dce4e8!important;
+  border:0!important;border-right:1px solid #dce4e8!important;
  }
- .resume-profile-side>.projects-panel{
-  grid-area:projects!important;
-  padding:24px 0 24px 22px!important;
-  border:0!important;
+ #resume .resume-matrix>.resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;
+  padding:24px 0 24px 22px!important;border:0!important;
  }
- .resume-profile-side>.resume-panel+.resume-panel{padding-top:24px!important}
+ #resume .resume-matrix>.resume-profile-side>.resume-panel+.resume-panel{padding-top:24px!important}
 }
 
 </style>
