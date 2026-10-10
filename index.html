@@ -1356,6 +1356,74 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 }
 
 .category{font-weight:700!important}
+
+/* Experience cards: reveal category and title together on blue hover */
+.case-card{
+ background:#fff!important;
+ border:1px solid #e1e7ec!important;
+ border-radius:10px;
+ overflow:hidden;
+ color:#263440!important;
+ transition:background-color .36s ease,color .36s ease,border-color .36s ease,box-shadow .36s ease,transform .36s cubic-bezier(.2,.7,.2,1)!important;
+ transition-delay:0s!important;
+}
+.case-card .category,.case-card .case-copy h3{
+ opacity:0;
+ visibility:hidden;
+ transform:translateY(5px);
+ transition:opacity .28s ease,transform .28s ease,visibility 0s linear .28s,color .28s ease!important;
+}
+.case-card .case-copy{
+ background:#fff!important;
+ transition:background-color .36s ease,color .36s ease!important;
+ transition-delay:0s!important;
+}
+.case-card .case-copy p{color:#64717d!important;transition:color .36s ease!important;transition-delay:0s!important}
+.case-card:hover,.case-card:focus-visible{
+ background:#1773cc!important;
+ border-color:#1773cc!important;
+ box-shadow:0 16px 36px rgba(23,83,143,.2)!important;
+ transform:translateY(-4px)!important;
+}
+.case-card:hover .case-copy,.case-card:focus-visible .case-copy{background:#1773cc!important}
+.case-card:hover .category,.case-card:focus-visible .category,
+.case-card:hover .case-copy h3,.case-card:focus-visible .case-copy h3{
+ opacity:1;visibility:visible;transform:translateY(0);
+ transition:opacity .28s ease,transform .28s ease,visibility 0s,color .28s ease!important;
+ transition-delay:0s!important;
+ color:#fff!important;
+}
+.case-card:hover .case-copy p,.case-card:focus-visible .case-copy p{color:rgba(255,255,255,.88)!important}
+.case-card:hover .case-visual,.case-card:focus-visible .case-visual{
+ background:#1773cc!important;color:#fff!important;
+}
+.case-card:hover .case-visual.photo-case::after,.case-card:focus-visible .case-visual.photo-case::after{
+ background:rgba(23,115,204,.86)!important;
+}
+.case-card:hover .case-visual strong,.case-card:hover .case-visual span,
+.case-card:focus-visible .case-visual strong,.case-card:focus-visible .case-visual span{color:#fff!important}
+.case-card:hover .visual-bg,.case-card:focus-visible .visual-bg{
+ filter:grayscale(1) saturate(.25) brightness(.55) contrast(1.05)!important;
+}
+.featured-link,.read{display:none!important}
+@media(max-width:760px){
+ .case-card .category,.case-card .case-copy h3{
+  opacity:1;visibility:visible;transform:none;
+ }
+ .case-card:hover,.case-card:focus-visible{transform:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .case-card,.case-card .category,.case-card .case-copy h3,.case-card .case-copy p{transition:none!important}
+}
+
+
+.case-card:hover .case-visual .visual-content,.case-card:focus-visible .case-visual .visual-content{
+ background:#1773cc!important;
+ border-color:transparent!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+}
+
 </style>
 </head>
 <body>
@@ -1440,27 +1508,27 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
     <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
       <button class="featured-card" style="--card-index:0;--card-tilt:-5deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
         <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
-        <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
+        <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span></span>
       </button>
       <button class="featured-card" style="--card-index:1;--card-tilt:-2deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
         <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">저성과 조교 평균 답변량 증가</span></span>
-        <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
+        <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span></span>
       </button>
       <button class="featured-card" style="--card-index:2;--card-tilt:1deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
         <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">30%+</span><span class="featured-metric-caption">2025년 게시판 질문량 증가 · 2024년 대비</span></span>
-        <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
+        <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span></span>
       </button>
       <button class="featured-card" style="--card-index:3;--card-tilt:3deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
         <span class="featured-art art-circle"><span class="featured-index">04 / HRD</span><span class="featured-peek">FACILITATION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="featured-metric">월 1회</span><span class="featured-metric-caption">대화의 장을 만든 학급자치서클</span></span>
-        <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
+        <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span></span>
       </button>
       <button class="featured-card" style="--card-index:4;--card-tilt:5deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
         <span class="featured-art art-retention"><span class="featured-index">05 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
-        <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
+        <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span></span>
       </button>
       <button class="featured-card" style="--card-index:5;--card-tilt:7deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
         <span class="featured-art art-ai"><span class="featured-index">06 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
-        <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span><span class="featured-link">경험 자세히 보기 <b aria-hidden="true">↗</b></span></span>
+        <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span></span>
       </button>
     </div>
   </div>
@@ -1471,43 +1539,43 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 및 기타활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
 <div class="portfolio-grid"><button class="case-card" data-category="HRD" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('improvement')">
 <div class="case-visual photo-case"><div class="visual-content"><strong>30%+</strong><span>게시판 질문량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>반복 오류와 현장 질문의 교육 반영</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>반복 오류와 현장 질문의 교육 반영</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('onboard')">
 <div class="case-visual photo-case onboarding-case"><img class="visual-bg" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>조직 안내부터 답변 기준까지 단계별 온보딩</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>조직 안내부터 답변 기준까지 단계별 온보딩</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('circle')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><div class="visual-content"><strong>CLASS</strong><span>월 1회 정기 프로그램</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>참여형 조직개발 프로그램 설계 및 운영</h3><p>토킹스틱을 활용한 대화와 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>참여형 조직개발 프로그램 설계 및 운영</h3><p>토킹스틱을 활용한 대화와 공동 의사결정</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('counsel')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><div class="visual-content"><strong>600회 +</strong><span>학생 및 학부모 개별 상담</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학생 및 학부모 상담과 맞춤 성장 지원</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학생 및 학부모 상담과 맞춤 성장 지원</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('brief')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p></div></button>
 <button class="case-card" data-category="AI" onclick="openCase('ai')">
 <div class="case-visual"><div class="visual-content"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div></div>
-<div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('selection')">
 <div class="case-visual hrm-case compact-metric"><div class="visual-content"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div></div>
-<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('retention')">
 <div class="case-visual photo-case hrm-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>조기 이탈 인원 감소</span></div></div>
-<div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('interview')">
 <div class="case-visual hrm-case"><div class="visual-content"><strong>약 100명</strong><span>지원자 면접 및 평가</span></div></div>
-<div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('alignment')">
 <div class="case-visual hrm-case"><div class="visual-content"><strong>공통 기준</strong><span>면접 평가 기준 정렬</span></div></div>
-<div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p></div></button>
 <button class="case-card" data-category="PROJECT" onclick="openCase('money')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
-<div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p></div></button>
 <button class="case-card" data-category="PROJECT" onclick="openCase('football')">
 <div class="case-visual photo-case football-case"><img class="visual-bg" src="assets/football-team.jpg" alt="사회인 축구팀 운영 현장"><div class="visual-content"><strong>50명</strong><span>축구팀 운영진</span></div></div>
-<div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p><span class="read">자세히 보기 ↗</span></div></button></div></div>
+<div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p></div></button></div></div>
 </section>
 
 <section id="services" class="light"><div class="container"><div class="section-title"><h2>업무 역량</h2></div>
