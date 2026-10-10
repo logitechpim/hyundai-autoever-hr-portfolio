@@ -1916,6 +1916,28 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
  #featured-experiences .stagger-prompt .stagger-highlight{bottom:72px;font-size:32px}
 }
 
+
+/* Core experience imagery comes from the matching major experience card. */
+#featured-experiences .stagger-art{overflow:hidden}
+#featured-experiences .stagger-media{position:absolute;inset:0;display:block;opacity:1;pointer-events:none;transition:opacity 240ms ease}
+#featured-experiences .stagger-photo{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.92) contrast(1.02)}
+#featured-experiences .stagger-card[onclick*="'onboard'"] .stagger-photo{object-position:center 48%}
+#featured-experiences .stagger-card[onclick*="'quality'"] .stagger-photo{object-position:center 44%}
+#featured-experiences .stagger-card[onclick*="'circle'"] .stagger-photo{object-position:center 49%}
+#featured-experiences .stagger-art:has(.stagger-image)::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 25%,rgba(9,26,43,.12) 42%,rgba(9,26,43,.84) 100%);opacity:1;transition:opacity 240ms ease}
+#featured-experiences .stagger-art:has(.stagger-image) :is(.stagger-highlight,.stagger-caption){z-index:1;color:#fff}
+#featured-experiences .stagger-highlight,#featured-experiences .stagger-caption{transition:color 240ms ease}
+#featured-experiences .stagger-graphic{background:radial-gradient(circle at 72% 28%,rgba(23,115,204,.09),transparent 25%),linear-gradient(135deg,#f4f7f9,#e9eff4)}
+#featured-experiences .stagger-graphic>svg{display:block;position:absolute;top:18px;left:50%;translate:-50% 0;width:168px;height:112px}
+#featured-experiences .stagger-graphic svg :is(path,rect,circle){vector-effect:non-scaling-stroke;stroke:#7890a5;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#featured-experiences .stagger-graphic svg .g-blue{stroke:#1773cc;stroke-width:2.5}
+#featured-experiences .stagger-graphic svg .g-dot{fill:#1773cc;stroke:#fff;stroke-width:2}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-media,#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-art::after{opacity:0}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) :is(.stagger-highlight,.stagger-caption){color:#fff}
+@media(prefers-reduced-motion:reduce){#featured-experiences .stagger-media,#featured-experiences .stagger-art::after,#featured-experiences .stagger-highlight,#featured-experiences .stagger-caption{transition:none}}
+
+@container(max-width:300px){#featured-experiences .stagger-graphic>svg{top:8px;width:132px;height:88px}}
+
 </style>
 
 
@@ -1986,19 +2008,19 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <div class="container stagger-layout">
 <div class="section-title stagger-heading"><h2>핵심 경험</h2></div>
 <div class="stagger-grid" aria-label="핵심 경험 4가지"><button type="button" class="stagger-card" onclick="openCase('onboard','featured')" aria-label="온보딩 설계와 과정 개선 상세 보기">
-<span class="stagger-art"><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="stagger-highlight">100명+</span><span class="stagger-caption">신규 조교 온보딩 및 직무교육</span></span>
+<span class="stagger-art"><span class="stagger-media stagger-image"><img class="stagger-photo" loading="lazy" decoding="async" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"></span><span class="stagger-highlight">100명+</span><span class="stagger-caption">신규 조교 온보딩 및 직무교육</span></span>
 <span class="stagger-copy"><strong>온보딩 설계와 과정 개선</strong><span class="stagger-description">조직 안내부터 답변 실습, 후속 피드백과 다음 교육 개선까지</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
 </button>
 <button type="button" class="stagger-card" onclick="openCase('quality','featured')" aria-label="데이터 기반 학습 진단과 코칭 상세 보기">
-<span class="stagger-art"><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="stagger-highlight">40 → 60건</span><span class="stagger-caption">검토 대상 24명의 평균 답변량 변화</span></span>
+<span class="stagger-art"><span class="stagger-media stagger-image"><img class="stagger-photo" loading="lazy" decoding="async" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"></span><span class="stagger-highlight">40 → 60건</span><span class="stagger-caption">검토 대상 24명의 평균 답변량 변화</span></span>
 <span class="stagger-copy"><strong>데이터 기반 학습 진단과 코칭</strong><span class="stagger-description">성과 지표와 면담으로 어려움을 찾고, 개인에 맞는 코칭 진행</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
 </button>
 <button type="button" class="stagger-card" onclick="openCase('circle','featured')" aria-label="학급자치서클 설계와 진행 상세 보기">
-<span class="stagger-art"><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="stagger-highlight">월 1회</span><span class="stagger-caption">정기적인 학급 대화의 장 운영</span></span>
+<span class="stagger-art"><span class="stagger-media stagger-image"><img class="stagger-photo" loading="lazy" decoding="async" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"></span><span class="stagger-highlight">월 1회</span><span class="stagger-caption">정기적인 학급 대화의 장 운영</span></span>
 <span class="stagger-copy"><strong>학급자치서클 설계와 진행</strong><span class="stagger-description">발언 규칙과 논의 주제를 설계해 학생들의 참여와 경청 지원</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
 </button>
 <button type="button" class="stagger-card stagger-prompt" onclick="openCase('ai','featured')" aria-label="수학 교육용 AI 프롬프트 설계·협업 상세 보기">
-<span class="stagger-art"><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="stagger-highlight">프롬프트<br>설계 주도</span></span>
+<span class="stagger-art"><span class="stagger-media stagger-graphic"><svg viewBox="0 0 180 120" aria-hidden="true" focusable="false"><rect class="g-line" x="38" y="19" width="67" height="80" rx="8"/><path class="g-blue" d="M53 39h37M53 52h27M53 72h23"/><circle class="g-dot" cx="116" cy="72" r="20"/><path class="g-blue" d="M107 72h18M116 63v18"/><path class="g-line" d="M105 41h18M123 41v11"/></svg></span><span class="stagger-highlight">프롬프트<br>설계 주도</span></span>
 <span class="stagger-copy"><strong>수학 교육용 AI 프롬프트 설계·협업</strong><span class="stagger-description">수학 교육 기준을 프롬프트로 만들고, 외부 업체와 개선 방향 조율</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
 </button></div>
 </div>
