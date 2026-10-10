@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "hyundai-autoever-hr-portfolio.vercel.app"
+        }
+      ],
+      "destination": "https://junho-lee-hr-portfolio.vercel.app/:path*",
+      "permanent": true
+    }
+  ]
+}
