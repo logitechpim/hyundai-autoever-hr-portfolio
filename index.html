@@ -1938,6 +1938,24 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 @container(max-width:300px){#featured-experiences .stagger-graphic>svg{top:8px;width:132px;height:88px}}
 
+
+/* Major experiences: title-only rows opening the existing detail dialog. */
+#portfolio .major-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;align-items:start}
+#portfolio .section-title{margin:0}
+#portfolio .major-content{min-width:0}
+#portfolio .filters{margin:0 0 22px;flex-wrap:wrap}
+#portfolio .experience-list{border-top:1px solid #dce2e8}
+#portfolio .experience-row{appearance:none;display:flex;align-items:center;justify-content:space-between;gap:28px;width:100%;min-height:94px;margin:0;padding:26px 4px;border:0;border-bottom:1px solid #dce2e8;border-radius:0;background:transparent;color:#263440;text-align:left;font:inherit;cursor:pointer;transition:color .18s ease}
+#portfolio .experience-row[hidden]{display:none}
+#portfolio .experience-title{min-width:0;font-size:20px;font-weight:500;line-height:1.65;word-break:keep-all;overflow-wrap:anywhere}
+#portfolio .experience-arrow{flex:none;font-size:26px;font-weight:400;line-height:1;color:#6d7b89;transition:color .18s ease}
+#portfolio .experience-row:hover,#portfolio .experience-row:focus-visible{color:#1673cc}
+#portfolio .experience-row:hover .experience-arrow,#portfolio .experience-row:focus-visible .experience-arrow{color:#1673cc}
+#portfolio .experience-row:focus-visible{outline:2px solid #1673cc;outline-offset:-2px}
+@media(max-width:1050px){#portfolio .major-layout{grid-template-columns:1fr;gap:28px}}
+@media(max-width:620px){#portfolio .experience-row{min-height:82px;padding:22px 0;gap:18px}#portfolio .experience-title{font-size:17px}#portfolio .experience-arrow{font-size:23px}#portfolio .filters{gap:8px;margin-bottom:18px}}
+@media(prefers-reduced-motion:reduce){#portfolio .experience-row,#portfolio .experience-arrow{transition:none}}
+
 </style>
 
 
@@ -2027,37 +2045,22 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 </section>
 
 <section id="portfolio">
-<div class="container"><div class="section-title"><h2>주요 경험</h2></div>
+<div class="container major-layout">
+<div class="section-title"><h2>주요 경험</h2></div>
+<div class="major-content">
 <div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 및 기타활동</button></div>
-<div class="portfolio-grid">
-
-
-
-<button class="case-card" data-category="HRD" onclick="openCase('counsel')" aria-label="구성원 적응 진단 및 개별 성장 지원 상세 보기">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학생 및 학부모 상담과 맞춤 성장 지원</p></div></button>
-<button class="case-card" data-category="HRD" onclick="openCase('brief')" aria-label="대규모 이해관계자 교육 및 커뮤니케이션 상세 보기">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p></div></button>
-
-<button class="case-card" data-category="HRM" onclick="openCase('selection')" aria-label="직무 적합성 중심 선발 프로세스 개선 상세 보기">
-<div class="case-visual case-graphic selection-graphic"><svg viewBox="0 0 180 120" aria-hidden="true" focusable="false"><rect class="g-line" x="30" y="23" width="78" height="76" rx="8"/><path class="g-blue" d="m43 43 5 5 9-11m-14 30 5 5 9-11"/><path class="g-line" d="M65 43h29M65 65h29"/><circle class="g-dot" cx="131" cy="45" r="15"/><path class="g-blue" d="M109 91c2-15 11-23 22-23s20 8 22 23"/></svg></div>
-<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 중심 선발 프로세스 개선</h3><p>핵심역량 평가기준과 테스트·면접 절차 정비</p></div></button>
-<button class="case-card" data-category="HRM" onclick="openCase('retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
-<div class="case-visual photo-case hrm-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"></div>
-<div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p></div></button>
-<button class="case-card" data-category="HRM" onclick="openCase('interview')" aria-label="구조화 면접 운영과 평가기준 조율 상세 보기">
-<div class="case-visual case-graphic interview-graphic"><svg viewBox="0 0 180 120" aria-hidden="true" focusable="false"><path class="g-line" d="M28 30a10 10 0 0 1 10-10h58a10 10 0 0 1 10 10v35a10 10 0 0 1-10 10H65L48 88V75h-10a10 10 0 0 1-10-10z"/><path class="g-blue" d="M46 40h42M46 52h31"/><path class="g-pale" d="M112 57h26a9 9 0 0 1 9 9v19l-12-8h-23a9 9 0 0 1-9-9v-2"/></svg></div>
-<div class="case-copy"><div class="category">HRM - 면접 및 평가</div><h3>구조화 면접 운영과 평가기준 조율</h3><p>자기소개서 기반 질문과 면접위원 간 평가기준 조율</p></div></button>
-
-<button class="case-card" data-category="PROJECT" onclick="openCase('money')" aria-label="So, My Money? 프로젝트 상세 보기">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"></div>
-<div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p></div></button>
-<button class="case-card" data-category="PROJECT" onclick="openCase('football')" aria-label="사회인 축구팀 운영 경험 상세 보기">
-<div class="case-visual photo-case football-case"><img class="visual-bg" src="assets/football-team.jpg" alt="사회인 축구팀 운영 현장"></div>
-<div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p></div></button></div></div>
+<div class="experience-list">
+<button class="experience-row" data-category="HRD" onclick="openCase('counsel')" aria-label="개별 상담과 성장 지원 상세 보기" aria-haspopup="dialog"><span class="experience-title">개별 상담과 성장 지원</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+<button class="experience-row" data-category="HRD" onclick="openCase('brief')" aria-label="학부모 설명회 기획과 발표 상세 보기" aria-haspopup="dialog"><span class="experience-title">학부모 설명회 기획과 발표</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+<button class="experience-row" data-category="HRM" onclick="openCase('selection')" aria-label="조교 선발 프로세스 개선 상세 보기" aria-haspopup="dialog"><span class="experience-title">조교 선발 프로세스 개선</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+<button class="experience-row" data-category="HRM" onclick="openCase('retention')" aria-label="성과와 이탈 분석을 통한 인력계획 상세 보기" aria-haspopup="dialog"><span class="experience-title">성과와 이탈 분석을 통한 인력계획</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+<button class="experience-row" data-category="HRM" onclick="openCase('interview')" aria-label="구조화 면접 운영과 평가기준 조율 상세 보기" aria-haspopup="dialog"><span class="experience-title">구조화 면접 운영과 평가기준 조율</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+<button class="experience-row" data-category="PROJECT" onclick="openCase('money')" aria-label="So, My Money? 상세 보기" aria-haspopup="dialog"><span class="experience-title">So, My Money?</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+<button class="experience-row" data-category="PROJECT" onclick="openCase('football')" aria-label="사회인 축구팀 운영 상세 보기" aria-haspopup="dialog"><span class="experience-title">사회인 축구팀 운영</span><span class="experience-arrow" aria-hidden="true">→</span></button>
+</div>
+</div>
+</div>
 </section>
-
 </main>
 
 
@@ -2092,22 +2095,22 @@ const cases={
 <h3>모두가 참여할 수 있는 대화 구조</h3><ul><li>토킹스틱을 직접 만들어 든 사람만 말하도록 해 발언 순서와 경청 규칙을 분명히 했습니다.</li><li>정기적으로 대화의 장을 열고, 함께 의논할 사안은 직접 진행하며 의견을 모았습니다.</li></ul>
 <h3>관찰한 변화와 참여자 의견</h3><p>운영 과정에서 욕설과 비방이 줄고 서로의 차이를 인정하는 모습을 관찰했습니다. 이는 정량적인 효과 검증이 아니라 현장에서 확인한 변화입니다.</p><p>별도로 실시한 25명 응답 설문에서는 학급 분위기, 질문의 편안함, 서로의 의견 존중, 조언의 도움, 성장 체감 등 다섯 문항에서 4~5점 응답 비율이 64~76%였습니다.</p>
 <h3>활동 자료</h3>
-<div class="detail-gallery"><figure><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><figcaption>학생들과 원형으로 앉아 학급자치서클 프로그램을 진행한 장면입니다.</figcaption></figure><figure><img src="assets/participatory-org-development.png" alt="참여형 프로그램 운영 자료"><figcaption>참여형 프로그램의 운영 자료입니다.</figcaption></figure><figure><img src="assets/participatory-circle-survey.svg" alt="학급자치서클 참여자 25명의 설문 응답 결과"><figcaption>프로그램 참여자 25명의 응답 결과입니다.</figcaption></figure></div>`},"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`구성원 적응 진단 및 개별 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">구성원의 적응 저해 요인을 진단하고 개인별 상황에 맞춘 성장 지원</div>
+<div class="detail-gallery"><figure><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><figcaption>학생들과 원형으로 앉아 학급자치서클 프로그램을 진행한 장면입니다.</figcaption></figure><figure><img src="assets/participatory-org-development.png" alt="참여형 프로그램 운영 자료"><figcaption>참여형 프로그램의 운영 자료입니다.</figcaption></figure><figure><img src="assets/participatory-circle-survey.svg" alt="학급자치서클 참여자 25명의 설문 응답 결과"><figcaption>프로그램 참여자 25명의 응답 결과입니다.</figcaption></figure></div>`},"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`개별 상담과 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">구성원의 적응 저해 요인을 진단하고 개인별 상황에 맞춘 성장 지원</div>
 <h3>수행 내용</h3><ul><li>학업, 관계, 학교 적응 과정의 어려움 진단</li><li>학생 및 학부모 상황에 따른 개별 상담과 팔로업</li><li>적응 저해 요인 파악 후 지속 지원</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>활동 사진</h3>
 <div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure><figure><img src="assets/member-adaptation-diagnosis.png" alt="학생 및 학부모 상담 기록과 적응 진단 자료"><figcaption>상담 기록을 바탕으로 구성원의 적응 상태와 성장 지원 방향을 점검한 자료입니다.</figcaption></figure></div>`},
-"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`구성원 적응 진단 및 개별 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">학생과 학부모의 상담을 통해 성적, 자녀 교육, 학교 적응 등 다양한 고민을 듣고 상황에 맞는 지원을 이어갔습니다.</div>
+"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`개별 상담과 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">학생과 학부모의 상담을 통해 성적, 자녀 교육, 학교 적응 등 다양한 고민을 듣고 상황에 맞는 지원을 이어갔습니다.</div>
 <h3>학생의 어려움을 먼저 알아차리고 대화</h3><p>정기적으로 진행하는 상담 외에도 학생의 말수가 갑자기 줄고 표정이 어두워진 것을 보고 먼저 다가갔습니다. 학교생활에 적응하지 못해 힘들어하던 학생과는 이동 시간이나 점심 산책 중 주 1회 짧게 대화하며 부담 없이 마음을 꺼낼 수 있도록 했습니다. 직접 해결책을 제시하기보다 학생의 이야기를 듣고 복잡한 마음을 함께 풀어가는 데 집중했습니다. 학생은 한 달가량 어려운 시기를 보낸 뒤 이를 잘 극복하고 졸업했습니다.</p>
 <h3>입시 데이터를 바탕으로 한 학부모 상담</h3><p>3년치 대입 결과와 전형별 결과, 학생들의 성적 흐름을 함께 살펴 학부모의 걱정에 답했습니다. 학생의 성적 경향에 따라 수시와 정시 중 살펴볼 방향을 설명하고, 과목별 취약점에 따른 공부 우선순위도 안내했습니다.</p>
 <h3>상담 결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>상담 자료</h3>
-<div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure><figure><img src="assets/member-adaptation-diagnosis.png" alt="학생 및 학부모 상담 기록과 적응 진단 자료"><figcaption>상담 기록을 바탕으로 구성원의 적응 상태와 성장 지원 방향을 점검한 자료입니다.</figcaption></figure></div>`},"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`구성원 적응 진단 및 개별 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">성적, 자녀 교육, 학교 적응 등 학생과 학부모의 고민을 듣고 상황에 맞는 상담과 지원을 이어갔습니다.</div>
+<div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure><figure><img src="assets/member-adaptation-diagnosis.png" alt="학생 및 학부모 상담 기록과 적응 진단 자료"><figcaption>상담 기록을 바탕으로 구성원의 적응 상태와 성장 지원 방향을 점검한 자료입니다.</figcaption></figure></div>`},"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`개별 상담과 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">성적, 자녀 교육, 학교 적응 등 학생과 학부모의 고민을 듣고 상황에 맞는 상담과 지원을 이어갔습니다.</div>
 <h3>학생의 적응 신호를 살피고 먼저 대화</h3><p>정기 상담 외에도 말수가 줄고 표정이 어두워진 학생에게 먼저 다가갔습니다. 학교생활 적응에 어려움을 겪던 학생과는 이동 시간이나 점심 산책 중 매주 짧게 대화를 나눠 부담을 낮추고, 해결책을 앞세우기보다 학생의 이야기를 듣는 데 집중했습니다. 학생은 한 달가량 어려운 시기를 보낸 뒤 이를 극복하고 졸업했습니다.</p>
 <h3>입시 데이터를 활용한 학부모 상담</h3><p>3년치 대입 결과와 전형별 결과, 성적 흐름을 함께 살펴 학생별 상담을 진행했습니다. 성적 경향에 따라 수시·정시 방향을 설명하고 과목별 취약점에 맞춰 공부 우선순위를 안내했습니다.</p>
 <h3>상담 결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>상담 자료</h3>
-<div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure><figure><img src="assets/member-adaptation-diagnosis.png" alt="학생 및 학부모 상담 기록과 적응 진단 자료"><figcaption>상담 기록을 바탕으로 구성원의 적응 상태와 성장 지원 방향을 점검한 자료입니다.</figcaption></figure></div>`},"brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`대규모 이해관계자 교육 및 커뮤니케이션`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대상자의 이해 수준과 관심사를 반영한 대규모 교육·정보 전달 프로그램 운영</div>
+<div class="detail-gallery"><figure><img src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><figcaption>학부모 상담 시간 신청을 위해 직접 구성한 안내 및 신청 폼 화면입니다.</figcaption></figure><figure><img src="assets/member-adaptation-diagnosis.png" alt="학생 및 학부모 상담 기록과 적응 진단 자료"><figcaption>상담 기록을 바탕으로 구성원의 적응 상태와 성장 지원 방향을 점검한 자료입니다.</figcaption></figure></div>`},"brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`학부모 설명회 기획과 발표`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대상자의 이해 수준과 관심사를 반영한 대규모 교육·정보 전달 프로그램 운영</div>
 <h3>수행 내용</h3>
 <ul><li>500명 이상의 학부모 및 학생을 대상으로 학교생활 및 입시 정보 안내</li><li>대상자의 관심과 이해 수준을 고려해 핵심 정보와 설명 흐름 구성</li><li>주요 질문과 우려 사항에 대한 질의응답 진행 및 후속 상담 연결</li></ul>
 <h3>활동 사진</h3>
@@ -2115,7 +2118,7 @@ const cases={
 <figure><img src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><figcaption>설명회 현장에서 직접 발표를 진행하는 모습입니다.</figcaption></figure>
 <figure><img src="assets/stakeholder-communication.png" alt="대규모 이해관계자 교육 및 커뮤니케이션 자료"><figcaption>대규모 이해관계자 커뮤니케이션을 위해 구성한 발표 자료입니다.</figcaption></figure>
 </div>`},
-"brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`대규모 이해관계자 교육 및 커뮤니케이션`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대상과 목적에 맞춰 학교 설명회와 입시설명회 내용을 구성하고, 학부모와 학생에게 직접 전달했습니다.</div>
+"brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`학부모 설명회 기획과 발표`,meta:`대일외국어고등학교`,body:`<div class="detail-context">대상과 목적에 맞춰 학교 설명회와 입시설명회 내용을 구성하고, 학부모와 학생에게 직접 전달했습니다.</div>
 <h3>설명회별 안내 내용</h3><ul><li>학부모 설명회에서는 학교의 장점, 입시 결과, 학교 운영 방침을 설명</li><li>입시설명회에서는 교육 및 대입 정책을 중심으로 내용을 직접 구성하고 발표</li><li>입시를 바라보는 관점에서 수학 공부 방향과 우리 학교의 수학 교육 방식까지 연결해 안내</li></ul>
 <h3>현장 질의응답</h3><p>설명회에서는 수학 공부법에 대한 질문이 특히 많았습니다. 현장에서 주요 질문에 답하고, 필요한 경우 후속 상담으로 연결했습니다.</p>
 <h3>진행 규모</h3><div class="metric-block"><strong>500명+</strong><span>학부모 및 학생 대상 설명회 참석자</span></div>
@@ -2123,7 +2126,7 @@ const cases={
 <div class="detail-gallery">
 <figure><img src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><figcaption>설명회 현장에서 직접 발표를 진행하는 모습입니다.</figcaption></figure>
 <figure><img src="assets/stakeholder-communication.png" alt="대규모 이해관계자 교육 및 커뮤니케이션 자료"><figcaption>대규모 이해관계자 커뮤니케이션을 위해 구성한 발표 자료입니다.</figcaption></figure>
-</div>`},"brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`대규모 이해관계자 교육 및 커뮤니케이션`,meta:`대일외국어고등학교`,body:`<div class="detail-context">500명 이상의 학부모와 학생을 대상으로 학교 설명회와 입시설명회를 진행했습니다.</div>
+</div>`},"brief":{label:`HRD - 전문성 / 대일외국어고등학교`,title:`학부모 설명회 기획과 발표`,meta:`대일외국어고등학교`,body:`<div class="detail-context">500명 이상의 학부모와 학생을 대상으로 학교 설명회와 입시설명회를 진행했습니다.</div>
 <h3>대상별 설명회 구성</h3><ul><li>학부모 설명회에서는 학교의 장점, 입시 결과, 학교 운영 방침을 전달했습니다.</li><li>입시설명회는 교육 및 대입 정책을 중심으로 직접 구성하고 발표했습니다. 입시를 바라보는 관점부터 수학 공부 방향, 학교의 수학 교육 방식까지 연결했습니다.</li></ul>
 <h3>현장 질의응답</h3><p>수학 공부법에 대한 질문이 특히 많았습니다. 현장에서 주요 질문에 답하고 필요한 경우 후속 상담으로 연결했습니다.</p>
 <h3>활동 자료</h3>
@@ -2135,11 +2138,12 @@ const cases={
 <h3>제가 맡은 역할과 협업 과정</h3><ul><li>업체에 구체적으로 어떤 부분에서 어려움을 겪는지 먼저 공유해 달라고 요청했습니다.</li><li>공유받은 어려움을 바탕으로 LLM 프롬프트를 여러 버전으로 실험했습니다.</li><li>핵심 개념을 먼저 설명하고 불필요하게 장황한 답변을 줄이기 위한 프롬프트 초안을 업체에 전달했습니다.</li><li>업체는 초안을 실제 구현에 반영하고 추가로 고도화했습니다.</li><li>저는 개선된 답변을 다시 검수하고 피드백을 전달하는 과정을 반복했습니다.</li></ul>
 <h3>협업 결과</h3><ul><li>답변 구조의 일관성이 개선되고 불필요한 장황함이 줄었습니다.</li><li>일부 학생을 대상으로 베타테스트를 진행했습니다.</li></ul>
 <h3>직접 수행한 검수</h3><div class="metric-block"><strong>3,500건</strong><span>제가 직접 검수 완료한 AI 답변 누적 건수</span></div><dl class="metric-method"><div><dt>집계 대상</dt><dd>직접 검수 완료한 교육용 AI 답변 전체</dd></div><div><dt>누적 건수</dt><dd>3,500건</dd></div><div><dt>본인 역할</dt><dd>수학 답변 품질 검수, 프롬프트 실험, 개선 피드백</dd></div><div><dt>기간</dt><dd>세부 집계 기간은 보유 자료에 기재되지 않음</dd></div></dl>`},
-"selection":{label:`HRM - 인재 확보 / Woojin Math`,title:`직무 적합성 중심 선발 프로세스 개선`,meta:`Woojin Math`,body:`<div class="detail-context">공정성과 직무 적합성을 높이기 위해 핵심역량 중심으로 선발기준과 채용 프로세스를 개선</div>
+"selection":{label:`HRM - 인재 확보 / Woojin Math`,title:`조교 선발 프로세스 개선`,meta:`Woojin Math`,body:`<div class="detail-context">공정성과 직무 적합성을 높이기 위해 핵심역량 중심으로 선발기준과 채용 프로세스를 개선</div>
 <h3>수행 내용</h3><ul><li>설명력, 문맥 이해, 오류 검토 능력을 평가기준에 반영</li><li>테스트와 면접 질문 및 판단 기준 정비</li><li>선발 후 답변량, 오류율, 미션 수행, 근무 이력 추적</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>약 300명</strong><span>지원자 평가</span></div><div><strong>100명 +</strong><span>최종 선발</span></div></div>
+<h3>운영 대시보드</h3><figure class="detail-single-image"><img src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="조교 운영 및 성과관리 대시보드"><figcaption>조교 운영 현황을 확인하는 대시보드 화면입니다.</figcaption></figure>
 <button class="resource-button" onclick="openOps()">조교 운영 및 성과관리 대시보드 보기 ↗</button>`},
-"retention":{label:`HRM - 인력 유지 / Woojin Math`,title:`성과·이탈 데이터 기반 인력계획 개선`,meta:`Woojin Math`,body:`<div class="detail-context">입사 후 성과와 이탈 데이터를 다음 선발기준과 채용 규모에 연결하는 인력 운영 프로세스 구축</div>
+"retention":{label:`HRM - 인력 유지 / Woojin Math`,title:`성과와 이탈 분석을 통한 인력계획`,meta:`Woojin Math`,body:`<div class="detail-context">입사 후 성과와 이탈 데이터를 다음 선발기준과 채용 규모에 연결하는 인력 운영 프로세스 구축</div>
 <h3>수행 내용</h3><ul><li>선발 이후 답변량, 오류율, 미션 수행, 근무 이력 지속 추적</li><li>학교 일정, 거리, 학업 부담 등 조기 이탈 원인 분석</li><li>입사 후 성과와 이탈 데이터를 다음 선발 기준에 반영</li><li>잔류 인원, 예상 이탈, 업무량을 바탕으로 다음 해 채용 규모 산정</li></ul>
 <h3>운영에 반영한 결과</h3><p>조기 이탈 원인과 잔류 인원, 예상 업무량을 다음 선발 기준과 채용 규모 산정에 반영했습니다.</p>
 <button class="resource-button" onclick="openOps()">조교 운영 및 성과관리 대시보드 보기 ↗</button>`},
@@ -2151,7 +2155,7 @@ const cases={
 <h3>제가 맡은 일</h3><ul><li>개인 자산에 미치는 뉴스 영향 설명 서비스 기획</li><li>이용자 유형과 개인화 뉴스 선택을 판단할 평가기준 설계</li></ul>
 <h3>데이터 검증</h3><ul><li>뉴스 100건과 페르소나 50명을 조합해 5,000개 평가 사례를 구성하고, 제가 설계한 기준으로 개인화 뉴스 선택 결과를 판정했습니다.</li></ul>
 <h3>테스트 결과</h3><div class="metric-block"><strong>97.2%</strong><span>5,000개 뉴스·페르소나 조합 기준 선택 정확도</span></div><a class="project-link" href="https://so-my-money-production.up.railway.app/" target="_blank" rel="noopener noreferrer">실제 프로젝트 페이지 ↗</a><h3>활동 사진</h3><div class="detail-gallery"><figure><img src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 랜딩 페이지"><figcaption>서비스 메시지와 문제의식을 담은 So, My Money? 랜딩 페이지 화면입니다.</figcaption></figure></div>`},
-"football":{label:`PROJECT / 사회인 축구팀`,title:`사회인 축구팀 - 운영진`,meta:`사회인 축구팀`,body:`<div class="detail-context">조직 및 구성원 성장에 대한 관심과 열정</div>
+"football":{label:`PROJECT / 사회인 축구팀`,title:`사회인 축구팀 운영`,meta:`사회인 축구팀`,body:`<div class="detail-context">조직 및 구성원 성장에 대한 관심과 열정</div>
 <h3>수행 내용</h3>
 <ul><li>정기 경기 운영, 참가 인원 파악, 역할 및 포지션 배분</li><li>실력과 참여도가 다른 구성원 간 의견 조율과 참여 관리</li><li>특정 인원에게 운영 부담이 집중되지 않도록 역할 조정</li><li>분기별 회식과 팀회의를 통한 팀 문화 조성 및 조직 관리</li><li>장기 참여가 가능한 운영 방식과 구성원 관계 유지</li></ul>
 <h3>결과</h3>
@@ -2181,7 +2185,7 @@ function openCase(key,variant='standard'){
 }
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===btn));
- document.querySelectorAll('.case-card').forEach(card=>{
+ document.querySelectorAll('#portfolio .experience-row').forEach(card=>{
   card.hidden=btn.dataset.filter!=='ALL'&&card.dataset.category!==btn.dataset.filter;
  });
 }));
