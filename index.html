@@ -1700,6 +1700,24 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
  #resume.home-profile .resume-matrix>.resume-profile-side>.projects-panel{grid-column:1!important;grid-row:auto!important}
 }
 
+
+/* Keep the portrait as a photo; remove the former ID-card presentation */
+.hero-home-top{grid-template-columns:minmax(0,1fr) 280px;min-height:300px;align-items:center}
+.hero-portrait{display:flex;align-items:center;justify-content:flex-end;min-height:260px;transform:translateY(-42px)}
+.hero-portrait img{display:block;width:205px;height:250px;object-fit:cover;object-position:center 24%;border:0;border-radius:0;box-shadow:none;background:transparent}
+.hero-home .why-id-card,.hero-home .why-id-brand,.hero-home .why-id-accent,
+.hero-home .why-id-info,.hero-home .why-id-vertical,.hero-home .why-id-footer{display:none!important}
+@media(max-width:900px){
+ .hero-home-top{grid-template-columns:minmax(0,1fr) 230px;min-height:280px}
+ .hero-portrait{transform:translateY(-28px)}
+ .hero-portrait img{width:185px;height:225px}
+}
+@media(max-width:700px){
+ .hero-home-top{grid-template-columns:1fr;min-height:0}
+ .hero-portrait{justify-content:flex-start;min-height:0;transform:none;margin-top:0}
+ .hero-portrait img{width:165px;height:202px}
+}
+
 </style>
 
 
@@ -1727,35 +1745,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
     <h1>이준호</h1>
     <div class="hero-actions"><button class="cta outline story-cta" onclick="openCase('story')">저의 사소한 이야기를 들어보실래요? <span aria-hidden="true">↗</span></button></div>
   </div>
-<div class="employee-card-slot">
-    <div class="why-id-card">
-      <div class="why-id-brand">
-        <div class="why-id-symbol">H</div>
-        <div>
-          <div class="why-id-company">HYUNDAI AUTOEVER</div>
-          <div class="why-id-company-en">지원자 프로필 · HRD</div>
-        </div>
-      </div>
-
-      <div class="why-id-accent">
-        <span></span><span></span>
-      </div>
-
-      <div class="why-id-photo">
-        <img src="assets/profile-id.svg" alt="이준호 증명사진 배경 제거 이미지">
-      </div>
-
-      <div class="why-id-info">
-        <div class="why-id-name">이준호</div>
-      </div>
-
-      <div class="why-id-vertical">HYUNDAI AUTOEVER</div>
-
-      <div class="why-id-footer">
-        <span>희망 분야 · HRD</span>
-      </div>
-    </div>
-  </div>
+<div class="hero-portrait"><img src="assets/profile-id.svg" alt="이준호 프로필 사진"></div>
   </div>
 <div id="resume" class="home-profile">
 <div class="section-title"><h2>커리어 프로필</h2></div>
@@ -1789,32 +1779,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 
 
-<section id="resume" class="light">
-<div class="container"><div class="section-title"><h2>커리어 프로필</h2></div>
-<div class="resume-matrix">
-  <div class="resume-panel career-panel"><h3 class="resume-title">경력</h3>
-    <div class="resume-item"><h4>Woojin Math</h4><h5>2024.03 — 현재</h5><p><strong>대한민국 1타 메가스터디 강사 연구원</strong></p><ul><li>신규 조교 온보딩 및 직무교육</li><li>답변 품질 점검과 교육과정 개선</li><li>채용, 평가와 조교 운영</li></ul></div>
-    <div class="resume-item"><h4>대일외국어고등학교</h4><h5>2022.03 — 2024.02</h5><p><strong>전국 단위 2위 외고 수학교사</strong></p><ul><li>300명 이상의 학생 및 학부모 개별 상담</li><li>학급자치서클 정기 운영</li><li>학부모 설명회 및 입시 설명회</li></ul></div>
-  </div>
-  <div class="resume-profile-side">
-    <div class="resume-panel compact education-panel"><h3 class="resume-title">학력</h3>
-      <div class="resume-item"><h4>성균관대학교</h4><p>수학교육과</p><ul><li>전체학점 3.78 / 4.5</li><li>전공학점 4.14 / 4.5</li></ul></div>
-    </div>
-    <div class="resume-panel compact certification-panel"><h3 class="resume-title">자격증</h3>
-      <div class="cert-list"><ul><li>중등학교 정교사</li><li>컴퓨터활용능력 2급</li><li>워드프로세서 1급</li></ul></div>
-    </div>
-    <div class="resume-panel compact skills-panel"><h3 class="resume-title">활용 도구</h3>
-      <div class="skill-tags"><span>EXCEL</span><span>WORD</span><span>POWERPOINT</span><span>ChatGPT</span><span>Claude Code</span><span>PYTHON</span></div>
-    </div>
-    <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
-      <ul class="activity-list">
-        <li>So, My Money?</li>
-        <li>사회인 축구팀 운영진</li>
-      </ul>
-    </div>
-  </div>
-</div></div>
-</section>
+
 
 
 
