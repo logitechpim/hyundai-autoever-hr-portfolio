@@ -1872,37 +1872,6 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 @media(max-width:1000px){.home-overview{grid-template-columns:1fr;gap:46px}.hero-home .home-overview>.hero-copy{max-width:480px!important}.home-career-grid,.home-facts-grid{column-gap:36px}}
 @media(max-width:560px){.home-career-grid,.home-facts-grid{grid-template-columns:1fr;gap:26px}.home-overview{gap:42px}.home-career{padding-bottom:26px;margin-bottom:26px}.home-info-title{margin-bottom:14px}.home-tool-list{max-width:330px}.home-facts-grid{row-gap:30px}}
 @media(prefers-reduced-motion:reduce){.home-story-link>span[aria-hidden]{transition:none}}
-
-/* Core experiences: open two-column composition with visible summaries. */
-#featured-experiences{background:#fff;overflow:visible;padding-top:88px;padding-bottom:88px}
-#featured-experiences .core-showcase{display:grid;grid-template-columns:210px minmax(0,1fr);gap:46px;align-items:start;max-width:1180px}
-#featured-experiences .core-intro{position:sticky;top:64px}
-#featured-experiences .core-intro .section-title h2{font-size:34px;line-height:1.3;margin:0;padding-bottom:22px;white-space:nowrap}
-#featured-experiences .core-intro>p{margin:24px 0 0;font-size:14px;line-height:1.9;color:#607087}
-#featured-experiences .core-experience-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 28px}
-#featured-experiences .core-experience{display:flex;flex-direction:column;min-width:0;padding:0 0 22px;border:0;border-bottom:1px solid #e0e6ec;border-radius:0;background:transparent;box-shadow:none;text-align:left;color:#222;cursor:pointer;appearance:none}
-#featured-experiences .core-media{display:block;position:relative;width:100%;aspect-ratio:1.9;overflow:hidden;background:#f2f5f8}
-#featured-experiences .core-media img{display:block;width:100%;height:100%;object-fit:cover;filter:none;opacity:1;transition:transform 300ms ease}
-#featured-experiences .core-document img{object-fit:contain;padding:10px}
-#featured-experiences .core-item-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px 0 10px;font-size:12px;color:#6f7e8c}
-#featured-experiences .core-open{transition:color 180ms ease}
-#featured-experiences .core-open span{display:inline-block;margin-left:5px}
-#featured-experiences .core-item-title{display:block;font-size:20px;line-height:1.5;letter-spacing:-.5px;font-weight:650}
-#featured-experiences .core-item-description{display:block;margin:9px 0 20px;font-size:13px;line-height:1.8;color:#607087}
-#featured-experiences .core-item-result{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px;margin-top:auto}
-#featured-experiences .core-item-result>strong{font-size:25px;line-height:1.3;letter-spacing:-.5px;color:#1673cc;font-weight:650}
-#featured-experiences .core-item-result>span{font-size:11px;line-height:1.6;color:#607087}
-#featured-experiences .core-process{display:flex;flex-direction:column;justify-content:center;padding:28px;background:#f1f4f7}
-#featured-experiences .core-process-label{font-size:12px;letter-spacing:.3px;color:#607087;margin-bottom:22px}
-#featured-experiences .core-process-steps{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:15px;font-weight:600;color:#294a6a}
-#featured-experiences .core-process-arrow{font-size:17px;font-weight:400;color:#8798a8}
-@media(hover:hover){#featured-experiences .core-experience:hover .core-media img{transform:scale(1.025)}#featured-experiences .core-experience:hover .core-open{color:#1673cc}}
-#featured-experiences .core-experience:focus-visible{outline:2px solid #1673cc;outline-offset:7px}
-@media(max-width:1200px){#featured-experiences .core-showcase{grid-template-columns:170px minmax(0,1fr);gap:30px}#featured-experiences .core-experience-grid{gap:34px 22px}#featured-experiences .core-process{padding:20px}#featured-experiences .core-process-steps{font-size:13px}}
-@media(max-width:1050px){#featured-experiences .core-showcase{grid-template-columns:1fr;gap:32px}#featured-experiences .core-intro{position:static}#featured-experiences .core-intro>p{margin-top:16px}#featured-experiences .core-intro>p br{display:none}}
-@media(max-width:620px){#featured-experiences{padding-top:52px;padding-bottom:52px}#featured-experiences .core-experience-grid{grid-template-columns:1fr;gap:32px}#featured-experiences .core-intro .section-title h2{font-size:29px}#featured-experiences .core-item-title{font-size:20px}#featured-experiences .core-process-steps{font-size:15px}}
-@media(prefers-reduced-motion:reduce){#featured-experiences .core-media img,#featured-experiences .core-open{transition:none}}
-
 </style>
 
 
@@ -1970,51 +1939,35 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 
 <section id="featured-experiences" class="featured-experiences">
-<div class="container core-showcase">
-<div class="core-intro"><div class="section-title"><h2>핵심 경험</h2></div><p>교육을 설계하고 운영하며,<br>데이터로 변화를 살폈습니다.</p></div>
-<div class="core-experience-grid" aria-label="핵심 경험 6가지"><button class="core-experience" type="button" onclick="openCase('onboard','featured')" aria-label="직무 온보딩 체계 설계·운영 상세 보기">
-<span class="core-media core-document"><img src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드" loading="lazy" decoding="async"></span>
-<span class="core-item-meta"><span>01</span><span class="core-open">상세 보기 <span aria-hidden="true">↗</span></span></span>
-<strong class="core-item-title">직무 온보딩 체계 설계·운영</strong>
-<span class="core-item-description">조직 안내부터 답변 기준과 실습 피드백까지</span>
-<span class="core-item-result"><strong>100명+</strong><span>신규 조교 온보딩 및 직무교육</span></span>
-</button>
-<button class="core-experience" type="button" onclick="openCase('quality','featured')" aria-label="답변 품질을 높인 개인별 코칭 상세 보기">
-<span class="core-media core-document"><img src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 자료" loading="lazy" decoding="async"></span>
-<span class="core-item-meta"><span>02</span><span class="core-open">상세 보기 <span aria-hidden="true">↗</span></span></span>
-<strong class="core-item-title">답변 품질을 높인 개인별 코칭</strong>
-<span class="core-item-description">모범 답안 비교와 실습 피드백으로 설명 역량 강화</span>
-<span class="core-item-result"><strong>40 → 60건</strong><span>검토 대상 조교 평균 답변량 증가</span></span>
-</button>
-<button class="core-experience" type="button" onclick="openCase('improvement','featured')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
-<span class="core-media core-process" aria-hidden="true"><span class="core-process-label">교육 과정 개선</span><span class="core-process-steps"><span>교육 운영</span><span class="core-process-arrow">→</span><span>현장 점검</span><span class="core-process-arrow">→</span><span>과정 개선</span></span></span>
-<span class="core-item-meta"><span>03</span><span class="core-open">상세 보기 <span aria-hidden="true">↗</span></span></span>
-<strong class="core-item-title">교육 효과 측정 및 과정 개선</strong>
-<span class="core-item-description">반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span>
-<span class="core-item-result"><strong>33.1%</strong><span>동일 기간 게시판 질문량 증가</span></span>
-</button>
-<button class="core-experience" type="button" onclick="openCase('circle','featured')" aria-label="참여형 조직개발 프로그램 설계·운영 상세 보기">
-<span class="core-media "><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진" loading="lazy" decoding="async"></span>
-<span class="core-item-meta"><span>04</span><span class="core-open">상세 보기 <span aria-hidden="true">↗</span></span></span>
-<strong class="core-item-title">참여형 조직개발 프로그램 설계·운영</strong>
-<span class="core-item-description">학교 공동체의 대화 구조와 참여 방식 설계</span>
-<span class="core-item-result"><strong>월 1회</strong><span>대화의 장을 만든 학급자치서클</span></span>
-</button>
-<button class="core-experience" type="button" onclick="openCase('retention','featured')" aria-label="성과·이탈 데이터 기반 인력계획 상세 보기">
-<span class="core-media core-document"><img src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="채용 프로세스 개선 대시보드" loading="lazy" decoding="async"></span>
-<span class="core-item-meta"><span>05</span><span class="core-open">상세 보기 <span aria-hidden="true">↗</span></span></span>
-<strong class="core-item-title">성과·이탈 데이터 기반 인력계획</strong>
-<span class="core-item-description">이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span>
-<span class="core-item-result"><strong>40% 감소</strong><span>같은 기간 조기 이탈 인원</span></span>
-</button>
-<button class="core-experience" type="button" onclick="openCase('ai','featured')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
-<span class="core-media core-process" aria-hidden="true"><span class="core-process-label">AI 서비스 개선</span><span class="core-process-steps"><span>프롬프트 실험</span><span class="core-process-arrow">→</span><span>답변 검수</span><span class="core-process-arrow">→</span><span>업체 피드백</span></span></span>
-<span class="core-item-meta"><span>06</span><span class="core-open">상세 보기 <span aria-hidden="true">↗</span></span></span>
-<strong class="core-item-title">수학과 AI를 연결한 서비스 개선 협업</strong>
-<span class="core-item-description">프롬프트 실험부터 개선 답변 재검수까지</span>
-<span class="core-item-result"><strong>3,500건</strong><span>제가 직접 검수한 누적 AI 답변</span></span>
-</button></div>
-</div>
+  <div class="container">
+    <div class="section-title"><h2>핵심 경험</h2></div>
+    <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
+      <button class="featured-card" style="--card-index:0;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
+        <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
+        <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:1;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
+        <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">검토 대상 조교 평균 답변량 증가</span></span>
+        <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:2;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
+        <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">33.1%</span><span class="featured-metric-caption">동일 기간 게시판 질문량 증가</span></span>
+        <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:3;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
+        <span class="featured-art art-circle"><span class="featured-index">04 / HRD</span><span class="featured-peek">FACILITATION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="featured-metric">월 1회</span><span class="featured-metric-caption">대화의 장을 만든 학급자치서클</span></span>
+        <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:4;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
+        <span class="featured-art art-retention"><span class="featured-index">05 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
+        <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:5;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
+        <span class="featured-art art-ai"><span class="featured-index">06 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
+        <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span></span>
+      </button>
+    </div>
+  </div>
 </section>
 
 <section id="portfolio">
@@ -2197,11 +2150,16 @@ function openOps(){
 }
 
 
-function openFeaturedCase(event,key){
+async function openFeaturedCase(event,key){
  event.preventDefault();
- if(!detail.open)openCase(key,'featured');
+ if(detail.open)return;
+ const card=event.currentTarget;
+ activateFeaturedCard(card);
+ card.classList.add('is-click-pull');
+ await new Promise(resolve=>setTimeout(resolve,650));
+ openCase(key,'featured');
 }
-detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');restoreModalPagePosition();});
+detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');clearFeaturedCards();document.querySelectorAll('.featured-card').forEach(card=>card.classList.remove('is-click-pull'));restoreModalPagePosition();});
 ops.addEventListener('close',restoreModalPagePosition);
 const navLinks=[...document.querySelectorAll('.navmenu a')];
 let navScrollFrame=0,navScrollToken=0,navScrollInlineBehavior='';
@@ -2270,6 +2228,46 @@ addEventListener('scroll',()=>{
 addEventListener('resize',updateActiveNav);
 updateActiveNav();
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const featuredDeck=document.querySelector('.featured-deck');
+const featuredCards=[...document.querySelectorAll('.featured-card')];
+let featuredResetTimer=null;
+function cancelFeaturedReset(){
+ if(featuredResetTimer!==null){clearTimeout(featuredResetTimer);featuredResetTimer=null;}
+}
+function scheduleFeaturedReset(){
+ cancelFeaturedReset();
+ featuredResetTimer=setTimeout(()=>{featuredResetTimer=null;clearFeaturedCards();},90);
+}
+function activateFeaturedCard(card){
+ cancelFeaturedReset();
+ featuredCards.forEach(other=>{
+  other.classList.remove('is-active','is-before','is-after');
+  if(other===card)other.classList.add('is-active');
+  else if(featuredCards.indexOf(other)<featuredCards.indexOf(card))other.classList.add('is-before');
+  else other.classList.add('is-after');
+ });
+}
+function clearFeaturedCards(){
+ cancelFeaturedReset();
+ featuredCards.forEach(card=>card.classList.remove('is-active','is-before','is-after'));
+}
+featuredCards.forEach(card=>{
+ card.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')activateFeaturedCard(card)});
+ card.addEventListener('pointermove',event=>{
+  if(event.pointerType!=='mouse'||reduceMotion)return;
+  const rect=card.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;
+  card.style.setProperty('--pointer-x',Math.round(x*100)+'%');
+  card.style.setProperty('--pointer-y',Math.round(y*100)+'%');
+  card.style.setProperty('--tilt-x',((.5-y)*5).toFixed(2)+'deg');
+  card.style.setProperty('--tilt-y',((x-.5)*6).toFixed(2)+'deg');
+ });
+ card.addEventListener('pointerleave',event=>{
+  card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');
+  if(event.pointerType==='mouse')scheduleFeaturedReset();
+ });
+ card.addEventListener('focus',()=>activateFeaturedCard(card));
+ card.addEventListener('blur',()=>setTimeout(()=>{if(!featuredDeck.contains(document.activeElement))clearFeaturedCards()},0));
+});
 function formatCount(value,source){
  const decimals=(source.split('.')[1]||'').length;
  return new Intl.NumberFormat('ko-KR',{minimumFractionDigits:0,maximumFractionDigits:decimals}).format(decimals?Number(value.toFixed(decimals)):Math.round(value));
