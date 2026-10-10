@@ -1081,6 +1081,39 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
  .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible,.featured-card.is-click-pull{animation:none!important}
 }
 
+
+/* Make the lifted card's border highlight visibly travel around its edge */
+.featured-card::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ z-index:12;
+ padding:2px;
+ border-radius:inherit;
+ pointer-events:none;
+ opacity:0;
+ background:conic-gradient(from 0deg,transparent 0deg 258deg,rgba(211,194,157,.28) 278deg,#f8edcf 291deg,#fff 298deg,rgba(201,183,145,.9) 308deg,transparent 326deg 360deg);
+ -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ -webkit-mask-composite:xor;
+ mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ mask-composite:exclude;
+}
+.featured-card.is-active::after,
+.featured-card:hover::after,
+.featured-card:focus-visible::after,
+.featured-card.is-click-pull::after{
+ opacity:1;
+ animation:featured-border-orbit 2.2s linear infinite;
+}
+@keyframes featured-border-orbit{to{transform:rotate(1turn)}}
+@media(prefers-reduced-motion:reduce){
+ .featured-card.is-active::after,.featured-card:hover::after,.featured-card:focus-visible::after,.featured-card.is-click-pull::after{
+  opacity:1;
+  animation:none!important;
+  background:conic-gradient(from 0deg,transparent 0deg 258deg,rgba(211,194,157,.4) 278deg,#f8edcf 291deg,#fff 298deg,rgba(201,183,145,.95) 308deg,transparent 326deg 360deg);
+ }
+}
+
 </style>
 </head>
 <body>
