@@ -1435,6 +1435,25 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 @media(max-width:700px){.hero-wordmark{font-size:clamp(46px,12vw,68px)}.hero-logo-wrap{min-height:150px}}
 @media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
 
+
+/* Keep the metric caption in the image panel visible; reveal only the card's lower summary on hover */
+.case-card .case-visual .visual-content span{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+}
+.case-card .case-copy p{
+ opacity:0!important;visibility:hidden!important;transform:translateY(5px);
+ transition:opacity .26s ease,transform .26s ease,visibility 0s linear .26s,color .28s ease!important;
+}
+.case-card:hover .case-copy p,.case-card:focus-visible .case-copy p{
+ opacity:1!important;visibility:visible!important;transform:translateY(0);
+ transition:opacity .26s ease,transform .26s ease,visibility 0s,color .28s ease!important;transition-delay:0s!important;
+ color:rgba(255,255,255,.9)!important;
+}
+@media(max-width:760px){
+ .case-card .case-copy p{opacity:1!important;visibility:visible!important;transform:none}
+}
+@media(prefers-reduced-motion:reduce){.case-card .case-copy p{transition:none!important}}
+
 </style>
 </head>
 <body>
