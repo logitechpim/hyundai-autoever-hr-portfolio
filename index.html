@@ -1964,6 +1964,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 .core-summary .result-pair{flex-wrap:wrap;gap:20px 32px}
 @media(max-width:620px){.core-summary li{font-size:14px}.core-summary .result-pair{gap:18px 24px}.core-summary .result-pair strong{font-size:25px}}
 
+.ops-grid img:only-child{grid-column:1 / -1}
 </style>
 
 
@@ -2177,7 +2178,7 @@ function openCase(key,variant='standard'){
  detail.showModal();
  animateCounters(detailBody);
 }
-const opsImages=[`assets/c48c09ce223196b4f43dc3dc9fc02c6d5a19a1a1.png`,`assets/f148ba000f65259376b738e12a214a92cb715ad4.png`,`assets/d825c8f1b8214b3356ab04ac8b937c046c63e2c6.png`,`assets/e5f29e01c5ab774a2df902755a1afa71c84eb902.png`];
+const opsImages=[`assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png`];
 function openOps(){
  modalReturnScrollY=window.scrollY;
  opsGrid.innerHTML=opsImages.filter(Boolean).map((src,i)=>`<img src="${src}" alt="운영 대시보드 ${i+1}">`).join('');
