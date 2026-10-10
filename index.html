@@ -1838,7 +1838,18 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
  .home-profile-layout>.resume-profile-side{grid-column:1;grid-row:3;padding:0!important;border:0!important;border-top:1px solid #cfd3d5!important}
 }
 
-\n/* Hero statement: concise positioning with the name in the site accent blue */\n.home-profile-layout .hero-copy h1.hero-statement{display:flex;flex-direction:column;align-items:flex-start;gap:9px;line-height:1.32;letter-spacing:-.04em}\n.home-profile-layout .hero-statement-copy{display:block;color:#253442;font-size:clamp(20px,2.05vw,27px);font-weight:500;line-height:1.55;letter-spacing:-.045em}\n.home-profile-layout .hero-statement-name{display:block;color:var(--green);font-size:clamp(42px,5vw,64px);font-weight:750;line-height:1.12;letter-spacing:-.055em;white-space:nowrap}\n@media(max-width:700px){.home-profile-layout .hero-copy h1.hero-statement{gap:8px}.home-profile-layout .hero-statement-copy{font-size:clamp(19px,5.4vw,24px)}.home-profile-layout .hero-statement-name{font-size:clamp(42px,12vw,56px)}}\n</style>
+
+/* Hero introduction fits the width of its own column. */
+.home-profile-layout>.hero-copy{min-width:0;container-type:inline-size}
+.home-profile-layout .hero-copy h1.hero-statement{display:block;margin:0;font-size:32px;font-weight:500;line-height:1.45;letter-spacing:-.045em}
+.home-profile-layout .hero-statement-copy{display:block;color:#222;font-size:clamp(20px,8.2cqi,34px);font-weight:500;line-height:1.5}
+.home-profile-layout .hero-statement-copy>span{display:block;white-space:nowrap}
+.home-profile-layout .hero-statement-name{display:block;margin-top:12px;color:#222;font-size:clamp(30px,12cqi,48px);font-weight:400;line-height:1.3;letter-spacing:-.055em;white-space:nowrap}
+.home-profile-layout .hero-statement-name .hero-name{color:#1673cc;font-weight:750}
+.home-profile-layout .hero-actions{margin-top:32px}
+.home-profile-layout .story-cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;max-width:100%;padding:12px 14px;font-size:clamp(12px,4cqi,15px);line-height:1.6;text-align:left}
+.home-profile-layout .story-cta>span[aria-hidden]{flex:0 0 auto}
+</style>
 
 
 
@@ -1863,7 +1874,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
   <div class="home-profile-layout">
 <div class="hero-copy">
     <div class="hero-eyebrow">HYUNDAI AUTOEVER / HR PORTFOLIO</div>
-    <h1 class="hero-statement"><span class="hero-statement-copy">데이터를 살펴 배움의 방향을 찾는</span><span class="hero-statement-name">이준호입니다</span></h1>
+    <h1 class="hero-statement"><span class="hero-statement-copy"><span>데이터를 살펴</span> <span>배움의 방향을 찾는</span></span> <span class="hero-statement-name"><span class="hero-name">이준호</span>입니다</span></h1>
     <div class="hero-actions"><button class="cta outline story-cta" onclick="openCase('story')">저의 사소한 이야기를 들어보실래요? <span aria-hidden="true">↗</span></button></div>
   </div>
 <div class="resume-panel career-panel"><h3 class="resume-title">경력</h3>
