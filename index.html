@@ -1872,6 +1872,40 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 @media(max-width:1000px){.home-overview{grid-template-columns:1fr;gap:46px}.hero-home .home-overview>.hero-copy{max-width:480px!important}.home-career-grid,.home-facts-grid{column-gap:36px}}
 @media(max-width:560px){.home-career-grid,.home-facts-grid{grid-template-columns:1fr;gap:26px}.home-overview{gap:42px}.home-career{padding-bottom:26px;margin-bottom:26px}.home-info-title{margin-bottom:14px}.home-tool-list{max-width:330px}.home-facts-grid{row-gap:30px}}
 @media(prefers-reduced-motion:reduce){.home-story-link>span[aria-hidden]{transition:none}}
+
+/* Four core experiences in staggered columns, without overlap. */
+#featured-experiences{background:#fff;overflow:visible;padding-top:78px;padding-bottom:88px}
+#featured-experiences .stagger-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:48px;align-items:start;max-width:1180px}
+#featured-experiences .stagger-heading h2{font-size:34px;white-space:nowrap;margin:0}
+#featured-experiences .stagger-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 48px;padding-bottom:76px}
+#featured-experiences .stagger-card{position:relative;display:flex;flex-direction:column;top:0;min-width:0;min-height:485px;padding:0;border:1px solid #e1e7eb;border-radius:20px;overflow:hidden;background:#e9edf0;color:#263746;text-align:left;cursor:pointer;box-shadow:0 12px 30px rgba(28,42,54,.08);transition:background-color 260ms ease,color 260ms ease,box-shadow 260ms ease;appearance:none}
+#featured-experiences .stagger-card:nth-child(odd){top:76px}
+#featured-experiences .stagger-art{position:relative;display:block;height:290px;flex:none}
+#featured-experiences .stagger-index{position:absolute;top:22px;left:24px;padding:7px 11px;border:1px solid #b9c5ce;border-radius:999px;font-size:10px;font-weight:650;letter-spacing:1.2px}
+#featured-experiences .stagger-peek{position:absolute;top:77px;left:28px;writing-mode:vertical-rl;font-size:10px;font-weight:600;letter-spacing:2.6px;color:#718391}
+#featured-experiences .stagger-symbol{position:absolute;top:68px;right:26px;width:77px;height:77px;stroke:#98abba;stroke-width:1.5}
+#featured-experiences .stagger-highlight{position:absolute;bottom:47px;left:26px;right:26px;display:block;font-size:clamp(34px,3vw,46px);font-weight:750;letter-spacing:-1.6px;line-height:1.2;color:#1673cc;white-space:nowrap}
+#featured-experiences .stagger-caption{position:absolute;bottom:22px;left:27px;right:24px;font-size:12px;line-height:1.5;color:#536979}
+#featured-experiences .stagger-prompt .stagger-highlight{font-size:clamp(30px,2.7vw,39px);letter-spacing:-1px;line-height:1.25;bottom:50px}
+#featured-experiences .stagger-copy{display:flex;flex:1;flex-direction:column;gap:14px;padding:19px 26px 26px}
+#featured-experiences .stagger-kicker{font-size:12px;line-height:1.5;color:#536979}
+#featured-experiences .stagger-copy>strong{font-size:21px;line-height:1.5;letter-spacing:-.65px;font-weight:650}
+#featured-experiences .stagger-description{font-size:13px;line-height:1.9;color:#536979}
+#featured-experiences .stagger-link{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;margin-top:auto;padding-top:8px;color:#536979}
+#featured-experiences .stagger-card:focus-visible{outline:3px solid #1673cc;outline-offset:5px}
+#featured-experiences .stagger-card:focus-visible,#featured-experiences .stagger-card:hover{background:#1773cc;color:#fff;box-shadow:0 16px 36px rgba(25,80,135,.18)}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-highlight{color:#fff}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) :is(.stagger-caption,.stagger-kicker,.stagger-description,.stagger-link){color:#fff}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-peek{color:#d3e5f6}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-symbol{stroke:#d3e5f6}
+#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-index{border-color:#9fc5eb}
+@media(max-width:1200px){#featured-experiences .stagger-layout{grid-template-columns:150px minmax(0,1fr);gap:30px}#featured-experiences .stagger-grid{gap:38px 28px}#featured-experiences .stagger-copy{padding-left:22px;padding-right:22px}#featured-experiences .stagger-copy>strong{font-size:19px}#featured-experiences .stagger-caption{font-size:11px}#featured-experiences .stagger-highlight{left:23px;right:23px;font-size:35px}#featured-experiences .stagger-prompt .stagger-highlight{font-size:32px}}
+@media(max-width:1050px){#featured-experiences .stagger-layout{grid-template-columns:1fr;gap:30px}#featured-experiences .stagger-grid{gap:38px 32px}}
+@media(max-width:620px){#featured-experiences{padding-top:52px;padding-bottom:52px}#featured-experiences .stagger-heading h2{font-size:29px}#featured-experiences .stagger-grid{grid-template-columns:1fr;gap:24px;padding-bottom:0}#featured-experiences .stagger-card:nth-child(odd){top:0}#featured-experiences .stagger-card{min-height:460px}#featured-experiences .stagger-art{height:255px}#featured-experiences .stagger-copy>strong{font-size:21px}#featured-experiences .stagger-highlight{font-size:43px}#featured-experiences .stagger-prompt .stagger-highlight{font-size:36px}}
+@media(prefers-reduced-motion:reduce){#featured-experiences .stagger-card{transition:none}}
+
+#featured-experiences .stagger-prompt .stagger-peek{writing-mode:horizontal-tb;top:72px;left:27px;letter-spacing:2px}
+
 </style>
 
 
@@ -1939,35 +1973,25 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 
 <section id="featured-experiences" class="featured-experiences">
-  <div class="container">
-    <div class="section-title"><h2>핵심 경험</h2></div>
-    <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
-      <button class="featured-card" style="--card-index:0;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
-        <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
-        <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:1;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
-        <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">검토 대상 조교 평균 답변량 증가</span></span>
-        <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:2;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
-        <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">33.1%</span><span class="featured-metric-caption">동일 기간 게시판 질문량 증가</span></span>
-        <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:3;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
-        <span class="featured-art art-circle"><span class="featured-index">04 / HRD</span><span class="featured-peek">FACILITATION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="featured-metric">월 1회</span><span class="featured-metric-caption">대화의 장을 만든 학급자치서클</span></span>
-        <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:4;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
-        <span class="featured-art art-retention"><span class="featured-index">05 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
-        <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:5;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
-        <span class="featured-art art-ai"><span class="featured-index">06 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
-        <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span></span>
-      </button>
-    </div>
-  </div>
+<div class="container stagger-layout">
+<div class="section-title stagger-heading"><h2>핵심 경험</h2></div>
+<div class="stagger-grid" aria-label="핵심 경험 4가지"><button type="button" class="stagger-card" onclick="openCase('onboard','featured')" aria-label="온보딩 교육 설계·운영과 과정 개선 상세 보기">
+<span class="stagger-art"><span class="stagger-index">01 / HRD</span><span class="stagger-peek">ONBOARDING</span><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="stagger-highlight">100명+</span><span class="stagger-caption">신규 조교 온보딩 및 직무교육</span></span>
+<span class="stagger-copy"><span class="stagger-kicker">교육 체계 설계</span><strong>온보딩 교육 설계·운영과 과정 개선</strong><span class="stagger-description">조직 안내부터 답변 실습, 후속 피드백과 다음 교육 개선까지</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
+</button>
+<button type="button" class="stagger-card" onclick="openCase('quality','featured')" aria-label="데이터 기반 개인별 학습 진단과 코칭 상세 보기">
+<span class="stagger-art"><span class="stagger-index">02 / HRD</span><span class="stagger-peek">COACHING</span><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="stagger-highlight">40 → 60건</span><span class="stagger-caption">검토 대상 24명의 평균 답변량 변화</span></span>
+<span class="stagger-copy"><span class="stagger-kicker">개인별 학습 진단</span><strong>데이터 기반 개인별 학습 진단과 코칭</strong><span class="stagger-description">성과 지표와 면담으로 어려움을 찾고, 개인에 맞는 코칭 진행</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
+</button>
+<button type="button" class="stagger-card" onclick="openCase('circle','featured')" aria-label="학급자치서클 설계와 진행 상세 보기">
+<span class="stagger-art"><span class="stagger-index">03 / HRD</span><span class="stagger-peek">FACILITATION</span><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="stagger-highlight">월 1회</span><span class="stagger-caption">정기적인 학급 대화의 장 운영</span></span>
+<span class="stagger-copy"><span class="stagger-kicker">참여와 대화 촉진</span><strong>학급자치서클 설계와 진행</strong><span class="stagger-description">발언 규칙과 논의 주제를 설계해 학생들의 참여와 경청 지원</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
+</button>
+<button type="button" class="stagger-card stagger-prompt" onclick="openCase('ai','featured')" aria-label="수학 교육용 AI 프롬프트 설계와 업체 협업 상세 보기">
+<span class="stagger-art"><span class="stagger-index">04 / AI</span><span class="stagger-peek">AI COLLAB</span><svg class="stagger-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="stagger-highlight">프롬프트<br>설계 주도</span><span class="stagger-caption">설계와 실험부터 업체와 구현·개선 협업까지</span></span>
+<span class="stagger-copy"><span class="stagger-kicker">프롬프트 설계와 협업</span><strong>수학 교육용 AI 프롬프트 설계와 업체 협업</strong><span class="stagger-description">수학 교육 기준을 프롬프트로 만들고, 외부 업체와 개선 방향 조율</span><span class="stagger-link">상세 보기 <span aria-hidden="true">↗</span></span></span>
+</button></div>
+</div>
 </section>
 
 <section id="portfolio">
@@ -2120,7 +2144,8 @@ const cases={
 <article class="story-step"><div class="story-number">02</div><h3>교육 현장에서 학생마다 다른 상황을 배웠습니다.</h3><p>대일외국어고등학교에서 학생 상담과 학급 운영을 맡으며 같은 안내와 지원도 학생의 상황과 이해 방식에 따라 다르게 닿는다는 점을 배웠습니다. 필요한 지원을 찾으려면 먼저 상대의 상황을 살펴야 한다고 느꼈습니다.</p></article>
 <article class="story-step"><div class="story-number">03</div><h3>개인의 성장을 돕는 일을 조직의 관점으로 넓혔습니다.</h3><p>이후 Woojin Math에서 조교 교육과 채용, 성과관리에 참여했습니다. 역할과 기준, 피드백이 구성원의 업무 경험에 미치는 영향을 보며 조직의 운영 방식에도 관심을 갖게 됐습니다. 업무 흐름과 결과를 살펴 필요한 변화를 찾고, 배움이 실제 업무로 이어지도록 돕는 HRD를 지향합니다.</p></article>`}
 };
-const featuredCaseDetails={"onboard":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">신규 조교 100명 이상이 조직과 QA 업무에 빠르게 적응하도록, 조직 안내부터 수학 답변 직무교육까지 이어지는 온보딩을 맡았습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>입사 직후 익혀야 할 것이 많았습니다</h3><p>조직과 운영 규칙, 시스템 사용법뿐 아니라 학생의 질문 의도를 파악하고 정확하고 이해하기 쉽게 답하는 기준까지 익혀야 했습니다. 단순한 시스템 안내만으로는 실제 답변 업무에 연결되기 어렵다고 봤습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 설계 판단</span><h3>좋은 답변의 기준을 사례로 익히게 했습니다</h3><p>답변 기준을 추상적으로 설명하기보다 모범답안과 개선이 필요한 답변을 비교하면 핵심 개념, 설명의 길이, 학생 눈높이를 구체적으로 이해할 수 있다고 판단했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>안내·실습·피드백을 단계별로 연결했습니다</h3><p>조직과 규칙, 시스템 사용법을 안내한 뒤 실제 답변 사례를 비교하고 조교가 직접 답변을 작성하도록 했습니다. 작성 결과에 피드백과 교정을 제공했으며, 약 3주간 답변을 살피고 비슷한 어려움이 반복되면 해당 조교들을 모아 추가 교육했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 확인한 변화</span><h3>질문의 핵심을 중심으로 답하도록 지원했습니다</h3><p>교육과 후속 피드백 과정에서 모호하거나 불필요한 설명을 덜어내고, 학생 질문의 핵심을 중심으로 답하는 변화를 확인했습니다. 별도의 정량 효과 수치는 확인되지 않아 관찰한 변화로 제시합니다.</p></article>\n</div></div>","quality":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">조교의 답변 지표와 1:1 면담을 함께 살펴 개인별 학습 과제를 찾았습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>성과 차이의 원인을 구체적으로 확인했습니다</h3><p>답변량과 오류율, 근무시간을 점검하고 조교와 면담했습니다. 그 과정에서 수학 실력은 충분하지만 학생 수준보다 많은 내용을 설명해 답변이 길어지는 사례를 발견했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 판단</span><h3>사람마다 다른 어려움에 맞춰 지원했습니다</h3><p>모든 저성과를 같은 교육으로 해결하기보다, 공통으로 필요한 내용은 함께 연습하고 반복되는 개인별 문제는 개별 피드백이나 역할 조정으로 지원하기로 했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>비교 사례와 실제 답변 연습으로 코칭했습니다</h3><p>우수 답안과 조교가 작성한 답변을 비교하는 사례를 준비해 핵심을 간결하게 전달하는 방법을 설명했습니다. 비슷한 어려움을 가진 조교들을 함께 교육하고, 이후 답변을 다시 살펴 개별 교정과 필요한 역할 조정을 진행했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 확인한 결과</span><h3>답변량과 오류율에서 변화를 확인했습니다</h3><p>4주 분석 자료에서 검토 대상 24명의 평균 답변량은 40건에서 60건으로, 평균 오류율은 8.6%에서 2.9%로 변했습니다. 답변량 증가만으로 교육 효과를 단정하지 않고 업무시간과 면담 내용도 함께 살폈습니다.</p><p class=\"featured-note\">오류율 산식과 평가 답변 건수 분모는 원자료에 없어 집계 비율 그대로 표기했습니다.</p></article>\n</div></div>","improvement":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">반복되는 답변 오류와 조교들이 어려워하는 수학 개념을 일회성 안내로 끝내지 않고, 재교육과 다음 해 직무교육에 이어지도록 운영했습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>같은 질문과 오류가 다시 나타났습니다</h3><p>조교들의 답변을 살펴보니 반복되는 오류와 자주 어려워하는 수학 개념이 있었습니다. 개인에게만 피드백하면 다른 조교가 같은 문제를 겪을 수 있어 공통 학습 자료로 정리할 필요가 있었습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 설계 판단</span><h3>현장의 질문을 다음 교육의 입력으로 삼았습니다</h3><p>먼저 오류와 어려운 개념을 정리해 전체 조교에게 공유하고, 자료를 본 뒤 새로 들어온 질문과 보완할 내용을 재교육 및 차년도 과정에 반영했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>오류 사례·질문·피드백을 과정에 연결했습니다</h3><p>반복 오류와 어려운 개념을 사례 자료로 만들고 공유했습니다. 이후 게시판에 들어온 질문과 추가 학습이 필요한 내용을 모아 재교육 및 다음 해 직무교육 내용에 반영했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 운영 지표에서 확인한 변화</span><h3>질문과 답변 흐름을 함께 살폈습니다</h3><p>동일 날짜 구간(2024.01.01–10.09, 2025.01.01–10.09)의 질문량을 비교하면 177,813건에서 236,691건으로 33.1% 늘었습니다. 전체 답변량도 증가했습니다. 미답변 질문과 답변 지연은 줄었으며 게시판이 개선됐다는 현장 반응도 들었습니다.</p><p class=\"featured-note\">증가율 분모는 2024년 동일 기간 질문량 177,813건입니다. 질문량과 답변 흐름은 운영 지표로 활용했으며 교육 하나만의 인과 성과로 단정하지 않습니다.</p></article>\n</div></div>","circle":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">학생들의 거친 말투와 공격적인 표현이 반복되는 상황에서, 일방적인 지적보다 학생들이 서로의 생각을 듣고 공동체의 규칙을 논의할 자리가 필요하다고 판단했습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>관계 문제를 함께 다룰 대화 구조가 필요했습니다</h3><p>학생들의 말이 관계에 미치는 영향을 돌아보고, 서로의 의견을 안전하게 나눌 수 있는 정기적인 대화의 장을 마련하고자 했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 설계 판단</span><h3>참여와 경청이 보장되는 규칙을 정했습니다</h3><p>발언이 일부 학생에게 쏠리지 않도록 말할 순서를 정하고, 공동체가 실제로 논의할 주제를 학생들과 함께 다루는 방식으로 진행했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>월 1회 학급자치서클을 직접 운영했습니다</h3><p>토킹스틱을 만들어 이를 든 사람만 말하도록 했습니다. 정기적으로 대화의 장을 열고, 언어 습관과 공동체 생활에서 함께 의논할 안건을 진행해 의견을 모았습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 관찰과 참여자 의견</span><h3>현장 변화와 설문 응답을 구분해 기록했습니다</h3><p>운영 중 욕설과 비방이 줄고 서로의 차이를 인정하는 모습을 관찰했습니다. 별도 설문에는 25명이 응답했고, 학급 분위기·질문의 편안함·의견 존중·조언의 도움·성장 체감 등 다섯 문항에서 4~5점 응답 비율은 64~76%였습니다.</p><p class=\"featured-note\">설문은 소규모 참여자 의견이며, 관찰한 변화와 함께 참고 자료로 제시합니다.</p></article>\n</div></div>","retention":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">선발 이후의 성과와 이탈을 추적해 다음 채용 기준과 규모에 연결했습니다. 인원을 단순히 늘리는 대신, 조기 이탈이 발생하는 이유와 실제 운영에 필요한 인원을 함께 살폈습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>조기 이탈이 인력 운영의 변수가 됐습니다</h3><p>입사 후 인원의 성과와 근무 지속 여부를 보지 않으면 기존 선발 방식과 채용 규모가 적절했는지 판단하기 어려웠습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 분석과 판단</span><h3>이탈 원인과 업무 수요를 함께 고려했습니다</h3><p>답변량, 오류율, 미션 수행, 근무 이력을 추적하고 학교 일정, 거리, 학업 부담 등 조기 이탈 이유를 살폈습니다. 잔류 인원과 예상 이탈, 업무량을 함께 봐야 다음 해 채용 규모를 정할 수 있다고 판단했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>입사 후 데이터를 다음 선발 계획으로 되돌렸습니다</h3><p>성과와 이탈 데이터를 다음 선발 기준에 반영하고, 예상 잔류 인원과 업무량을 고려해 다음 해 필요한 채용 규모를 산정했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 확인한 결과</span><h3>같은 기간 조기 이탈 인원이 줄었습니다</h3><p>조기 이탈 원인과 예상 잔류 인원, 업무량을 다음 해 선발 기준과 채용 규모 산정에 반영했습니다.</p></article>\n</div></div>","ai":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">외부 AI 업체와 교육용 수학 답변 서비스를 개선했습니다. 업체는 AI를 구현하고, 저는 교육 도메인에서 답변의 정확성과 설명 적절성을 검수하며 개선 방향을 구체화했습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>수학 답변의 구조와 설명을 맞추기 어려웠습니다</h3><p>업체에 수학 전문가가 없어 학생 질문의 의도에 맞는 설명과 답변 구조를 정하는 데 어려움이 있었습니다. 여러 개선 시도 뒤에도 해결이 필요한 지점을 업체와 공유했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 역할과 판단</span><h3>교육 기준을 구현 가능한 피드백으로 바꿨습니다</h3><p>제가 맡은 일은 모델을 직접 개발하는 것이 아니라, 수학 교육 관점의 품질 기준을 설명하고 프롬프트 초안과 검수 의견을 전달하는 것이었습니다. 핵심 개념을 먼저 설명하고 불필요하게 장황한 답변을 줄이는 방향을 제안했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>프롬프트 실험과 재검수를 반복했습니다</h3><p>업체가 겪는 문제를 구체적으로 확인한 뒤 프롬프트를 여러 버전으로 실험했습니다. 초안을 전달하면 업체가 구현과 고도화를 진행했고, 저는 개선 답변을 다시 검수해 피드백을 보냈습니다. 일부 학생 대상 베타테스트도 진행했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 결과와 범위</span><h3>교육 도메인에서 누적 3,500건을 직접 검수했습니다</h3><p>반복 검수를 통해 답변 구조의 일관성이 나아지고 불필요한 장황함이 줄어드는 것을 확인했습니다. AI 구현과 제품 반영은 외부 업체가 맡았으며, 제가 직접 수행한 검수 규모는 누적 3,500건입니다.</p><p class=\"featured-note\">집계 기간은 보유 자료에 별도 기재되지 않았습니다.</p></article>\n</div></div>"};
+const featuredCaseDetails={"onboard":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">신규 조교 100명 이상이 조직과 QA 업무를 익히도록 온보딩과 직무교육을 맡고, 현장에서 발견한 오류와 질문을 다음 교육에 반영했습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>업무 적응과 답변 기준을 함께 다뤄야 했습니다</h3><p>신규 조교는 조직과 운영 규칙, 시스템 사용법뿐 아니라 학생의 질문 의도를 파악하고 정확하고 이해하기 쉽게 답하는 기준을 익혀야 했습니다. 업무 중 반복되는 오류와 어려운 수학 개념도 교육에서 다룰 필요가 있었습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 교육 설계</span><h3>안내에서 답변 실습으로 이어지도록 구성했습니다</h3><p>조직과 규칙, 시스템 사용법을 안내한 뒤 모범답안과 개선이 필요한 답변을 비교했습니다. 핵심 개념과 설명의 길이, 학생 눈높이를 사례로 익히고 직접 답변을 작성하도록 했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 운영과 후속 지원</span><h3>실습 피드백과 업무 중 점검을 연결했습니다</h3><p>작성한 답변에 피드백과 교정을 제공하고, 약 3주간 실제 답변을 살폈습니다. 비슷한 어려움이 반복되는 조교들을 모아 추가 교육했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 과정 개선</span><h3>반복 오류와 현장 질문을 다음 교육에 반영했습니다</h3><p>반복되는 답변 오류와 어려운 개념을 사례 자료로 정리해 전체 조교에게 공유했습니다. 자료를 본 뒤 들어온 질문과 추가 학습이 필요한 내용을 모아 재교육과 다음 해 직무교육에 반영했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>05 / 확인한 변화</span><h3>학생 질문의 핵심을 중심으로 답하도록 지원했습니다</h3><p>교육과 후속 피드백 과정에서 모호하거나 불필요한 설명을 덜어내고, 질문의 핵심을 중심으로 답하는 변화를 확인했습니다. 신규 조교 100명 이상은 교육 규모이며, 교육 효과의 정량 수치와 구분해 제시합니다.</p></article>\n</div></div>","quality":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">조교의 답변 지표와 1:1 면담을 함께 살펴 개인별 학습 과제를 찾았습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>성과 차이의 원인을 구체적으로 확인했습니다</h3><p>답변량과 오류율, 근무시간을 점검하고 조교와 면담했습니다. 그 과정에서 수학 실력은 충분하지만 학생 수준보다 많은 내용을 설명해 답변이 길어지는 사례를 발견했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 판단</span><h3>사람마다 다른 어려움에 맞춰 지원했습니다</h3><p>모든 저성과를 같은 교육으로 해결하기보다, 공통으로 필요한 내용은 함께 연습하고 반복되는 개인별 문제는 개별 피드백이나 역할 조정으로 지원하기로 했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>비교 사례와 실제 답변 연습으로 코칭했습니다</h3><p>우수 답안과 조교가 작성한 답변을 비교하는 사례를 준비해 핵심을 간결하게 전달하는 방법을 설명했습니다. 비슷한 어려움을 가진 조교들을 함께 교육하고, 이후 답변을 다시 살펴 개별 교정과 필요한 역할 조정을 진행했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 확인한 결과</span><h3>답변량과 오류율에서 변화를 확인했습니다</h3><p>4주 분석 자료에서 검토 대상 24명의 평균 답변량은 40건에서 60건으로, 평균 오류율은 8.6%에서 2.9%로 변했습니다. 답변량 증가만으로 교육 효과를 단정하지 않고 업무시간과 면담 내용도 함께 살폈습니다.</p><p class=\"featured-note\">오류율 산식과 평가 답변 건수 분모는 원자료에 없어 집계 비율 그대로 표기했습니다.</p></article>\n</div></div>","circle":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">학생들의 거친 말투와 공격적인 표현이 반복되는 상황에서, 일방적인 지적보다 학생들이 서로의 생각을 듣고 공동체의 규칙을 논의할 자리가 필요하다고 판단했습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>관계 문제를 함께 다룰 대화 구조가 필요했습니다</h3><p>학생들의 말이 관계에 미치는 영향을 돌아보고, 서로의 의견을 안전하게 나눌 수 있는 정기적인 대화의 장을 마련하고자 했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 설계 판단</span><h3>참여와 경청이 보장되는 규칙을 정했습니다</h3><p>발언이 일부 학생에게 쏠리지 않도록 말할 순서를 정하고, 공동체가 실제로 논의할 주제를 학생들과 함께 다루는 방식으로 진행했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 실행</span><h3>월 1회 학급자치서클을 직접 운영했습니다</h3><p>토킹스틱을 만들어 이를 든 사람만 말하도록 했습니다. 정기적으로 대화의 장을 열고, 언어 습관과 공동체 생활에서 함께 의논할 안건을 진행해 의견을 모았습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 관찰과 참여자 의견</span><h3>현장 변화와 설문 응답을 구분해 기록했습니다</h3><p>운영 중 욕설과 비방이 줄고 서로의 차이를 인정하는 모습을 관찰했습니다. 별도 설문에는 25명이 응답했고, 학급 분위기·질문의 편안함·의견 존중·조언의 도움·성장 체감 등 다섯 문항에서 4~5점 응답 비율은 64~76%였습니다.</p><p class=\"featured-note\">설문은 소규모 참여자 의견이며, 관찰한 변화와 함께 참고 자료로 제시합니다.</p></article>\n</div></div>","ai":"<div class=\"featured-detail\">\n<div class=\"detail-context featured-lead\">수학 교육 관점에서 필요한 답변 구조와 설명 기준을 프롬프트로 직접 설계하고, 외부 AI 업체와 구현 및 개선을 이어갔습니다.</div>\n<div class=\"featured-detail-grid\">\n<article class=\"featured-detail-step\"><span>01 / 상황과 과제</span><h3>학생 질문에 맞는 답변 구조가 필요했습니다</h3><p>외부 업체와 수학 답변 서비스를 개선하는 과정에서 질문 의도에 맞는 설명과 답변 구조를 정하는 데 어려움이 있었습니다. 기존 답변에서 해결이 필요한 지점을 구체적으로 확인하고 업체와 공유했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>02 / 프롬프트 설계 주도</span><h3>수학 교육 기준을 프롬프트에 담았습니다</h3><p>핵심 개념을 먼저 설명하고 불필요하게 장황한 답변을 줄이는 방향으로 프롬프트 초안을 제작했습니다. 여러 버전으로 실험하며 학생 질문에 적절한 설명이 나오도록 설계를 보완했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>03 / 업체와 협업</span><h3>설계안과 검수 의견을 구현으로 연결했습니다</h3><p>제가 제작한 프롬프트 초안을 업체에 전달하면 업체가 구현과 고도화를 진행했습니다. 개선된 답변을 다시 살펴 피드백을 보내고, 업체와 수정 방향을 조율하는 과정을 반복했습니다. 일부 학생 대상 베타테스트도 진행했습니다.</p></article>\n<article class=\"featured-detail-step\"><span>04 / 확인한 변화</span><h3>답변 구조와 설명의 일관성을 개선했습니다</h3><p>반복 실험과 개선 과정에서 답변 구조의 일관성이 나아지고 불필요한 장황함이 줄어드는 것을 확인했습니다. 프롬프트 초안 제작과 교육 관점의 검수는 제가 맡았고, AI 구현과 제품 반영은 외부 업체가 맡았습니다.</p><p class=\"featured-note\">설계안을 점검하고 개선하는 과정에서 직접 검수한 AI 답변은 누적 3,500건입니다. 집계 기간은 보유 자료에 별도 기재되지 않았습니다.</p></article>\n</div></div>"};
+const featuredCaseTitles={"onboard":"온보딩 교육 설계·운영과 과정 개선","quality":"데이터 기반 개인별 학습 진단과 코칭","circle":"학급자치서클 설계와 진행","ai":"수학 교육용 AI 프롬프트 설계와 업체 협업"};
 const detail=document.getElementById('detail');
 let modalReturnScrollY=0;
 function restoreModalPagePosition(){
@@ -2131,7 +2156,7 @@ function restoreModalPagePosition(){
 function openCase(key,variant='standard'){
  modalReturnScrollY=window.scrollY;
  const base=cases[key];
- const c=variant==='featured'&&featuredCaseDetails[key]?{...base,body:featuredCaseDetails[key]}:base;
+ const c=variant==='featured'&&featuredCaseDetails[key]?{...base,title:featuredCaseTitles[key]||base.title,body:featuredCaseDetails[key]}:base;
  detailBody.innerHTML=`<div class="section-label">${c.label}</div><h2>${c.title}</h2>${c.body}`;
  detail.showModal();
  animateCounters(detailBody);
@@ -2150,16 +2175,11 @@ function openOps(){
 }
 
 
-async function openFeaturedCase(event,key){
+function openFeaturedCase(event,key){
  event.preventDefault();
- if(detail.open)return;
- const card=event.currentTarget;
- activateFeaturedCard(card);
- card.classList.add('is-click-pull');
- await new Promise(resolve=>setTimeout(resolve,650));
- openCase(key,'featured');
+ if(!detail.open)openCase(key,'featured');
 }
-detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');clearFeaturedCards();document.querySelectorAll('.featured-card').forEach(card=>card.classList.remove('is-click-pull'));restoreModalPagePosition();});
+detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');restoreModalPagePosition();});
 ops.addEventListener('close',restoreModalPagePosition);
 const navLinks=[...document.querySelectorAll('.navmenu a')];
 let navScrollFrame=0,navScrollToken=0,navScrollInlineBehavior='';
@@ -2228,46 +2248,6 @@ addEventListener('scroll',()=>{
 addEventListener('resize',updateActiveNav);
 updateActiveNav();
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const featuredDeck=document.querySelector('.featured-deck');
-const featuredCards=[...document.querySelectorAll('.featured-card')];
-let featuredResetTimer=null;
-function cancelFeaturedReset(){
- if(featuredResetTimer!==null){clearTimeout(featuredResetTimer);featuredResetTimer=null;}
-}
-function scheduleFeaturedReset(){
- cancelFeaturedReset();
- featuredResetTimer=setTimeout(()=>{featuredResetTimer=null;clearFeaturedCards();},90);
-}
-function activateFeaturedCard(card){
- cancelFeaturedReset();
- featuredCards.forEach(other=>{
-  other.classList.remove('is-active','is-before','is-after');
-  if(other===card)other.classList.add('is-active');
-  else if(featuredCards.indexOf(other)<featuredCards.indexOf(card))other.classList.add('is-before');
-  else other.classList.add('is-after');
- });
-}
-function clearFeaturedCards(){
- cancelFeaturedReset();
- featuredCards.forEach(card=>card.classList.remove('is-active','is-before','is-after'));
-}
-featuredCards.forEach(card=>{
- card.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')activateFeaturedCard(card)});
- card.addEventListener('pointermove',event=>{
-  if(event.pointerType!=='mouse'||reduceMotion)return;
-  const rect=card.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;
-  card.style.setProperty('--pointer-x',Math.round(x*100)+'%');
-  card.style.setProperty('--pointer-y',Math.round(y*100)+'%');
-  card.style.setProperty('--tilt-x',((.5-y)*5).toFixed(2)+'deg');
-  card.style.setProperty('--tilt-y',((x-.5)*6).toFixed(2)+'deg');
- });
- card.addEventListener('pointerleave',event=>{
-  card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');
-  if(event.pointerType==='mouse')scheduleFeaturedReset();
- });
- card.addEventListener('focus',()=>activateFeaturedCard(card));
- card.addEventListener('blur',()=>setTimeout(()=>{if(!featuredDeck.contains(document.activeElement))clearFeaturedCards()},0));
-});
 function formatCount(value,source){
  const decimals=(source.split('.')[1]||'').length;
  return new Intl.NumberFormat('ko-KR',{minimumFractionDigits:0,maximumFractionDigits:decimals}).format(decimals?Number(value.toFixed(decimals)):Math.round(value));
