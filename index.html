@@ -1237,6 +1237,33 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
  .featured-card,.featured-art,.featured-copy{transition:none!important}
 }
 
+
+/* Remove artwork overlays that make the top panel appear to change later */
+.featured-card,.featured-art,.featured-copy{
+ transition-property:background-color,color,border-color,box-shadow,transform!important;
+ transition-duration:.36s,.36s,.36s,.36s,.64s!important;
+ transition-timing-function:cubic-bezier(.22,.68,.2,1),cubic-bezier(.22,.68,.2,1),cubic-bezier(.22,.68,.2,1),ease,cubic-bezier(.16,1,.3,1)!important;
+ transition-delay:0s!important;
+}
+.featured-art,.featured-art.art-onboarding,.featured-art.art-coaching,.featured-art.art-improvement,
+.featured-art.art-circle,.featured-art.art-retention,.featured-art.art-ai{
+ background-color:#e9edf0!important;
+ background-image:none!important;
+}
+.featured-card:hover .featured-art,.featured-card:focus-visible .featured-art,.featured-card.is-active .featured-art{
+ background-color:#173e70!important;
+ background-image:none!important;
+}
+.featured-card:hover .featured-copy,.featured-card:focus-visible .featured-copy,.featured-card.is-active .featured-copy,
+.featured-card:hover.is-click-pull .featured-copy,.featured-card.is-click-pull .featured-copy{
+ background-color:#173e70!important;
+ background-image:none!important;
+}
+.featured-art::before,.featured-art::after{
+ display:none!important;
+ transition:none!important;
+}
+
 </style>
 </head>
 <body>
