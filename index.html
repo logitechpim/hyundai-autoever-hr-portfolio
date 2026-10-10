@@ -1943,7 +1943,6 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 #portfolio .major-layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:64px;align-items:start}
 #portfolio .section-title{margin:0}
 #portfolio .major-content{min-width:0}
-#portfolio .filters{margin:0 0 22px;flex-wrap:wrap}
 #portfolio .experience-list{border-top:1px solid #dce2e8}
 #portfolio .experience-row{appearance:none;display:flex;align-items:center;justify-content:space-between;gap:28px;width:100%;min-height:94px;margin:0;padding:26px 4px;border:0;border-bottom:1px solid #dce2e8;border-radius:0;background:transparent;color:#263440;text-align:left;font:inherit;cursor:pointer;transition:color .18s ease}
 #portfolio .experience-row[hidden]{display:none}
@@ -1953,7 +1952,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 #portfolio .experience-row:hover .experience-arrow,#portfolio .experience-row:focus-visible .experience-arrow{color:#1673cc}
 #portfolio .experience-row:focus-visible{outline:2px solid #1673cc;outline-offset:-2px}
 @media(max-width:1050px){#portfolio .major-layout{grid-template-columns:1fr;gap:28px}}
-@media(max-width:620px){#portfolio .experience-row{min-height:82px;padding:22px 0;gap:18px}#portfolio .experience-title{font-size:17px}#portfolio .experience-arrow{font-size:23px}#portfolio .filters{gap:8px;margin-bottom:18px}}
+@media(max-width:620px){#portfolio .experience-row{min-height:82px;padding:22px 0;gap:18px}#portfolio .experience-title{font-size:17px}#portfolio .experience-arrow{font-size:23px}}
 @media(prefers-reduced-motion:reduce){#portfolio .experience-row,#portfolio .experience-arrow{transition:none}}
 
 </style>
@@ -2048,7 +2047,6 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <div class="container major-layout">
 <div class="section-title"><h2>주요 경험</h2></div>
 <div class="major-content">
-<div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 및 기타활동</button></div>
 <div class="experience-list">
 <button class="experience-row" data-category="HRD" onclick="openCase('counsel')" aria-label="개별 상담과 성장 지원 상세 보기" aria-haspopup="dialog"><span class="experience-title">개별 상담과 성장 지원</span><span class="experience-arrow" aria-hidden="true">→</span></button>
 <button class="experience-row" data-category="HRD" onclick="openCase('brief')" aria-label="학부모 설명회 기획과 발표 상세 보기" aria-haspopup="dialog"><span class="experience-title">학부모 설명회 기획과 발표</span><span class="experience-arrow" aria-hidden="true">→</span></button>
@@ -2183,12 +2181,6 @@ function openCase(key,variant='standard'){
  detail.showModal();
  animateCounters(detailBody);
 }
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
- document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===btn));
- document.querySelectorAll('#portfolio .experience-row').forEach(card=>{
-  card.hidden=btn.dataset.filter!=='ALL'&&card.dataset.category!==btn.dataset.filter;
- });
-}));
 const opsImages=[`assets/c48c09ce223196b4f43dc3dc9fc02c6d5a19a1a1.png`,`assets/f148ba000f65259376b738e12a214a92cb715ad4.png`,`assets/d825c8f1b8214b3356ab04ac8b937c046c63e2c6.png`,`assets/e5f29e01c5ab774a2df902755a1afa71c84eb902.png`];
 function openOps(){
  modalReturnScrollY=window.scrollY;
