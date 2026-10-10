@@ -1311,6 +1311,38 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
  background-color:#1773cc!important;
 }
 
+
+/* Floating sidebar navigation without a visible panel edge */
+.header{
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+.header .navmenu{
+ display:flex;
+ flex-direction:column;
+ gap:10px;
+}
+.header .navmenu a{
+ border:0!important;
+ border-radius:12px;
+ background:transparent!important;
+ padding:15px 18px;
+ transition:transform .28s cubic-bezier(.2,.7,.2,1),background-color .28s ease,box-shadow .28s ease!important;
+}
+.header .navmenu a:hover,
+.header .navmenu a:focus-visible{
+ background:rgba(23,115,204,.07)!important;
+ box-shadow:0 9px 24px rgba(23,91,150,.10);
+ transform:translateX(4px) translateY(-1px);
+}
+.header .navmenu a.active{
+ background:rgba(23,115,204,.09)!important;
+ box-shadow:none!important;
+ transform:none;
+}
+.header .navmenu a.active::before{display:none!important}
+
 </style>
 </head>
 <body>
