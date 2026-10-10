@@ -882,7 +882,7 @@ body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;to
 /* Featured experiences: overlapping cards that pull forward on hover or focus */
 .featured-experiences{background:#f7f9f6;overflow:hidden}
 .featured-deck{position:relative;width:min(100%,1080px);height:490px;margin:34px auto 0;perspective:1400px}
-.featured-card{position:absolute;top:calc(var(--card-index)*5px);left:calc(var(--card-index)*11.2%);z-index:calc(1 + var(--card-index));display:block;width:34%;height:420px;padding:0;border:1px solid rgba(0,44,95,.14);border-radius:16px;overflow:hidden;background:#fff;text-align:left;color:inherit;cursor:pointer;transform:rotate(var(--card-tilt));transform-origin:50% 85%;box-shadow:0 14px 32px rgba(10,35,65,.16);transition:transform .55s cubic-bezier(.18,.76,.25,1),box-shadow .45s ease,border-color .3s ease}
+.featured-card{position:absolute;top:0;left:calc(var(--card-index)*11.2%);z-index:calc(1 + var(--card-index));display:block;width:34%;height:420px;padding:0;border:1px solid rgba(0,44,95,.14);border-radius:16px;overflow:hidden;background:#fff;text-align:left;color:inherit;cursor:pointer;transform:rotate(var(--card-tilt));transform-origin:50% 85%;box-shadow:0 14px 32px rgba(10,35,65,.16);transition:transform .55s cubic-bezier(.18,.76,.25,1),box-shadow .45s ease,border-color .3s ease}
 .featured-art{height:265px;position:relative;display:block;overflow:hidden;background:#14202c;color:#fff;isolation:isolate}
 .featured-art::before{content:"";position:absolute;inset:-22%;z-index:-1;background:radial-gradient(ellipse at 73% 28%,rgba(117,157,192,.42),transparent 38%),linear-gradient(135deg,rgba(255,255,255,.1),transparent 56%);transition:transform .65s ease}
 .featured-art::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,transparent 34%,rgba(255,255,255,.2) 49%,transparent 63%);transform:translateX(-130%);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -1026,6 +1026,13 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
 .featured-card.is-click-pull .featured-metric{text-shadow:none}
 .featured-card::before{background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(255,255,255,.075),transparent 66%)}
 
+
+
+/* Keep stacked experience cards level and on one baseline; preserve hover/click extraction. */
+@media(min-width:761px){
+ .featured-card{top:0!important;transform:translateZ(0) rotate(0deg)!important}
+ .featured-card.is-before,.featured-card.is-after{top:0!important;transform:translateZ(0) rotate(0deg)!important}
+}
 
 /* Featured deck: keep every card level, then visibly pull it from the stack */
 @media (min-width:761px){
@@ -1623,27 +1630,27 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
   <div class="container">
     <div class="section-title"><h2>핵심 경험</h2></div>
     <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
-      <button class="featured-card" style="--card-index:0;--card-tilt:-5deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
+      <button class="featured-card" style="--card-index:0;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
         <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
         <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span></span>
       </button>
-      <button class="featured-card" style="--card-index:1;--card-tilt:-2deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
+      <button class="featured-card" style="--card-index:1;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
         <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">저성과 조교 평균 답변량 증가</span></span>
         <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span></span>
       </button>
-      <button class="featured-card" style="--card-index:2;--card-tilt:1deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
+      <button class="featured-card" style="--card-index:2;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
         <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">30%+</span><span class="featured-metric-caption">2025년 게시판 질문량 증가 · 2024년 대비</span></span>
         <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span></span>
       </button>
-      <button class="featured-card" style="--card-index:3;--card-tilt:3deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
+      <button class="featured-card" style="--card-index:3;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
         <span class="featured-art art-circle"><span class="featured-index">04 / HRD</span><span class="featured-peek">FACILITATION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="featured-metric">월 1회</span><span class="featured-metric-caption">대화의 장을 만든 학급자치서클</span></span>
         <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span></span>
       </button>
-      <button class="featured-card" style="--card-index:4;--card-tilt:5deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
+      <button class="featured-card" style="--card-index:4;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
         <span class="featured-art art-retention"><span class="featured-index">05 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
         <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span></span>
       </button>
-      <button class="featured-card" style="--card-index:5;--card-tilt:7deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
+      <button class="featured-card" style="--card-index:5;--card-tilt:0deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
         <span class="featured-art art-ai"><span class="featured-index">06 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
         <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span></span>
       </button>
@@ -1656,10 +1663,10 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 및 기타활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
 <div class="portfolio-grid"><button class="case-card" data-category="HRD" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>답변량·오류율·근무시간과 면담으로 개인별 학습 과제 진단</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('improvement')">
 <div class="case-visual photo-case"><div class="visual-content"><strong>30%+</strong><span>게시판 질문량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>반복 오류와 현장 질문의 교육 반영</p></div></button>
+<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>교육 후 질문·답변 흐름을 점검해 재교육·차년도 과정에 반영</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('onboard')">
 <div class="case-visual photo-case onboarding-case"><img class="visual-bg" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
 <div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>조직 안내부터 답변 기준까지 단계별 온보딩</p></div></button>
@@ -1677,16 +1684,16 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('selection')">
 <div class="case-visual hrm-case compact-metric"><div class="visual-content"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div></div>
-<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p></div></button>
+<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 중심 선발 프로세스 개선</h3><p>핵심역량 평가기준과 테스트·면접 절차 정비</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('retention')">
 <div class="case-visual photo-case hrm-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>조기 이탈 인원 감소</span></div></div>
 <div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('interview')">
 <div class="case-visual hrm-case"><div class="visual-content"><strong>약 100명</strong><span>지원자 면접 및 평가</span></div></div>
-<div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p></div></button>
+<div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>자기소개서 기반 구조화 면접 운영</h3><p>3인 면접위원으로 참여해 약 100명 지원자의 답변 평가</p></div></button>
 <button class="case-card" data-category="HRM" onclick="openCase('alignment')">
 <div class="case-visual hrm-case"><div class="visual-content"><strong>공통 기준</strong><span>면접 평가 기준 정렬</span></div></div>
-<div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p></div></button>
+<div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>면접위원 간 평가기준 정렬</h3><p>답변 사례·점수 근거를 비교해 공통 판단기준 정리</p></div></button>
 <button class="case-card" data-category="PROJECT" onclick="openCase('money')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
 <div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p></div></button>
@@ -1835,7 +1842,7 @@ const cases={
 <h3>제가 맡은 역할과 협업 과정</h3><ul><li>업체에 구체적으로 어떤 부분에서 어려움을 겪는지 먼저 공유해 달라고 요청했습니다.</li><li>공유받은 어려움을 바탕으로 LLM 프롬프트를 여러 버전으로 실험했습니다.</li><li>핵심 개념을 먼저 설명하고 불필요하게 장황한 답변을 줄이기 위한 프롬프트 초안을 업체에 전달했습니다.</li><li>업체는 초안을 실제 구현에 반영하고 추가로 고도화했습니다.</li><li>저는 개선된 답변을 다시 검수하고 피드백을 전달하는 과정을 반복했습니다.</li></ul>
 <h3>협업 결과</h3><ul><li>답변 구조의 일관성이 개선되고 불필요한 장황함이 줄었습니다.</li><li>일부 학생을 대상으로 베타테스트를 진행했습니다.</li></ul>
 <h3>직접 수행한 검수</h3><div class="metric-block"><strong>3,500건</strong><span>제가 누적 직접 검수한 AI 답변 수</span></div>`},
-"selection":{label:`HRM - 인재 확보 / Woojin Math`,title:`직무 적합성 기반 인재 선발체계 개선`,meta:`Woojin Math`,body:`<div class="detail-context">공정성과 직무 적합성을 높이기 위해 핵심역량 중심으로 선발기준과 채용 프로세스를 개선</div>
+"selection":{label:`HRM - 인재 확보 / Woojin Math`,title:`직무 적합성 중심 선발 프로세스 개선`,meta:`Woojin Math`,body:`<div class="detail-context">공정성과 직무 적합성을 높이기 위해 핵심역량 중심으로 선발기준과 채용 프로세스를 개선</div>
 <h3>수행 내용</h3><ul><li>설명력, 문맥 이해, 오류 검토 능력을 평가기준에 반영</li><li>테스트와 면접 질문 및 판단 기준 정비</li><li>선발 후 답변량, 오류율, 미션 수행, 근무 이력 추적</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>약 300명</strong><span>지원자 평가</span></div><div><strong>100명 +</strong><span>최종 선발</span></div></div>
 <button class="resource-button" onclick="openOps()">조교 운영 및 성과관리 대시보드 보기 ↗</button>`},
@@ -1843,10 +1850,10 @@ const cases={
 <h3>수행 내용</h3><ul><li>선발 이후 답변량, 오류율, 미션 수행, 근무 이력 지속 추적</li><li>학교 일정, 거리, 학업 부담 등 조기 이탈 원인 분석</li><li>입사 후 성과와 이탈 데이터를 다음 선발 기준에 반영</li><li>잔류 인원, 예상 이탈, 업무량을 바탕으로 다음 해 채용 규모 산정</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>40% ↓</strong><span>같은 기간 조기 이탈 인원 감소</span></div>
 <button class="resource-button" onclick="openOps()">조교 운영 및 성과관리 대시보드 보기 ↗</button>`},
-"interview":{label:`HRM - 공정한 선발 / 대일외국어고등학교`,title:`지원자 역량 중심 면접 및 평가`,meta:`대일외국어고등학교`,body:`<div class="detail-context">지원자의 경험과 역량을 일관된 기준으로 검토하기 위한 자기소개서 기반 면접 설계 및 운영</div>
+"interview":{label:`HRM - 구조화 면접 / 대일외국어고등학교`,title:`자기소개서 기반 구조화 면접 운영`,meta:`대일외국어고등학교`,body:`<div class="detail-context">지원자의 경험과 역량을 일관된 기준으로 검토하기 위한 자기소개서 기반 면접 설계 및 운영</div>
 <h3>수행 내용</h3><ul><li>3인 면접위원으로 입학전형 참여</li><li>자기소개서 기반 질문과 후속 질문 설계</li><li>답변의 논리, 경험의 구체성, 질문과의 관련성 평가</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>약 100명</strong><span>지원자 직접 면접 및 평가</span></div>`},
-"alignment":{label:`HRM - 평가 일관성 / 대일외국어고등학교`,title:`평가 신뢰도 제고를 위한 면접기준 표준화`,meta:`대일외국어고등학교`,body:`<div class="detail-context">면접위원 간 판단 편차를 줄이고 공정한 선발을 지원하기 위한 평가기준 정렬</div>
+"alignment":{label:`HRM - 평가 일관성 / 대일외국어고등학교`,title:`면접위원 간 평가기준 정렬`,meta:`대일외국어고등학교`,body:`<div class="detail-context">면접위원 간 판단 편차를 줄이고 공정한 선발을 지원하기 위한 평가기준 정렬</div>
 <h3>수행 내용</h3><ul><li>실제 지원자 답변 사례와 점수 근거 비교</li><li>공통으로 판단 가능한 항목을 평가기준으로 정리</li><li>점수보다 판단 근거를 설명하고 공유하는 방식으로 조율</li></ul>
 <h3>결과</h3><div class="metric-block"><strong>공통 기준</strong><span>면접위원 간 판단 근거 정렬</span></div>`},
 "money":{label:`PROJECT / 2026 AI Challenge / 금융보안원 주최`,title:`So, My Money?`,meta:`2026 AI Challenge`,body:`<div class="detail-context">개인 자산에 영향을 주는 뉴스를 이용자별로 설명하는 서비스를 기획하고 검증한 프로젝트</div>
