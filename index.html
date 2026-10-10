@@ -1541,6 +1541,18 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 .featured-detail-step .featured-note{margin-top:12px;padding:10px 12px;background:#f7f9fb;color:#657386;font-size:12px;line-height:1.7}
 @media(max-width:700px){.featured-detail-grid{grid-template-columns:1fr}.featured-detail-step{padding:18px 0}}
 </style>
+
+<style id="employee-id-photo-refinement">
+.why-id-card{display:flex;flex-direction:column;min-height:430px;padding:24px 22px 18px}
+.why-id-brand{position:relative;z-index:2;margin-bottom:0}
+.why-id-accent{flex:0 0 3px;margin:42px -22px 0}
+.why-id-info{position:relative;z-index:2;width:112px;margin:12px 0 -4px auto;text-align:center}
+.why-id-name{font-size:20px;line-height:1.2;letter-spacing:-.5px}
+.why-id-photo{position:relative;z-index:1;width:176px;height:222px;border:0;background:transparent;margin:0 0 0 auto;display:flex;align-items:flex-end;justify-content:flex-end;overflow:visible}
+.why-id-photo img{width:100%;height:100%;object-fit:contain;object-position:right bottom}
+.why-id-vertical{z-index:2;bottom:58px}
+.why-id-footer{position:relative;z-index:2;margin:auto 0 0 44px;padding-top:8px}
+</style>
 </head>
 <body>
 <header class="header">
@@ -1742,12 +1754,12 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
         <span></span><span></span>
       </div>
 
-      <div class="why-id-photo">
-        <img src="assets/profile-id.svg" alt="이준호 증명사진">
-      </div>
-
       <div class="why-id-info">
         <div class="why-id-name">이준호</div>
+      </div>
+
+      <div class="why-id-photo">
+        <img src="assets/profile-id-cutout.png" alt="이준호 증명사진 배경 제거 이미지">
       </div>
 
       <div class="why-id-vertical">HYUNDAI AUTOEVER</div>
