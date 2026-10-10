@@ -1862,10 +1862,38 @@ async function openFeaturedCase(event,key){
 detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');clearFeaturedCards();document.querySelectorAll('.featured-card').forEach(card=>card.classList.remove('is-click-pull'));restoreModalPagePosition();});
 ops.addEventListener('close',restoreModalPagePosition);
 const navLinks=[...document.querySelectorAll('.navmenu a')];
+let navScrollFrame=0,navScrollToken=0,navScrollInlineBehavior='';
+function cancelNavScroll(){
+ if(!navScrollFrame)return;
+ cancelAnimationFrame(navScrollFrame);
+ navScrollFrame=0;
+ navScrollToken=0;
+ document.documentElement.style.scrollBehavior=navScrollInlineBehavior;
+}
+['wheel','touchstart','pointerdown','keydown'].forEach(type=>addEventListener(type,event=>{
+ if(type==='keydown'&&!['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key))return;
+ cancelNavScroll();
+},{passive:true}));
 function scrollToSection(target,hash){
- const top=Math.max(0,target.getBoundingClientRect().top+window.scrollY-20);
- window.scrollTo({top,behavior:'smooth'});
- if(hash) history.replaceState(null,'',hash);
+ cancelNavScroll();
+ const start=window.scrollY;
+ const top=Math.max(0,target.getBoundingClientRect().top+start-20);
+ const distance=top-start;
+ if(hash)history.replaceState(null,'',hash);
+ if(reduceMotion||Math.abs(distance)<2){window.scrollTo({top,behavior:'auto'});return}
+ navScrollInlineBehavior=document.documentElement.style.scrollBehavior;
+ document.documentElement.style.scrollBehavior='auto';
+ const duration=Math.min(1350,Math.max(700,Math.abs(distance)*.42));
+ const started=performance.now(),token=++navScrollToken;
+ const animate=now=>{
+  if(token!==navScrollToken)return;
+  const t=Math.min(1,(now-started)/duration);
+  const eased=t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+  window.scrollTo(0,start+distance*eased);
+  if(t<1)navScrollFrame=requestAnimationFrame(animate);
+  else{navScrollFrame=0;navScrollToken=0;document.documentElement.style.scrollBehavior=navScrollInlineBehavior}
+ };
+ navScrollFrame=requestAnimationFrame(animate);
 }
 navLinks.forEach(a=>a.addEventListener('click',e=>{
  const target=document.querySelector(a.hash);
