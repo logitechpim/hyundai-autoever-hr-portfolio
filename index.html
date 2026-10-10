@@ -1906,6 +1906,16 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 #featured-experiences .stagger-prompt .stagger-peek{writing-mode:horizontal-tb;top:72px;left:27px;letter-spacing:2px}
 
+
+/* Narrow each core card by 1.5cm while retaining its column center. */
+#featured-experiences .stagger-card{width:calc(100% - 1.5cm);justify-self:center}
+
+#featured-experiences .stagger-card{container-type:inline-size}
+@container(max-width:300px){
+ #featured-experiences .stagger-highlight{bottom:68px;font-size:min(35px,16cqw)}
+ #featured-experiences .stagger-prompt .stagger-highlight{bottom:72px;font-size:32px}
+}
+
 </style>
 
 
