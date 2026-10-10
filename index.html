@@ -616,6 +616,919 @@ pointer-events:none}
 /* Keep the onboarding metric clear of text printed on its cover image */
 .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.03)}
 @media(hover:hover) and (pointer:fine){.case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(24px) scale(1.09)}}
+
+/* Design prototype: portfolio cards, modal readability, and restrained motion */
+body::before{content:"DESIGN PROTOTYPE · PREVIEW";position:fixed;z-index:100;top:14px;right:16px;padding:8px 12px;border-radius:999px;background:#173E70;color:#fff;font-size:10px;letter-spacing:1px;box-shadow:0 4px 16px rgba(0,44,95,.16)}
+.case-card{border-radius:8px;overflow:hidden}
+.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{position:absolute;z-index:2;left:16px;right:16px;bottom:14px;padding:13px 12px;border:1px solid rgba(255,255,255,.8);border-radius:7px;background:rgba(255,255,255,.88);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center;transition:transform .28s ease,background .28s ease}
+.case-visual.photo-case .visual-content strong,.case-visual:not(.photo-case) .visual-content strong{font-size:30px}
+.case-visual.photo-case .visual-content span,.case-visual:not(.photo-case) .visual-content span{display:block;margin-top:6px}
+.case-visual.onboarding-case .visual-bg{transform:translateY(36px) scale(1.12)}
+@media(hover:hover) and (pointer:fine){
+ .motion-ready .case-card:hover .visual-bg{transform:scale(1.05)}
+ .motion-ready .case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(36px) scale(1.12)}
+ .motion-ready .case-card:hover .visual-content{transform:translateY(-3px);background:rgba(255,255,255,.94)}
+}
+.dialog-inner{padding:46px clamp(24px,6vw,56px)}
+.dialog-inner h2{max-width:760px;margin:12px 0 22px}
+.dialog-inner h3{max-width:760px;font-size:18px;margin-top:34px;margin-bottom:12px;padding-bottom:9px;border-bottom:1px solid var(--line)}
+.dialog-inner p,.dialog-inner li{max-width:760px;line-height:1.85}
+.detail-context{max-width:760px;padding:16px 18px;border-left:3px solid var(--green);background:var(--pale);border-radius:0 6px 6px 0}
+.story-step{max-width:760px;border-left:1px solid var(--line);padding-left:20px;margin-top:30px}
+.story-step .story-number{display:inline-block;min-width:30px;padding:4px 8px;border-radius:999px;background:var(--pale);font-weight:700}
+.hero-wordmark{animation:wordmark-enter .8s .2s ease-out both}
+@media(max-width:700px){body::before{top:9px;right:10px;font-size:9px;padding:7px 10px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:12px;right:12px;bottom:12px;padding:11px 9px}.dialog-inner{padding:40px 22px}.dialog-inner h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
+
+/* Prototype refinement: reveal the onboarding cover and slightly narrow metric panels */
+.case-visual.photo-case .visual-content{left:22px;right:22px}
+.case-visual.onboarding-case .visual-bg{transform:translateY(-30px) scale(1.12)}
+@media(hover:hover) and (pointer:fine){
+ .motion-ready .case-card:hover .case-visual.onboarding-case .visual-bg{transform:translateY(-30px) scale(1.12)}
+}
+@media(max-width:700px){.case-visual.photo-case .visual-content{left:18px;right:18px}}
+
+
+/* All experience cards: fixed metric panel size and shared position */
+.case-visual .visual-content{z-index:2;top:60%;bottom:auto;width:68%;max-width:320px;height:100px;transform:translate(-50%,-50%);box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px 12px;border:1px solid rgba(255,255,255,.88);border-radius:7px;background:rgba(255,255,255,.9);backdrop-filter:blur(7px);box-shadow:0 5px 18px rgba(0,44,95,.09);text-align:center}
+.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{position:absolute;left:50%;right:auto}
+.case-visual .visual-content strong{font-size:30px;line-height:1.1}
+.case-visual .visual-content span{display:block;margin-top:6px;line-height:1.35}
+.case-visual.compact-metric .visual-content strong{font-size:20px;white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .visual-content{transform:translate(-50%,calc(-50% - 3px))}}
+@media(max-width:700px){.case-visual .visual-content{width:68%;height:96px;padding:9px 8px}.case-visual.photo-case .visual-content,.case-visual:not(.photo-case) .visual-content{left:50%;right:auto}.case-visual .visual-content strong{font-size:27px}.case-visual.compact-metric .visual-content strong{font-size:18px}}
+
+/* Keep onboarding metric centered like every other card, and lower all panels slightly */
+.case-visual .visual-content{top:66%}
+.case-visual.onboarding-case .visual-content{transform:translate(-50%,-50%)}
+@media(hover:hover) and (pointer:fine){.motion-ready .case-card:hover .case-visual.onboarding-case .visual-content{transform:translate(-50%,calc(-50% - 3px))}}
+
+/* Prototype effects: metric light sweep and a softer case modal */
+.case-visual .visual-content{position:absolute;overflow:hidden}
+.case-visual .visual-content::after{content:"";position:absolute;z-index:0;top:-40%;bottom:-40%;left:-55%;width:34%;background:linear-gradient(105deg,transparent 0%,rgba(92,136,184,.04) 30%,rgba(92,136,184,.24) 50%,rgba(92,136,184,.04) 70%,transparent 100%);transform:skewX(-18deg);opacity:0;pointer-events:none}
+.case-visual .visual-content>*{position:relative;z-index:1}
+@media(hover:hover) and (pointer:fine){.case-card:hover .visual-content::after{left:125%;opacity:1;transition:left .7s cubic-bezier(.2,.7,.2,1),opacity .18s ease}}
+.dialog{border-radius:18px;opacity:0;transform:translateY(14px) scale(.985);transition:opacity .26s ease,transform .26s cubic-bezier(.2,.7,.2,1),overlay .26s ease allow-discrete,display .26s ease allow-discrete}
+.dialog[open]{opacity:1;transform:translateY(0) scale(1)}
+.dialog::backdrop{background:rgba(8,40,91,0);backdrop-filter:blur(0);transition:background .26s ease,backdrop-filter .26s ease}
+.dialog[open]::backdrop{background:rgba(8,40,91,.68);backdrop-filter:blur(3px)}
+.dialog[open] .section-label,.dialog[open] h2{animation:modal-heading-in .42s cubic-bezier(.2,.7,.2,1) both}
+.dialog[open] h2{animation-delay:.04s}
+@keyframes modal-heading-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@starting-style{.dialog[open]{opacity:0;transform:translateY(14px) scale(.985)}.dialog[open]::backdrop{background:rgba(8,40,91,0);backdrop-filter:blur(0)}}
+@media(prefers-reduced-motion:reduce){
+ .case-visual .visual-content::after{display:none}
+ .dialog,.dialog::backdrop{transition:none!important}
+ .dialog[open] .section-label,.dialog[open] h2{animation:none!important;opacity:1;transform:none}
+}
+
+/* Career profile prototype: quiet editorial layout */
+.resume-matrix{
+ display:grid!important;
+ grid-template-columns:minmax(0,1.28fr) minmax(280px,.72fr)!important;
+ grid-template-areas:"career side"!important;
+ grid-template-rows:auto!important;
+ gap:42px 58px!important;
+ align-items:start!important;
+ border:0!important;background:transparent!important
+}
+.resume-matrix>.career-panel:nth-child(1){
+ grid-area:career!important;grid-column:1!important;grid-row:1!important;
+ min-height:0!important;padding:0 46px 0 0!important;
+ border:0!important;border-right:1px solid #dce4e8!important;
+ background:transparent!important
+}
+.resume-matrix>.resume-panel{min-width:0}
+.resume-matrix .resume-title{
+ font-size:23px!important;line-height:1.35!important;
+ margin:0 0 22px!important;color:#222
+}
+.resume-matrix>.career-panel .resume-item{
+ padding:0 0 25px 20px!important;margin:0 0 22px!important;
+ border-left:1px solid var(--green)!important
+}
+.resume-matrix>.career-panel .resume-item:last-child{margin-bottom:0!important;padding-bottom:0!important}
+.resume-matrix>.career-panel .resume-item::before{
+ width:11px!important;height:11px!important;left:-6px!important;top:1px!important;
+ border-width:1.5px!important
+}
+.resume-matrix>.career-panel .resume-item h4{font-size:20px!important;margin-bottom:8px!important}
+.resume-matrix>.career-panel .resume-item h5{font-size:12px!important;padding:4px 9px!important}
+.resume-matrix>.career-panel .resume-item p,.resume-matrix>.career-panel .resume-item li{
+ font-size:14px!important;line-height:1.85!important
+}
+.resume-matrix>.resume-profile-side{
+ grid-area:side!important;display:grid!important;grid-template-columns:1fr!important;
+ gap:0!important;align-content:start!important;min-width:0
+}
+.resume-profile-side>.resume-panel{
+ margin:0!important;padding:0 0 20px!important;
+ border:0!important;border-bottom:1px solid #dce4e8!important;
+ border-radius:0!important;background:transparent!important;box-shadow:none!important
+}
+.resume-profile-side>.resume-panel+ .resume-panel{padding-top:19px!important}
+.resume-profile-side .resume-title{font-size:16px!important;margin:0 0 10px!important;color:var(--green-dark)}
+.resume-profile-side .resume-item{border:0!important;padding:0!important;margin:0!important}
+.resume-profile-side .resume-item::before,.resume-profile-side .cert-list::before{display:none!important}
+.resume-profile-side .resume-item h4{font-size:16px!important;margin:0 0 4px!important}
+.resume-profile-side .resume-item p{font-size:13px!important;margin:0 0 6px!important;color:var(--muted)}
+.resume-profile-side .resume-item ul{margin:0;padding-left:17px}
+.resume-profile-side .resume-item li,.resume-profile-side .cert-list li{font-size:13px!important;line-height:1.75!important}
+.resume-profile-side .cert-list{border:0!important;padding:0!important;margin:0!important}
+.resume-profile-side .cert-list ul{margin:0;padding-left:17px}
+.skill-tags{display:flex;flex-wrap:wrap;gap:7px}
+.skill-tags span{
+ display:inline-flex;align-items:center;min-height:28px;padding:4px 9px;
+ border:1px solid #dfe7eb;border-radius:4px;background:rgba(255,255,255,.55);
+ color:#385675;font-size:10px;font-weight:700;letter-spacing:.2px
+}
+.resume-profile-side>.projects-panel{padding-bottom:16px!important}
+.projects-panel .activity-list{margin:0;padding-left:17px}
+.projects-panel .activity-list li{font-size:13px;line-height:1.75}
+.projects-panel .activity-list li+li{margin-top:3px}
+@media(min-width:701px) and (max-width:960px){
+ .resume-matrix{grid-template-columns:minmax(0,1.12fr) minmax(245px,.88fr)!important;gap:36px 30px!important}
+ .resume-matrix>.career-panel:nth-child(1){padding-right:26px!important}
+}
+@media(max-width:700px){
+ .resume-matrix{display:flex!important;flex-direction:column!important;gap:30px!important}
+ .resume-matrix>.career-panel,.resume-matrix>.resume-profile-side{width:100%!important;max-width:none!important}
+ .resume-matrix>.career-panel:nth-child(1){padding:0 0 24px!important;border-right:0!important;border-bottom:1px solid #dce4e8!important}
+ .resume-profile-side{display:grid!important;grid-template-columns:1fr!important}
+}
+
+/* Profile facts: balanced two-by-two grid on wide screens */
+@media(min-width:1241px){
+ .resume-profile-side{grid-template-columns:repeat(2,minmax(0,1fr))!important;column-gap:0!important;row-gap:0!important}
+ .resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;padding:0 18px 18px 0!important;
+  border-right:1px solid #dce4e8!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.certification-panel{
+  grid-column:2!important;grid-row:1!important;padding:0 0 18px 18px!important;
+  border-right:0!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.skills-panel{
+  grid-column:1!important;grid-row:2!important;padding:18px 18px 0 0!important;
+  border-right:1px solid #dce4e8!important;border-bottom:0!important
+ }
+ .resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;padding:18px 0 0 18px!important;
+  border-right:0!important;border-bottom:0!important
+ }
+ .resume-profile-side>.resume-panel+ .resume-panel{padding-top:0!important}
+}
+@media(max-width:1240px){
+ .resume-profile-side{grid-template-columns:1fr!important}
+ .resume-profile-side>.resume-panel{border-right:0!important;border-bottom:1px solid #dce4e8!important;padding:0 0 16px!important}
+ .resume-profile-side>.resume-panel+ .resume-panel{padding-top:17px!important}
+ .resume-profile-side>.resume-panel:last-child{border-bottom:0!important}
+}
+.skill-tags span{white-space:nowrap}
+
+/* Roomier rhythm for the two-by-two profile facts */
+@media(min-width:1241px){
+ .resume-matrix{gap:40px 48px!important}
+ .resume-profile-side{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  grid-template-rows:repeat(2,minmax(190px,auto))!important;
+  align-content:start!important
+ }
+ .resume-profile-side>.resume-panel{
+  min-height:190px!important;margin:0!important;border:0!important;border-radius:0!important;
+  background:transparent!important;box-shadow:none!important
+ }
+ .resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;padding:24px 22px 24px 0!important;
+  border-right:1px solid #dce4e8!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.certification-panel{
+  grid-column:2!important;grid-row:1!important;padding:24px 0 24px 22px!important;
+  border-right:0!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.skills-panel{
+  grid-column:1!important;grid-row:2!important;padding:24px 22px 24px 0!important;
+  border-right:1px solid #dce4e8!important;border-bottom:0!important
+ }
+ .resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;padding:24px 0 24px 22px!important;
+  border-right:0!important;border-bottom:0!important
+ }
+ .resume-profile-side>.resume-panel+ .resume-panel{padding-top:24px!important}
+ .resume-profile-side .resume-title{font-size:16px!important;margin:0 0 18px!important;letter-spacing:.01em}
+ .resume-profile-side .resume-item h4{font-size:17px!important;margin:0 0 5px!important}
+ .resume-profile-side .resume-item p{font-size:14px!important;margin:0 0 12px!important}
+ .resume-profile-side .resume-item ul,.resume-profile-side .cert-list ul,.projects-panel .activity-list{
+  display:grid;gap:6px;margin:0;padding-left:18px
+ }
+ .resume-profile-side .resume-item li,.resume-profile-side .cert-list li,.projects-panel .activity-list li{
+  font-size:13px!important;line-height:1.8!important
+ }
+ .skill-tags{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px!important}
+ .skill-tags span{
+  min-height:34px!important;padding:6px 8px!important;
+  justify-content:center!important;font-size:11px!important;letter-spacing:0!important
+ }
+}
+@media(max-width:1240px){
+ .resume-profile-side>.resume-panel{min-height:0!important}
+}
+
+@media(min-width:1241px){
+ .resume-matrix{grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr)!important;column-gap:24px!important}
+ .resume-matrix>.career-panel:nth-child(1){padding-right:24px!important}
+}
+
+/* Use the section width for both the career timeline and profile grid */
+@media(min-width:1241px){
+ .resume-matrix{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;column-gap:36px!important}
+ .resume-matrix>.career-panel:nth-child(1){padding-right:28px!important}
+ .resume-profile-side{width:100%!important}
+}
+
+/* Balance the two-by-two grid by distributing content density */
+@media(min-width:1241px){
+ .resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;
+  padding:24px 22px 24px 0!important;border-right:1px solid #dce4e8!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.skills-panel{
+  grid-column:2!important;grid-row:1!important;
+  padding:24px 0 24px 22px!important;border-right:0!important;border-bottom:1px solid #dce4e8!important
+ }
+ .resume-profile-side>.certification-panel{
+  grid-column:1!important;grid-row:2!important;
+  padding:24px 22px 24px 0!important;border-right:1px solid #dce4e8!important;border-bottom:0!important
+ }
+ .resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;
+  padding:24px 0 24px 22px!important;border-right:0!important;border-bottom:0!important
+ }
+ .resume-profile-side>.resume-panel+ .resume-panel{padding-top:24px!important}
+}
+
+/* Reference layout: education/tools above certification/projects */
+@media(min-width:1241px){
+ .resume-profile-side{grid-template-areas:"education skills" "certification projects"!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(190px,auto))!important;align-content:start!important}
+ .resume-profile-side>.education-panel{grid-area:education!important}
+ .resume-profile-side>.skills-panel{grid-area:skills!important}
+ .resume-profile-side>.certification-panel{grid-area:certification!important}
+ .resume-profile-side>.projects-panel{grid-area:projects!important}
+}
+
+
+/* Featured experiences: overlapping cards that pull forward on hover or focus */
+.featured-experiences{background:#f7f9f6;overflow:hidden}
+.featured-deck{position:relative;width:min(100%,1080px);height:490px;margin:34px auto 0;perspective:1400px}
+.featured-card{position:absolute;top:calc(var(--card-index)*5px);left:calc(var(--card-index)*11.2%);z-index:calc(1 + var(--card-index));display:block;width:34%;height:420px;padding:0;border:1px solid rgba(0,44,95,.14);border-radius:16px;overflow:hidden;background:#fff;text-align:left;color:inherit;cursor:pointer;transform:rotate(var(--card-tilt));transform-origin:50% 85%;box-shadow:0 14px 32px rgba(10,35,65,.16);transition:transform .55s cubic-bezier(.18,.76,.25,1),box-shadow .45s ease,border-color .3s ease}
+.featured-art{height:265px;position:relative;display:block;overflow:hidden;background:#14202c;color:#fff;isolation:isolate}
+.featured-art::before{content:"";position:absolute;inset:-22%;z-index:-1;background:radial-gradient(ellipse at 73% 28%,rgba(117,157,192,.42),transparent 38%),linear-gradient(135deg,rgba(255,255,255,.1),transparent 56%);transition:transform .65s ease}
+.featured-art::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,transparent 34%,rgba(255,255,255,.2) 49%,transparent 63%);transform:translateX(-130%);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.art-coaching{background:#1b2632}.art-coaching::before{background:radial-gradient(ellipse at 73% 28%,rgba(103,151,188,.38),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.art-circle{background:#1a2b37}.art-circle::before{background:radial-gradient(ellipse at 73% 28%,rgba(132,177,144,.38),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.art-improvement{background:#172936}.art-improvement::before{background:radial-gradient(ellipse at 73% 28%,rgba(90,163,155,.4),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.art-retention{background:#202735}.art-retention::before{background:radial-gradient(ellipse at 73% 28%,rgba(155,142,101,.34),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.art-ai{background:#172532}.art-ai::before{background:radial-gradient(ellipse at 73% 28%,rgba(65,134,160,.42),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.featured-index{position:absolute;top:17px;left:17px;padding:6px 9px;border:1px solid rgba(255,255,255,.55);border-radius:999px;color:rgba(255,255,255,.92);font-size:9px;font-weight:700;letter-spacing:1.3px}
+.featured-peek{position:absolute;top:58px;left:20px;color:rgba(255,255,255,.67);font-size:9px;font-weight:700;letter-spacing:2px;writing-mode:vertical-rl}
+.featured-symbol{position:absolute;top:34px;right:23px;width:88px;height:88px;stroke:rgba(255,255,255,.86);stroke-width:1.5;transition:transform .45s ease,opacity .35s ease}
+.featured-metric{position:absolute;left:20px;bottom:43px;font-size:clamp(27px,3vw,39px);font-weight:750;letter-spacing:-1.5px;line-height:1.05;color:#fff;font-variant-numeric:tabular-nums;white-space:nowrap}
+.featured-metric-caption{position:absolute;left:21px;bottom:18px;max-width:calc(100% - 34px);font-size:10px;line-height:1.3;color:rgba(255,255,255,.76)}
+.featured-copy{display:grid;gap:6px;padding:13px 16px 14px}
+.featured-kicker{color:var(--green-dark);font-size:9px;letter-spacing:.45px}
+.featured-copy strong{font-size:15px;line-height:1.35;color:#202a35}
+.featured-copy>span:not(.featured-kicker):not(.featured-link){font-size:10px;line-height:1.5;color:var(--muted)}
+.featured-link{display:flex;align-items:center;gap:6px;margin-top:1px;color:var(--navy);font-size:10px;font-weight:700}
+.featured-link b{display:inline-block;transition:transform .25s ease}
+.featured-card:hover,.featured-card:focus-visible{z-index:20!important;transform:translateY(-27px) translateZ(35px) scale(1.045) rotate(0deg);border-color:rgba(92,136,184,.6);box-shadow:0 28px 54px rgba(10,35,65,.3)}
+.featured-card:hover .featured-art::before,.featured-card:focus-visible .featured-art::before{transform:scale(1.16)}
+.featured-card:hover .featured-art::after,.featured-card:focus-visible .featured-art::after{transform:translateX(130%)}
+.featured-card:hover .featured-symbol,.featured-card:focus-visible .featured-symbol{transform:translate(-4px,-3px) scale(1.08)}
+.featured-card:hover .featured-link b,.featured-card:focus-visible .featured-link b{transform:translate(3px,-3px)}
+.featured-card:focus-visible{outline:3px solid var(--green);outline-offset:5px}
+@media(max-width:1050px){.featured-deck{height:470px}.featured-card{width:34%;height:405px;left:calc(var(--card-index)*11.2%)}.featured-art{height:250px}.featured-copy{padding:12px 13px}}
+@media(max-width:760px){.featured-deck{height:auto;display:grid;grid-template-columns:1fr;gap:16px;perspective:none;margin-top:26px}.featured-card{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:0;transform:none!important;overflow:hidden}.featured-art{height:230px}.featured-copy{padding:15px 16px 16px}.featured-copy strong{font-size:17px}.featured-copy>span:not(.featured-kicker):not(.featured-link){font-size:12px}.featured-index{font-size:10px}.featured-peek{top:58px}.featured-symbol{width:84px;height:84px}.featured-metric{font-size:36px}.featured-metric-caption{font-size:11px}.featured-link{font-size:12px}.featured-card:hover,.featured-card:focus-visible{transform:translateY(-5px)!important}}
+@media(prefers-reduced-motion:reduce){.featured-card,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition:none!important}.featured-card:hover,.featured-card:focus-visible{transform:none!important}}
+
+/* Pointer-responsive card deck motion */
+.featured-experiences{background:radial-gradient(ellipse at 50% 52%,#eef3f5 0%,#f7f9f6 62%);padding-top:74px;padding-bottom:78px}
+.featured-deck{perspective:1600px;transform-style:preserve-3d}
+.featured-card{transform-style:preserve-3d;backface-visibility:hidden;will-change:transform,filter;transition:transform .72s cubic-bezier(.16,1,.3,1),box-shadow .5s ease,border-color .35s ease,filter .45s ease}
+.featured-card::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(255,255,255,.18),transparent 62%);opacity:0;transition:opacity .28s ease}
+.featured-card.is-active{z-index:30!important;transform:translateY(-34px) translateZ(54px) scale(1.06) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(var(--hover-tilt,0deg));border-color:rgba(92,136,184,.82);box-shadow:0 34px 70px rgba(7,31,60,.36);filter:saturate(1.13)}
+.featured-card.is-before{transform:translateX(-16px) translateZ(-12px) scale(.985) rotate(var(--card-tilt));filter:brightness(.88)}
+.featured-card.is-after{transform:translateX(18px) translateZ(-12px) scale(.985) rotate(var(--card-tilt));filter:brightness(.88)}
+.featured-card.is-active::before{opacity:1}
+.featured-card.is-active .featured-art::before{transform:scale(1.18);background-position:var(--pointer-x,73%) var(--pointer-y,28%)}
+.featured-card.is-active .featured-art::after{transform:translateX(130%)}
+.featured-card.is-active .featured-symbol{transform:translate3d(-5px,-5px,22px) rotate(-4deg) scale(1.1)}
+.featured-card.is-active .featured-link b{transform:translate(4px,-4px)}
+.featured-card:hover,.featured-card:focus-visible{z-index:30!important;transform:translateY(-34px) translateZ(54px) scale(1.06) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(var(--hover-tilt,0deg));box-shadow:0 34px 70px rgba(7,31,60,.36)}
+.featured-card:hover::before,.featured-card:focus-visible::before{opacity:1}
+.featured-deck:has(.featured-card:hover) .featured-card:not(:hover){filter:brightness(.9) saturate(.88)}
+.featured-deck:has(.featured-card:focus-visible) .featured-card:not(:focus-visible){filter:brightness(.9) saturate(.88)}
+@media(max-width:760px){
+ .featured-experiences{padding-top:58px;padding-bottom:58px}
+ .featured-card,.featured-card.is-active,.featured-card.is-before,.featured-card.is-after,.featured-card:hover,.featured-card:focus-visible{transform:none!important;filter:none}
+ .featured-card:hover,.featured-card:focus-visible,.featured-card.is-active{box-shadow:0 14px 30px rgba(10,35,65,.16)}
+ .featured-card::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card{transition-duration:.32s!important}
+ .featured-card::before,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition-duration:.2s!important}
+ .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible{transform:translateY(-20px) translateZ(24px) scale(1.025)!important}
+ .featured-card.is-before{transform:translateX(-10px) scale(.99) rotate(var(--card-tilt))!important}
+ .featured-card.is-after{transform:translateX(10px) scale(.99) rotate(var(--card-tilt))!important}
+}
+
+/* Click-to-expand transition from the selected experience card into its story */
+dialog.featured-morphing{padding:0;min-width:0;max-width:none;max-height:none;background:#fff}
+dialog.featured-morphing::backdrop{background:rgba(8,40,91,0);backdrop-filter:blur(0);transition:background .65s ease,backdrop-filter .65s ease}
+dialog.featured-morphing.featured-unfolded::backdrop{background:rgba(8,40,91,.68);backdrop-filter:blur(3px)}
+dialog.featured-morphing .dialog-inner{opacity:0;transform:translateY(20px) scale(.985);transition:opacity .45s ease,transform .65s cubic-bezier(.16,1,.3,1)}
+dialog.featured-morphing.featured-unfolded .dialog-inner{opacity:1;transform:translateY(0) scale(1)}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation:featured-content-unfold .55s cubic-bezier(.16,1,.3,1) both}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(1){animation-delay:0ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(2){animation-delay:45ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(3){animation-delay:90ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(4){animation-delay:135ms}
+dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animation-delay:180ms}
+@keyframes featured-content-unfold{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){
+ dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition-duration:.36s!important}
+ dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation-duration:.32s!important;animation-delay:20ms!important}
+}
+
+/* Hyundai AutoEver inspired flagship card surfaces: deep blue, white and a vivid blue glow */
+.featured-card{border:0!important;border-radius:18px;background:#0a1b2d;box-shadow:0 20px 42px rgba(5,26,51,.28),0 8px 18px rgba(5,26,51,.16)}
+.featured-art{background:linear-gradient(145deg,#06172a 0%,#0a2c51 56%,#0c5790 100%)}
+.featured-art::before{background:radial-gradient(ellipse at 72% 26%,rgba(49,177,255,.56),transparent 39%),linear-gradient(135deg,rgba(255,255,255,.11),transparent 54%)}
+.art-coaching{background:linear-gradient(145deg,#07182b 0%,#103767 65%,#145b91 100%)}
+.art-coaching::before{background:radial-gradient(ellipse at 76% 25%,rgba(83,163,255,.52),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.09),transparent 60%)}
+.art-improvement{background:linear-gradient(145deg,#071a2b 0%,#0c3f5d 60%,#087d91 100%)}
+.art-improvement::before{background:radial-gradient(ellipse at 74% 25%,rgba(39,206,222,.43),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.09),transparent 58%)}
+.art-retention{background:linear-gradient(145deg,#101c2b 0%,#153858 62%,#23739b 100%)}
+.art-retention::before{background:radial-gradient(ellipse at 74% 25%,rgba(110,181,226,.47),transparent 40%),linear-gradient(145deg,rgba(255,255,255,.08),transparent 58%)}
+.art-ai{background:linear-gradient(145deg,#061a30 0%,#073e69 56%,#0085bd 100%)}
+.art-ai::before{background:radial-gradient(ellipse at 74% 25%,rgba(51,206,255,.58),transparent 42%),linear-gradient(145deg,rgba(255,255,255,.1),transparent 60%)}
+.featured-copy{min-height:155px;background:linear-gradient(145deg,#0a1b2d 0%,#102a43 100%);padding:15px 18px 17px}
+.featured-kicker{color:#76ceff;font-size:10px;letter-spacing:.6px}
+.featured-copy strong{color:#f5f9ff;font-size:16px;line-height:1.4}
+.featured-copy>span:not(.featured-kicker):not(.featured-link){color:#c3d5e7;font-size:11px;line-height:1.6}
+.featured-link{color:#9cddff;font-size:11px}
+.featured-index{background:rgba(3,20,37,.34);backdrop-filter:blur(7px);border-color:rgba(197,231,255,.62)}
+.featured-peek{color:rgba(225,242,255,.84)}
+.featured-symbol{filter:drop-shadow(0 0 12px rgba(88,197,255,.25))}
+.featured-card{transition:transform .84s cubic-bezier(.18,.82,.22,1),box-shadow .58s ease,filter .5s ease}
+.featured-card.is-active{box-shadow:0 34px 80px rgba(0,23,51,.48),0 0 48px rgba(34,157,230,.22)}
+.featured-card.is-click-pull{z-index:40!important;transform:translateY(-58px) translateZ(110px) scale(1.12) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) rotate(var(--hover-tilt,0deg));box-shadow:0 42px 100px rgba(0,19,45,.56),0 0 64px rgba(35,166,245,.32)}
+.featured-card.is-click-pull .featured-art::after{transform:translateX(130%)}
+.featured-card.is-click-pull .featured-metric{transform:translateZ(20px);text-shadow:0 5px 26px rgba(60,184,255,.44)}
+.featured-card.is-click-pull .featured-copy{background:linear-gradient(145deg,#0b2036,#153a5d)}
+.featured-link{position:relative;width:max-content}
+.featured-link::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:#5cc4ff;transform:scaleX(0);transform-origin:left;transition:transform .36s ease}
+.featured-card:hover .featured-link::after,.featured-card.is-active .featured-link::after,.featured-card:focus-visible .featured-link::after{transform:scaleX(1)}
+.featured-deck:has(.featured-card:hover) .featured-card:not(:hover){filter:brightness(.78) saturate(.82)}
+@media(max-width:1050px) and (min-width:761px){.featured-card.is-click-pull{transform:translateY(-42px) translateZ(70px) scale(1.08) rotate(0deg)}}
+@media(max-width:760px){
+ .featured-card{border:0!important;background:#0a1b2d;box-shadow:0 16px 36px rgba(5,26,51,.22)}
+ .featured-card.is-click-pull{transform:none!important}
+ .featured-copy{min-height:145px}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card{transition-duration:.42s!important}
+ .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible{transform:translateY(-20px) translateZ(24px) scale(1.025)!important}
+ .featured-card.is-click-pull{transform:translateY(-34px) translateZ(60px) scale(1.06)!important}
+ dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition-duration:.48s!important}
+ dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation-duration:.36s!important;animation-delay:20ms!important}
+}
+
+/* Matte slate palette: restrained, consistent surfaces without neon glow */
+.featured-experiences{background:#f2f4f3}
+.featured-card{background:#26394c!important;box-shadow:0 18px 38px rgba(25,39,53,.2),0 4px 12px rgba(25,39,53,.12)}
+.featured-art,.featured-art.art-onboarding,.featured-art.art-coaching,.featured-art.art-improvement,.featured-art.art-circle,.featured-art.art-retention,.featured-art.art-ai{background:#3a4f63}
+.featured-art.art-onboarding::before,.featured-art.art-coaching::before,.featured-art.art-improvement::before,.featured-art.art-circle::before,.featured-art.art-retention::before,.featured-art.art-ai::before{background:radial-gradient(ellipse at 76% 24%,rgba(193,174,142,.13),transparent 44%),linear-gradient(140deg,rgba(255,255,255,.055),transparent 60%)}
+.featured-art::after{background:linear-gradient(118deg,transparent 34%,rgba(242,239,231,.09) 49%,transparent 63%)}
+.featured-copy,.featured-card.is-click-pull .featured-copy{min-height:155px;background:#26394c!important;padding:15px 18px 17px}
+.featured-kicker{color:#c3b18f}
+.featured-copy strong{color:#f4f4f0}
+.featured-copy>span:not(.featured-kicker):not(.featured-link){color:#c7d0d7}
+.featured-link{color:#d2c2a1}
+.featured-link::after{background:#c2ae87}
+.featured-index{background:rgba(20,35,49,.24);backdrop-filter:none;border-color:rgba(226,231,234,.32);color:#e3e7e9}
+.featured-peek{color:rgba(230,234,236,.7)}
+.featured-symbol{filter:none}
+.featured-card.is-active{box-shadow:0 28px 58px rgba(20,34,48,.3),0 5px 16px rgba(20,34,48,.17);filter:saturate(1.02)}
+.featured-card:hover,.featured-card:focus-visible{box-shadow:0 28px 58px rgba(20,34,48,.32),0 5px 16px rgba(20,34,48,.17)}
+.featured-card.is-click-pull{box-shadow:0 34px 68px rgba(18,31,45,.38),0 8px 20px rgba(18,31,45,.2)}
+.featured-card.is-click-pull .featured-metric{text-shadow:none}
+.featured-card::before{background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(255,255,255,.075),transparent 66%)}
+
+
+/* Featured deck: keep every card level, then visibly pull it from the stack */
+@media (min-width:761px){
+ .featured-card,
+ .featured-card.is-before,
+ .featured-card.is-after{
+  transform:translateZ(0) rotate(0deg)!important;
+ }
+ .featured-card.is-active,
+ .featured-card:hover,
+ .featured-card:focus-visible{
+  transform:translateY(-38px) translateZ(70px) scale(1.055) rotate(0deg)!important;
+ }
+ .featured-card.is-click-pull{
+  transform:translateY(-116px) translateZ(150px) scale(1.12) rotate(0deg)!important;
+  transition:transform .78s cubic-bezier(.16,1,.3,1),box-shadow .58s ease,filter .45s ease!important;
+  animation:featured-edge-glint 1.1s ease-out both;
+ }
+}
+
+
+@keyframes featured-edge-glint{
+ 0%{outline:0 solid rgba(207,190,154,0);outline-offset:0}
+ 32%{outline:3px solid rgba(207,190,154,.82);outline-offset:2px}
+ 68%{outline:2px solid rgba(207,190,154,.42);outline-offset:3px}
+ 100%{outline:0 solid rgba(207,190,154,0);outline-offset:5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card.is-click-pull{animation:none!important}
+}
+
+/* Keep the lifted card's edge gently shimmering while it stays selected */
+@media(min-width:761px){
+ .featured-card.is-active,
+ .featured-card:hover,
+ .featured-card:focus-visible{
+  border-color:rgba(215,199,165,.9)!important;
+  animation:featured-edge-pulse 1.7s ease-in-out infinite;
+ }
+ .featured-card.is-click-pull{
+  animation:featured-edge-pulse 1.7s ease-in-out infinite,featured-edge-glint 1.1s ease-out 1;
+ }
+}
+@keyframes featured-edge-pulse{
+ 0%,100%{
+  border-color:rgba(200,211,218,.58);
+  box-shadow:0 28px 58px rgba(20,34,48,.3),0 5px 16px rgba(20,34,48,.17),0 0 7px rgba(224,211,184,.18);
+ }
+ 50%{
+  border-color:rgba(232,218,187,1);
+  box-shadow:0 28px 58px rgba(20,34,48,.3),0 5px 16px rgba(20,34,48,.17),0 0 19px rgba(224,211,184,.62);
+ }
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible,.featured-card.is-click-pull{animation:none!important}
+}
+
+
+/* Make the lifted card's border highlight visibly travel around its edge */
+.featured-card::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ z-index:12;
+ padding:2px;
+ border-radius:inherit;
+ pointer-events:none;
+ opacity:0;
+ background:conic-gradient(from 0deg,transparent 0deg 258deg,rgba(211,194,157,.28) 278deg,#f8edcf 291deg,#fff 298deg,rgba(201,183,145,.9) 308deg,transparent 326deg 360deg);
+ -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ -webkit-mask-composite:xor;
+ mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+ mask-composite:exclude;
+}
+.featured-card.is-active::after,
+.featured-card:hover::after,
+.featured-card:focus-visible::after,
+.featured-card.is-click-pull::after{
+ opacity:1;
+ animation:featured-border-orbit 2.2s linear infinite;
+}
+@keyframes featured-border-orbit{to{transform:rotate(1turn)}}
+@media(prefers-reduced-motion:reduce){
+ .featured-card.is-active::after,.featured-card:hover::after,.featured-card:focus-visible::after,.featured-card.is-click-pull::after{
+  opacity:1;
+  animation:none!important;
+  background:conic-gradient(from 0deg,transparent 0deg 258deg,rgba(211,194,157,.4) 278deg,#f8edcf 291deg,#fff 298deg,rgba(201,183,145,.95) 308deg,transparent 326deg 360deg);
+ }
+}
+
+
+/* Featured experience cards: neutral by default, AutoEver blue on hover */
+.featured-card,
+.featured-card.is-active,
+.featured-card.is-before,
+.featured-card.is-after{
+ transform:translateZ(0) rotate(0deg)!important;
+ filter:none!important;
+ background:#e8e9e7!important;
+ border-color:rgba(42,57,72,.08)!important;
+ box-shadow:0 14px 32px rgba(28,42,54,.14)!important;
+ animation:none!important;
+ transition:background-color .42s ease,color .42s ease,border-color .42s ease,box-shadow .42s ease,transform .42s ease!important;
+}
+.featured-art,
+.featured-art.art-onboarding,.featured-art.art-coaching,.featured-art.art-improvement,
+.featured-art.art-circle,.featured-art.art-retention,.featured-art.art-ai{
+ background:#dfe3e3!important;
+ color:#263746!important;
+ transition:background-color .42s ease,color .42s ease!important;
+}
+.featured-copy,.featured-card.is-click-pull .featured-copy{
+ background:#e8e9e7!important;
+ transition:background-color .42s ease,color .42s ease!important;
+}
+.featured-kicker,.featured-link{color:#536477!important}
+.featured-copy strong{color:#263746!important}
+.featured-copy>span:not(.featured-kicker):not(.featured-link){color:#5e6b78!important}
+.featured-index{background:rgba(38,55,70,.06)!important;border-color:rgba(38,55,70,.2)!important;color:#35485b!important}
+.featured-peek{color:rgba(38,55,70,.52)!important}
+.featured-card:hover,.featured-card:focus-visible,.featured-card.is-active{
+ background:#1976d2!important;
+ border-color:#1976d2!important;
+ box-shadow:0 18px 38px rgba(25,80,135,.24)!important;
+}
+.featured-card:hover .featured-art,.featured-card:focus-visible .featured-art,.featured-card.is-active .featured-art{
+ background:#1976d2!important;color:#fff!important;
+}
+.featured-card:hover .featured-copy,.featured-card:focus-visible .featured-copy,.featured-card.is-active .featured-copy,
+.featured-card:hover.is-click-pull .featured-copy{
+ background:#1976d2!important;
+}
+.featured-card:hover .featured-kicker,.featured-card:hover .featured-link,
+.featured-card:focus-visible .featured-kicker,.featured-card:focus-visible .featured-link,
+.featured-card.is-active .featured-kicker,.featured-card.is-active .featured-link,
+.featured-card:hover .featured-copy strong,.featured-card:focus-visible .featured-copy strong,.featured-card.is-active .featured-copy strong,
+.featured-card:hover .featured-copy>span:not(.featured-kicker):not(.featured-link),
+.featured-card:focus-visible .featured-copy>span:not(.featured-kicker):not(.featured-link),
+.featured-card.is-active .featured-copy>span:not(.featured-kicker):not(.featured-link){
+ color:#fff!important;
+}
+.featured-card:hover .featured-index,.featured-card:focus-visible .featured-index,.featured-card.is-active .featured-index{
+ color:#fff!important;border-color:rgba(255,255,255,.42)!important;background:rgba(255,255,255,.08)!important;
+}
+.featured-card:hover .featured-peek,.featured-card:focus-visible .featured-peek,.featured-card.is-active .featured-peek{color:rgba(255,255,255,.7)!important}
+.featured-card.is-active::after,.featured-card:hover::after,.featured-card:focus-visible::after,.featured-card.is-click-pull::after{
+ opacity:0!important;animation:none!important;
+}
+.featured-deck:has(.featured-card:hover) .featured-card:not(:hover){filter:none!important}
+.featured-deck:has(.featured-card:focus-visible) .featured-card:not(:focus-visible){filter:none!important}
+@media(prefers-reduced-motion:reduce){
+ .featured-card,.featured-art,.featured-copy{transition:none!important}
+}
+
+
+/* Synchronized brand-color transition with a clear card-pull interaction */
+@media(min-width:761px){
+ .featured-card,.featured-card.is-before,.featured-card.is-after{
+  transform:translateZ(0) rotate(0deg)!important;
+ }
+ .featured-card.is-active,.featured-card:hover,.featured-card:focus-visible{
+  transform:translateY(-38px) translateZ(64px) scale(1.045) rotate(0deg)!important;
+ }
+ .featured-card.is-click-pull{
+  transform:translateY(-112px) translateZ(145px) scale(1.1) rotate(0deg)!important;
+  transition:transform .64s cubic-bezier(.16,1,.3,1),background-color .36s cubic-bezier(.22,.68,.2,1),box-shadow .36s ease!important;
+  animation:none!important;
+ }
+}
+.featured-card,.featured-art,.featured-copy{
+ transition:background-color .36s cubic-bezier(.22,.68,.2,1),color .36s cubic-bezier(.22,.68,.2,1),border-color .36s cubic-bezier(.22,.68,.2,1),box-shadow .36s ease,transform .36s cubic-bezier(.22,.68,.2,1)!important;
+ transition-delay:0s!important;
+}
+.featured-card,.featured-art,.featured-copy{
+ background:#e9edf0!important;
+}
+.featured-art,.featured-art.art-onboarding,.featured-art.art-coaching,.featured-art.art-improvement,.featured-art.art-circle,.featured-art.art-retention,.featured-art.art-ai{
+ background:#e9edf0!important;color:#263746!important;
+}
+.featured-copy,.featured-card.is-click-pull .featured-copy{background:#e9edf0!important}
+.featured-card:hover,.featured-card:focus-visible,.featured-card.is-active,
+.featured-card:hover .featured-art,.featured-card:focus-visible .featured-art,.featured-card.is-active .featured-art,
+.featured-card:hover .featured-copy,.featured-card:focus-visible .featured-copy,.featured-card.is-active .featured-copy,
+.featured-card:hover.is-click-pull .featured-copy{
+ background:#173e70!important;
+}
+.featured-card:hover .featured-kicker,.featured-card:hover .featured-link,
+.featured-card:focus-visible .featured-kicker,.featured-card:focus-visible .featured-link,
+.featured-card.is-active .featured-kicker,.featured-card.is-active .featured-link,
+.featured-card:hover .featured-copy strong,.featured-card:focus-visible .featured-copy strong,.featured-card.is-active .featured-copy strong,
+.featured-card:hover .featured-copy>span:not(.featured-kicker):not(.featured-link),
+.featured-card:focus-visible .featured-copy>span:not(.featured-kicker):not(.featured-link),
+.featured-card.is-active .featured-copy>span:not(.featured-kicker):not(.featured-link){
+ color:#fff!important;
+ transition:color .36s cubic-bezier(.22,.68,.2,1)!important;
+ transition-delay:0s!important;
+}
+.featured-card:hover .featured-index,.featured-card:focus-visible .featured-index,.featured-card.is-active .featured-index{
+ color:#fff!important;border-color:rgba(255,255,255,.42)!important;background:rgba(255,255,255,.08)!important;
+ transition:background-color .36s ease,color .36s ease,border-color .36s ease!important;transition-delay:0s!important;
+}
+.featured-card:hover .featured-peek,.featured-card:focus-visible .featured-peek,.featured-card.is-active .featured-peek{color:rgba(255,255,255,.7)!important;transition:color .36s ease!important;transition-delay:0s!important}
+.featured-card.is-active::after,.featured-card:hover::after,.featured-card:focus-visible::after,.featured-card.is-click-pull::after{opacity:0!important;animation:none!important}
+.featured-card:hover .featured-art::after,.featured-card:focus-visible .featured-art::after{transition:none!important;transform:translateX(-130%)!important}
+.featured-deck:has(.featured-card:hover) .featured-card:not(:hover),
+.featured-deck:has(.featured-card:focus-visible) .featured-card:not(:focus-visible){filter:none!important}
+@media(max-width:760px){
+ .featured-card,.featured-card.is-active,.featured-card.is-before,.featured-card.is-after,.featured-card:hover,.featured-card:focus-visible{transform:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card,.featured-art,.featured-copy{transition:none!important}
+}
+
+
+/* Remove artwork overlays that make the top panel appear to change later */
+.featured-card,.featured-art,.featured-copy{
+ transition-property:background-color,color,border-color,box-shadow,transform!important;
+ transition-duration:.36s,.36s,.36s,.36s,.64s!important;
+ transition-timing-function:cubic-bezier(.22,.68,.2,1),cubic-bezier(.22,.68,.2,1),cubic-bezier(.22,.68,.2,1),ease,cubic-bezier(.16,1,.3,1)!important;
+ transition-delay:0s!important;
+}
+.featured-art,.featured-art.art-onboarding,.featured-art.art-coaching,.featured-art.art-improvement,
+.featured-art.art-circle,.featured-art.art-retention,.featured-art.art-ai{
+ background-color:#e9edf0!important;
+ background-image:none!important;
+}
+.featured-card:hover .featured-art,.featured-card:focus-visible .featured-art,.featured-card.is-active .featured-art{
+ background-color:#173e70!important;
+ background-image:none!important;
+}
+.featured-card:hover .featured-copy,.featured-card:focus-visible .featured-copy,.featured-card.is-active .featured-copy,
+.featured-card:hover.is-click-pull .featured-copy,.featured-card.is-click-pull .featured-copy{
+ background-color:#173e70!important;
+ background-image:none!important;
+}
+.featured-art::before,.featured-art::after{
+ display:none!important;
+ transition:none!important;
+}
+
+
+/* AutoEver blue and white site-wide palette */
+:root{
+ --brand-blue:#1773cc;
+ --green:#1773cc;
+ --green-dark:#1268b6;
+ --navy:#1773cc;
+ --pale:#f3f8fc;
+ --line:#dce8f3;
+}
+html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
+ background:#fff!important;
+ background-image:none!important;
+}
+.header{
+ background:#fff!important;
+ color:var(--brand-blue)!important;
+ border-right:1px solid #e4edf6;
+ box-shadow:4px 0 22px rgba(23,75,125,.035);
+}
+.header .navmenu a,
+.header .navmenu a:hover,
+.header .navmenu a.active{
+ color:var(--brand-blue)!important;
+}
+.header .navmenu a:hover,
+.header .navmenu a.active{
+ background:rgba(23,115,204,.075)!important;
+}
+.header .navmenu a.active::before{
+ background:var(--brand-blue)!important;
+}
+.header .nav-icon,
+.header .navmenu a:hover .nav-icon,
+.header .navmenu a.active .nav-icon{
+ color:var(--brand-blue)!important;
+ stroke:var(--brand-blue)!important;
+}
+.prototype-label{color:#6c98c4!important}
+.profile-caption{color:#527ca5!important}
+.featured-card:hover,.featured-card:focus-visible,.featured-card.is-active,
+.featured-card:hover .featured-art,.featured-card:focus-visible .featured-art,.featured-card.is-active .featured-art,
+.featured-card:hover .featured-copy,.featured-card:focus-visible .featured-copy,.featured-card.is-active .featured-copy,
+.featured-card:hover.is-click-pull .featured-copy,.featured-card.is-click-pull .featured-copy{
+ background-color:#1773cc!important;
+}
+
+
+/* Floating sidebar navigation without a visible panel edge */
+.header{
+ background:transparent!important;
+ border:0!important;
+ box-shadow:none!important;
+}
+.header .navmenu{
+ display:flex;
+ flex-direction:column;
+ gap:10px;
+}
+.header .navmenu a{
+ border:0!important;
+ border-radius:12px;
+ background:transparent!important;
+ padding:15px 18px;
+ transition:transform .28s cubic-bezier(.2,.7,.2,1),background-color .28s ease,box-shadow .28s ease!important;
+}
+.header .navmenu a:hover,
+.header .navmenu a:focus-visible{
+ background:rgba(23,115,204,.07)!important;
+ box-shadow:0 9px 24px rgba(23,91,150,.10);
+ transform:translateX(4px) translateY(-1px);
+}
+.header .navmenu a.active{
+ background:rgba(23,115,204,.09)!important;
+ box-shadow:none!important;
+ transform:none;
+}
+.header .navmenu a.active::before{display:none!important}
+
+
+/* Balance the brand blue with calm neutral content colors; sidebar styling stays intact */
+:root{
+ --brand-blue:#1773cc;
+ --green:#1773cc;
+ --green-dark:#1268b6;
+ --navy:#263440;
+ --pale:#f4f6f8;
+ --line:#e1e7ec;
+ --muted:#64717d;
+}
+
+.category{font-weight:700!important}
+
+/* Experience cards: reveal category and title together on blue hover */
+.case-card{
+ background:#fff!important;
+ border:1px solid #e1e7ec!important;
+ border-radius:10px;
+ overflow:hidden;
+ color:#263440!important;
+ transition:background-color .36s ease,color .36s ease,border-color .36s ease,box-shadow .36s ease,transform .36s cubic-bezier(.2,.7,.2,1)!important;
+ transition-delay:0s!important;
+}
+.case-card .category,.case-card .case-copy h3{
+ opacity:0;
+ visibility:hidden;
+ transform:translateY(5px);
+ transition:opacity .28s ease,transform .28s ease,visibility 0s linear .28s,color .28s ease!important;
+}
+.case-card .case-copy{
+ background:#fff!important;
+ transition:background-color .36s ease,color .36s ease!important;
+ transition-delay:0s!important;
+}
+.case-card .case-copy p{color:#64717d!important;transition:color .36s ease!important;transition-delay:0s!important}
+.case-card:hover,.case-card:focus-visible{
+ background:#1773cc!important;
+ border-color:#1773cc!important;
+ box-shadow:0 16px 36px rgba(23,83,143,.2)!important;
+ transform:translateY(-4px)!important;
+}
+.case-card:hover .case-copy,.case-card:focus-visible .case-copy{background:#1773cc!important}
+.case-card:hover .category,.case-card:focus-visible .category,
+.case-card:hover .case-copy h3,.case-card:focus-visible .case-copy h3{
+ opacity:1;visibility:visible;transform:translateY(0);
+ transition:opacity .28s ease,transform .28s ease,visibility 0s,color .28s ease!important;
+ transition-delay:0s!important;
+ color:#fff!important;
+}
+.case-card:hover .case-copy p,.case-card:focus-visible .case-copy p{color:rgba(255,255,255,.88)!important}
+.case-card:hover .case-visual,.case-card:focus-visible .case-visual{
+ background:#1773cc!important;color:#fff!important;
+}
+.case-card:hover .case-visual.photo-case::after,.case-card:focus-visible .case-visual.photo-case::after{
+ background:rgba(23,115,204,.86)!important;
+}
+.case-card:hover .case-visual strong,.case-card:hover .case-visual span,
+.case-card:focus-visible .case-visual strong,.case-card:focus-visible .case-visual span{color:#fff!important}
+.case-card:hover .visual-bg,.case-card:focus-visible .visual-bg{
+ filter:grayscale(1) saturate(.25) brightness(.55) contrast(1.05)!important;
+}
+.featured-link,.read{display:none!important}
+@media(max-width:760px){
+ .case-card .category,.case-card .case-copy h3{
+  opacity:1;visibility:visible;transform:none;
+ }
+ .case-card:hover,.case-card:focus-visible{transform:none!important}
+}
+@media(prefers-reduced-motion:reduce){
+ .case-card,.case-card .category,.case-card .case-copy h3,.case-card .case-copy p{transition:none!important}
+}
+
+
+.case-card:hover .case-visual .visual-content,.case-card:focus-visible .case-visual .visual-content{
+ background:#1773cc!important;
+ border-color:transparent!important;
+ box-shadow:none!important;
+ backdrop-filter:none!important;
+}
+
+
+/* Hero wordmark: metallic embossed lettering inspired by the reference image */
+.hero-logo-wrap{position:relative;isolation:isolate}
+.hero-logo-wrap::before{content:"";position:absolute;z-index:-1;width:min(520px,100%);aspect-ratio:2.6/1;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.98) 0%,rgba(255,255,255,.82) 42%,rgba(235,239,242,.24) 70%,transparent 100%);filter:blur(11px);pointer-events:none}
+.hero-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:0;white-space:nowrap;font-size:clamp(44px,5.2vw,78px);font-weight:850;letter-spacing:-.055em;line-height:.88;color:#8b8986;background:linear-gradient(180deg,#fdfdfd 0%,#b9b8b6 19%,#777673 48%,#d0cfcc 70%,#878581 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-text-stroke:.35px rgba(255,255,255,.72);filter:drop-shadow(0 1px 0 rgba(255,255,255,.95)) drop-shadow(0 4px 7px rgba(48,54,59,.19)) drop-shadow(0 0 14px rgba(255,255,255,.9));}
+.hero-wordmark-top{font-size:.79em;font-weight:800;letter-spacing:-.045em}
+.hero-wordmark-bottom{font-size:1em;font-style:italic;font-weight:850;letter-spacing:-.075em}
+@media(max-width:1100px){.hero-logo-wrap::before{width:min(420px,86vw)}.hero-wordmark{font-size:clamp(48px,8vw,74px)}}
+@media(max-width:700px){.hero-wordmark{font-size:clamp(46px,12vw,68px)}.hero-logo-wrap{min-height:150px}}
+@media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
+
+
+/* Keep the metric caption in the image panel visible; reveal only the card's lower summary on hover */
+.case-card .case-visual .visual-content span{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+}
+.case-card .case-copy p{
+ opacity:0!important;visibility:hidden!important;transform:translateY(5px);
+ transition:opacity .26s ease,transform .26s ease,visibility 0s linear .26s,color .28s ease!important;
+}
+.case-card:hover .case-copy p,.case-card:focus-visible .case-copy p{
+ opacity:1!important;visibility:visible!important;transform:translateY(0);
+ transition:opacity .26s ease,transform .26s ease,visibility 0s,color .28s ease!important;transition-delay:0s!important;
+ color:rgba(255,255,255,.9)!important;
+}
+@media(max-width:760px){
+ .case-card .case-copy p{opacity:1!important;visibility:visible!important;transform:none}
+}
+@media(prefers-reduced-motion:reduce){.case-card .case-copy p{transition:none!important}}
+
+
+/* Category and headline stay visible; only the secondary summary is hover-revealed */
+.case-card .category,.case-card .case-copy h3{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+ transition:color .28s ease!important;transition-delay:0s!important;
+}
+.case-card:hover .category,.case-card:focus-visible .category,
+.case-card:hover .case-copy h3,.case-card:focus-visible .case-copy h3{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+ color:#fff!important;
+}
+
+
+/* Stronger brushed-metal and embossed treatment based on the new logo reference */
+.hero-logo-wrap::before{
+ width:min(560px,108%);aspect-ratio:2.55/1;
+ background:radial-gradient(ellipse,rgba(255,255,255,1) 0%,rgba(255,255,255,.96) 38%,rgba(220,226,230,.46) 69%,transparent 100%);
+ filter:blur(8px)
+}
+.hero-wordmark{
+ font-size:clamp(50px,6.25vw,92px);
+ letter-spacing:-.06em;
+ line-height:.86;
+ background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.15) 0 1px,transparent 1px 3px),linear-gradient(178deg,#fff 0%,#e6e6e3 15%,#8b8d8b 31%,#f4f4f1 42%,#686b6a 58%,#c7c8c5 74%,#858784 100%);
+ background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+ -webkit-text-stroke:.65px rgba(91,94,94,.48);
+ filter:drop-shadow(0 1px 0 rgba(255,255,255,.98)) drop-shadow(0 2px 0 rgba(128,130,130,.72)) drop-shadow(0 4px 0 rgba(83,85,85,.5)) drop-shadow(0 8px 7px rgba(35,41,45,.23)) drop-shadow(0 0 16px rgba(255,255,255,.95));
+}
+.hero-wordmark-top{font-size:.76em;font-weight:850;letter-spacing:-.045em}
+.hero-wordmark-bottom{font-size:1em;font-style:italic;font-weight:900;letter-spacing:-.075em}
+@media(max-width:1100px){.hero-wordmark{font-size:clamp(52px,8.5vw,80px)}}
+@media(max-width:700px){.hero-wordmark{font-size:clamp(46px,12.2vw,70px)}}
+
+
+/* Use the supplied logo artwork as-is in the hero */
+.hero-logo-wrap::before{display:none!important}
+.hero-logo{display:block;width:min(560px,100%)!important;max-width:100%;height:auto!important;object-fit:contain;filter:none!important;opacity:1}
+@media(max-width:1100px){.hero-logo{width:min(560px,100%)!important}}
+@media(max-width:700px){.hero-logo{width:min(420px,100%)!important}}
+
+
+/* Career profile: align the education/certification and tools/projects split to the reference */
+@media(min-width:801px){
+ #resume .resume-matrix>.resume-profile-side{
+  display:grid!important;
+  grid-template-columns:minmax(0,56%) minmax(0,44%)!important;
+  grid-template-rows:repeat(2,minmax(190px,auto))!important;
+  align-content:start!important;
+ }
+ #resume .resume-matrix>.resume-profile-side>.education-panel{
+  grid-column:1!important;grid-row:1!important;
+  padding:24px 22px 24px 0!important;
+  border-right:1px solid #dce4e8!important;
+  border-bottom:1px solid #dce4e8!important;
+ }
+ #resume .resume-matrix>.resume-profile-side>.skills-panel{
+  grid-column:2!important;grid-row:1!important;
+  padding:24px 0 24px 22px!important;
+  border:0!important;border-bottom:1px solid #dce4e8!important;
+ }
+ #resume .resume-matrix>.resume-profile-side>.certification-panel{
+  grid-column:1!important;grid-row:2!important;
+  padding:24px 22px 24px 0!important;
+  border:0!important;border-right:1px solid #dce4e8!important;
+ }
+ #resume .resume-matrix>.resume-profile-side>.projects-panel{
+  grid-column:2!important;grid-row:2!important;
+  padding:24px 0 24px 22px!important;border:0!important;
+ }
+ #resume .resume-matrix>.resume-profile-side>.resume-panel+.resume-panel{padding-top:24px!important}
+}
+
+
+@media(max-width:1000px){.services-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:38px 30px}}
+@media(max-width:700px){.services-grid{grid-template-columns:1fr;gap:28px}}
 </style>
 </head>
 <body>
@@ -624,6 +1537,7 @@ pointer-events:none}
     <a href="#hero" class="active"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 10.5 12 3l8.5 7.5"/><path d="M5.5 9.5V21h13V9.5M9.5 21v-6h5v6"/></svg><span>홈</span></a>
     <a href="#about"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7" r="3.5"/><path d="M5 21v-2.5A5.5 5.5 0 0 1 10.5 13h3a5.5 5.5 0 0 1 5.5 5.5V21"/></svg><span>소개</span></a>
     <a href="#resume"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h9l4 4V21.5H6z"/><path d="M15 2.5v4h4M9 11h6M9 15h6M9 19h4"/></svg><span>커리어 프로필</span></a>
+    <a href="#featured-experiences"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.8 8l6.1.9-4.4 4.3 1 6.1-5.5-2.9-5.5 2.9 1-6.1-4.4-4.3L9.2 8z"/><path d="m19 2 .6 1.4L21 4l-1.4.6L19 6l-.6-1.4L17 4l1.4-.6z"/></svg><span>핵심 경험</span></a>
     <a href="#portfolio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>주요 경험</span></a>
     <a href="#services"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5.5 4-4 4 4-4 4M9.5 14.5l-8 8"/><path d="M4.5 1.5a5 5 0 0 0 6.4 6.4L21.5 18.5a2.1 2.1 0 0 1-3 3L7.9 10.9a5 5 0 0 1-6.4-6.4l3 3 3-3z"/></svg><span>업무 역량</span></a>
     <a href="#why"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-4.4 7-11V4.5L12 2 5 4.5V10c0 6.6 7 11 7 11z"/><path d="m9 11.5 2 2 4-4"/></svg><span>Why Hyundai AutoEver</span></a>
@@ -641,10 +1555,7 @@ pointer-events:none}
     <p class="hero-description">사람의 성장을 이해하고, 데이터로 진단하며,<br>조직에게 서비스를 제공하는 이준호입니다.</p>
     <div class="hero-actions"><a class="cta" href="#portfolio">주요 경험 보기 ↓</a><button class="cta outline story-cta" onclick="openCase('story')">저의 이야기가 궁금하세요? ↗</button></div>
   </div>
-  <div class="hero-logo-wrap">
-    <div class="hero-wordmark" aria-label="현대오토에버">HYUNDAI <span>AutoEver</span></div>
   </div>
-</div>
 
 </section>
 
@@ -660,88 +1571,125 @@ pointer-events:none}
     </div>
     <div class="about-art"><strong>People.<br>Data.<br>Growth.</strong></div>
   </div>
-  <div class="facts-row"><div class="fact"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div><div class="fact"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div><div class="fact"><strong>40% 감소</strong><span>같은 기간 조기 이탈 인원</span></div><div class="fact"><strong>30% +</strong><span>2025년 게시판 질문량, 2024년 대비</span></div></div>
+  <div class="facts-row"><div class="fact"><strong>100명 +</strong><span>조교 온보딩 및 직무교육</span></div><div class="fact"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div><div class="fact"><strong>40% 감소</strong><span>같은 기간 조기 이탈 인원</span></div><div class="fact"><strong>30% +</strong><span>2025년 게시판 질문량, 2024년 대비</span></div></div>
 </div>
 </section>
 
 <section id="resume" class="light">
 <div class="container"><div class="section-title"><h2>커리어 프로필</h2><p>학교와 연구실에서 교육 운영, 상담과 조교 관리 경험을 쌓았습니다.</p></div>
 <div class="resume-matrix">
-  <div class="resume-panel"><h3 class="resume-title">경력</h3>
+  <div class="resume-panel career-panel"><h3 class="resume-title">경력</h3>
     <div class="resume-item"><h4>Woojin Math</h4><h5>2024.03 — 현재</h5><p><strong>대한민국 1타 메가스터디 강사 연구원</strong></p><ul><li>신규 조교 온보딩 및 직무교육</li><li>답변 품질 점검과 교육과정 개선</li><li>채용, 평가와 조교 운영</li></ul></div>
     <div class="resume-item"><h4>대일외국어고등학교</h4><h5>2022.03 — 2024.02</h5><p><strong>전국 단위 2위 외고 수학교사</strong></p><ul><li>300명 이상의 학생 및 학부모 개별 상담</li><li>학급자치서클 정기 운영</li><li>학부모 설명회 및 입시 설명회</li></ul></div>
   </div>
-  <div class="resume-panel compact"><h3 class="resume-title">학력</h3>
-    <div class="resume-item"><h4>성균관대학교</h4><p>수학교육과</p><ul><li>전체학점 3.78 / 4.5</li><li>전공학점 4.14 / 4.5</li></ul></div>
-  </div>
-  <div class="resume-panel compact"><h3 class="resume-title">자격증</h3>
-    <div class="cert-list"><ul><li>중등학교 정교사</li><li>컴퓨터활용능력 2급</li><li>워드프로세서 1급</li></ul></div>
-  </div>
-  <div class="resume-panel compact"><h3 class="resume-title">SKILLS</h3>
-    <div class="skills-list">
-      <div class="skill-row"><span class="skill-name">EXCEL</span><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">WORD</span><div class="skill-track"><div class="skill-fill" style="width:100%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">POWERPOINT</span><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">LLM</span><div class="skill-track"><div class="skill-fill" style="width:100%"></div></div></div>
-      <div class="skill-row"><span class="skill-name">PYTHON</span><div class="skill-track"><div class="skill-fill" style="width:50%"></div></div></div>
+  <div class="resume-profile-side">
+    <div class="resume-panel compact education-panel"><h3 class="resume-title">학력</h3>
+      <div class="resume-item"><h4>성균관대학교</h4><p>수학교육과</p><ul><li>전체학점 3.78 / 4.5</li><li>전공학점 4.14 / 4.5</li></ul></div>
     </div>
-  </div>
-  <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
-    <div class="activity-grid">
-      <div class="resume-item activity-name-only"><h4>So, My Money?</h4></div>
-      <div class="resume-item activity-name-only"><h4>사회인 축구팀 운영진</h4></div>
+    <div class="resume-panel compact certification-panel"><h3 class="resume-title">자격증</h3>
+      <div class="cert-list"><ul><li>중등학교 정교사</li><li>컴퓨터활용능력 2급</li><li>워드프로세서 1급</li></ul></div>
+    </div>
+    <div class="resume-panel compact skills-panel"><h3 class="resume-title">활용 도구</h3>
+      <div class="skill-tags"><span>EXCEL</span><span>WORD</span><span>POWERPOINT</span><span>ChatGPT</span><span>Claude Code</span><span>PYTHON</span></div>
+    </div>
+    <div class="resume-panel projects-panel"><h3 class="resume-title">프로젝트 및 활동</h3>
+      <ul class="activity-list">
+        <li>So, My Money?</li>
+        <li>사회인 축구팀 운영진</li>
+      </ul>
     </div>
   </div>
 </div></div>
 </section>
 
 
+
+
+<section id="featured-experiences" class="featured-experiences">
+  <div class="container">
+    <div class="section-title"><h2>핵심 경험</h2><p>현대오토에버 HRD·HRM 요구역량과 실제 수행 경험을 연결한 여섯 가지 사례입니다.</p></div>
+    <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
+      <button class="featured-card" style="--card-index:0;--card-tilt:-5deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
+        <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
+        <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:1;--card-tilt:-2deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
+        <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">저성과 조교 평균 답변량 증가</span></span>
+        <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:2;--card-tilt:1deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
+        <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">30%+</span><span class="featured-metric-caption">2025년 게시판 질문량 증가 · 2024년 대비</span></span>
+        <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:3;--card-tilt:3deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
+        <span class="featured-art art-circle"><span class="featured-index">04 / HRD</span><span class="featured-peek">FACILITATION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="featured-metric">월 1회</span><span class="featured-metric-caption">대화의 장을 만든 학급자치서클</span></span>
+        <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:4;--card-tilt:5deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
+        <span class="featured-art art-retention"><span class="featured-index">05 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
+        <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span></span>
+      </button>
+      <button class="featured-card" style="--card-index:5;--card-tilt:7deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
+        <span class="featured-art art-ai"><span class="featured-index">06 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
+        <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <section id="portfolio">
-<div class="container"><div class="section-title"><h2>주요 경험</h2><p>분류를 선택해 경험을 살펴보세요. 각 항목을 누르면 수행 내용과 관련 자료를 볼 수 있습니다.</p></div>
-<div class="filters"><button class="filter active" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
+<div class="container"><div class="section-title"><h2>주요 경험</h2></div>
+<div class="filters"><button class="filter active" data-filter="ALL">전체</button><button class="filter" data-filter="HRD">HRD</button><button class="filter" data-filter="HRM">HRM</button><button class="filter" data-filter="PROJECT">프로젝트 및 기타활동</button><button class="filter" data-filter="AI">AI 협업</button></div>
 <div class="portfolio-grid"><button class="case-card" data-category="HRD" onclick="openCase('quality')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/40925d398bf357027cbfecc7c4ee1a183ec31803.png" alt="개인별 성과 편차 진단 화면"><div class="visual-content"><strong>40 → 60건</strong><span>저성과 조교 평균 답변량 증가</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>성과 데이터 기반 개인별 학습 니즈 진단</h3><p>성과 데이터 기반 개인별 학습 진단</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('improvement')">
-<div class="case-visual photo-case"><div class="visual-content"><strong>30%+</strong><span>2025년 게시판 질문량 증가<br>2024년 대비</span></div></div>
-<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>반복 오류와 현장 질문의 교육 반영</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-visual photo-case"><div class="visual-content"><strong>30%+</strong><span>게시판 질문량 증가</span></div></div>
+<div class="case-copy"><div class="category">HRD - 효과성</div><h3>교육 효과 측정 및 과정 개선</h3><p>반복 오류와 현장 질문의 교육 반영</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('onboard')">
 <div class="case-visual photo-case onboarding-case"><img class="visual-bg" src="assets/onboarding-guide-cover.png" alt="현우진 수학 연구실 QA 조교 업무 가이드"><div class="visual-content"><strong>100명 +</strong><span>조교 선발, 온보딩 및 직무교육</span></div></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>조직 안내부터 답변 기준까지 단계별 온보딩</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 전문성</div><h3>직무 온보딩 체계 설계 및 운영</h3><p>조직 안내부터 답변 기준까지 단계별 온보딩</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('circle')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><div class="visual-content"><strong>CLASS</strong><span>월 1회 정기 프로그램</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>참여형 조직개발 프로그램 설계 및 운영</h3><p>토킹스틱을 활용한 대화와 공동 의사결정</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>참여형 조직개발 프로그램 설계 및 운영</h3><p>토킹스틱을 활용한 대화와 공동 의사결정</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('counsel')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/a49afda2fa8a6e2841964fa5a0765179d6d5f34b.png" alt="학생 및 학부모 개별 상담 관련 안내 폼"><div class="visual-content"><strong>600회 +</strong><span>학생 및 학부모 개별 상담</span></div></div>
-<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학생 및 학부모 상담과 맞춤 성장 지원</p><span class="read">자세히 보기 ↗</span></div></button>
+<div class="case-copy"><div class="category">HRD - 적합성</div><h3>구성원 적응 진단 및 개별 성장 지원</h3><p>학생 및 학부모 상담과 맞춤 성장 지원</p></div></button>
 <button class="case-card" data-category="HRD" onclick="openCase('brief')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/49ae28eeced8089115774f462c51013e8a5cf335.png" alt="학부모 설명회 및 입시설명회 발표 사진"><div class="visual-content"><strong>500명 +</strong><span>학부모 및 학생 대상</span></div></div>
-<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="AI" onclick="openCase('ai')">
-<div class="case-visual"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div>
-<div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('selection')">
-<div class="case-visual"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div>
-<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('retention')">
-<div class="case-visual photo-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>같은 기간 조기 이탈 인원 감소</span></div></div>
-<div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('interview')">
-<div class="case-visual"><strong>약 100명</strong><span>지원자 직접 면접 및 평가</span></div>
-<div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="HRM" onclick="openCase('alignment')">
-<div class="case-visual"><strong>공통 기준</strong><span>면접위원 간 판단 근거 정렬</span></div>
-<div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="PROJECT" onclick="openCase('money')">
+<div class="case-copy"><div class="category">HRD - 전문성</div><h3>대규모 이해관계자 교육 및 커뮤니케이션</h3><p>학교 및 입시 정보 전달과 현장 질의응답</p></div></button>
+<button class="case-card" data-category="AI" onclick="openCase('ai')">
+<div class="case-visual"><div class="visual-content"><strong>3,500건</strong><span>AI 답변 직접 검수</span></div></div>
+<div class="case-copy"><div class="category">AI</div><h3>수학과 AI를 연결한 서비스 개선 협업</h3><p>프롬프트 설계와 외부 개발업체 협업</p></div></button>
+<button class="case-card" data-category="HRM" onclick="openCase('selection')">
+<div class="case-visual hrm-case compact-metric"><div class="visual-content"><strong>300명 / 100명 +</strong><span>지원자 평가 / 최종 선발</span></div></div>
+<div class="case-copy"><div class="category">HRM - 인재 확보</div><h3>직무 적합성 기반 인재 선발체계 개선</h3><p>핵심역량 중심 평가기준 및 선발 프로세스 정비</p></div></button>
+<button class="case-card" data-category="HRM" onclick="openCase('retention')">
+<div class="case-visual photo-case hrm-case"><img class="visual-bg" src="assets/368ddf1eb15024eac04d17e2c3e22dca34877098.png" alt="선발 이후까지 연결한 채용 프로세스 개선 대시보드"><div class="visual-content"><strong>40% ↓</strong><span>조기 이탈 인원 감소</span></div></div>
+<div class="case-copy"><div class="category">HRM - 인력 유지</div><h3>성과·이탈 데이터 기반 인력계획 개선</h3><p>입사 후 데이터를 다음 선발기준과 채용 규모에 반영</p></div></button>
+<button class="case-card" data-category="HRM" onclick="openCase('interview')">
+<div class="case-visual hrm-case"><div class="visual-content"><strong>약 100명</strong><span>지원자 면접 및 평가</span></div></div>
+<div class="case-copy"><div class="category">HRM - 공정한 선발</div><h3>지원자 역량 중심 면접 및 평가</h3><p>자기소개서 기반 질문 설계와 지원자 평가</p></div></button>
+<button class="case-card" data-category="HRM" onclick="openCase('alignment')">
+<div class="case-visual hrm-case"><div class="visual-content"><strong>공통 기준</strong><span>면접 평가 기준 정렬</span></div></div>
+<div class="case-copy"><div class="category">HRM - 평가 일관성</div><h3>평가 신뢰도 제고를 위한 면접기준 표준화</h3><p>답변 사례와 점수 근거를 바탕으로 판단기준 정렬</p></div></button>
+<button class="case-card" data-category="PROJECT" onclick="openCase('money')">
 <div class="case-visual photo-case"><img class="visual-bg" src="assets/eb11772c4498107adc3dc146a89c6105d4e2f91f.png" alt="So, My Money 프로젝트 화면"><div class="visual-content"><strong>97.2%</strong><span>개인화 뉴스 선택 정확도</span></div></div>
-<div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p><span class="read">자세히 보기 ↗</span></div></button>
-<button class="case-card" hidden data-category="PROJECT" onclick="openCase('football')">
+<div class="case-copy"><div class="category">PROJECT</div><h3>So, My Money?</h3><p>개인 자산에 미치는 뉴스 영향 설명 서비스</p></div></button>
+<button class="case-card" data-category="PROJECT" onclick="openCase('football')">
 <div class="case-visual photo-case football-case"><img class="visual-bg" src="assets/football-team.jpg" alt="사회인 축구팀 운영 현장"><div class="visual-content"><strong>50명</strong><span>축구팀 운영진</span></div></div>
-<div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p><span class="read">자세히 보기 ↗</span></div></button></div></div>
+<div class="case-copy"><div class="category">PROJECT</div><h3>사회인 축구팀 - 운영진</h3><p>정기 경기 운영, 역할 및 포지션 배분</p></div></button></div></div>
 </section>
 
 <section id="services" class="light"><div class="container"><div class="section-title"><h2>업무 역량</h2></div>
-<div class="services-grid"><div class="service"><div class="service-icon">01</div><div><h4>학습 니즈 진단과 교육 설계</h4><p>답변량, 오류율, 근무시간과 면담을 바탕으로 어려움을 파악해 교육과 역할 조정으로 연결했습니다.</p></div></div><div class="service"><div class="service-icon">02</div><div><h4>교육 효과 측정과 과정 개선</h4><p>반복 오류를 유형화하고<br>교육 예시와 피드백 기준에 반영했습니다.</p></div></div><div class="service"><div class="service-icon">03</div><div><h4>AI 품질 기준과 협업</h4><p>AI 답변 품질 기준을 구조화하고<br>외부 업체와 개선 우선순위를 조율했습니다.</p></div></div></div></div></section>
+<div class="services-grid">
+<div class="service"><div class="service-icon">01</div><div><h4>조직·직무 이슈를 학습 과제로 전환</h4><p>반복되는 오류와 현장 의견에서 수행의 어려움을 찾아 교육이 필요한 과제로 구체화합니다.</p></div></div>
+<div class="service"><div class="service-icon">02</div><div><h4>성장 단계에 맞는 L&amp;D 설계</h4><p>신규 구성원 온보딩과 직무교육 경험을 바탕으로 역할과 숙련도에 맞는 학습 경로를 설계합니다.</p></div></div>
+<div class="service"><div class="service-icon">03</div><div><h4>교육 운영부터 효과 측정까지 주도</h4><p>교육 후 답변 품질과 현장 변화를 살피고, 결과를 다음 교육과 운영 기준에 반영합니다.</p></div></div>
+<div class="service"><div class="service-icon">04</div><div><h4>데이터 기반 학습 효과 분석</h4><p>답변량과 오류율 등 운영 지표를 살펴 학습 효과와 추가 지원이 필요한 지점을 확인합니다.</p></div></div>
+<div class="service"><div class="service-icon">05</div><div><h4>조직문화와 구성원 참여 촉진</h4><p>학급 자치와 팀 운영 경험을 바탕으로 구성원이 참여하고 소통하는 프로그램을 기획합니다.</p></div></div>
+<div class="service"><div class="service-icon">06</div><div><h4>이해관계자 협업과 커뮤니케이션</h4><p>교육 대상자와 동료, 외부 파트너 간 목표와 기준을 맞추고 피드백을 실행 가능한 개선으로 연결합니다.</p></div></div>
+</div></div></section>
 
 <section id="why">
 <div class="container why why-layout">
@@ -830,12 +1778,12 @@ const cases={
 <h3>직무교육</h3><ul><li>모범답안과 문제가 있는 답변을 사례로 비교하며, 학생 질문의 핵심을 찾고 이해하기 쉽게 설명하는 기준을 교육</li><li>불필요한 설명과 학생에게 혼란을 줄 수 있는 내용을 덜어내는 방법을 안내</li><li>조교가 직접 답변을 작성하면 피드백과 교정을 제공</li></ul>
 <h3>교육 후 지원</h3><p>약 3주간 답변을 살피며 설명이 모호한 사례가 반복될 때는 해당 조교들을 모아 추가 교육했습니다. 그 과정에서 질문의 핵심을 중심으로 답하고, 불필요하거나 혼란을 줄 수 있는 설명을 덜어내는 변화를 확인했습니다.</p>
 <div class="detail-gallery"><figure><img src="assets/onboarding-system-guide.png" alt="QA 시스템 사용법 교육 자료"><figcaption>시스템 사용법 교육</figcaption></figure><figure><img src="assets/onboarding-feedback-example.png" alt="실제 사례 기반 피드백 자료"><figcaption>실 사례로 피드백 체계 구성</figcaption></figure></div>`},
-"circle":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`참여형 조직개발 프로그램 설계 및 운영`,meta:`대일외국어고등학교`,body:`<div class="detail-context">월 1회 학급자치서클을 운영해 학생들이 서로의 생각과 마음을 나누는 대화의 장을 마련했습니다.</div>
-<h3>대화 구조 설계</h3><ul><li>토킹스틱을 직접 만들어 이를 든 학생만 말할 수 있도록 해 발언 순서를 명확히 했습니다.</li><li>함께 논의할 안건이 있을 때 대화를 진행하고 학생들이 의견을 나누도록 했습니다.</li></ul>
-<h3>공동 대화 주제와 진행</h3><p>구성원들이 서로의 차이를 존중하며 의견을 나눌 수 있도록 대화의 장을 마련했습니다. 언어 습관과 관계에서 느끼는 불편함 등 공동으로 논의할 주제를 제안하고, 토킹스틱을 활용해 참여자들이 차례로 의견을 나누도록 진행했습니다. 필요한 안건은 직접 대화를 이끌며 서로의 생각을 듣고 함께 논의하도록 도왔습니다.</p>
-<h3>참여자 설문</h3><p>응답자 25명의 설문에서 학급 분위기, 편하게 질문할 수 있는 정도, 서로의 의견 존중, 조언의 도움, 성장 체감 등 다섯 문항의 4~5점 응답 비율은 64~76%였습니다.</p>
+"circle":{label:`HRD - 조직개발·퍼실리테이션 경험 / 대일외국어고등학교`,title:`참여형 조직개발 프로그램 설계·운영`,meta:`대일외국어고등학교 · 학급 공동체 사례`,body:`<div class="detail-context">월 1회 학급자치서클을 운영하며 학생들이 서로의 생각과 마음을 나눌 대화의 장을 마련했습니다. 기업 구성원을 대상으로 한 조직개발 사례는 아니지만, 공동체의 대화 주제를 정하고 참여 구조를 설계해 진행한 경험입니다.</div>
+<h3>공동체의 필요를 안건으로 구체화</h3><p>학생들의 거친 말투와 공격적인 표현이 반복되는 것을 보고, 언어 습관을 함께 돌아볼 필요가 있다고 판단했습니다. 이를 공동 안건으로 제안해 서로의 말이 관계에 미치는 영향을 생각하고 각자의 의견을 나누도록 했습니다.</p>
+<h3>모두가 참여할 수 있는 대화 구조</h3><ul><li>토킹스틱을 직접 만들어 든 사람만 말하도록 해 발언 순서와 경청 규칙을 분명히 했습니다.</li><li>정기적으로 대화의 장을 열고, 함께 의논할 사안은 직접 진행하며 의견을 모았습니다.</li></ul>
+<h3>관찰한 변화와 참여자 의견</h3><p>운영 과정에서 욕설과 비방이 줄고 서로의 차이를 인정하는 모습을 관찰했습니다. 이는 정량적인 효과 검증이 아니라 현장에서 확인한 변화입니다.</p><p>별도로 실시한 25명 응답 설문에서는 학급 분위기, 질문의 편안함, 서로의 의견 존중, 조언의 도움, 성장 체감 등 다섯 문항에서 4~5점 응답 비율이 64~76%였습니다.</p>
 <h3>활동 자료</h3>
-<div class="detail-gallery"><figure><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><figcaption>학생들과 원형으로 앉아 학급자치서클 프로그램을 진행한 장면입니다.</figcaption></figure><figure><img src="assets/participatory-org-development.png" alt="참여형 조직개발 프로그램 자료"><figcaption>참여형 조직개발 프로그램의 운영 자료입니다.</figcaption></figure><figure><img src="assets/participatory-circle-survey.svg" alt="학급자치서클 참여자 25명의 설문 응답 결과"><figcaption>프로그램 참여자 25명의 응답 결과입니다.</figcaption></figure></div>`},"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`구성원 적응 진단 및 개별 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">구성원의 적응 저해 요인을 진단하고 개인별 상황에 맞춘 성장 지원</div>
+<div class="detail-gallery"><figure><img src="assets/f74539dd5d920fe2ea15a9e02162e502f08dfa07.png" alt="학급자치서클 운영 활동 사진"><figcaption>학생들과 원형으로 앉아 학급자치서클 프로그램을 진행한 장면입니다.</figcaption></figure><figure><img src="assets/participatory-org-development.png" alt="참여형 프로그램 운영 자료"><figcaption>참여형 프로그램의 운영 자료입니다.</figcaption></figure><figure><img src="assets/participatory-circle-survey.svg" alt="학급자치서클 참여자 25명의 설문 응답 결과"><figcaption>프로그램 참여자 25명의 응답 결과입니다.</figcaption></figure></div>`},"counsel":{label:`HRD - 적합성 / 대일외국어고등학교`,title:`구성원 적응 진단 및 개별 성장 지원`,meta:`대일외국어고등학교`,body:`<div class="detail-context">구성원의 적응 저해 요인을 진단하고 개인별 상황에 맞춘 성장 지원</div>
 <h3>수행 내용</h3><ul><li>학업, 관계, 학교 적응 과정의 어려움 진단</li><li>학생 및 학부모 상황에 따른 개별 상담과 팔로업</li><li>적응 저해 요인 파악 후 지속 지원</li></ul>
 <h3>결과</h3><div class="result-pair"><div><strong>600회+</strong><span>학생 및 학부모 개별 상담</span></div><div><strong>4위</strong><span>학급 운영 만족도 전체 학급 30개 중</span></div></div>
 <h3>활동 사진</h3>
@@ -923,7 +1871,9 @@ function openCase(key){
 }
 document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{
  document.querySelectorAll('.filter').forEach(b=>b.classList.toggle('active',b===btn));
- document.querySelectorAll('.case-card').forEach(card=>card.hidden=card.dataset.category!==btn.dataset.filter);
+ document.querySelectorAll('.case-card').forEach(card=>{
+  card.hidden=btn.dataset.filter!=='ALL'&&card.dataset.category!==btn.dataset.filter;
+ });
 }));
 const opsImages=[`assets/c48c09ce223196b4f43dc3dc9fc02c6d5a19a1a1.png`,`assets/f148ba000f65259376b738e12a214a92cb715ad4.png`,`assets/d825c8f1b8214b3356ab04ac8b937c046c63e2c6.png`,`assets/e5f29e01c5ab774a2df902755a1afa71c84eb902.png`];
 function openOps(){
@@ -931,13 +1881,52 @@ function openOps(){
  opsGrid.innerHTML=opsImages.filter(Boolean).map((src,i)=>`<img src="${src}" alt="운영 대시보드 ${i+1}">`).join('');
  ops.showModal();
 }
-detail.addEventListener('close',restoreModalPagePosition);
+
+
+async function openFeaturedCase(event,key){
+ event.preventDefault();
+ if(detail.open)return;
+ const card=event.currentTarget;
+ activateFeaturedCard(card);
+ card.classList.add('is-click-pull');
+ await new Promise(resolve=>setTimeout(resolve,650));
+ openCase(key);
+}
+detail.addEventListener('close',()=>{detail.classList.remove('featured-morphing','featured-unfolded');detail.removeAttribute('style');clearFeaturedCards();document.querySelectorAll('.featured-card').forEach(card=>card.classList.remove('is-click-pull'));restoreModalPagePosition();});
 ops.addEventListener('close',restoreModalPagePosition);
 const navLinks=[...document.querySelectorAll('.navmenu a')];
+let navScrollFrame=0,navScrollToken=0,navScrollInlineBehavior='';
+function cancelNavScroll(){
+ if(!navScrollFrame)return;
+ cancelAnimationFrame(navScrollFrame);
+ navScrollFrame=0;
+ navScrollToken=0;
+ document.documentElement.style.scrollBehavior=navScrollInlineBehavior;
+}
+['wheel','touchstart','pointerdown','keydown'].forEach(type=>addEventListener(type,event=>{
+ if(type==='keydown'&&!['ArrowDown','ArrowUp','PageDown','PageUp','Home','End',' '].includes(event.key))return;
+ cancelNavScroll();
+},{passive:true}));
 function scrollToSection(target,hash){
- const top=Math.max(0,target.getBoundingClientRect().top+window.scrollY-20);
- window.scrollTo({top,behavior:'smooth'});
- if(hash) history.replaceState(null,'',hash);
+ cancelNavScroll();
+ const start=window.scrollY;
+ const top=Math.max(0,target.getBoundingClientRect().top+start-20);
+ const distance=top-start;
+ if(hash)history.replaceState(null,'',hash);
+ if(Math.abs(distance)<2){window.scrollTo({top,behavior:'auto'});return}
+ navScrollInlineBehavior=document.documentElement.style.scrollBehavior;
+ document.documentElement.style.scrollBehavior='auto';
+ const duration=Math.min(1900,Math.max(1050,Math.abs(distance)*.58));
+ const started=performance.now(),token=++navScrollToken;
+ const animate=now=>{
+  if(token!==navScrollToken)return;
+  const t=Math.min(1,(now-started)/duration);
+  const eased=t<.5?16*t*t*t*t*t:1-Math.pow(-2*t+2,5)/2;
+  window.scrollTo(0,start+distance*eased);
+  if(t<1)navScrollFrame=requestAnimationFrame(animate);
+  else{navScrollFrame=0;navScrollToken=0;document.documentElement.style.scrollBehavior=navScrollInlineBehavior}
+ };
+ navScrollFrame=requestAnimationFrame(animate);
 }
 navLinks.forEach(a=>a.addEventListener('click',e=>{
  const target=document.querySelector(a.hash);
@@ -972,6 +1961,34 @@ addEventListener('scroll',()=>{
 addEventListener('resize',updateActiveNav);
 updateActiveNav();
 const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const featuredDeck=document.querySelector('.featured-deck');
+const featuredCards=[...document.querySelectorAll('.featured-card')];
+function activateFeaturedCard(card){
+ featuredCards.forEach(other=>{
+  other.classList.remove('is-active','is-before','is-after');
+  if(other===card)other.classList.add('is-active');
+  else if(featuredCards.indexOf(other)<featuredCards.indexOf(card))other.classList.add('is-before');
+  else other.classList.add('is-after');
+ });
+}
+function clearFeaturedCards(){featuredCards.forEach(card=>card.classList.remove('is-active','is-before','is-after'));}
+featuredCards.forEach(card=>{
+ card.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')activateFeaturedCard(card)});
+ card.addEventListener('pointermove',event=>{
+  if(event.pointerType!=='mouse'||reduceMotion)return;
+  const rect=card.getBoundingClientRect(),x=(event.clientX-rect.left)/rect.width,y=(event.clientY-rect.top)/rect.height;
+  card.style.setProperty('--pointer-x',Math.round(x*100)+'%');
+  card.style.setProperty('--pointer-y',Math.round(y*100)+'%');
+  card.style.setProperty('--tilt-x',((.5-y)*5).toFixed(2)+'deg');
+  card.style.setProperty('--tilt-y',((x-.5)*6).toFixed(2)+'deg');
+ });
+ card.addEventListener('pointerleave',()=>{
+  card.style.removeProperty('--tilt-x');card.style.removeProperty('--tilt-y');
+  setTimeout(()=>{if(!featuredDeck.matches(':hover'))clearFeaturedCards()},100);
+ });
+ card.addEventListener('focus',()=>activateFeaturedCard(card));
+ card.addEventListener('blur',()=>setTimeout(()=>{if(!featuredDeck.contains(document.activeElement))clearFeaturedCards()},0));
+});
 function formatCount(value,source){
  const decimals=(source.split('.')[1]||'').length;
  return new Intl.NumberFormat('ko-KR',{minimumFractionDigits:0,maximumFractionDigits:decimals}).format(decimals?Number(value.toFixed(decimals)):Math.round(value));
