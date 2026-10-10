@@ -1424,6 +1424,47 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
  backdrop-filter:none!important;
 }
 
+
+/* Editorial showcase separates flagship stories from the experience index */
+#featured-experiences{background:#fff;padding-top:76px;padding-bottom:84px}
+#featured-experiences .section-title p{max-width:720px}
+.showcase-layout{display:grid;grid-template-columns:minmax(0,1.16fr) minmax(370px,.84fr);gap:clamp(28px,5vw,76px);align-items:stretch;margin-top:38px}
+.showcase-stage{min-width:0;min-height:480px;position:relative;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:0;border-radius:4px;padding:30px 34px 24px;background:linear-gradient(140deg,#1674c9,#1773cc 58%,#0e5fae);color:#fff;text-align:left;cursor:pointer;box-shadow:0 22px 46px rgba(23,115,204,.16);transition:transform .4s cubic-bezier(.2,.75,.25,1),box-shadow .4s ease}
+.showcase-stage::before{content:"";position:absolute;width:410px;height:410px;right:-115px;top:-145px;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 0 44px rgba(255,255,255,.035),0 0 0 96px rgba(255,255,255,.025);transition:transform .7s cubic-bezier(.2,.75,.25,1)}
+.showcase-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 12%,rgba(255,255,255,.09) 46%,transparent 68%);transform:translateX(-120%);transition:transform .9s cubic-bezier(.2,.75,.25,1);pointer-events:none}
+.showcase-stage:hover,.showcase-stage:focus-visible{transform:translateY(-5px);box-shadow:0 30px 58px rgba(23,115,204,.23)}
+.showcase-stage:hover::before,.showcase-stage:focus-visible::before{transform:scale(1.08) translate(-10px,10px)}
+.showcase-stage:hover::after,.showcase-stage:focus-visible::after{transform:translateX(120%)}
+.showcase-stage:focus-visible{outline:3px solid #83b8ea;outline-offset:4px}
+.showcase-stage.is-opening{transform:translateY(-12px) scale(1.015);box-shadow:0 36px 70px rgba(23,115,204,.3)}
+.showcase-stage-top,.showcase-stage-foot{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between}
+.showcase-stage-top>span:first-child,.showcase-stage-foot{font-size:11px;font-weight:700;letter-spacing:1.5px}
+.showcase-open-mark{font-size:25px;line-height:1;transition:transform .25s ease}
+.showcase-stage:hover .showcase-open-mark{transform:translate(3px,-3px)}
+.showcase-stage-body{position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;max-width:620px;padding:28px 0}
+.showcase-kicker{font-size:12px;font-weight:700;letter-spacing:.8px;color:rgba(255,255,255,.8)}
+.showcase-metric{display:block;margin-top:25px;font-size:clamp(50px,6vw,76px);font-weight:750;line-height:1;letter-spacing:-3px;font-variant-numeric:tabular-nums}
+.showcase-metric-caption{margin-top:12px;font-size:14px;color:rgba(255,255,255,.88)}
+.showcase-rule{width:100%;height:1px;margin:28px 0 22px;background:rgba(255,255,255,.3)}
+.showcase-stage-body strong{font-size:clamp(23px,2.5vw,32px);line-height:1.4;letter-spacing:-.6px}
+.showcase-summary{max-width:510px;margin-top:12px;font-size:14px;line-height:1.85;color:rgba(255,255,255,.84)}
+.showcase-stage-foot{padding-top:17px;border-top:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.72)}
+.showcase-index{display:grid;grid-template-rows:repeat(6,minmax(0,1fr));align-content:stretch}
+.showcase-choice{width:100%;min-width:0;display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:15px;align-items:center;padding:15px 14px;border:0;border-bottom:1px solid #e4e9ed;background:transparent;color:#263746;text-align:left;cursor:pointer;transition:background .25s ease,color .25s ease,padding .25s ease}
+.showcase-choice:first-child{border-top:1px solid #e4e9ed}
+.showcase-choice:hover,.showcase-choice:focus-visible{background:#f2f7fc}
+.showcase-choice:focus-visible{outline:2px solid #1773cc;outline-offset:-2px}
+.showcase-choice.is-selected{background:#f1f6fb;padding-left:19px;box-shadow:inset 3px 0 #1773cc}
+.showcase-choice-no{align-self:start;padding-top:2px;color:#8a9aaa;font-size:11px;font-weight:700;letter-spacing:.8px;font-variant-numeric:tabular-nums}
+.showcase-choice.is-selected .showcase-choice-no{color:#1773cc}
+.showcase-choice-copy{min-width:0;display:grid;gap:6px}
+.showcase-choice-copy small{color:#718294;font-size:10px;font-weight:700;letter-spacing:.5px}
+.showcase-choice-copy strong{font-size:14px;line-height:1.45;font-weight:650}
+.showcase-choice-metric{color:#1773cc;font-size:13px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+@media(max-width:900px){.showcase-layout{grid-template-columns:1fr;gap:22px}.showcase-stage{min-height:430px}.showcase-index{grid-template-rows:none}.showcase-choice{min-height:76px}}
+@media(max-width:600px){#featured-experiences{padding-top:58px;padding-bottom:62px}.showcase-layout{margin-top:26px}.showcase-stage{min-height:400px;padding:23px 22px 19px}.showcase-stage-body{padding:18px 0}.showcase-metric{font-size:52px;margin-top:20px}.showcase-rule{margin:23px 0 18px}.showcase-summary{font-size:13px}.showcase-choice{grid-template-columns:28px minmax(0,1fr) auto;gap:9px;padding:13px 9px}.showcase-choice-copy strong{font-size:13px}.showcase-choice-metric{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.showcase-stage,.showcase-stage::before,.showcase-stage::after,.showcase-open-mark,.showcase-choice{transition:none!important}.showcase-stage:hover,.showcase-stage:focus-visible,.showcase-stage.is-opening{transform:none}}
+
 </style>
 </head>
 <body>
@@ -1502,37 +1543,21 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 
 
-<section id="featured-experiences" class="featured-experiences">
-  <div class="container">
-    <div class="section-title"><h2>핵심 경험</h2><p>현대오토에버 HRD·HRM 요구역량과 실제 수행 경험을 연결한 여섯 가지 사례입니다.</p></div>
-    <div class="featured-deck" aria-label="핵심 경험 카드. 카드를 선택하면 상세 내용이 열립니다.">
-      <button class="featured-card" style="--card-index:0;--card-tilt:-5deg" type="button" onclick="openFeaturedCase(event, 'onboard')" aria-label="직무 온보딩 체계 설계 및 운영 상세 보기">
-        <span class="featured-art art-onboarding"><span class="featured-index">01 / HRD</span><span class="featured-peek">ONBOARDING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="38" r="19"/><path d="M25 92c3-17 16-26 35-26s32 9 35 26M60 57v18m-9-9h18"/></svg><span class="featured-metric">100명+</span><span class="featured-metric-caption">신규 조교 온보딩 및 직무교육</span></span>
-        <span class="featured-copy"><span class="featured-kicker">직무교육 설계·운영</span><strong>직무 온보딩 체계 설계·운영</strong><span>조직 안내부터 답변 기준과 실습 피드백까지</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:1;--card-tilt:-2deg" type="button" onclick="openFeaturedCase(event, 'quality')" aria-label="성과 데이터 기반 개인별 학습 니즈 진단 상세 보기">
-        <span class="featured-art art-coaching"><span class="featured-index">02 / HRD</span><span class="featured-peek">COACHING</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M22 89h76M30 79l17-20 15 11 28-35"/><path d="M74 35h16v16"/></svg><span class="featured-metric">40 → 60건</span><span class="featured-metric-caption">저성과 조교 평균 답변량 증가</span></span>
-        <span class="featured-copy"><span class="featured-kicker">학습 니즈 진단·개별 코칭</span><strong>답변 품질을 높인 개인별 코칭</strong><span>모범 답안 비교와 실습 피드백으로 설명 역량 강화</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:2;--card-tilt:1deg" type="button" onclick="openFeaturedCase(event, 'improvement')" aria-label="교육 효과 측정 및 과정 개선 상세 보기">
-        <span class="featured-art art-improvement"><span class="featured-index">03 / HRD</span><span class="featured-peek">L&D IMPACT</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M24 91V62h18v29M51 91V43h18v48M78 91V27h18v64"/><path d="m29 49 22-16 18 5 27-22"/></svg><span class="featured-metric">30%+</span><span class="featured-metric-caption">2025년 게시판 질문량 증가 · 2024년 대비</span></span>
-        <span class="featured-copy"><span class="featured-kicker">교육 효과 점검·과정 개선</span><strong>교육 효과 측정 및 과정 개선</strong><span>반복 오류와 현장 질문을 재교육·차년도 과정에 반영</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:3;--card-tilt:3deg" type="button" onclick="openFeaturedCase(event, 'circle')" aria-label="참여형 조직개발 프로그램 설계 및 운영 상세 보기">
-        <span class="featured-art art-circle"><span class="featured-index">04 / HRD</span><span class="featured-peek">FACILITATION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><circle cx="60" cy="60" r="31"/><circle cx="60" cy="22" r="5"/><circle cx="97" cy="60" r="5"/><circle cx="60" cy="98" r="5"/><circle cx="23" cy="60" r="5"/><path d="M42 60h36M60 42v36"/></svg><span class="featured-metric">월 1회</span><span class="featured-metric-caption">대화의 장을 만든 학급자치서클</span></span>
-        <span class="featured-copy"><span class="featured-kicker">조직개발·집단 퍼실리테이션</span><strong>참여형 조직개발 프로그램 설계·운영</strong><span>학교 공동체의 대화 구조와 참여 방식 설계</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:4;--card-tilt:5deg" type="button" onclick="openFeaturedCase(event, 'retention')" aria-label="성과·이탈 데이터 기반 인력계획 개선 상세 보기">
-        <span class="featured-art art-retention"><span class="featured-index">05 / HRM</span><span class="featured-peek">RETENTION</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M23 40h74M23 60h54M23 80h35"/><circle cx="83" cy="77" r="18"/><path d="m75 77 6 6 11-13"/></svg><span class="featured-metric">40% 감소</span><span class="featured-metric-caption">같은 기간 조기 이탈 인원</span></span>
-        <span class="featured-copy"><span class="featured-kicker">인력 데이터 분석·채용계획</span><strong>성과·이탈 데이터 기반 인력계획</strong><span>이탈 원인을 살펴 다음 채용 기준과 규모에 반영</span></span>
-      </button>
-      <button class="featured-card" style="--card-index:5;--card-tilt:7deg" type="button" onclick="openFeaturedCase(event, 'ai')" aria-label="수학과 AI를 연결한 서비스 개선 협업 상세 보기">
-        <span class="featured-art art-ai"><span class="featured-index">06 / AI</span><span class="featured-peek">AI COLLAB</span><svg class="featured-symbol" viewBox="0 0 120 120" fill="none" aria-hidden="true"><rect x="30" y="27" width="60" height="66" rx="13"/><path d="M44 48h32M44 61h23M44 74h14"/><circle cx="82" cy="80" r="15"/></svg><span class="featured-metric">3,500건</span><span class="featured-metric-caption">제가 직접 검수한 누적 AI 답변</span></span>
-        <span class="featured-copy"><span class="featured-kicker">교육 도메인·AI 업체 협업</span><strong>수학과 AI를 연결한 서비스 개선 협업</strong><span>프롬프트 실험부터 개선 답변 재검수까지</span></span>
-      </button>
-    </div>
-  </div>
-</section>
+<section id="featured-experiences" class="featured-experiences"><div class="container">
+<div class="section-title"><h2>핵심 경험</h2><p>대표 성과와 문제 해결 과정을 중심으로 살펴보는 핵심 사례입니다.</p></div>
+<div class="showcase-layout">
+<button class="showcase-stage" type="button" data-showcase-stage aria-label="직무 온보딩 체계 설계 및 운영 사례 열기">
+<span class="showcase-stage-top"><span data-showcase-index>01 / HRD</span><span class="showcase-open-mark" aria-hidden="true">↗</span></span>
+<span class="showcase-stage-body"><span class="showcase-kicker" data-showcase-kicker>직무교육 설계·운영</span><span class="showcase-metric" data-showcase-metric>100명+</span><span class="showcase-metric-caption" data-showcase-caption>신규 조교 온보딩 및 직무교육</span><span class="showcase-rule"></span><strong data-showcase-title>직무 온보딩 체계 설계·운영</strong><span class="showcase-summary" data-showcase-summary>조직 안내부터 답변 기준과 실습 피드백까지, 신규 조교의 현장 적응을 지원했습니다.</span></span>
+<span class="showcase-stage-foot"><span>핵심 사례</span><span data-showcase-foot>01 — 06</span></span></button>
+<div class="showcase-index" role="group" aria-label="핵심 경험 사례 선택">
+<button class="showcase-choice is-selected" type="button" data-showcase-choice="0" aria-pressed="true"><span class="showcase-choice-no">01</span><span class="showcase-choice-copy"><small>HRD · 직무교육</small><strong>직무 온보딩 체계 설계·운영</strong></span><span class="showcase-choice-metric">100명+</span></button>
+<button class="showcase-choice" type="button" data-showcase-choice="1" aria-pressed="false"><span class="showcase-choice-no">02</span><span class="showcase-choice-copy"><small>HRD · 개별 코칭</small><strong>성과 데이터 기반 학습 진단</strong></span><span class="showcase-choice-metric">40 → 60건</span></button>
+<button class="showcase-choice" type="button" data-showcase-choice="2" aria-pressed="false"><span class="showcase-choice-no">03</span><span class="showcase-choice-copy"><small>HRD · 교육 효과</small><strong>교육 효과 측정 및 과정 개선</strong></span><span class="showcase-choice-metric">30%+</span></button>
+<button class="showcase-choice" type="button" data-showcase-choice="3" aria-pressed="false"><span class="showcase-choice-no">04</span><span class="showcase-choice-copy"><small>HRD · 조직개발</small><strong>참여형 조직개발 프로그램 운영</strong></span><span class="showcase-choice-metric">월 1회</span></button>
+<button class="showcase-choice" type="button" data-showcase-choice="4" aria-pressed="false"><span class="showcase-choice-no">05</span><span class="showcase-choice-copy"><small>HRM · 인력계획</small><strong>성과·이탈 데이터 기반 인력계획</strong></span><span class="showcase-choice-metric">40% 감소</span></button>
+<button class="showcase-choice" type="button" data-showcase-choice="5" aria-pressed="false"><span class="showcase-choice-no">06</span><span class="showcase-choice-copy"><small>AI 협업 · 서비스 개선</small><strong>수학과 AI를 연결한 협업</strong></span><span class="showcase-choice-metric">3,500건</span></button>
+</div></div></div></section>
 
 <section id="portfolio">
 <div class="container"><div class="section-title"><h2>주요 경험</h2></div>
@@ -1905,6 +1930,33 @@ if(!reduceMotion&&'IntersectionObserver' in window){
   sectionObserver.observe(block);
  });
 }
+
+const showcaseCases=[
+{key:'onboard',index:'01 / HRD',kicker:'직무교육 설계·운영',metric:'100명+',caption:'신규 조교 온보딩 및 직무교육',title:'직무 온보딩 체계 설계·운영',summary:'조직 안내부터 답변 기준과 실습 피드백까지, 신규 조교의 현장 적응을 지원했습니다.'},
+{key:'quality',index:'02 / HRD',kicker:'학습 니즈 진단·개별 코칭',metric:'40 → 60건',caption:'저성과 조교 평균 답변량 증가',title:'성과 데이터 기반 학습 진단',summary:'답변량과 오류 유형을 살펴 개인별 학습 과제를 정하고, 모범 답안 비교와 실습 피드백을 이어갔습니다.'},
+{key:'improvement',index:'03 / HRD',kicker:'교육 효과 점검·과정 개선',metric:'30%+',caption:'2025년 게시판 질문량 증가 · 2024년 대비',title:'교육 효과 측정 및 과정 개선',summary:'반복 오류와 현장 질문을 점검해 재교육과 다음 연도 교육과정에 반영했습니다.'},
+{key:'circle',index:'04 / HRD',kicker:'조직개발·집단 퍼실리테이션',metric:'월 1회',caption:'대화의 장을 만든 학급자치서클',title:'참여형 조직개발 프로그램 설계·운영',summary:'구성원이 직접 의견을 나누고 참여할 수 있도록 대화 구조와 운영 방식을 설계했습니다.'},
+{key:'retention',index:'05 / HRM',kicker:'인력 데이터 분석·채용계획',metric:'40% 감소',caption:'같은 기간 조기 이탈 인원',title:'성과·이탈 데이터 기반 인력계획',summary:'이탈 원인과 재직 성과를 살펴 다음 채용 기준과 규모를 조정하는 데 연결했습니다.'},
+{key:'ai',index:'06 / AI',kicker:'교육 도메인·AI 업체 협업',metric:'3,500건',caption:'직접 검수한 누적 AI 답변',title:'수학과 AI를 연결한 서비스 개선',summary:'프롬프트 실험부터 개선 답변의 재검수까지, 교육 전문성을 바탕으로 업체와 협업했습니다.'}
+];
+const showcaseStage=document.querySelector('[data-showcase-stage]');
+const showcaseChoices=[...document.querySelectorAll('[data-showcase-choice]')];
+function selectShowcaseCase(index){
+ const item=showcaseCases[index];if(!item||!showcaseStage)return;
+ showcaseChoices.forEach((button,i)=>{const on=i===index;button.classList.toggle('is-selected',on);button.setAttribute('aria-pressed',String(on));});
+ showcaseStage.setAttribute('aria-label',item.title+' 사례 열기');
+ showcaseStage.querySelector('[data-showcase-index]').textContent=item.index;
+ showcaseStage.querySelector('[data-showcase-kicker]').textContent=item.kicker;
+ showcaseStage.querySelector('[data-showcase-metric]').textContent=item.metric;
+ showcaseStage.querySelector('[data-showcase-caption]').textContent=item.caption;
+ showcaseStage.querySelector('[data-showcase-title]').textContent=item.title;
+ showcaseStage.querySelector('[data-showcase-summary]').textContent=item.summary;
+ showcaseStage.querySelector('[data-showcase-foot]').textContent=String(index+1).padStart(2,'0')+' — 06';
+ showcaseStage.dataset.caseKey=item.key;
+}
+showcaseChoices.forEach(button=>button.addEventListener('click',()=>selectShowcaseCase(Number(button.dataset.showcaseChoice))));
+if(showcaseStage){showcaseStage.dataset.caseKey=showcaseCases[0].key;showcaseStage.addEventListener('click',async()=>{if(showcaseStage.classList.contains('is-opening'))return;showcaseStage.classList.add('is-opening');await new Promise(resolve=>setTimeout(resolve,260));showcaseStage.classList.remove('is-opening');openCase(showcaseStage.dataset.caseKey);});}
+
 </script>
 </body>
 </html>
