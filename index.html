@@ -880,7 +880,7 @@ pointer-events:none}
 /* Featured experiences: overlapping cards that pull forward on hover or focus */
 .featured-experiences{background:#f7f9f6;overflow:hidden}
 .featured-deck{position:relative;width:min(100%,1080px);height:490px;margin:34px auto 0;perspective:1400px}
-.featured-card{position:absolute;top:0;left:calc(var(--card-index)*11.2%);z-index:calc(1 + var(--card-index));display:block;width:34%;height:420px;padding:0;border:1px solid rgba(0,44,95,.14);border-radius:16px;overflow:hidden;background:#fff;text-align:left;color:inherit;cursor:pointer;transform:rotate(var(--card-tilt));transform-origin:50% 85%;box-shadow:0 14px 32px rgba(10,35,65,.16);transition:transform .55s cubic-bezier(.18,.76,.25,1),box-shadow .45s ease,border-color .3s ease}
+.featured-card{position:absolute;top:0;left:calc(var(--card-index)*14%);z-index:calc(1 + var(--card-index));display:block;width:29%;height:420px;padding:0;border:1px solid rgba(0,44,95,.14);border-radius:16px;overflow:hidden;background:#fff;text-align:left;color:inherit;cursor:pointer;transform:rotate(var(--card-tilt));transform-origin:50% 85%;box-shadow:0 14px 32px rgba(10,35,65,.16);transition:transform .55s cubic-bezier(.18,.76,.25,1),box-shadow .45s ease,border-color .3s ease}
 .featured-art{height:265px;position:relative;display:block;overflow:hidden;background:#14202c;color:#fff;isolation:isolate}
 .featured-art::before{content:"";position:absolute;inset:-22%;z-index:-1;background:radial-gradient(ellipse at 73% 28%,rgba(117,157,192,.42),transparent 38%),linear-gradient(135deg,rgba(255,255,255,.1),transparent 56%);transition:transform .65s ease}
 .featured-art::after{content:"";position:absolute;inset:0;background:linear-gradient(118deg,transparent 34%,rgba(255,255,255,.2) 49%,transparent 63%);transform:translateX(-130%);transition:transform .8s cubic-bezier(.2,.7,.2,1)}
@@ -906,7 +906,7 @@ pointer-events:none}
 .featured-card:hover .featured-symbol,.featured-card:focus-visible .featured-symbol{transform:translate(-4px,-3px) scale(1.08)}
 .featured-card:hover .featured-link b,.featured-card:focus-visible .featured-link b{transform:translate(3px,-3px)}
 .featured-card:focus-visible{outline:3px solid var(--green);outline-offset:5px}
-@media(max-width:1050px){.featured-deck{height:470px}.featured-card{width:34%;height:405px;left:calc(var(--card-index)*11.2%)}.featured-art{height:250px}.featured-copy{padding:12px 13px}}
+@media(max-width:1050px){.featured-deck{height:470px}.featured-card{width:29%;height:405px;left:calc(var(--card-index)*14%)}.featured-art{height:250px}.featured-copy{padding:12px 13px}}
 @media(max-width:760px){.featured-deck{height:auto;display:grid;grid-template-columns:1fr;gap:16px;perspective:none;margin-top:26px}.featured-card{position:relative;top:auto;left:auto;width:100%;height:auto;min-height:0;transform:none!important;overflow:hidden}.featured-art{height:230px}.featured-copy{padding:15px 16px 16px}.featured-copy strong{font-size:17px}.featured-copy>span:not(.featured-kicker):not(.featured-link){font-size:12px}.featured-index{font-size:10px}.featured-peek{top:58px}.featured-symbol{width:84px;height:84px}.featured-metric{font-size:36px}.featured-metric-caption{font-size:11px}.featured-link{font-size:12px}.featured-card:hover,.featured-card:focus-visible{transform:translateY(-5px)!important}}
 @media(prefers-reduced-motion:reduce){.featured-card,.featured-art::before,.featured-art::after,.featured-symbol,.featured-link b{transition:none!important}.featured-card:hover,.featured-card:focus-visible{transform:none!important}}
 
