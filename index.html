@@ -1035,14 +1035,25 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
  .featured-card.is-active,
  .featured-card:hover,
  .featured-card:focus-visible{
-  transform:translateY(-76px) translateZ(70px) scale(1.055) rotate(0deg)!important;
+  transform:translateY(-38px) translateZ(70px) scale(1.055) rotate(0deg)!important;
  }
  .featured-card.is-click-pull{
   transform:translateY(-116px) translateZ(150px) scale(1.12) rotate(0deg)!important;
   transition:transform .78s cubic-bezier(.16,1,.3,1),box-shadow .58s ease,filter .45s ease!important;
+  animation:featured-edge-glint 1.1s ease-out both;
  }
 }
 
+
+@keyframes featured-edge-glint{
+ 0%{outline:0 solid rgba(207,190,154,0);outline-offset:0}
+ 32%{outline:3px solid rgba(207,190,154,.82);outline-offset:2px}
+ 68%{outline:2px solid rgba(207,190,154,.42);outline-offset:3px}
+ 100%{outline:0 solid rgba(207,190,154,0);outline-offset:5px}
+}
+@media(prefers-reduced-motion:reduce){
+ .featured-card.is-click-pull{animation:none!important}
+}
 </style>
 </head>
 <body>
