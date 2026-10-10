@@ -1002,6 +1002,28 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
  dialog.featured-morphing,dialog.featured-morphing::backdrop,dialog.featured-morphing .dialog-inner{transition-duration:.48s!important}
  dialog.featured-morphing.featured-unfolded .dialog-inner>*{animation-duration:.36s!important;animation-delay:20ms!important}
 }
+
+/* Matte slate palette: restrained, consistent surfaces without neon glow */
+.featured-experiences{background:#f2f4f3}
+.featured-card{background:#26394c!important;box-shadow:0 18px 38px rgba(25,39,53,.2),0 4px 12px rgba(25,39,53,.12)}
+.featured-art,.featured-art.art-onboarding,.featured-art.art-coaching,.featured-art.art-improvement,.featured-art.art-circle,.featured-art.art-retention,.featured-art.art-ai{background:#3a4f63}
+.featured-art.art-onboarding::before,.featured-art.art-coaching::before,.featured-art.art-improvement::before,.featured-art.art-circle::before,.featured-art.art-retention::before,.featured-art.art-ai::before{background:radial-gradient(ellipse at 76% 24%,rgba(193,174,142,.13),transparent 44%),linear-gradient(140deg,rgba(255,255,255,.055),transparent 60%)}
+.featured-art::after{background:linear-gradient(118deg,transparent 34%,rgba(242,239,231,.09) 49%,transparent 63%)}
+.featured-copy,.featured-card.is-click-pull .featured-copy{min-height:155px;background:#26394c!important;padding:15px 18px 17px}
+.featured-kicker{color:#c3b18f}
+.featured-copy strong{color:#f4f4f0}
+.featured-copy>span:not(.featured-kicker):not(.featured-link){color:#c7d0d7}
+.featured-link{color:#d2c2a1}
+.featured-link::after{background:#c2ae87}
+.featured-index{background:rgba(20,35,49,.24);backdrop-filter:none;border-color:rgba(226,231,234,.32);color:#e3e7e9}
+.featured-peek{color:rgba(230,234,236,.7)}
+.featured-symbol{filter:none}
+.featured-card.is-active{box-shadow:0 28px 58px rgba(20,34,48,.3),0 5px 16px rgba(20,34,48,.17);filter:saturate(1.02)}
+.featured-card:hover,.featured-card:focus-visible{box-shadow:0 28px 58px rgba(20,34,48,.32),0 5px 16px rgba(20,34,48,.17)}
+.featured-card.is-click-pull{box-shadow:0 34px 68px rgba(18,31,45,.38),0 8px 20px rgba(18,31,45,.2)}
+.featured-card.is-click-pull .featured-metric{text-shadow:none}
+.featured-card::before{background:radial-gradient(300px circle at var(--pointer-x,50%) var(--pointer-y,50%),rgba(255,255,255,.075),transparent 66%)}
+
 </style>
 </head>
 <body>
