@@ -1465,6 +1465,42 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 @media(max-width:600px){#featured-experiences{padding-top:58px;padding-bottom:62px}.showcase-layout{margin-top:26px}.showcase-stage{min-height:400px;padding:23px 22px 19px}.showcase-stage-body{padding:18px 0}.showcase-metric{font-size:52px;margin-top:20px}.showcase-rule{margin:23px 0 18px}.showcase-summary{font-size:13px}.showcase-choice{grid-template-columns:28px minmax(0,1fr) auto;gap:9px;padding:13px 9px}.showcase-choice-copy strong{font-size:13px}.showcase-choice-metric{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.showcase-stage,.showcase-stage::before,.showcase-stage::after,.showcase-open-mark,.showcase-choice{transition:none!important}.showcase-stage:hover,.showcase-stage:focus-visible,.showcase-stage.is-opening{transform:none}}
 
+
+/* Refined flagship case: quiet editorial surface, blue used as a focused accent */
+#featured-experiences{background:#f7f9f6;padding-top:72px;padding-bottom:78px}
+#featured-experiences .section-title p{max-width:720px}
+.showcase-layout{display:flex;flex-direction:column;gap:24px;margin-top:30px}
+.showcase-index{order:0;grid-template-columns:repeat(6,minmax(0,1fr));grid-template-rows:none;border-top:1px solid #dce4e8;border-bottom:1px solid #dce4e8}
+.showcase-choice,.showcase-choice:first-child{min-height:82px;border:0;border-right:1px solid #e3e9ec;border-radius:0;padding:12px 13px;grid-template-columns:23px minmax(0,1fr);grid-template-rows:auto auto;gap:5px 9px;background:transparent}
+.showcase-choice:last-child{border-right:0}
+.showcase-choice:hover,.showcase-choice:focus-visible{background:rgba(23,115,204,.045)}
+.showcase-choice.is-selected{padding-left:13px;background:#eaf2f8;box-shadow:inset 0 -3px #1773cc}
+.showcase-choice-no{grid-column:1;grid-row:1;color:#1773cc;font-size:10px}
+.showcase-choice-copy{grid-column:2;grid-row:1 / span 2;align-self:center;gap:5px}
+.showcase-choice-copy small{font-size:9px;letter-spacing:.35px;color:#6f8293}
+.showcase-choice-copy strong{font-size:12px;line-height:1.4;color:#263746}
+.showcase-choice-metric{grid-column:1 / span 2;grid-row:2;justify-self:start;padding-left:32px;font-size:11px;color:#526c82}
+.showcase-stage{order:1;min-height:350px;display:grid;grid-template-rows:auto 1fr auto;gap:0;padding:20px 30px 18px;border:1px solid #e1e8eb;border-radius:3px;background:#fff;color:#263746;box-shadow:0 10px 30px rgba(28,53,75,.055);transition:transform .35s ease,box-shadow .35s ease}
+.showcase-stage::before{width:380px;height:380px;right:-120px;top:-185px;border-color:rgba(23,115,204,.1);box-shadow:0 0 0 42px rgba(23,115,204,.025),0 0 0 90px rgba(23,115,204,.018)}
+.showcase-stage::after{background:linear-gradient(110deg,transparent 15%,rgba(23,115,204,.045) 48%,transparent 72%)}
+.showcase-stage:hover,.showcase-stage:focus-visible{transform:translateY(-3px);box-shadow:0 17px 38px rgba(28,53,75,.1)}
+.showcase-stage:focus-visible{outline:2px solid #1773cc;outline-offset:3px}
+.showcase-stage-top>span:first-child{color:#1773cc;font-size:10px;letter-spacing:1.2px}
+.showcase-open-mark{color:#1773cc}
+.showcase-stage-body{width:100%;max-width:none;display:grid;grid-template-columns:minmax(220px,.78fr) minmax(0,1.22fr);grid-template-rows:auto auto auto 1fr;align-content:center;align-items:center;column-gap:34px;row-gap:0;padding:20px 0 24px}
+.showcase-kicker{grid-column:1 / 3;grid-row:1;margin-bottom:19px;color:#1773cc;font-size:11px;letter-spacing:.4px}
+.showcase-metric{grid-column:1;grid-row:2;margin:0;color:#1773cc;font-size:clamp(42px,5vw,62px);letter-spacing:-2.5px}
+.showcase-metric-caption{grid-column:1;grid-row:3;margin-top:9px;color:#617487;font-size:12px;line-height:1.6}
+.showcase-rule{grid-column:1;grid-row:4;width:48px;height:3px;margin:22px 0 0;background:#1773cc}
+.showcase-stage-body strong{grid-column:2;grid-row:2;align-self:end;padding-left:29px;border-left:1px solid #dce4e8;color:#263746;font-size:clamp(22px,2.5vw,30px);letter-spacing:-.5px}
+.showcase-summary{grid-column:2;grid-row:3 / span 2;align-self:start;padding:12px 0 0 29px;color:#617487;font-size:13px;line-height:1.85}
+.showcase-stage-foot{border-color:#e6ecef;color:#748597;font-size:9px;letter-spacing:1px}
+.showcase-stage-foot span:first-child{color:#1773cc}
+.showcase-stage.is-opening{transform:translateY(-5px);box-shadow:0 22px 42px rgba(28,53,75,.13)}
+@media(max-width:1000px){.showcase-index{grid-template-columns:repeat(3,minmax(0,1fr))}.showcase-choice:nth-child(3){border-right:0}.showcase-choice:nth-child(n+4){border-top:1px solid #e3e9ec}}
+@media(max-width:700px){#featured-experiences{padding-top:58px;padding-bottom:62px}.showcase-layout{gap:18px;margin-top:25px}.showcase-index{grid-template-columns:repeat(2,minmax(0,1fr))}.showcase-choice,.showcase-choice:first-child{min-height:74px;padding:10px 9px;border-top:1px solid #e3e9ec;border-right:1px solid #e3e9ec}.showcase-choice:nth-child(3){border-right:1px solid #e3e9ec}.showcase-choice:nth-child(even){border-right:0}.showcase-choice.is-selected{padding-left:9px}.showcase-choice-copy small{font-size:8px}.showcase-choice-copy strong{font-size:11px}.showcase-choice-metric{font-size:10px}.showcase-stage{min-height:340px;padding:17px 18px 15px}.showcase-stage-body{grid-template-columns:1fr;grid-template-rows:auto auto auto auto auto auto;row-gap:0;padding:22px 0}.showcase-kicker{grid-column:1;grid-row:1;margin-bottom:15px}.showcase-metric{grid-column:1;grid-row:2;font-size:48px}.showcase-metric-caption{grid-column:1;grid-row:3}.showcase-rule{grid-column:1;grid-row:4;margin:18px 0}.showcase-stage-body strong{grid-column:1;grid-row:5;border-left:0;padding-left:0;font-size:22px}.showcase-summary{grid-column:1;grid-row:6;padding:8px 0 0;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.showcase-stage,.showcase-stage::before,.showcase-stage::after,.showcase-open-mark,.showcase-choice{transition:none!important}.showcase-stage:hover,.showcase-stage:focus-visible,.showcase-stage.is-opening{transform:none}}
+
 </style>
 </head>
 <body>
@@ -1549,7 +1585,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <button class="showcase-stage" type="button" data-showcase-stage aria-label="직무 온보딩 체계 설계 및 운영 사례 열기">
 <span class="showcase-stage-top"><span data-showcase-index>01 / HRD</span><span class="showcase-open-mark" aria-hidden="true">↗</span></span>
 <span class="showcase-stage-body"><span class="showcase-kicker" data-showcase-kicker>직무교육 설계·운영</span><span class="showcase-metric" data-showcase-metric>100명+</span><span class="showcase-metric-caption" data-showcase-caption>신규 조교 온보딩 및 직무교육</span><span class="showcase-rule"></span><strong data-showcase-title>직무 온보딩 체계 설계·운영</strong><span class="showcase-summary" data-showcase-summary>조직 안내부터 답변 기준과 실습 피드백까지, 신규 조교의 현장 적응을 지원했습니다.</span></span>
-<span class="showcase-stage-foot"><span>핵심 사례</span><span data-showcase-foot>01 — 06</span></span></button>
+<span class="showcase-stage-foot"><span>선택 사례 열기 ↗</span><span data-showcase-foot>01 — 06</span></span></button>
 <div class="showcase-index" role="group" aria-label="핵심 경험 사례 선택">
 <button class="showcase-choice is-selected" type="button" data-showcase-choice="0" aria-pressed="true"><span class="showcase-choice-no">01</span><span class="showcase-choice-copy"><small>HRD · 직무교육</small><strong>직무 온보딩 체계 설계·운영</strong></span><span class="showcase-choice-metric">100명+</span></button>
 <button class="showcase-choice" type="button" data-showcase-choice="1" aria-pressed="false"><span class="showcase-choice-no">02</span><span class="showcase-choice-copy"><small>HRD · 개별 코칭</small><strong>성과 데이터 기반 학습 진단</strong></span><span class="showcase-choice-metric">40 → 60건</span></button>
