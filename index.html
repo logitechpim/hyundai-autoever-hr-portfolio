@@ -1454,6 +1454,18 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 }
 @media(prefers-reduced-motion:reduce){.case-card .case-copy p{transition:none!important}}
 
+
+/* Category and headline stay visible; only the secondary summary is hover-revealed */
+.case-card .category,.case-card .case-copy h3{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+ transition:color .28s ease!important;transition-delay:0s!important;
+}
+.case-card:hover .category,.case-card:focus-visible .category,
+.case-card:hover .case-copy h3,.case-card:focus-visible .case-copy h3{
+ opacity:1!important;visibility:visible!important;transform:none!important;
+ color:#fff!important;
+}
+
 </style>
 </head>
 <body>
