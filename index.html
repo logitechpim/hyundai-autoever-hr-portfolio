@@ -1264,6 +1264,53 @@ dialog.featured-morphing.featured-unfolded .dialog-inner>*:nth-child(n+5){animat
  transition:none!important;
 }
 
+
+/* AutoEver blue and white site-wide palette */
+:root{
+ --brand-blue:#1773cc;
+ --green:#1773cc;
+ --green-dark:#1268b6;
+ --navy:#1773cc;
+ --pale:#f3f8fc;
+ --line:#dce8f3;
+}
+html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
+ background:#fff!important;
+ background-image:none!important;
+}
+.header{
+ background:#fff!important;
+ color:var(--brand-blue)!important;
+ border-right:1px solid #e4edf6;
+ box-shadow:4px 0 22px rgba(23,75,125,.035);
+}
+.header .navmenu a,
+.header .navmenu a:hover,
+.header .navmenu a.active{
+ color:var(--brand-blue)!important;
+}
+.header .navmenu a:hover,
+.header .navmenu a.active{
+ background:rgba(23,115,204,.075)!important;
+}
+.header .navmenu a.active::before{
+ background:var(--brand-blue)!important;
+}
+.header .nav-icon,
+.header .navmenu a:hover .nav-icon,
+.header .navmenu a.active .nav-icon{
+ color:var(--brand-blue)!important;
+ stroke:var(--brand-blue)!important;
+}
+.prototype-label{color:#6c98c4!important}
+.profile-caption{color:#527ca5!important}
+.featured-card:hover,.featured-card:focus-visible,.featured-card.is-active,
+.featured-card:hover .featured-art,.featured-card:focus-visible .featured-art,.featured-card.is-active .featured-art,
+.featured-card:hover .featured-copy,.featured-card:focus-visible .featured-copy,.featured-card.is-active .featured-copy,
+.featured-card:hover.is-click-pull .featured-copy,.featured-card.is-click-pull .featured-copy{
+ background-color:#1773cc!important;
+}
+
 </style>
 </head>
 <body>
