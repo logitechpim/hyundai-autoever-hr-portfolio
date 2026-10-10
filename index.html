@@ -1424,6 +1424,17 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
  backdrop-filter:none!important;
 }
 
+
+/* Hero wordmark: metallic embossed lettering inspired by the reference image */
+.hero-logo-wrap{position:relative;isolation:isolate}
+.hero-logo-wrap::before{content:"";position:absolute;z-index:-1;width:min(520px,100%);aspect-ratio:2.6/1;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.98) 0%,rgba(255,255,255,.82) 42%,rgba(235,239,242,.24) 70%,transparent 100%);filter:blur(11px);pointer-events:none}
+.hero-wordmark{display:flex;flex-direction:column;align-items:flex-start;gap:0;white-space:nowrap;font-size:clamp(44px,5.2vw,78px);font-weight:850;letter-spacing:-.055em;line-height:.88;color:#8b8986;background:linear-gradient(180deg,#fdfdfd 0%,#b9b8b6 19%,#777673 48%,#d0cfcc 70%,#878581 100%);background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-text-stroke:.35px rgba(255,255,255,.72);filter:drop-shadow(0 1px 0 rgba(255,255,255,.95)) drop-shadow(0 4px 7px rgba(48,54,59,.19)) drop-shadow(0 0 14px rgba(255,255,255,.9));}
+.hero-wordmark-top{font-size:.79em;font-weight:800;letter-spacing:-.045em}
+.hero-wordmark-bottom{font-size:1em;font-style:italic;font-weight:850;letter-spacing:-.075em}
+@media(max-width:1100px){.hero-logo-wrap::before{width:min(420px,86vw)}.hero-wordmark{font-size:clamp(48px,8vw,74px)}}
+@media(max-width:700px){.hero-wordmark{font-size:clamp(46px,12vw,68px)}.hero-logo-wrap{min-height:150px}}
+@media(prefers-reduced-motion:reduce){.hero-wordmark{animation:none!important;opacity:1}}
+
 </style>
 </head>
 <body>
@@ -1450,7 +1461,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
     <div class="hero-actions"><a class="cta" href="#portfolio">주요 경험 보기 ↓</a><button class="cta outline story-cta" onclick="openCase('story')">저의 이야기가 궁금하세요? ↗</button></div>
   </div>
   <div class="hero-logo-wrap">
-    <div class="hero-wordmark" aria-label="현대오토에버">HYUNDAI <span>AutoEver</span></div>
+    <div class="hero-wordmark" aria-label="현대오토에버"><span class="hero-wordmark-top">HYUNDAI</span><span class="hero-wordmark-bottom">AutoEver</span></div>
   </div>
 </div>
 
