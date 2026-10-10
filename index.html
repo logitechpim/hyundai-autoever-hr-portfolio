@@ -1494,6 +1494,16 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 @media(max-width:1100px){.hero-logo{width:min(560px,100%)!important}}
 @media(max-width:700px){.hero-logo{width:min(420px,100%)!important}}
 
+
+/* Pull the tools and projects column 3cm toward the education/certification column */
+@media(min-width:1241px){
+ .resume-profile-side{
+  grid-template-columns:minmax(0,calc(50% - 3cm)) minmax(0,calc(50% + 3cm))!important;
+ }
+ .resume-profile-side>.education-panel,
+ .resume-profile-side>.certification-panel{padding-right:14px!important}
+}
+
 </style>
 </head>
 <body>
