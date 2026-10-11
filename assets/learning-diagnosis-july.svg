@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 28 1200 647" role="img" aria-labelledby="title desc">
 <title id="title">학습 진단과 업무 피드백 면담 대시보드</title><desc id="desc">7월 학습 현황, 개인별 답변량 변화, 업무 피드백 면담 일정을 보여주는 운영 화면</desc>
 <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f5f8fb"/><stop offset="1" stop-color="#eaf0f5"/></linearGradient><filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="5" stdDeviation="12" flood-color="#173e70" flood-opacity=".08"/></filter></defs>
 <rect width="1200" height="675" fill="#edf2f6"/><rect x="34" y="28" width="1132" height="619" rx="18" fill="#fff" filter="url(#shadow)"/>
