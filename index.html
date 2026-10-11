@@ -1985,6 +1985,7 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 
 
 
+<link rel="stylesheet" href="/assets/css/hrd-proposal.css">
 </head>
 <body>
 <header class="header">
@@ -2082,10 +2083,28 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 <button class="experience-row" data-category="PROJECT" onclick="openCase('money')" aria-label="So, My Money? 상세 보기" aria-haspopup="dialog"><span class="experience-title">So, My Money?</span><span class="experience-year">2026</span><span class="experience-arrow" aria-hidden="true">→</span></button>
 <button class="experience-row" data-category="PROJECT" onclick="openCase('football')" aria-label="사회인 축구팀 운영 상세 보기" aria-haspopup="dialog"><span class="experience-title">사회인 축구팀 운영</span><span class="experience-year">2022–2026</span><span class="experience-arrow" aria-hidden="true">→</span></button>
 </div>
+
+<aside class="hrd-proposal-card" aria-label="HRD 프로그램 제안">
+  <div class="hrd-proposal-copy"><p>온보딩 프로그램 기획</p><h3>사내 15분 교실</h3></div>
+  <button type="button" class="hrd-proposal-trigger" id="hrd-proposal-trigger" aria-haspopup="dialog" aria-controls="hrd-proposal-dialog"><span>HRD 프로그램 제안드립니다</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></button>
+</aside>
 </div>
 </div>
 </section>
 </main>
+
+<dialog class="hrd-proposal-dialog" id="hrd-proposal-dialog" aria-labelledby="hrd-slide-title">
+  <div class="hrd-dialog-layout">
+    <div class="hrd-dialog-header"><p>온보딩 프로그램 제안</p><button type="button" class="hrd-dialog-close" id="hrd-proposal-close" aria-label="제안서 닫기" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="hrd-proposal-stage" id="hrd-proposal-stage"></div>
+    <div class="hrd-dialog-footer">
+      <a class="hrd-proposal-download" href="/downloads/hrd-15-minute-classroom.docx" download="사내15분교실_온보딩기획안.docx"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg><span>전체 기획안 다운로드</span></a>
+      <div class="hrd-pager"><button type="button" id="hrd-proposal-prev">이전</button><span class="hrd-page-count" id="hrd-proposal-count" aria-hidden="true">1 / 5</span><button type="button" id="hrd-proposal-next">다음</button></div>
+      <span class="hrd-sr-only" id="hrd-proposal-status" role="status" aria-live="polite" aria-atomic="true"></span>
+    </div>
+  </div>
+</dialog>
+
 
 
 
@@ -2328,5 +2347,6 @@ if(!reduceMotion&&'IntersectionObserver' in window){
  });
 }
 </script>
+<script src="/assets/js/hrd-proposal.js" defer></script>
 </body>
 </html>
