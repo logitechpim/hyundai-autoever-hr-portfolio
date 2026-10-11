@@ -96,9 +96,9 @@
 
 
 /* Match the core experience card size, alignment and hover treatment. */
-#hrd-proposal .major-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:48px;align-items:start;max-width:1180px}
+#hrd-proposal .major-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:30px;align-items:start;max-width:1180px}
 #hrd-proposal .major-content{display:flex;justify-content:flex-end;min-width:0;padding-bottom:0}
-#hrd-proposal .hrd-proposal-card{position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:calc((100% - 48px)/2 - 1.5cm);min-width:0;min-height:485px;margin:0 0 0 auto;padding:0;border:1px solid #e1e7eb;border-radius:20px;overflow:hidden;background:#e9edf0;color:#263746;text-align:left;box-shadow:0 12px 30px rgba(28,42,54,.08);transition:background-color 260ms ease,color 260ms ease,box-shadow 260ms ease}
+#hrd-proposal .hrd-proposal-card{position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:calc((100% - 286px)/2 - 1.5cm);min-width:0;min-height:485px;margin:0 0 0 auto;padding:0;border:1px solid #e1e7eb;border-radius:20px;overflow:hidden;background:#e9edf0;color:#263746;text-align:left;box-shadow:0 12px 30px rgba(28,42,54,.08);transition:background-color 260ms ease,color 260ms ease,box-shadow 260ms ease}
 #hrd-proposal .hrd-proposal-art{position:relative;display:block;flex:none;height:290px;aspect-ratio:auto;overflow:hidden;background:transparent}
 #hrd-proposal .hrd-proposal-art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(9,26,43,.12) 42%,rgba(9,26,43,.84) 100%);opacity:1;transition:opacity 240ms ease}
 #hrd-proposal .hrd-proposal-photo{position:absolute;inset:0;display:block;width:100%;height:100%;max-height:none;object-fit:cover;object-position:center;opacity:1;transition:opacity 240ms ease}
@@ -117,11 +117,10 @@
 #hrd-proposal .hrd-proposal-card:hover .hrd-proposal-copy>p:first-child,#hrd-proposal .hrd-proposal-card:hover .hrd-proposal-summary,#hrd-proposal .hrd-proposal-card:hover .hrd-proposal-trigger{color:#fff}
 #hrd-proposal .hrd-proposal-card:focus-within{outline:3px solid #1673cc;outline-offset:5px}
 @media(max-width:1200px) and (min-width:1051px){
- #hrd-proposal .major-layout{grid-template-columns:150px minmax(0,1fr);gap:30px}
- #hrd-proposal .hrd-proposal-card{width:calc((100% - 28px)/2 - 1.5cm)}
+ #hrd-proposal .hrd-proposal-card{width:calc((100% - 208px)/2 - 1.5cm)}
 }
 @media(max-width:1050px){
- #hrd-proposal .major-layout{grid-template-columns:1fr;gap:28px}
+ #hrd-proposal .major-layout{gap:28px}
  #hrd-proposal .hrd-proposal-card{width:calc((100% - 32px)/2 - 1.5cm)}
 }
 @media(max-width:620px){
