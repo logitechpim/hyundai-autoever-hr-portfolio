@@ -13,7 +13,7 @@
 .hrd-dialog-close{display:grid;place-items:center;flex-shrink:0;width:40px;height:40px;padding:0;border:0;border-radius:50%;background:#f1f4f8;color:#3c5068;cursor:pointer}
 .hrd-dialog-close:hover{background:#e6edf5}
 .hrd-dialog-close svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7}
-.hrd-proposal-stage{min-height:0;overflow:auto;overscroll-behavior:contain;padding:18px 42px 30px;word-break:keep-all;overflow-wrap:anywhere}
+.hrd-proposal-stage{min-height:0;overflow:auto;overscroll-behavior:contain;padding:18px 42px 30px;word-break:keep-all;overflow-wrap:anywhere}.hrd-proposal-stage :is(h2,h3,p){text-wrap:pretty}
 .hrd-proposal-stage h2{margin:0 0 24px;color:#002c5f;font-size:32px;font-weight:750;line-height:1.35;letter-spacing:-.045em}
 .hrd-proposal-stage h3{margin:0 0 12px;color:#173e70;font-size:18px;font-weight:700;line-height:1.4}
 .hrd-proposal-stage p{margin:0 0 16px;font-size:16px;line-height:1.75}
