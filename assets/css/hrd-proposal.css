@@ -60,3 +60,12 @@
 @media(max-width:1050px){.hrd-proposal-card{grid-template-columns:minmax(0,1fr) minmax(160px,200px) auto;gap:18px}}
 @media(max-width:760px){.hrd-proposal-card{grid-template-columns:minmax(0,1fr) minmax(150px,200px)}.hrd-proposal-trigger{grid-column:1/-1;justify-self:end}}
 @media(max-width:650px){.hrd-proposal-card{display:grid;grid-template-columns:1fr;gap:18px}.hrd-proposal-photo{max-height:190px;aspect-ratio:16/9}.hrd-proposal-trigger{grid-column:auto;justify-self:stretch}}
+
+/* Keep the proposal visually separate from the experience list. */
+#portfolio{padding-bottom:0}
+#portfolio .major-content{padding-bottom:2cm}
+#hrd-proposal{padding-top:0}
+#hrd-proposal .major-layout{grid-template-columns:220px minmax(0,1fr);gap:64px}
+#hrd-proposal .major-content{min-width:0;padding-bottom:0}
+#hrd-proposal .hrd-proposal-card{margin-top:0}
+@media(max-width:1050px){#hrd-proposal .major-layout{grid-template-columns:1fr;gap:28px}}
