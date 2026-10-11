@@ -64,7 +64,7 @@
 /* Keep the proposal visually separate from the experience list. */
 #portfolio{padding-bottom:0}
 #portfolio .major-content{padding-bottom:3cm}
-#hrd-proposal{padding-top:0}
+#hrd-proposal{padding-top:0;padding-bottom:3cm}
 #hrd-proposal .major-layout{grid-template-columns:220px minmax(0,1fr);gap:64px}
 #hrd-proposal .major-content{min-width:0;padding-bottom:0}
 #hrd-proposal .hrd-proposal-card{margin-top:0}
