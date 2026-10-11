@@ -133,3 +133,5 @@
  #hrd-proposal .hrd-proposal-art-copy strong{font-size:40px}
 }
 @media(prefers-reduced-motion:reduce){#hrd-proposal .hrd-proposal-card,#hrd-proposal .hrd-proposal-photo,#hrd-proposal .hrd-proposal-art::after{transition:none}}
+
+.hrd-proposal-stage .hrd-purpose-emphasis{font-weight:700;color:#263b55}
