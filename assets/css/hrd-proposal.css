@@ -96,7 +96,7 @@
 
 
 /* Match the core experience card size, alignment and hover treatment. */
-#hrd-proposal .major-layout{grid-template-columns:190px minmax(0,1fr);gap:48px}
+#hrd-proposal .major-layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:48px;align-items:start;max-width:1180px}
 #hrd-proposal .major-content{display:flex;justify-content:flex-end;min-width:0;padding-bottom:0}
 #hrd-proposal .hrd-proposal-card{position:relative;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:0;width:calc((100% - 48px)/2 - 1.5cm);min-width:0;min-height:485px;margin:0 0 0 auto;padding:0;border:1px solid #e1e7eb;border-radius:20px;overflow:hidden;background:#e9edf0;color:#263746;text-align:left;box-shadow:0 12px 30px rgba(28,42,54,.08);transition:background-color 260ms ease,color 260ms ease,box-shadow 260ms ease}
 #hrd-proposal .hrd-proposal-art{position:relative;display:block;flex:none;height:290px;aspect-ratio:auto;overflow:hidden;background:transparent}
