@@ -1893,12 +1893,12 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 #featured-experiences .stagger-description{font-size:13px;line-height:1.9;color:#536979}
 #featured-experiences .stagger-link{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;margin-top:auto;padding-top:8px;color:#536979}
 #featured-experiences .stagger-card:focus-visible{outline:3px solid #1673cc;outline-offset:5px}
-#featured-experiences .stagger-card:focus-visible,#featured-experiences .stagger-card:hover{background:#1773cc;color:#fff;box-shadow:0 16px 36px rgba(25,80,135,.18)}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-highlight{color:#fff}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) :is(.stagger-caption,.stagger-kicker,.stagger-description,.stagger-link){color:#fff}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-peek{color:#d3e5f6}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-symbol{stroke:#d3e5f6}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-index{border-color:#9fc5eb}
+#featured-experiences .stagger-card:hover{background:#1773cc;color:#fff;box-shadow:0 16px 36px rgba(25,80,135,.18)}
+#featured-experiences .stagger-card:hover .stagger-highlight{color:#fff}
+#featured-experiences .stagger-card:hover :is(.stagger-caption,.stagger-kicker,.stagger-description,.stagger-link){color:#fff}
+#featured-experiences .stagger-card:hover .stagger-peek{color:#d3e5f6}
+#featured-experiences .stagger-card:hover .stagger-symbol{stroke:#d3e5f6}
+#featured-experiences .stagger-card:hover .stagger-index{border-color:#9fc5eb}
 @media(max-width:1200px){#featured-experiences .stagger-layout{grid-template-columns:150px minmax(0,1fr);gap:30px}#featured-experiences .stagger-grid{gap:38px 28px}#featured-experiences .stagger-copy{padding-left:22px;padding-right:22px}#featured-experiences .stagger-copy>strong{font-size:19px}#featured-experiences .stagger-caption{font-size:11px}#featured-experiences .stagger-highlight{left:23px;right:23px;font-size:35px}#featured-experiences .stagger-prompt .stagger-highlight{font-size:32px}}
 @media(max-width:1050px){#featured-experiences .stagger-layout{grid-template-columns:1fr;gap:30px}#featured-experiences .stagger-grid{gap:38px 32px}}
 @media(max-width:620px){#featured-experiences{padding-top:52px;padding-bottom:52px}#featured-experiences .stagger-heading h2{font-size:29px}#featured-experiences .stagger-grid{grid-template-columns:1fr;gap:24px;padding-bottom:0}#featured-experiences .stagger-card:nth-child(odd){top:0}#featured-experiences .stagger-card{min-height:460px}#featured-experiences .stagger-art{height:255px}#featured-experiences .stagger-copy>strong{font-size:21px}#featured-experiences .stagger-highlight{font-size:43px}#featured-experiences .stagger-prompt .stagger-highlight{font-size:36px}}
@@ -1932,8 +1932,8 @@ html,body,main,main>section,.light,.hero,.featured-experiences,.footer{
 #featured-experiences .stagger-graphic svg :is(path,rect,circle){vector-effect:non-scaling-stroke;stroke:#7890a5;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
 #featured-experiences .stagger-graphic svg .g-blue{stroke:#1773cc;stroke-width:2.5}
 #featured-experiences .stagger-graphic svg .g-dot{fill:#1773cc;stroke:#fff;stroke-width:2}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-media,#featured-experiences .stagger-card:is(:hover,:focus-visible) .stagger-art::after{opacity:0}
-#featured-experiences .stagger-card:is(:hover,:focus-visible) :is(.stagger-highlight,.stagger-caption){color:#fff}
+#featured-experiences .stagger-card:hover .stagger-media,#featured-experiences .stagger-card:hover .stagger-art::after{opacity:0}
+#featured-experiences .stagger-card:hover :is(.stagger-highlight,.stagger-caption){color:#fff}
 @media(prefers-reduced-motion:reduce){#featured-experiences .stagger-media,#featured-experiences .stagger-art::after,#featured-experiences .stagger-highlight,#featured-experiences .stagger-caption{transition:none}}
 
 @container(max-width:300px){#featured-experiences .stagger-graphic>svg{top:8px;width:132px;height:88px}}
